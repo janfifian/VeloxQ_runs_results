@@ -1,0 +1,36 @@
+setting,instance,tier,E_opt,legal,legal_min_above_opt,legal_max_above_opt,illegal,cheapest_illegal_above_opt,cheapest_illegal_move,cheapest_illegal_breaks,cheapest_addition_above_opt,illegal_below_worst_legal,illegal_below_opt
+S0,easy_003_seed_1030,easy,-1161.0,365,0.0,634.0,423,77985.0,move,PR3_PR4_lecturer_overlap=1,4051916.0,0,0
+S1,easy_003_seed_1030,easy,-1161.0,365,0.0,634.0,423,77985.0,move,PR3_PR4_lecturer_overlap=1,4051916.0,0,0
+S2,easy_003_seed_1030,easy,-1161.0,365,0.0,634.0,423,77985.0,move,PR3_PR4_lecturer_overlap=1,4051916.0,0,0
+S3,easy_003_seed_1030,easy,-1161.0,365,0.0,634.0,423,879.0,add,PR1_course_minutes=1;MC_max_chunks=1,879.0,0,0
+S4,easy_003_seed_1030,easy,-1161.0,365,0.0,634.0,423,879.0,add,PR1_course_minutes=1;MC_max_chunks=1,879.0,0,0
+S5,easy_003_seed_1030,easy,-1161.0,365,0.0,634.0,423,77985.0,move,PR3_PR4_lecturer_overlap=1,4051916.0,0,0
+S6,easy_003_seed_1030,easy,-1161.0,365,0.0,634.0,423,3126.0,add,PR1_course_minutes=1;MC_max_chunks=1,3126.0,0,0
+S0,medium_005_seed_1050,medium,-2069.0,543,0.0,1922.0,913,7895.0,move,CONJ_PHASE3_room_count=6;CONJ_PHASE3_room_capacity=6,4051916.0,0,0
+S1,medium_005_seed_1050,medium,-2069.0,543,0.0,1922.0,913,145.0,move,CONJ_PHASE3_room_count=6;CONJ_PHASE3_room_capacity=6,4051916.0,10,0
+S2,medium_005_seed_1050,medium,-2069.0,543,0.0,1922.0,913,4513.5,move,CONJ_PHASE3_room_count=6;CONJ_PHASE3_room_capacity=6,4051916.0,0,0
+S3,medium_005_seed_1050,medium,-2069.0,543,0.0,1922.0,913,3718.5,add,PR1_course_minutes=1;MC_max_chunks=1,3718.5,0,0
+S4,medium_005_seed_1050,medium,-2069.0,543,0.0,1922.0,913,3718.5,add,PR1_course_minutes=1;MC_max_chunks=1,3718.5,0,0
+S5,medium_005_seed_1050,medium,-2069.0,543,0.0,1922.0,913,55.0,move,CONJ_PHASE3_room_count=6;CONJ_PHASE3_room_capacity=6,4051916.0,10,0
+S6,medium_005_seed_1050,medium,-2069.0,543,0.0,1922.0,913,12591.0,add,PR1_course_minutes=1;MC_max_chunks=1,12591.0,0,0
+S0,medium_006_seed_1061,medium,-2354.0,640,0.0,1491.0,1084,2635.0,move,CONJ_PHASE3_room_count=6;CONJ_PHASE3_room_capacity=6,4051931.0,0,0
+S1,medium_006_seed_1061,medium,-2354.0,640,0.0,1491.0,1084,165.0,move,CONJ_PHASE3_room_count=6;CONJ_PHASE3_room_capacity=6,4051931.0,11,0
+S2,medium_006_seed_1061,medium,-2354.0,640,0.0,1491.0,1084,4533.5,move,CONJ_PHASE3_room_count=6;CONJ_PHASE3_room_capacity=6,4051931.0,0,0
+S3,medium_006_seed_1061,medium,-2354.0,640,0.0,1491.0,1084,3733.5,add,PR1_course_minutes=1;MC_max_chunks=1,3733.5,0,0
+S4,medium_006_seed_1061,medium,-2354.0,640,0.0,1491.0,1084,3733.5,add,PR1_course_minutes=1;MC_max_chunks=1,3733.5,0,0
+S5,medium_006_seed_1061,medium,-2354.0,640,0.0,1491.0,1084,75.0,move,CONJ_PHASE3_room_count=6;CONJ_PHASE3_room_capacity=6,4051931.0,11,0
+S6,medium_006_seed_1061,medium,-2354.0,640,0.0,1491.0,1084,12606.0,add,PR1_course_minutes=1;MC_max_chunks=1,12606.0,0,0
+S0,hard_008_seed_1084,hard,-2847.0,774,10.0,1931.0,1526,539.0,move,no exact room assignment=1,4051945.0,2,0
+S1,hard_008_seed_1084,hard,-2847.0,774,10.0,1931.0,1526,165.0,move,no exact room assignment=1,4051945.0,4,0
+S2,hard_008_seed_1084,hard,-2847.0,774,10.0,1931.0,1526,7778.0,move,no exact room assignment=1,4051945.0,0,0
+S3,hard_008_seed_1084,hard,-2847.0,774,10.0,1931.0,1526,6587.0,add,PR1_course_minutes=1;MC_max_chunks=1,6587.0,0,0
+S4,hard_008_seed_1084,hard,-2847.0,774,10.0,1931.0,1526,6587.0,add,PR1_course_minutes=1;MC_max_chunks=1,6587.0,0,0
+S5,hard_008_seed_1084,hard,-2847.0,774,10.0,1931.0,1526,75.0,move,no exact room assignment=1,4051945.0,4,0
+S6,hard_008_seed_1084,hard,-2847.0,774,10.0,1931.0,1526,22085.0,add,PR1_course_minutes=1;MC_max_chunks=1,22085.0,0,0
+S0,hard_009_seed_1090,hard,-2651.0,833,1.0,4138.0,1855,9.0,move,CONJ_PHASE3_room_count=6,4051921.0,8,0
+S1,hard_009_seed_1090,hard,-2651.0,833,1.0,4138.0,1855,99.0,move,CONJ_PHASE3_room_count=6,4051921.0,8,0
+S2,hard_009_seed_1090,hard,-2651.0,833,1.0,4138.0,1855,12038.0,move,CONJ_PHASE3_room_count=6,4051921.0,0,0
+S3,hard_009_seed_1090,hard,-2651.0,833,1.0,4138.0,1855,10349.0,add,PR1_course_minutes=1;MC_max_chunks=1,10349.0,0,0
+S4,hard_009_seed_1090,hard,-2651.0,833,1.0,4138.0,1855,10349.0,add,PR1_course_minutes=1;MC_max_chunks=1,10349.0,0,0
+S5,hard_009_seed_1090,hard,-2651.0,833,1.0,4138.0,1855,9.0,move,CONJ_PHASE3_room_count=6,4051921.0,8,0
+S6,hard_009_seed_1090,hard,-2651.0,833,1.0,4138.0,1855,34681.0,add,PR1_course_minutes=1;MC_max_chunks=1,34681.0,0,0
