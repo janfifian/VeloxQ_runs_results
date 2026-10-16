@@ -1,0 +1,606 @@
+schema_version: 1
+metadata:
+  solver: QUBO/VeloxQ (h100-1)
+  stages_solved:
+  - phase2
+  phase2:
+    build_time_seconds: 0.847
+    upload_seconds: 1.485
+    veloxq_solver_time_seconds: 7.939
+    veloxq_effective_mode: 'submit (batch: submitted without waiting, pulled later)'
+    veloxq_job_id: 9bb21902-9981-4c36-9035-bf991a2956ef
+    submitted_at: '2026-10-14T14:06:31+02:00'
+    pulled_at: '2026-10-14T14:37:45+02:00'
+    veloxq_job_statistics:
+      usage_time: 160.526418
+      pending_time: 150.356866
+      running_time: 7.993
+      quota_solver_time: 7.993
+      cost_solver_time: 0.0
+      solver_cost: 0.55
+      solver_usage_scale: 1.0
+      backend_cost_scale: 1.0
+      backend_usage_scale: 1.0
+      total_cost: 0.0
+      total_quota_usage: 7993
+    veloxq_job_timeline:
+    - name: created
+      value: '2026-10-14T12:06:33.236871Z'
+    - name: pending
+      value: 150.356866
+    - name: running
+      value: 7.993
+    - name: completed
+      value: '2026-10-14T12:09:13.763289Z'
+    veloxq_samples_file:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S6\rep_3\medium_005_seed_1051_veloxq_samples_phase2.npz
+      sha256: 8229b529987bec79d09bb483eac6c87fe2e4fb2ad58678649492d49563e79502
+      bytes: 704477
+      n_distinct_samples: 4096
+      n_reads: 4096
+    veloxq_raw_result_file:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S6\rep_3\medium_005_seed_1051_veloxq_result_phase2.h5.gz
+      sha256: c1937fc4ef2e380b3f871707ae247668ad28578385c45027dd85e7bf33e26c43
+      sha256_file_bytes: c1937fc4ef2e380b3f871707ae247668ad28578385c45027dd85e7bf33e26c43
+      bytes: 883982
+      compression: gzip
+      uncompressed_sha256: 092b95ed0b363687d84ad50fbe1c3a20b077162770ce93622230bc15c3bc7392
+      uncompressed_bytes: 9868896
+    best_state_file:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S6\rep_3\medium_005_seed_1051_veloxq_best_state_phase2.npz
+      sha256: f71d7d7f02420767fd13e996262da51826614d109b227e4f2339562be8ece55f
+      sha256_file_bytes: f71d7d7f02420767fd13e996262da51826614d109b227e4f2339562be8ece55f
+      bytes: 831
+    veloxq_vartype: SPIN
+    veloxq_response_info:
+      main_loop_time: 7.745989867
+      total_time: 7.939346383
+      solver_name: VeloxQchaotic.SimpleVeloxQ
+      L: 2375
+      num_rep: 4096
+    veloxq_sent_as: Ising h5 written from the cache arrays, float64
+    uploaded_ising_h5:
+      name: medium_005_seed_1051_S6_ising.h5
+      sha256: 583566af7d24794dd82384beed97e7aa7dfaaeb99ee79dfccce75d6014d4252f
+      bytes: 1840928
+    n_vars: 2375
+    n_q_entries: 37851
+    energy: 47570.0
+    lessons_planned: 28
+    qubo_matrix:
+      n_vars: 2375
+      n_entries: 37851
+      constant: 105837740.0
+      dtype: float64
+      qubo_diagonal:
+        n: 2265
+        n_nonzero: 2265
+        min: -1480000.0
+        max: 3600.0
+        max_abs: 1480000.0
+        n_positive: 1090
+        n_negative: 1175
+        min_abs_nonzero: 1.0
+        abs_quantiles_50_90_99:
+        - 18500.0
+        - 637740.0
+        - 1480000.0
+        n_distinct_values: 59
+      qubo_off_diagonal:
+        n: 35586
+        n_nonzero: 35586
+        min: -3600.0
+        max: 1184000.0
+        max_abs: 1184000.0
+        n_positive: 30141
+        n_negative: 5445
+        min_abs_nonzero: 5.0
+        abs_quantiles_50_90_99:
+        - 31660.0
+        - 296000.0
+        - 555010.0
+        n_distinct_values: 28
+      ising_h:
+        n: 2375
+        n_nonzero: 2375
+        min: -8077.5
+        max: 2023197.5
+        max_abs: 2023197.5
+        n_positive: 1230
+        n_negative: 1145
+        min_abs_nonzero: 1.25
+        abs_quantiles_50_90_99:
+        - 6277.5
+        - 1251910.5
+        - 1850000.0
+        n_distinct_values: 660
+      ising_J:
+        n: 35586
+        n_nonzero: 35586
+        min: -900.0
+        max: 296000.0
+        max_abs: 296000.0
+        n_positive: 30141
+        n_negative: 5445
+        min_abs_nonzero: 1.25
+        abs_quantiles_50_90_99:
+        - 7915.0
+        - 74000.0
+        - 138752.5
+        n_distinct_values: 28
+      ising_offset: 472248375.0
+      ising_max_local_field: 4440000.0
+      dynamic_range: 1618558.0
+      energy_convention: 'E(x) = constant + sum_i Q_ii x_i + sum_{i<j} Q_ij x_i x_j,
+        x in {0,1}; Q stored upper-triangular, one entry per pair (duplicates summed
+        when built). Ising: x = (1 + s)/2, s in {-1,+1}, h_i = Q_ii/2 + sum_j Q_ij/4,
+        J_ij = Q_ij/4, offset = constant + sum_i Q_ii/2 + sum_{i<j} Q_ij/4.'
+      fingerprint: 8202ee276291b26b36f7a7a760edf582f11956fa9f9e21403ad1d3890fc73f14
+    qubo_config:
+      Lambda_PR1: 7.814814814814815
+      Lambda_MC: 5.0
+      Lambda_nonoverlap: 18500.0
+      Lambda_mix: 5.0
+      Lambda_room: 10.0
+      Lambda_room_count: 18500.0
+      Lambda_room_capacity: 18500.0
+      Lambda_y: 5.0
+      Lambda_z: 5.0
+      alpha_lecture_before: 100.0
+      delta_days_per_group: 1.0
+      gamma_gap_per_minute: 1.0
+      Lambda_idle_marker: 3600.0
+      satisfaction_weights:
+        preferred: 80
+        undesired: 20
+        not_available: 0
+        neutral: 0
+      tod_weights:
+        morning: -5.0
+        afternoon: 0.0
+        evening: 10.0
+      midday_start_hour:
+      - 12
+      - 0
+      afternoon_start_hour:
+      - 16
+      - 0
+      buffer_minutes: 15
+      enable_PR1: true
+      enable_MAX_CHUNKS: true
+      enable_PR4_lecturers: true
+      enable_PR4_students: true
+      enable_mixed_modality: true
+      enable_CONJ_PHASE3: true
+      enable_CONJ_PHASE3_capacity: true
+      room_rows_per: cell
+      room_presolve: counts
+      penalty_profile: fixed
+      penalty_margin: 5.0
+      penalty_profile_keep: []
+      mc_slack_encoding: binary
+      Lambda_MC_ladder_chain: 200.0
+      enable_y_linking: true
+      enable_z_linking: true
+      enable_satisfaction: true
+      enable_time_of_day: true
+      enable_min_days: true
+      enable_gap: true
+      enable_lecture_before: false
+      enforce_RU2: true
+      enforce_PR2: true
+      reward_unit: lesson
+      penalty_profile_resolved_from: sufficient
+    rules:
+      room_filter: 'RU3 filter of 07.10.2026: possible_rooms[c] keeps the rooms whose
+        capacity is at least the course size; loading fails for a course with no such
+        room unless ProblemInstance.strict_RU3 is False'
+      pr5: true
+      validation_profile: time core + room rows per 15-min cell + exact rooms + 15-min
+        break + PR5
+      remote_lessons: need no room; the room stage leaves them out
+      qubo:
+        buffer_minutes: 15
+        room_rows_per: cell
+        room_presolve: counts
+        penalty_profile: fixed
+        penalty_profile_resolved_from: sufficient
+        penalty_margin: 5.0
+        enforce_RU2: true
+        enforce_PR2: true
+        mc_slack_encoding: binary
+        reward_unit: lesson
+        enabled_families:
+        - CONJ_PHASE3
+        - CONJ_PHASE3_capacity
+        - MAX_CHUNKS
+        - PR1
+        - PR4_lecturers
+        - PR4_students
+        - gap
+        - min_days
+        - mixed_modality
+        - satisfaction
+        - time_of_day
+        - y_linking
+        - z_linking
+    qubo_room_presolve:
+      rows: 138
+      count_kept: 97
+      count_cannot_bind: 41
+      capacity_kept: 0
+      capacity_cannot_bind: 66
+      capacity_implied: 38
+      capacity_left_to_rooms: 34
+    qubo_penalty_requirements:
+      Lambda_PR1: 1.5629629629629629
+      Lambda_MC: 0.0
+      Lambda_nonoverlap: 3700.0
+      Lambda_mix: 0.0
+      Lambda_room_count: 3700.0
+      Lambda_room_capacity: 3700.0
+      Lambda_y: 1.0
+      Lambda_z: 1.0
+      Lambda_idle_marker: 720.0
+    qubo_penalty_profile_set_penalties: true
+    qubo_cache_code_version:
+      commit: bd8a847e799cbcc222b1368269db3064c57c666c
+      tags_at_commit:
+      - campaign-2026-10-qubo
+      describe: campaign-2026-10-qubo-dirty
+      dirty: true
+      modified_tracked_files:
+      - notebooks/velox_vs_gurobi_comparison.ipynb
+      - paper/RECENZJA.md
+      - paper/icsoc2026.aux
+      - paper/icsoc2026.pdf
+      - paper/icsoc2026.tex
+      - scripts/LATO_instructions.txt
+      n_modified_tracked_files: 6
+    qubo_cache: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S6\caches\medium_005_seed_1051.qubo_cache.h5
+    qubo_cache_file:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S6\caches\medium_005_seed_1051.qubo_cache.h5
+      sha256: a1c93016835bdd720a35686e7b9f854fa05244e8e96a7d83bc9562f7e9106c8d
+      sha256_file_bytes: a1c93016835bdd720a35686e7b9f854fa05244e8e96a7d83bc9562f7e9106c8d
+      bytes: 78603
+  phase3: {}
+  veloxq:
+    backend: h100-1
+    num_rep: 4096
+    num_steps: 10000
+    mode: submit (batch)
+    problem:
+      name: campaign-2026-10_S6
+      id: 06a923be-48a4-4ccb-bbd7-d03dda6ba82d
+    file_id: efc03334-a417-4633-9e20-39e5d83db886
+  setting:
+    name: S6
+    description: presolve (counts) + sufficient penalties (margin 5)
+    overrides:
+      room_presolve: counts
+      penalty_profile: sufficient
+      penalty_margin: 5.0
+    repetition: 3
+  submission_code:
+    commit: bd8a847e799cbcc222b1368269db3064c57c666c
+    describe: campaign-2026-10-qubo-dirty
+  environment:
+    python_version: 3.13.12
+    python_implementation: CPython
+    platform: Windows-11-10.0.26200-SP0
+    machine: AMD64
+    processor: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+    logical_processors: 20
+    hostname: FifianJanPC
+    timestamp: '2026-10-14T14:38:10+02:00'
+    git_commit: bd8a847e799c
+    git_dirty: true
+    code:
+      commit: bd8a847e799cbcc222b1368269db3064c57c666c
+      tags_at_commit:
+      - campaign-2026-10-qubo
+      describe: campaign-2026-10-qubo-dirty
+      dirty: true
+      modified_tracked_files:
+      - notebooks/velox_vs_gurobi_comparison.ipynb
+      - paper/RECENZJA.md
+      - paper/icsoc2026.aux
+      - paper/icsoc2026.pdf
+      - paper/icsoc2026.tex
+      - scripts/LATO_instructions.txt
+      n_modified_tracked_files: 6
+    packages:
+      gurobipy: 12.0.3
+      veloxq_sdk: 0.1.dev125+ge290bd081
+      dimod: 0.12.21
+      numpy: 2.4.4
+      scipy: 1.17.1
+      torch: 2.11.0+cpu
+      networkx: 3.6.1
+      h5py: 3.16.0
+      PyYAML: 6.0.3
+      gurobi_library: 12.0.3
+  instance:
+    file:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\repository_ready\instances\synthetic\medium_005_seed_1051.yaml
+      sha256: de217a3bdd0b282b1502099a1b08d86d9af5a08cd6657d614bc56b3f016fd902
+      sha256_file_bytes: de217a3bdd0b282b1502099a1b08d86d9af5a08cd6657d614bc56b3f016fd902
+      bytes: 116143
+    dimensions:
+      n_lecturers: 11
+      n_subjects: 28
+      n_groups: 11
+      n_rooms: 9
+      n_days: 5
+      n_time_slots: 35
+    conflict_graph:
+      n_vertices: 28
+      n_edges: 117
+      edge_density: 0.309524
+      avg_degree: 8.3571
+      max_degree: 18
+      min_degree: 2
+      degree_std: 4.0375
+      n_components: 1
+      largest_component_size: 28
+      n_triangles: 188
+      global_clustering: 0.517906
+      avg_local_clustering: 0.591212
+      chromatic_lower_bound: 8
+      chromatic_upper_bound: 8
+      chromatic_pressure: 0.228571
+      edges_by_source:
+        groups: 95
+        teachers: 27
+  verifier:
+    feasible: true
+    n_violations: 0
+    violations_by_constraint:
+      PR1_course_minutes: 0
+      MC_max_chunks: 0
+      PR3_PR4_lecturer_overlap: 0
+      PR3_PR4_group_overlap: 0
+      RU2_lecturer_availability: 0
+      PR2_lecturer_assigned: 0
+      CONJ_PHASE3_room_count: 0
+      CONJ_PHASE3_room_capacity: 0
+    soft_metrics:
+      lecturer_satisfaction_counts:
+        high_pref: 6
+        low_pref: 2
+        neutral: 20
+        not_available: 0
+      lecturer_satisfaction_percent:
+        high_pref: 21.4
+        low_pref: 7.1
+        neutral: 71.4
+        not_available: 0.0
+      time_of_day_counts:
+        morning: 4
+        afternoon: 17
+        evening: 7
+      time_of_day_minutes:
+        morning: 360.0
+        afternoon: 1530.0
+        evening: 630.0
+      total_student_gap_minutes: 1665.0
+      gap_minutes_by_group:
+        grp_002: 675.0
+        grp_003: 165.0
+        grp_009: 225.0
+        grp_011: 15.0
+        grp_005: 120.0
+        grp_006: 15.0
+        grp_008: 225.0
+        grp_007: 225.0
+      days_per_group:
+        avg: 3.27
+        min: 1
+        max: 5
+        by_group:
+          grp_001: 3
+          grp_002: 4
+          grp_003: 4
+          grp_004: 4
+          grp_005: 4
+          grp_006: 4
+          grp_007: 2
+          grp_008: 2
+          grp_009: 3
+          grp_010: 1
+          grp_011: 5
+    statuses:
+      time_core: true
+      room_rows: true
+      v_zero: true
+      rooms: true
+      policy_rules: true
+      extra_rules: true
+      full: true
+      pr5: true
+      profile: time core + room rows per 15-min cell + exact rooms + 15-min break
+        + PR5
+    extra_violations_by_rule:
+      BREAK_lecturer: 0
+      BREAK_group: 0
+      PR5_mixed_modality: 0
+    room_assignment:
+      roomable: true
+      assignment:
+        '0': 0
+        '1': 0
+        '2': 1
+        '3': 1
+        '4': 0
+        '5': 1
+        '6': 1
+        '7': 0
+        '8': 8
+        '9': 0
+        '10': 0
+        '11': 0
+        '12': 6
+        '13': 0
+        '14': 1
+        '15': 1
+        '16': 4
+        '17': 0
+        '18': 2
+        '19': 1
+        '20': 1
+        '21': 0
+        '22': 6
+        '23': 8
+        '24': 1
+        '25': 1
+        '26': 1
+        '27': 1
+      n_in_person: 28
+      n_remote_exempt: 0
+      n_roomed: 28
+      upper_bound: 28
+      n_without_admissible_free_room: 0
+      status: OPTIMAL
+      unroomed: []
+lessons:
+- l_idx: 0
+  course_unique_id: grp_001__1001_Course 1__Inne
+  lecturer_unique_id: lec_003
+  slot_str: 13:15-14:45
+  dayname: Poniedziałek
+- l_idx: 1
+  course_unique_id: grp_002__1002_Course 2__Laboratorium
+  lecturer_unique_id: lec_004
+  slot_str: 16:45-18:15
+  dayname: Piątek
+- l_idx: 2
+  course_unique_id: grp_003__1003_Course 3__Inne
+  lecturer_unique_id: lec_002
+  slot_str: 13:15-14:45
+  dayname: Wtorek
+- l_idx: 3
+  course_unique_id: grp_004__1004_Course 4__Seminarium
+  lecturer_unique_id: lec_009
+  slot_str: 13:15-14:45
+  dayname: Poniedziałek
+- l_idx: 4
+  course_unique_id: grp_005__1005_Course 5__Seminarium
+  lecturer_unique_id: lec_004
+  slot_str: 16:45-18:15
+  dayname: Wtorek
+- l_idx: 5
+  course_unique_id: grp_006__1006_Course 6__E-learning
+  lecturer_unique_id: lec_003
+  slot_str: 16:45-18:15
+  dayname: Piątek
+- l_idx: 6
+  course_unique_id: grp_007__1007_Course 7__Seminarium
+  lecturer_unique_id: lec_005
+  slot_str: 16:45-18:15
+  dayname: Wtorek
+- l_idx: 7
+  course_unique_id: grp_008__1008_Course 8__Laboratorium
+  lecturer_unique_id: lec_007
+  slot_str: 18:30-20:00
+  dayname: Czwartek
+- l_idx: 8
+  course_unique_id: grp_009__1009_Course 9__Ćwiczenia
+  lecturer_unique_id: lec_008
+  slot_str: 13:15-14:45
+  dayname: Środa
+- l_idx: 9
+  course_unique_id: grp_010__1010_Course 10__Wykład
+  lecturer_unique_id: lec_004
+  slot_str: 15:00-16:30
+  dayname: Czwartek
+- l_idx: 10
+  course_unique_id: grp_011__1011_Course 11__Ćwiczenia
+  lecturer_unique_id: lec_007
+  slot_str: 13:15-14:45
+  dayname: Wtorek
+- l_idx: 11
+  course_unique_id: grp_004__1012_Course 12__Ćwiczenia
+  lecturer_unique_id: lec_005
+  slot_str: 15:00-16:30
+  dayname: Środa
+- l_idx: 12
+  course_unique_id: grp_009__1013_Course 13__Projekt
+  lecturer_unique_id: lec_002
+  slot_str: 18:30-20:00
+  dayname: Środa
+- l_idx: 13
+  course_unique_id: grp_003__1014_Course 14__Ćwiczenia
+  lecturer_unique_id: lec_006
+  slot_str: 15:00-16:30
+  dayname: Poniedziałek
+- l_idx: 14
+  course_unique_id: grp_011__1015_Course 15__Seminarium
+  lecturer_unique_id: lec_002
+  slot_str: 11:30-13:00
+  dayname: Poniedziałek
+- l_idx: 15
+  course_unique_id: grp_006__1016_Course 16__Ćwiczenia
+  lecturer_unique_id: lec_007
+  slot_str: 15:00-16:30
+  dayname: Poniedziałek
+- l_idx: 16
+  course_unique_id: grp_002__1017_Course 17__Wykład
+  lecturer_unique_id: lec_007
+  slot_str: 11:30-13:00
+  dayname: Piątek
+- l_idx: 17
+  course_unique_id: grp_009__1018_Course 18__Laboratorium
+  lecturer_unique_id: lec_011
+  slot_str: 15:00-16:30
+  dayname: Wtorek
+- l_idx: 18
+  course_unique_id: grp_006__1019_Course 19__E-learning
+  lecturer_unique_id: lec_010
+  slot_str: 13:15-14:45
+  dayname: Poniedziałek
+- l_idx: 19
+  course_unique_id: grp_011__1020_Course 20__E-learning
+  lecturer_unique_id: lec_001
+  slot_str: 15:00-16:30
+  dayname: Środa
+- l_idx: 20
+  course_unique_id: grp_002__1021_Course 21__Ćwiczenia
+  lecturer_unique_id: lec_009
+  slot_str: 18:30-20:00
+  dayname: Czwartek
+- l_idx: 21
+  course_unique_id: grp_002__1022_Course 22__Inne
+  lecturer_unique_id: lec_003
+  slot_str: 8:00-9:30
+  dayname: Środa
+- l_idx: 22
+  course_unique_id: grp_006__1023_Course 23__E-learning
+  lecturer_unique_id: lec_009
+  slot_str: 13:15-14:45
+  dayname: Czwartek
+- l_idx: 23
+  course_unique_id: grp_004__1024_Course 24__Ćwiczenia
+  lecturer_unique_id: lec_010
+  slot_str: 13:15-14:45
+  dayname: Czwartek
+- l_idx: 24
+  course_unique_id: grp_007__1025_Course 25__Projekt
+  lecturer_unique_id: lec_006
+  slot_str: 8:00-9:30
+  dayname: Środa
+- l_idx: 25
+  course_unique_id: grp_003__1026_Course 26__Projekt
+  lecturer_unique_id: lec_001
+  slot_str: 15:00-16:30
+  dayname: Czwartek
+- l_idx: 26
+  course_unique_id: grp_004__1027_Course 27__Wykład
+  lecturer_unique_id: lec_003
+  slot_str: 15:00-16:30
+  dayname: Wtorek
+- l_idx: 27
+  course_unique_id: grp_008__1028_Course 28__Projekt
+  lecturer_unique_id: lec_010
+  slot_str: 13:15-14:45
+  dayname: Środa
+room_assignments: []

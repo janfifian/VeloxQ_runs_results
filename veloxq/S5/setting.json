@@ -1,0 +1,8 @@
+{
+ "setting": "S5",
+ "description": "presolve (counts), base penalties",
+ "overrides": {
+  "room_presolve": "counts"
+ },
+ "base_config": "cfg/qubo_cfg.yaml"
+}

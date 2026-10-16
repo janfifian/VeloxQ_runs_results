@@ -1,0 +1,12 @@
+{
+ "setting": "S4",
+ "description": "all rows + sufficient penalties (margin 1.5), seat rows base",
+ "overrides": {
+  "penalty_profile": "sufficient",
+  "penalty_margin": 1.5,
+  "penalty_profile_keep": [
+   "Lambda_room_capacity"
+  ]
+ },
+ "base_config": "cfg/qubo_cfg.yaml"
+}
