@@ -1,0 +1,6 @@
+{
+ "setting": "S0",
+ "description": "as configured",
+ "overrides": {},
+ "base_config": "cfg/qubo_cfg.yaml"
+}

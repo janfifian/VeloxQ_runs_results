@@ -1,0 +1,123 @@
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 4858.
+================================================================================
+Wczytuję instancję z: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\repository_ready\instances\synthetic\hard_008_seed_1081.yaml
+================================================================================
+  ProblemInstance(|P| (prowadzący)=16, |C| (kursy)=44, |C_double|=104, |C_linking|=0, |C_zdalne|=0, |C_sportowe|=0, |C_jezykowe|=0, |G| (grupy studenckie)=16, |R| (sale)=13, |R_zdalne|=0, |R_CJ|=0, |R_CS|=0, |R_fizycznie_istniejace|=13, |T| (sloty)=35, |D| (dni)=5)
+  [save] rozwiązanie zapisane do: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S1\rep_3\hard_008_seed_1081_velox_solution.yaml
+
+================================================================================
+VERIFICATION REPORT
+================================================================================
+  instance: {'P': 16, 'C': 44, 'G': 16, 'R': 13, 'T': 35, 'D': 5}
+  |L|=44  has_spatial=False
+
+-- 1. HARD CONSTRAINTS --
+  feasibility: FAILED  (total violations: 3)
+  ✓ PR1_course_minutes: 0 violation(s)
+  ✓ MC_max_chunks: 0 violation(s)
+  ✓ PR3_PR4_lecturer_overlap: 0 violation(s)
+  ✗ PR3_PR4_group_overlap: 3 violation(s)
+      - {'group': 'grp_002', 'lessons': (23, 27)}
+      - {'group': 'grp_012', 'lessons': (23, 27)}
+      - {'group': 'grp_013', 'lessons': (28, 36)}
+  ✓ RU2_lecturer_availability: 0 violation(s)
+  ✓ PR2_lecturer_assigned: 0 violation(s)
+  ✓ CONJ_PHASE3_room_count: 0 violation(s)
+  ✓ CONJ_PHASE3_room_capacity: 0 violation(s)
+
+-- 1b. RULES OUTSIDE V AND STATUSES --
+  ✓ BREAK_lecturer: 0 violation(s)
+  ✓ BREAK_group: 0 violation(s)
+  ✓ PR5_mixed_modality: 0 violation(s)
+  rooms: 44/44 in-person lessons roomed (remote exempt: 0, bound 44, solver status OPTIMAL)
+  statuses: {'time_core': False, 'room_rows': True, 'v_zero': False, 'rooms': True, 'policy_rules': True, 'extra_rules': True, 'full': False, 'pr5': True, 'profile': 'time core + room rows per 15-min cell + exact rooms + 15-min break + PR5'}
+
+-- 2. SOFT METRICS --
+  lecturer_satisfaction_counts:
+      high_pref: 6
+      low_pref: 10
+      neutral: 28
+      not_available: 0
+  lecturer_satisfaction_percent:
+      high_pref: 13.6
+      low_pref: 22.7
+      neutral: 63.6
+      not_available: 0.0
+  time_of_day_counts:
+      morning: 18
+      afternoon: 15
+      evening: 11
+  time_of_day_minutes:
+      morning: 1620.0
+      afternoon: 1350.0
+      evening: 990.0
+  total_student_gap_minutes: 7185.0
+  gap_minutes_by_group:
+      grp_004: 930.0
+      grp_005: 600.0
+      grp_006: 975.0
+      grp_008: 345.0
+      grp_009: 435.0
+      grp_010: 270.0
+      grp_011: 360.0
+      grp_013: 240.0
+      grp_014: 120.0
+      grp_015: 480.0
+      grp_016: 660.0
+      grp_001: 270.0
+      grp_003: 450.0
+      grp_012: 255.0
+      grp_007: 450.0
+      grp_002: 345.0
+  days_per_group:
+      avg: 3.5
+      min: 2
+      max: 5
+      by_group: {'grp_001': 4, 'grp_002': 4, 'grp_003': 4, 'grp_004': 5, 'grp_005': 3, 'grp_006': 3, 'grp_007': 4, 'grp_008': 3, 'grp_009': 3, 'grp_010': 3, 'grp_011': 5, 'grp_012': 4, 'grp_013': 3, 'grp_014': 2, 'grp_015': 2, 'grp_016': 4}
+
+-- 3. PER-LESSON AUDIT --
+  l  0  ★ Piątek         18:30-20:00    grp_001__1001_Course 1__Laboratorium                    lec_008     room=—
+  l  1    Poniedziałek   15:00-16:30    grp_002__1002_Course 2__Wykład                          lec_013     room=—
+  l  2    Środa          15:00-16:30    grp_003__1003_Course 3__Wykład                          lec_016     room=—
+  l  3  ~ Wtorek         18:30-20:00    grp_004__1004_Course 4__Projekt                         lec_010     room=—  gap[min]: grp_004=435.0
+  l  4  ★ Czwartek       18:30-20:00    grp_005__1005_Course 5__Inne                            lec_013     room=—  gap[min]: grp_005=15.0
+  l  5    Środa          8:00-9:30      grp_006__1006_Course 6__Ćwiczenia                       lec_005     room=—
+  l  6  ~ Wtorek         9:45-11:15     grp_007__1007_Course 7__Projekt                         lec_012     room=—
+  l  7  ★ Wtorek         8:00-9:30      grp_008__1008_Course 8__Seminarium                      lec_002     room=—
+  l  8    Wtorek         9:45-11:15     grp_009__1009_Course 9__Laboratorium                    lec_014     room=—
+  l  9    Wtorek         13:15-14:45    grp_010__1010_Course 10__Ćwiczenia                      lec_004     room=—  gap[min]: grp_010=120.0
+  l 10    Piątek         13:15-14:45    grp_011__1011_Course 11__Ćwiczenia                      lec_002     room=—  gap[min]: grp_011=15.0
+  l 11  ~ Czwartek       16:45-18:15    grp_012__1012_Course 12__Ćwiczenia                      lec_001     room=—
+  l 12    Środa          11:30-13:00    grp_013__1013_Course 13__Inne                           lec_004     room=—
+  l 13    Czwartek       15:00-16:30    grp_014__1014_Course 14__Seminarium                     lec_013     room=—  gap[min]: grp_014=120.0
+  l 14  ~ Środa          18:30-20:00    grp_015__1015_Course 15__Wykład                         lec_016     room=—  gap[min]: grp_015=15.0
+  l 15  ★ Wtorek         8:00-9:30      grp_016__1016_Course 16__Laboratorium                   lec_013     room=—
+  l 16    Czwartek       16:45-18:15    grp_001__1017_Course 17__E-learning                     lec_014     room=—  gap[min]: grp_001=15.0, grp_003=225.0, grp_005=225.0
+  l 17  ~ Środa          16:45-18:15    grp_015__1018_Course 18__Seminarium                     lec_008     room=—  gap[min]: grp_015=330.0, grp_004=15.0, grp_006=435.0, grp_013=225.0
+  l 18    Poniedziałek   13:15-14:45    grp_012__1019_Course 19__Projekt                        lec_014     room=—  gap[min]: grp_005=225.0
+  l 19  ★ Czwartek       8:00-9:30      grp_004__1020_Course 20__Ćwiczenia                      lec_010     room=—
+  l 20    Poniedziałek   15:00-16:30    grp_004__1021_Course 21__Seminarium                     lec_015     room=—  gap[min]: grp_004=15.0
+  l 21  ~ Środa          9:45-11:15     grp_002__1022_Course 22__Inne                           lec_004     room=—  gap[min]: grp_015=15.0
+  l 22    Piątek         9:45-11:15     grp_008__1023_Course 23__Ćwiczenia                      lec_003     room=—
+  l 23    Wtorek         18:30-20:00    grp_002__1024_Course 24__E-learning                     lec_012     room=—  gap[min]: grp_002=120.0, grp_009=435.0, grp_012=120.0  ⚠ PR3_PR4_group_overlap, PR3_PR4_group_overlap
+  l 24    Środa          15:00-16:30    grp_004__1025_Course 25__Seminarium                     lec_006     room=—  gap[min]: grp_004=120.0
+  l 25  ~ Poniedziałek   9:45-11:15     grp_003__1026_Course 26__E-learning                     lec_003     room=—
+  l 26    Czwartek       9:45-11:15     grp_015__1027_Course 27__E-learning                     lec_012     room=—  gap[min]: grp_007=15.0, grp_010=15.0
+  l 27    Wtorek         18:30-20:00    grp_012__1028_Course 28__Laboratorium                   lec_009     room=—  gap[min]: grp_012=-90.0, grp_002=-90.0, grp_016=540.0  ⚠ PR3_PR4_group_overlap, PR3_PR4_group_overlap
+  l 28    Czwartek       13:15-14:45    grp_004__1029_Course 29__Laboratorium                   lec_005     room=—  gap[min]: grp_004=225.0, grp_013=15.0, grp_015=120.0  ⚠ PR3_PR4_group_overlap
+  l 29    Środa          11:30-13:00    grp_005__1030_Course 30__Ćwiczenia                      lec_011     room=—  gap[min]: grp_005=15.0, grp_004=120.0, grp_010=120.0
+  l 30    Czwartek       11:30-13:00    grp_014__1031_Course 31__Projekt                        lec_008     room=—  gap[min]: grp_010=15.0
+  l 31    Poniedziałek   15:00-16:30    grp_003__1032_Course 32__E-learning                     lec_004     room=—  gap[min]: grp_003=225.0, grp_012=15.0
+  l 32  ~ Środa          8:00-9:30      grp_004__1033_Course 33__Ćwiczenia                      lec_011     room=—
+  l 33    Poniedziałek   15:00-16:30    grp_011__1034_Course 34__Projekt                        lec_012     room=—  gap[min]: grp_011=330.0
+  l 34  ~ Poniedziałek   16:45-18:15    grp_007__1035_Course 35__Projekt                        lec_011     room=—  gap[min]: grp_007=435.0, grp_001=15.0, grp_005=120.0
+  l 35    Poniedziałek   8:00-9:30      grp_011__1036_Course 36__Wykład                         lec_011     room=—
+  l 36    Czwartek       13:15-14:45    grp_013__1037_Course 37__Wykład                         lec_009     room=—  gap[min]: grp_013=-90.0, grp_001=225.0  ⚠ PR3_PR4_group_overlap
+  l 37    Czwartek       15:00-16:30    grp_016__1038_Course 38__Ćwiczenia                      lec_007     room=—  gap[min]: grp_001=15.0, grp_002=225.0, grp_008=330.0, grp_011=15.0
+  l 38  ~ Poniedziałek   18:30-20:00    grp_013__1039_Course 39__Seminarium                     lec_010     room=—  gap[min]: grp_006=540.0, grp_012=120.0, grp_016=120.0
+  l 39  ★ Piątek         13:15-14:45    grp_006__1040_Course 40__E-learning                     lec_007     room=—
+  l 40    Wtorek         15:00-16:30    grp_002__1041_Course 41__E-learning                     lec_009     room=—
+  l 41    Czwartek       11:30-13:00    grp_005__1042_Course 42__Laboratorium                   lec_003     room=—
+  l 42    Piątek         11:30-13:00    grp_007__1043_Course 43__Laboratorium                   lec_014     room=—
+  l 43    Wtorek         9:45-11:15     grp_004__1044_Course 44__Inne                           lec_003     room=—  gap[min]: grp_008=15.0
+[S1] hard_008_seed_1081 rep 3: energy 7219542.0, |L| 44, solver time 15.240767859 s

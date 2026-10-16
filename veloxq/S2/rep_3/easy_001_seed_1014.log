@@ -1,0 +1,69 @@
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 3985.
+================================================================================
+Wczytuję instancję z: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\repository_ready\instances\synthetic\easy_001_seed_1014.yaml
+================================================================================
+  ProblemInstance(|P| (prowadzący)=5, |C| (kursy)=9, |C_double|=9, |C_linking|=0, |C_zdalne|=0, |C_sportowe|=0, |C_jezykowe|=0, |G| (grupy studenckie)=5, |R| (sale)=4, |R_zdalne|=0, |R_CJ|=0, |R_CS|=0, |R_fizycznie_istniejace|=4, |T| (sloty)=35, |D| (dni)=5)
+  [save] rozwiązanie zapisane do: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S2\rep_3\easy_001_seed_1014_velox_solution.yaml
+
+================================================================================
+VERIFICATION REPORT
+================================================================================
+  instance: {'P': 5, 'C': 9, 'G': 5, 'R': 4, 'T': 35, 'D': 5}
+  |L|=9  has_spatial=False
+
+-- 1. HARD CONSTRAINTS --
+  feasibility: OK  (total violations: 0)
+  ✓ PR1_course_minutes: 0 violation(s)
+  ✓ MC_max_chunks: 0 violation(s)
+  ✓ PR3_PR4_lecturer_overlap: 0 violation(s)
+  ✓ PR3_PR4_group_overlap: 0 violation(s)
+  ✓ RU2_lecturer_availability: 0 violation(s)
+  ✓ PR2_lecturer_assigned: 0 violation(s)
+  ✓ CONJ_PHASE3_room_count: 0 violation(s)
+  ✓ CONJ_PHASE3_room_capacity: 0 violation(s)
+
+-- 1b. RULES OUTSIDE V AND STATUSES --
+  ✓ BREAK_lecturer: 0 violation(s)
+  ✓ BREAK_group: 0 violation(s)
+  ✓ PR5_mixed_modality: 0 violation(s)
+  rooms: 9/9 in-person lessons roomed (remote exempt: 0, bound 9, solver status OPTIMAL)
+  statuses: {'time_core': True, 'room_rows': True, 'v_zero': True, 'rooms': True, 'policy_rules': True, 'extra_rules': True, 'full': True, 'pr5': True, 'profile': 'time core + room rows per 15-min cell + exact rooms + 15-min break + PR5'}
+
+-- 2. SOFT METRICS --
+  lecturer_satisfaction_counts:
+      high_pref: 1
+      low_pref: 2
+      neutral: 6
+      not_available: 0
+  lecturer_satisfaction_percent:
+      high_pref: 11.1
+      low_pref: 22.2
+      neutral: 66.7
+      not_available: 0.0
+  time_of_day_counts:
+      morning: 1
+      afternoon: 3
+      evening: 5
+  time_of_day_minutes:
+      morning: 90.0
+      afternoon: 270.0
+      evening: 450.0
+  total_student_gap_minutes: 0.0
+  gap_minutes_by_group:
+  days_per_group:
+      avg: 1.8
+      min: 1
+      max: 4
+      by_group: {'grp_001': 1, 'grp_002': 4, 'grp_003': 1, 'grp_004': 2, 'grp_005': 1}
+
+-- 3. PER-LESSON AUDIT --
+  l  0  ~ Poniedziałek   18:30-20:00    grp_001__1001_Course 1__E-learning                      lec_003     room=—
+  l  1  ★ Wtorek         18:30-20:00    grp_002__1002_Course 2__Ćwiczenia                       lec_003     room=—
+  l  2    Wtorek         16:45-18:15    grp_003__1003_Course 3__Seminarium                      lec_001     room=—
+  l  3  ~ Piątek         8:00-9:30      grp_004__1004_Course 4__Wykład                          lec_001     room=—
+  l  4    Poniedziałek   15:00-16:30    grp_005__1005_Course 5__Seminarium                      lec_003     room=—
+  l  5    Piątek         18:30-20:00    grp_002__1006_Course 6__Wykład                          lec_001     room=—
+  l  6    Poniedziałek   18:30-20:00    grp_002__1007_Course 7__Projekt                         lec_002     room=—
+  l  7    Środa          13:15-14:45    grp_004__1008_Course 8__Projekt                         lec_004     room=—
+  l  8    Środa          13:15-14:45    grp_002__1009_Course 9__Seminarium                      lec_005     room=—
+[S2] easy_001_seed_1014 rep 3: energy 2055693.0, |L| 9, solver time 2.527353019 s

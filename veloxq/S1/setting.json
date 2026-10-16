@@ -1,0 +1,9 @@
+{
+ "setting": "S1",
+ "description": "presolve (implied) + room-count coefficient 100",
+ "overrides": {
+  "room_presolve": "implied",
+  "Lambda_room_count": 100.0
+ },
+ "base_config": "cfg/qubo_cfg.yaml"
+}
