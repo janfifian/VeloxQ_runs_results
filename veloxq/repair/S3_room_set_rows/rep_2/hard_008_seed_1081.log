@@ -1,0 +1,284 @@
+
+[run_pair] instance     = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\repository_ready\instances\synthetic\hard_008_seed_1081.yaml
+[run_pair] candidates    = 1
+[run_pair] output prefix = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq_ls\S3_room_set_rows\rep_2\hard_008_seed_1081_*
+[run_pair] cost          = (hard violations incl. break and PR5 and the MILP room-set rows, soft_objective)
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 5337.
+[run_pair] solution      = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S3\rep_2\hard_008_seed_1081_velox_solution.yaml
+  [greedy] pass 1: 0 deficit course(s) to process
+  [k=1] enumerating up to 54 tuples over 54 items
+  [k=1] tuples 2/54 (3%)  evaluated=2  accepted=2  elapsed=0.0s  remaining_tuples≈52
+  [k=1] tuples 4/54 (7%)  evaluated=4  accepted=4  elapsed=0.0s  remaining_tuples≈50
+  [k=1] tuples 6/54 (11%)  evaluated=6  accepted=6  elapsed=0.0s  remaining_tuples≈48
+  [k=1] tuples 8/54 (14%)  evaluated=8  accepted=8  elapsed=0.0s  remaining_tuples≈46
+  [k=1] tuples 10/54 (18%)  evaluated=10  accepted=10  elapsed=0.0s  remaining_tuples≈44
+  [k=1] tuples 12/54 (22%)  evaluated=12  accepted=12  elapsed=0.1s  remaining_tuples≈42
+  [k=1] tuples 14/54 (25%)  evaluated=14  accepted=14  elapsed=0.1s  remaining_tuples≈40
+  [k=1] tuples 16/54 (29%)  evaluated=16  accepted=16  elapsed=0.1s  remaining_tuples≈38
+  [k=1] tuples 18/54 (33%)  evaluated=18  accepted=18  elapsed=0.1s  remaining_tuples≈36
+  [k=1] tuples 20/54 (37%)  evaluated=20  accepted=20  elapsed=0.1s  remaining_tuples≈34
+  [k=1] tuples 22/54 (40%)  evaluated=22  accepted=22  elapsed=0.1s  remaining_tuples≈32
+  [k=1] tuples 24/54 (44%)  evaluated=24  accepted=24  elapsed=0.1s  remaining_tuples≈30
+  [k=1] tuples 26/54 (48%)  evaluated=26  accepted=26  elapsed=0.1s  remaining_tuples≈28
+  [k=1] tuples 28/54 (51%)  evaluated=28  accepted=28  elapsed=0.1s  remaining_tuples≈26
+  [k=1] tuples 30/54 (55%)  evaluated=30  accepted=30  elapsed=0.1s  remaining_tuples≈24
+  [k=1] tuples 32/54 (59%)  evaluated=32  accepted=32  elapsed=0.1s  remaining_tuples≈22
+  [k=1] tuples 34/54 (62%)  evaluated=34  accepted=33  elapsed=0.1s  remaining_tuples≈20
+  [k=1] tuples 36/54 (66%)  evaluated=36  accepted=34  elapsed=0.1s  remaining_tuples≈18
+  [k=1] tuples 38/54 (70%)  evaluated=38  accepted=36  elapsed=0.1s  remaining_tuples≈16
+  [k=1] tuples 40/54 (74%)  evaluated=40  accepted=38  elapsed=0.1s  remaining_tuples≈14
+  [k=1] tuples 42/54 (77%)  evaluated=42  accepted=39  elapsed=0.1s  remaining_tuples≈12
+  [k=1] tuples 44/54 (81%)  evaluated=44  accepted=41  elapsed=0.1s  remaining_tuples≈10
+  [k=1] tuples 46/54 (85%)  evaluated=46  accepted=43  elapsed=0.1s  remaining_tuples≈8
+  [k=1] tuples 48/54 (88%)  evaluated=48  accepted=44  elapsed=0.2s  remaining_tuples≈6
+  [k=1] tuples 50/54 (92%)  evaluated=50  accepted=46  elapsed=0.2s  remaining_tuples≈4
+  [k=1] tuples 52/54 (96%)  evaluated=52  accepted=47  elapsed=0.2s  remaining_tuples≈2
+  [k=1] enumerating up to 44 tuples over 44 items
+  [k=1] tuples 2/44 (4%)  evaluated=2  accepted=1  elapsed=0.0s  remaining_tuples≈42
+  [k=1] tuples 4/44 (9%)  evaluated=4  accepted=1  elapsed=0.0s  remaining_tuples≈40
+  [k=1] tuples 6/44 (13%)  evaluated=6  accepted=1  elapsed=0.0s  remaining_tuples≈38
+  [k=1] tuples 8/44 (18%)  evaluated=8  accepted=2  elapsed=0.0s  remaining_tuples≈36
+  [k=1] tuples 10/44 (22%)  evaluated=10  accepted=3  elapsed=0.0s  remaining_tuples≈34
+  [k=1] tuples 12/44 (27%)  evaluated=12  accepted=4  elapsed=0.0s  remaining_tuples≈32
+  [k=1] tuples 14/44 (31%)  evaluated=14  accepted=6  elapsed=0.0s  remaining_tuples≈30
+  [k=1] tuples 16/44 (36%)  evaluated=16  accepted=7  elapsed=0.0s  remaining_tuples≈28
+  [k=1] tuples 18/44 (40%)  evaluated=18  accepted=9  elapsed=0.0s  remaining_tuples≈26
+  [k=1] tuples 20/44 (45%)  evaluated=20  accepted=10  elapsed=0.1s  remaining_tuples≈24
+  [k=1] tuples 22/44 (50%)  evaluated=22  accepted=12  elapsed=0.1s  remaining_tuples≈22
+  [k=1] tuples 24/44 (54%)  evaluated=24  accepted=12  elapsed=0.1s  remaining_tuples≈20
+  [k=1] tuples 26/44 (59%)  evaluated=26  accepted=12  elapsed=0.1s  remaining_tuples≈18
+  [k=1] tuples 28/44 (63%)  evaluated=28  accepted=13  elapsed=0.1s  remaining_tuples≈16
+  [k=1] tuples 30/44 (68%)  evaluated=30  accepted=13  elapsed=0.1s  remaining_tuples≈14
+  [k=1] tuples 32/44 (72%)  evaluated=32  accepted=13  elapsed=0.1s  remaining_tuples≈12
+  [k=1] tuples 34/44 (77%)  evaluated=34  accepted=13  elapsed=0.1s  remaining_tuples≈10
+  [k=1] tuples 36/44 (81%)  evaluated=36  accepted=13  elapsed=0.1s  remaining_tuples≈8
+  [k=1] tuples 38/44 (86%)  evaluated=38  accepted=13  elapsed=0.1s  remaining_tuples≈6
+  [k=1] tuples 40/44 (90%)  evaluated=40  accepted=13  elapsed=0.1s  remaining_tuples≈4
+  [k=1] tuples 42/44 (95%)  evaluated=42  accepted=13  elapsed=0.1s  remaining_tuples≈2
+  [k=1] enumerating up to 44 tuples over 44 items
+  [k=1] tuples 2/44 (4%)  evaluated=2  accepted=0  elapsed=0.0s  remaining_tuples≈42
+  [k=1] tuples 4/44 (9%)  evaluated=4  accepted=2  elapsed=0.0s  remaining_tuples≈40
+  [k=1] tuples 6/44 (13%)  evaluated=6  accepted=2  elapsed=0.0s  remaining_tuples≈38
+  [k=1] tuples 8/44 (18%)  evaluated=8  accepted=2  elapsed=0.0s  remaining_tuples≈36
+  [k=1] tuples 10/44 (22%)  evaluated=10  accepted=2  elapsed=0.0s  remaining_tuples≈34
+  [k=1] tuples 12/44 (27%)  evaluated=12  accepted=2  elapsed=0.0s  remaining_tuples≈32
+  [k=1] tuples 14/44 (31%)  evaluated=14  accepted=2  elapsed=0.0s  remaining_tuples≈30
+  [k=1] tuples 16/44 (36%)  evaluated=16  accepted=2  elapsed=0.0s  remaining_tuples≈28
+  [k=1] tuples 18/44 (40%)  evaluated=18  accepted=2  elapsed=0.0s  remaining_tuples≈26
+  [k=1] tuples 20/44 (45%)  evaluated=20  accepted=2  elapsed=0.1s  remaining_tuples≈24
+  [k=1] tuples 22/44 (50%)  evaluated=22  accepted=2  elapsed=0.1s  remaining_tuples≈22
+  [k=1] tuples 24/44 (54%)  evaluated=24  accepted=2  elapsed=0.1s  remaining_tuples≈20
+  [k=1] tuples 26/44 (59%)  evaluated=26  accepted=2  elapsed=0.1s  remaining_tuples≈18
+  [k=1] tuples 28/44 (63%)  evaluated=28  accepted=2  elapsed=0.1s  remaining_tuples≈16
+  [k=1] tuples 30/44 (68%)  evaluated=30  accepted=2  elapsed=0.1s  remaining_tuples≈14
+  [k=1] tuples 32/44 (72%)  evaluated=32  accepted=2  elapsed=0.1s  remaining_tuples≈12
+  [k=1] tuples 34/44 (77%)  evaluated=34  accepted=2  elapsed=0.1s  remaining_tuples≈10
+  [k=1] tuples 36/44 (81%)  evaluated=36  accepted=2  elapsed=0.1s  remaining_tuples≈8
+  [k=1] tuples 38/44 (86%)  evaluated=38  accepted=2  elapsed=0.1s  remaining_tuples≈6
+  [k=1] tuples 40/44 (90%)  evaluated=40  accepted=2  elapsed=0.1s  remaining_tuples≈4
+  [k=1] tuples 42/44 (95%)  evaluated=42  accepted=2  elapsed=0.1s  remaining_tuples≈2
+  [k=1] enumerating up to 44 tuples over 44 items
+  [k=1] tuples 2/44 (4%)  evaluated=2  accepted=0  elapsed=0.0s  remaining_tuples≈42
+  [k=1] tuples 4/44 (9%)  evaluated=4  accepted=0  elapsed=0.0s  remaining_tuples≈40
+  [k=1] tuples 6/44 (13%)  evaluated=6  accepted=0  elapsed=0.0s  remaining_tuples≈38
+  [k=1] tuples 8/44 (18%)  evaluated=8  accepted=0  elapsed=0.0s  remaining_tuples≈36
+  [k=1] tuples 10/44 (22%)  evaluated=10  accepted=0  elapsed=0.0s  remaining_tuples≈34
+  [k=1] tuples 12/44 (27%)  evaluated=12  accepted=0  elapsed=0.0s  remaining_tuples≈32
+  [k=1] tuples 14/44 (31%)  evaluated=14  accepted=0  elapsed=0.0s  remaining_tuples≈30
+  [k=1] tuples 16/44 (36%)  evaluated=16  accepted=0  elapsed=0.0s  remaining_tuples≈28
+  [k=1] tuples 18/44 (40%)  evaluated=18  accepted=0  elapsed=0.0s  remaining_tuples≈26
+  [k=1] tuples 20/44 (45%)  evaluated=20  accepted=0  elapsed=0.1s  remaining_tuples≈24
+  [k=1] tuples 22/44 (50%)  evaluated=22  accepted=0  elapsed=0.1s  remaining_tuples≈22
+  [k=1] tuples 24/44 (54%)  evaluated=24  accepted=0  elapsed=0.1s  remaining_tuples≈20
+  [k=1] tuples 26/44 (59%)  evaluated=26  accepted=0  elapsed=0.1s  remaining_tuples≈18
+  [k=1] tuples 28/44 (63%)  evaluated=28  accepted=0  elapsed=0.1s  remaining_tuples≈16
+  [k=1] tuples 30/44 (68%)  evaluated=30  accepted=0  elapsed=0.1s  remaining_tuples≈14
+  [k=1] tuples 32/44 (72%)  evaluated=32  accepted=0  elapsed=0.1s  remaining_tuples≈12
+  [k=1] tuples 34/44 (77%)  evaluated=34  accepted=0  elapsed=0.1s  remaining_tuples≈10
+  [k=1] tuples 36/44 (81%)  evaluated=36  accepted=0  elapsed=0.1s  remaining_tuples≈8
+  [k=1] tuples 38/44 (86%)  evaluated=38  accepted=0  elapsed=0.1s  remaining_tuples≈6
+  [k=1] tuples 40/44 (90%)  evaluated=40  accepted=0  elapsed=0.1s  remaining_tuples≈4
+  [k=1] tuples 42/44 (95%)  evaluated=42  accepted=0  elapsed=0.1s  remaining_tuples≈2
+  [k=2] enumerating up to 946 tuples over 44 items
+  [k=2] tuples 47/946 (4%)  evaluated=1  accepted=1  elapsed=0.0s  remaining_tuples≈899
+  [k=2] tuples 94/946 (9%)  evaluated=10  accepted=1  elapsed=0.2s  remaining_tuples≈852
+  [k=2] tuples 141/946 (14%)  evaluated=26  accepted=2  elapsed=0.4s  remaining_tuples≈805
+  [k=2] tuples 188/946 (19%)  evaluated=58  accepted=3  elapsed=1.0s  remaining_tuples≈758
+  [k=2] tuples 235/946 (24%)  evaluated=65  accepted=4  elapsed=1.2s  remaining_tuples≈711
+  [k=2] tuples 282/946 (29%)  evaluated=76  accepted=5  elapsed=1.3s  remaining_tuples≈664
+  [k=2] tuples 329/946 (34%)  evaluated=83  accepted=7  elapsed=1.4s  remaining_tuples≈617
+  [k=2] tuples 376/946 (39%)  evaluated=89  accepted=8  elapsed=1.5s  remaining_tuples≈570
+  [k=2] tuples 423/946 (44%)  evaluated=95  accepted=9  elapsed=1.6s  remaining_tuples≈523
+  [k=2] tuples 470/946 (49%)  evaluated=95  accepted=9  elapsed=1.6s  remaining_tuples≈476
+  [k=2] tuples 517/946 (54%)  evaluated=95  accepted=9  elapsed=1.6s  remaining_tuples≈429
+  [k=2] tuples 564/946 (59%)  evaluated=102  accepted=10  elapsed=1.7s  remaining_tuples≈382
+  [k=2] tuples 611/946 (64%)  evaluated=108  accepted=11  elapsed=1.9s  remaining_tuples≈335
+  [k=2] tuples 658/946 (69%)  evaluated=116  accepted=11  elapsed=2.0s  remaining_tuples≈288
+  [k=2] tuples 705/946 (74%)  evaluated=147  accepted=11  elapsed=2.6s  remaining_tuples≈241
+  [k=2] tuples 752/946 (79%)  evaluated=165  accepted=11  elapsed=3.0s  remaining_tuples≈194
+  [k=2] tuples 799/946 (84%)  evaluated=198  accepted=11  elapsed=3.6s  remaining_tuples≈147
+  [k=2] tuples 846/946 (89%)  evaluated=218  accepted=11  elapsed=3.9s  remaining_tuples≈100
+  [k=2] tuples 893/946 (94%)  evaluated=265  accepted=11  elapsed=4.7s  remaining_tuples≈53
+  [k=2] tuples 940/946 (99%)  evaluated=312  accepted=11  elapsed=5.6s  remaining_tuples≈6
+  [k=2] enumerating up to 946 tuples over 44 items
+  [k=2] tuples 47/946 (4%)  evaluated=29  accepted=1  elapsed=0.5s  remaining_tuples≈899
+  [k=2] tuples 94/946 (9%)  evaluated=60  accepted=2  elapsed=1.0s  remaining_tuples≈852
+  [k=2] tuples 141/946 (14%)  evaluated=105  accepted=3  elapsed=1.8s  remaining_tuples≈805
+  [k=2] tuples 188/946 (19%)  evaluated=139  accepted=4  elapsed=2.4s  remaining_tuples≈758
+  [k=2] tuples 235/946 (24%)  evaluated=180  accepted=4  elapsed=3.1s  remaining_tuples≈711
+  [k=2] tuples 282/946 (29%)  evaluated=222  accepted=4  elapsed=3.8s  remaining_tuples≈664
+  [k=2] tuples 329/946 (34%)  evaluated=251  accepted=5  elapsed=4.2s  remaining_tuples≈617
+  [k=2] tuples 376/946 (39%)  evaluated=289  accepted=5  elapsed=4.9s  remaining_tuples≈570
+  [k=2] tuples 423/946 (44%)  evaluated=330  accepted=5  elapsed=5.6s  remaining_tuples≈523
+  [k=2] tuples 470/946 (49%)  evaluated=369  accepted=5  elapsed=6.3s  remaining_tuples≈476
+  [k=2] tuples 517/946 (54%)  evaluated=409  accepted=5  elapsed=7.0s  remaining_tuples≈429
+  [k=2] tuples 564/946 (59%)  evaluated=434  accepted=6  elapsed=7.4s  remaining_tuples≈382
+  [k=2] tuples 611/946 (64%)  evaluated=466  accepted=6  elapsed=8.0s  remaining_tuples≈335
+  [k=2] tuples 658/946 (69%)  evaluated=502  accepted=6  elapsed=8.6s  remaining_tuples≈288
+  [k=2] tuples 705/946 (74%)  evaluated=536  accepted=6  elapsed=9.2s  remaining_tuples≈241
+  [k=2] tuples 752/946 (79%)  evaluated=557  accepted=6  elapsed=9.6s  remaining_tuples≈194
+  [k=2] tuples 799/946 (84%)  evaluated=574  accepted=6  elapsed=9.8s  remaining_tuples≈147
+  [k=2] tuples 846/946 (89%)  evaluated=591  accepted=6  elapsed=10.1s  remaining_tuples≈100
+  [k=2] tuples 893/946 (94%)  evaluated=629  accepted=6  elapsed=10.8s  remaining_tuples≈53
+  [k=2] tuples 940/946 (99%)  evaluated=662  accepted=6  elapsed=11.3s  remaining_tuples≈6
+  [k=2] enumerating up to 946 tuples over 44 items
+  [k=2] tuples 47/946 (4%)  evaluated=6  accepted=1  elapsed=0.1s  remaining_tuples≈899
+  [k=2] tuples 94/946 (9%)  evaluated=52  accepted=1  elapsed=0.9s  remaining_tuples≈852
+  [k=2] tuples 141/946 (14%)  evaluated=84  accepted=1  elapsed=1.4s  remaining_tuples≈805
+  [k=2] tuples 188/946 (19%)  evaluated=106  accepted=1  elapsed=1.7s  remaining_tuples≈758
+  [k=2] tuples 235/946 (24%)  evaluated=153  accepted=1  elapsed=2.5s  remaining_tuples≈711
+  [k=2] tuples 282/946 (29%)  evaluated=200  accepted=1  elapsed=3.3s  remaining_tuples≈664
+  [k=2] tuples 329/946 (34%)  evaluated=247  accepted=1  elapsed=4.1s  remaining_tuples≈617
+  [k=2] tuples 376/946 (39%)  evaluated=294  accepted=1  elapsed=4.9s  remaining_tuples≈570
+  [k=2] tuples 423/946 (44%)  evaluated=341  accepted=1  elapsed=5.7s  remaining_tuples≈523
+  [k=2] tuples 470/946 (49%)  evaluated=388  accepted=1  elapsed=6.5s  remaining_tuples≈476
+  [k=2] tuples 517/946 (54%)  evaluated=435  accepted=1  elapsed=7.3s  remaining_tuples≈429
+  [k=2] tuples 564/946 (59%)  evaluated=482  accepted=1  elapsed=8.2s  remaining_tuples≈382
+  [k=2] tuples 611/946 (64%)  evaluated=529  accepted=1  elapsed=9.0s  remaining_tuples≈335
+  [k=2] tuples 658/946 (69%)  evaluated=576  accepted=1  elapsed=9.8s  remaining_tuples≈288
+  [k=2] tuples 705/946 (74%)  evaluated=623  accepted=1  elapsed=10.6s  remaining_tuples≈241
+  [k=2] tuples 752/946 (79%)  evaluated=670  accepted=1  elapsed=11.4s  remaining_tuples≈194
+  [k=2] tuples 799/946 (84%)  evaluated=717  accepted=1  elapsed=12.2s  remaining_tuples≈147
+  [k=2] tuples 846/946 (89%)  evaluated=764  accepted=1  elapsed=13.0s  remaining_tuples≈100
+  [k=2] tuples 893/946 (94%)  evaluated=811  accepted=1  elapsed=13.8s  remaining_tuples≈53
+  [k=2] tuples 940/946 (99%)  evaluated=858  accepted=1  elapsed=14.6s  remaining_tuples≈6
+  [k=2] enumerating up to 946 tuples over 44 items
+  [k=2] tuples 47/946 (4%)  evaluated=47  accepted=0  elapsed=0.8s  remaining_tuples≈899
+  [k=2] tuples 94/946 (9%)  evaluated=94  accepted=0  elapsed=1.5s  remaining_tuples≈852
+  [k=2] tuples 141/946 (14%)  evaluated=141  accepted=0  elapsed=2.3s  remaining_tuples≈805
+  [k=2] tuples 188/946 (19%)  evaluated=188  accepted=0  elapsed=3.2s  remaining_tuples≈758
+  [k=2] tuples 235/946 (24%)  evaluated=235  accepted=0  elapsed=3.9s  remaining_tuples≈711
+  [k=2] tuples 282/946 (29%)  evaluated=282  accepted=0  elapsed=4.7s  remaining_tuples≈664
+  [k=2] tuples 329/946 (34%)  evaluated=329  accepted=0  elapsed=5.5s  remaining_tuples≈617
+  [k=2] tuples 376/946 (39%)  evaluated=376  accepted=0  elapsed=6.3s  remaining_tuples≈570
+  [k=2] tuples 423/946 (44%)  evaluated=423  accepted=0  elapsed=7.2s  remaining_tuples≈523
+  [k=2] tuples 470/946 (49%)  evaluated=470  accepted=0  elapsed=8.0s  remaining_tuples≈476
+  [k=2] tuples 517/946 (54%)  evaluated=517  accepted=0  elapsed=8.8s  remaining_tuples≈429
+  [k=2] tuples 564/946 (59%)  evaluated=564  accepted=0  elapsed=9.6s  remaining_tuples≈382
+  [k=2] tuples 611/946 (64%)  evaluated=611  accepted=0  elapsed=10.5s  remaining_tuples≈335
+  [k=2] tuples 658/946 (69%)  evaluated=658  accepted=0  elapsed=11.2s  remaining_tuples≈288
+  [k=2] tuples 705/946 (74%)  evaluated=705  accepted=0  elapsed=12.1s  remaining_tuples≈241
+  [k=2] tuples 752/946 (79%)  evaluated=752  accepted=0  elapsed=12.9s  remaining_tuples≈194
+  [k=2] tuples 799/946 (84%)  evaluated=799  accepted=0  elapsed=13.8s  remaining_tuples≈147
+  [k=2] tuples 846/946 (89%)  evaluated=846  accepted=0  elapsed=14.6s  remaining_tuples≈100
+  [k=2] tuples 893/946 (94%)  evaluated=893  accepted=0  elapsed=15.4s  remaining_tuples≈53
+  [k=2] tuples 940/946 (99%)  evaluated=938  accepted=1  elapsed=16.2s  remaining_tuples≈6
+  [k=2] enumerating up to 946 tuples over 44 items
+  [k=2] tuples 47/946 (4%)  evaluated=7  accepted=1  elapsed=0.1s  remaining_tuples≈899
+  [k=2] tuples 94/946 (9%)  evaluated=53  accepted=1  elapsed=0.9s  remaining_tuples≈852
+  [k=2] tuples 141/946 (14%)  evaluated=99  accepted=1  elapsed=1.6s  remaining_tuples≈805
+  [k=2] tuples 188/946 (19%)  evaluated=124  accepted=1  elapsed=2.1s  remaining_tuples≈758
+  [k=2] tuples 235/946 (24%)  evaluated=154  accepted=1  elapsed=2.6s  remaining_tuples≈711
+  [k=2] tuples 282/946 (29%)  evaluated=201  accepted=1  elapsed=3.3s  remaining_tuples≈664
+  [k=2] tuples 329/946 (34%)  evaluated=248  accepted=1  elapsed=4.1s  remaining_tuples≈617
+  [k=2] tuples 376/946 (39%)  evaluated=295  accepted=1  elapsed=4.9s  remaining_tuples≈570
+  [k=2] tuples 423/946 (44%)  evaluated=342  accepted=1  elapsed=5.8s  remaining_tuples≈523
+  [k=2] tuples 470/946 (49%)  evaluated=389  accepted=1  elapsed=6.6s  remaining_tuples≈476
+  [k=2] tuples 517/946 (54%)  evaluated=436  accepted=1  elapsed=7.5s  remaining_tuples≈429
+  [k=2] tuples 564/946 (59%)  evaluated=483  accepted=1  elapsed=8.3s  remaining_tuples≈382
+  [k=2] tuples 611/946 (64%)  evaluated=530  accepted=1  elapsed=9.1s  remaining_tuples≈335
+  [k=2] tuples 658/946 (69%)  evaluated=577  accepted=1  elapsed=9.9s  remaining_tuples≈288
+  [k=2] tuples 705/946 (74%)  evaluated=624  accepted=1  elapsed=10.7s  remaining_tuples≈241
+  [k=2] tuples 752/946 (79%)  evaluated=671  accepted=1  elapsed=11.5s  remaining_tuples≈194
+  [k=2] tuples 799/946 (84%)  evaluated=718  accepted=1  elapsed=12.3s  remaining_tuples≈147
+  [k=2] tuples 846/946 (89%)  evaluated=765  accepted=1  elapsed=13.1s  remaining_tuples≈100
+  [k=2] tuples 893/946 (94%)  evaluated=812  accepted=1  elapsed=14.0s  remaining_tuples≈53
+  [k=2] tuples 940/946 (99%)  evaluated=859  accepted=1  elapsed=14.8s  remaining_tuples≈6
+  [k=2] enumerating up to 946 tuples over 44 items
+  [k=2] tuples 47/946 (4%)  evaluated=47  accepted=0  elapsed=0.8s  remaining_tuples≈899
+  [k=2] tuples 94/946 (9%)  evaluated=94  accepted=0  elapsed=1.6s  remaining_tuples≈852
+  [k=2] tuples 141/946 (14%)  evaluated=141  accepted=0  elapsed=2.4s  remaining_tuples≈805
+  [k=2] tuples 188/946 (19%)  evaluated=188  accepted=0  elapsed=3.1s  remaining_tuples≈758
+  [k=2] tuples 235/946 (24%)  evaluated=235  accepted=0  elapsed=3.9s  remaining_tuples≈711
+  [k=2] tuples 282/946 (29%)  evaluated=282  accepted=0  elapsed=4.7s  remaining_tuples≈664
+  [k=2] tuples 329/946 (34%)  evaluated=329  accepted=0  elapsed=5.5s  remaining_tuples≈617
+  [k=2] tuples 376/946 (39%)  evaluated=376  accepted=0  elapsed=6.4s  remaining_tuples≈570
+  [k=2] tuples 423/946 (44%)  evaluated=423  accepted=0  elapsed=7.2s  remaining_tuples≈523
+  [k=2] tuples 470/946 (49%)  evaluated=470  accepted=0  elapsed=8.1s  remaining_tuples≈476
+  [k=2] tuples 517/946 (54%)  evaluated=517  accepted=0  elapsed=8.9s  remaining_tuples≈429
+  [k=2] tuples 564/946 (59%)  evaluated=564  accepted=0  elapsed=9.7s  remaining_tuples≈382
+  [k=2] tuples 611/946 (64%)  evaluated=611  accepted=0  elapsed=10.5s  remaining_tuples≈335
+  [k=2] tuples 658/946 (69%)  evaluated=658  accepted=0  elapsed=11.3s  remaining_tuples≈288
+  [k=2] tuples 705/946 (74%)  evaluated=705  accepted=0  elapsed=12.1s  remaining_tuples≈241
+  [k=2] tuples 752/946 (79%)  evaluated=752  accepted=0  elapsed=12.9s  remaining_tuples≈194
+  [k=2] tuples 799/946 (84%)  evaluated=799  accepted=0  elapsed=13.7s  remaining_tuples≈147
+  [k=2] tuples 846/946 (89%)  evaluated=846  accepted=0  elapsed=14.6s  remaining_tuples≈100
+  [k=2] tuples 893/946 (94%)  evaluated=893  accepted=0  elapsed=15.4s  remaining_tuples≈53
+  [k=2] tuples 940/946 (99%)  evaluated=940  accepted=0  elapsed=16.2s  remaining_tuples≈6
+  [k=1] enumerating up to 44 tuples over 44 items
+  [k=1] tuples 2/44 (4%)  evaluated=2  accepted=0  elapsed=0.0s  remaining_tuples≈42
+  [k=1] tuples 4/44 (9%)  evaluated=4  accepted=0  elapsed=0.0s  remaining_tuples≈40
+  [k=1] tuples 6/44 (13%)  evaluated=6  accepted=0  elapsed=0.0s  remaining_tuples≈38
+  [k=1] tuples 8/44 (18%)  evaluated=8  accepted=0  elapsed=0.0s  remaining_tuples≈36
+  [k=1] tuples 10/44 (22%)  evaluated=10  accepted=0  elapsed=0.0s  remaining_tuples≈34
+  [k=1] tuples 12/44 (27%)  evaluated=12  accepted=0  elapsed=0.0s  remaining_tuples≈32
+  [k=1] tuples 14/44 (31%)  evaluated=14  accepted=0  elapsed=0.0s  remaining_tuples≈30
+  [k=1] tuples 16/44 (36%)  evaluated=16  accepted=0  elapsed=0.0s  remaining_tuples≈28
+  [k=1] tuples 18/44 (40%)  evaluated=18  accepted=0  elapsed=0.0s  remaining_tuples≈26
+  [k=1] tuples 20/44 (45%)  evaluated=20  accepted=0  elapsed=0.0s  remaining_tuples≈24
+  [k=1] tuples 22/44 (50%)  evaluated=22  accepted=0  elapsed=0.1s  remaining_tuples≈22
+  [k=1] tuples 24/44 (54%)  evaluated=24  accepted=0  elapsed=0.1s  remaining_tuples≈20
+  [k=1] tuples 26/44 (59%)  evaluated=26  accepted=0  elapsed=0.1s  remaining_tuples≈18
+  [k=1] tuples 28/44 (63%)  evaluated=28  accepted=0  elapsed=0.1s  remaining_tuples≈16
+  [k=1] tuples 30/44 (68%)  evaluated=30  accepted=0  elapsed=0.1s  remaining_tuples≈14
+  [k=1] tuples 32/44 (72%)  evaluated=32  accepted=0  elapsed=0.1s  remaining_tuples≈12
+  [k=1] tuples 34/44 (77%)  evaluated=34  accepted=0  elapsed=0.1s  remaining_tuples≈10
+  [k=1] tuples 36/44 (81%)  evaluated=36  accepted=0  elapsed=0.1s  remaining_tuples≈8
+  [k=1] tuples 38/44 (86%)  evaluated=38  accepted=0  elapsed=0.1s  remaining_tuples≈6
+  [k=1] tuples 40/44 (90%)  evaluated=40  accepted=0  elapsed=0.1s  remaining_tuples≈4
+  [k=1] tuples 42/44 (95%)  evaluated=42  accepted=0  elapsed=0.1s  remaining_tuples≈2
+  [k=2] enumerating up to 946 tuples over 44 items
+  [k=2] tuples 47/946 (4%)  evaluated=47  accepted=0  elapsed=0.8s  remaining_tuples≈899
+  [k=2] tuples 94/946 (9%)  evaluated=94  accepted=0  elapsed=1.5s  remaining_tuples≈852
+  [k=2] tuples 141/946 (14%)  evaluated=141  accepted=0  elapsed=2.4s  remaining_tuples≈805
+  [k=2] tuples 188/946 (19%)  evaluated=188  accepted=0  elapsed=3.1s  remaining_tuples≈758
+  [k=2] tuples 235/946 (24%)  evaluated=235  accepted=0  elapsed=3.9s  remaining_tuples≈711
+  [k=2] tuples 282/946 (29%)  evaluated=282  accepted=0  elapsed=4.7s  remaining_tuples≈664
+  [k=2] tuples 329/946 (34%)  evaluated=329  accepted=0  elapsed=5.5s  remaining_tuples≈617
+  [k=2] tuples 376/946 (39%)  evaluated=376  accepted=0  elapsed=6.4s  remaining_tuples≈570
+  [k=2] tuples 423/946 (44%)  evaluated=423  accepted=0  elapsed=7.2s  remaining_tuples≈523
+  [k=2] tuples 470/946 (49%)  evaluated=470  accepted=0  elapsed=8.0s  remaining_tuples≈476
+  [k=2] tuples 517/946 (54%)  evaluated=517  accepted=0  elapsed=8.8s  remaining_tuples≈429
+  [k=2] tuples 564/946 (59%)  evaluated=564  accepted=0  elapsed=9.6s  remaining_tuples≈382
+  [k=2] tuples 611/946 (64%)  evaluated=611  accepted=0  elapsed=10.4s  remaining_tuples≈335
+  [k=2] tuples 658/946 (69%)  evaluated=658  accepted=0  elapsed=11.2s  remaining_tuples≈288
+  [k=2] tuples 705/946 (74%)  evaluated=705  accepted=0  elapsed=12.1s  remaining_tuples≈241
+  [k=2] tuples 752/946 (79%)  evaluated=752  accepted=0  elapsed=12.9s  remaining_tuples≈194
+  [k=2] tuples 799/946 (84%)  evaluated=799  accepted=0  elapsed=13.7s  remaining_tuples≈147
+  [k=2] tuples 846/946 (89%)  evaluated=846  accepted=0  elapsed=14.5s  remaining_tuples≈100
+  [k=2] tuples 893/946 (94%)  evaluated=893  accepted=0  elapsed=15.3s  remaining_tuples≈53
+  [k=2] tuples 940/946 (99%)  evaluated=940  accepted=0  elapsed=16.1s  remaining_tuples≈6
+LocalSearch summary:
+  cost          : (violations (time core + break + PR5 + MILP room-set rows), soft objective)
+  initial cost  : (20, 5813)
+  final cost    : (0, -2128)
+  Δ (final − initial) : violations -20, soft objective -7941  (both negative = improvement)
+  saved (init − final): violations +20, soft objective +7941  (both positive = improvement)
+  n outer passes: 2
+  n cycles      : 5
+  total wall    : 96.0s
+  terminated by : convergence
+
+improvement: violations 20 → 0  (Δ -20), soft objective 5813 → -2128  (Δ -7941)  — negative Δ = improvement
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 5338.
+verdict: time core True, rooms True, full True

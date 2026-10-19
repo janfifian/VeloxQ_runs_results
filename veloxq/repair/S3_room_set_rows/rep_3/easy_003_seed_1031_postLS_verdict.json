@@ -1,0 +1,145 @@
+{
+ "solution_file": {
+  "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_ls\\S3_room_set_rows\\rep_3\\easy_003_seed_1031_postLS.yaml",
+  "sha256": "c8abf143fc320c2e3b66d7a171925a7d0bccaf10d75b2300f000665887183cdc",
+  "sha256_file_bytes": "b5ef41bf2362037aaa80ae29e70a2dd768dce861c187ebdbc4605fab0ebc47ed",
+  "bytes": 7602
+ },
+ "instance_file": {
+  "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_003_seed_1031.yaml",
+  "sha256": "72a6a6d80c88ed228ccc605a671b7a2aaa3dc6f28ae2e3509f8ed7819da98243",
+  "sha256_file_bytes": "72a6a6d80c88ed228ccc605a671b7a2aaa3dc6f28ae2e3509f8ed7819da98243",
+  "bytes": 78526
+ },
+ "lessons": 14,
+ "feasible_time_core": true,
+ "n_violations": 0,
+ "violations_by_constraint": {
+  "PR1_course_minutes": 0,
+  "MC_max_chunks": 0,
+  "PR3_PR4_lecturer_overlap": 0,
+  "PR3_PR4_group_overlap": 0,
+  "RU2_lecturer_availability": 0,
+  "PR2_lecturer_assigned": 0,
+  "CONJ_PHASE3_room_count": 0,
+  "CONJ_PHASE3_room_capacity": 0
+ },
+ "extra_violations_by_rule": {
+  "BREAK_lecturer": 0,
+  "BREAK_group": 0,
+  "PR5_mixed_modality": 0
+ },
+ "statuses": {
+  "time_core": true,
+  "room_rows": true,
+  "v_zero": true,
+  "rooms": true,
+  "policy_rules": true,
+  "extra_rules": true,
+  "full": true,
+  "pr5": true,
+  "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+ },
+ "room_assignment": {
+  "roomable": true,
+  "assignment": {
+   "0": 0,
+   "6": 1,
+   "12": 2,
+   "71": 3,
+   "100": 6,
+   "129": 2,
+   "159": 2,
+   "188": 0,
+   "212": 0,
+   "242": 1,
+   "272": 1,
+   "301": 6,
+   "400": 2,
+   "401": 2
+  },
+  "n_in_person": 14,
+  "n_remote_exempt": 0,
+  "n_roomed": 14,
+  "upper_bound": 14,
+  "n_without_admissible_free_room": 0,
+  "status": "OPTIMAL",
+  "unroomed": []
+ },
+ "soft_metrics": {
+  "lecturer_satisfaction_counts": {
+   "high_pref": 14,
+   "low_pref": 0,
+   "neutral": 0,
+   "not_available": 0
+  },
+  "lecturer_satisfaction_percent": {
+   "high_pref": 100.0,
+   "low_pref": 0.0,
+   "neutral": 0.0,
+   "not_available": 0.0
+  },
+  "time_of_day_counts": {
+   "morning": 12,
+   "afternoon": 2,
+   "evening": 0
+  },
+  "time_of_day_minutes": {
+   "morning": 1080.0,
+   "afternoon": 180.0,
+   "evening": 0.0
+  },
+  "total_student_gap_minutes": 0.0,
+  "gap_minutes_by_group": {},
+  "days_per_group": {
+   "avg": 1.88,
+   "min": 1,
+   "max": 3,
+   "by_group": {
+    "grp_001": 3,
+    "grp_007": 2,
+    "grp_002": 3,
+    "grp_003": 1,
+    "grp_004": 1,
+    "grp_005": 1,
+    "grp_006": 2,
+    "grp_008": 2
+   }
+  }
+ },
+ "environment": {
+  "python_version": "3.13.12",
+  "python_implementation": "CPython",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_processors": 20,
+  "hostname": "FifianJanPC",
+  "timestamp": "2026-10-16T22:26:04+02:00",
+  "git_commit": "2ebf72ef815c",
+  "git_dirty": true,
+  "code": {
+   "commit": "2ebf72ef815cba4f8e141c0c1383eb69ac0178df",
+   "tags_at_commit": [],
+   "describe": "campaign-2026-10-qubo-5-g2ebf72e-dirty",
+   "dirty": true,
+   "modified_tracked_files": [
+    "notebooks/velox_vs_gurobi_comparison.ipynb",
+    "scripts/LATO_instructions.txt"
+   ],
+   "n_modified_tracked_files": 2
+  },
+  "packages": {
+   "gurobipy": "12.0.3",
+   "veloxq_sdk": "0.1.dev125+ge290bd081",
+   "dimod": "0.12.21",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "torch": "2.11.0+cpu",
+   "networkx": "3.6.1",
+   "h5py": "3.16.0",
+   "PyYAML": "6.0.3",
+   "gurobi_library": "12.0.3"
+  }
+ }
+}

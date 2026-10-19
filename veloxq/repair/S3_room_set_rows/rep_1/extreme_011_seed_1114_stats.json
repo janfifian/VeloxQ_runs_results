@@ -1,0 +1,282 @@
+{
+  "second_key": "soft_objective",
+  "count_extra_rules": true,
+  "room_set_rows": true,
+  "initial_cost": [
+    16,
+    11312.0
+  ],
+  "final_cost": [
+    0,
+    2186.0
+  ],
+  "improvement_violations": 16,
+  "improvement_second_key": 9126.0,
+  "n_outer_passes": 2,
+  "n_cycles": 5,
+  "total_wall_seconds": 117.517,
+  "converged": true,
+  "hit_max_outer_passes": false,
+  "cycles": [
+    {
+      "name": "H1_greedy_repair",
+      "outer_pass": 0,
+      "cycle_kind": "H1",
+      "k": null,
+      "second_key": "soft_objective",
+      "cost_in": [
+        16,
+        11312.0
+      ],
+      "cost_out": [
+        11,
+        13596.0
+      ],
+      "violations_in": 16,
+      "violations_out": 11,
+      "violations_by_family_in": {
+        "PR1_course_minutes": 9,
+        "MC_max_chunks": 3,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 2,
+        "room_set_capacity": 2
+      },
+      "violations_by_family_out": {
+        "PR1_course_minutes": 4,
+        "MC_max_chunks": 3,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 2,
+        "room_set_capacity": 2
+      },
+      "placements_in": 72,
+      "placements_out": 77,
+      "wall_seconds": 0.004,
+      "improvement_violations": 5,
+      "improvement_second_key": -2284.0
+    },
+    {
+      "name": "H2_k=1",
+      "outer_pass": 1,
+      "cycle_kind": "H2",
+      "k": 1,
+      "second_key": "soft_objective",
+      "cost_in": [
+        11,
+        13596.0
+      ],
+      "cost_out": [
+        0,
+        7100.0
+      ],
+      "violations_in": 11,
+      "violations_out": 0,
+      "violations_by_family_in": {
+        "PR1_course_minutes": 4,
+        "MC_max_chunks": 3,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 2,
+        "room_set_capacity": 2
+      },
+      "violations_by_family_out": {
+        "PR1_course_minutes": 0,
+        "MC_max_chunks": 0,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 0,
+        "room_set_capacity": 0
+      },
+      "placements_in": 77,
+      "placements_out": 75,
+      "wall_seconds": 0.645,
+      "improvement_violations": 11,
+      "improvement_second_key": 6496.0
+    },
+    {
+      "name": "H2_k=2",
+      "outer_pass": 1,
+      "cycle_kind": "H2",
+      "k": 2,
+      "second_key": "soft_objective",
+      "cost_in": [
+        0,
+        7100.0
+      ],
+      "cost_out": [
+        0,
+        2186.0
+      ],
+      "violations_in": 0,
+      "violations_out": 0,
+      "violations_by_family_in": {
+        "PR1_course_minutes": 0,
+        "MC_max_chunks": 0,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 0,
+        "room_set_capacity": 0
+      },
+      "violations_by_family_out": {
+        "PR1_course_minutes": 0,
+        "MC_max_chunks": 0,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 0,
+        "room_set_capacity": 0
+      },
+      "placements_in": 75,
+      "placements_out": 75,
+      "wall_seconds": 93.342,
+      "improvement_violations": 0,
+      "improvement_second_key": 4914.0
+    },
+    {
+      "name": "H2_k=1",
+      "outer_pass": 2,
+      "cycle_kind": "H2",
+      "k": 1,
+      "second_key": "soft_objective",
+      "cost_in": [
+        0,
+        2186.0
+      ],
+      "cost_out": [
+        0,
+        2186.0
+      ],
+      "violations_in": 0,
+      "violations_out": 0,
+      "violations_by_family_in": {
+        "PR1_course_minutes": 0,
+        "MC_max_chunks": 0,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 0,
+        "room_set_capacity": 0
+      },
+      "violations_by_family_out": {
+        "PR1_course_minutes": 0,
+        "MC_max_chunks": 0,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 0,
+        "room_set_capacity": 0
+      },
+      "placements_in": 75,
+      "placements_out": 75,
+      "wall_seconds": 0.125,
+      "improvement_violations": 0,
+      "improvement_second_key": 0.0
+    },
+    {
+      "name": "H2_k=2",
+      "outer_pass": 2,
+      "cycle_kind": "H2",
+      "k": 2,
+      "second_key": "soft_objective",
+      "cost_in": [
+        0,
+        2186.0
+      ],
+      "cost_out": [
+        0,
+        2186.0
+      ],
+      "violations_in": 0,
+      "violations_out": 0,
+      "violations_by_family_in": {
+        "PR1_course_minutes": 0,
+        "MC_max_chunks": 0,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 0,
+        "room_set_capacity": 0
+      },
+      "violations_by_family_out": {
+        "PR1_course_minutes": 0,
+        "MC_max_chunks": 0,
+        "PR3_PR4_lecturer_overlap": 0,
+        "PR3_PR4_group_overlap": 0,
+        "RU2_lecturer_availability": 0,
+        "PR2_lecturer_assigned": 0,
+        "CONJ_PHASE3_room_count": 0,
+        "CONJ_PHASE3_room_capacity": 0,
+        "BREAK_lecturer": 0,
+        "BREAK_group": 0,
+        "PR5_mixed_modality": 0,
+        "room_set_count": 0,
+        "room_set_capacity": 0
+      },
+      "placements_in": 75,
+      "placements_out": 75,
+      "wall_seconds": 23.401,
+      "improvement_violations": 0,
+      "improvement_second_key": 0.0
+    }
+  ]
+}

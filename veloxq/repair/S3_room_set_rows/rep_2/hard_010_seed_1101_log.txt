@@ -1,0 +1,23 @@
+# LocalSearch run — 2026-10-16 20:30:41
+#
+# instance : C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\repository_ready\instances\synthetic\hard_010_seed_1101.yaml
+# solution : C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S3\rep_2\hard_010_seed_1101_velox_solution.yaml
+# args     : {'instance_yaml': WindowsPath('C:/Users/21034/OneDrive/Dokumenty/Badania/Plany Zajęć - Quantum Approach/MILP-to-QUBO-transition-on-UCTTP/repository_ready/instances/synthetic/hard_010_seed_1101.yaml'), 'input_solution': [WindowsPath('C:/Users/21034/OneDrive/Dokumenty/Badania/Plany Zajęć - Quantum Approach/MILP-to-QUBO-transition-on-UCTTP/artifacts/campaign/veloxq/S3/rep_2/hard_010_seed_1101_velox_solution.yaml')], 'output_prefix': WindowsPath('C:/Users/21034/OneDrive/Dokumenty/Badania/Plany Zajęć - Quantum Approach/MILP-to-QUBO-transition-on-UCTTP/artifacts/campaign/veloxq_ls/S3_room_set_rows/rep_2/hard_010_seed_1101'), 'qubo_cache': WindowsPath('C:/Users/21034/OneDrive/Dokumenty/Badania/Plany Zajęć - Quantum Approach/MILP-to-QUBO-transition-on-UCTTP/artifacts/campaign/veloxq/S3/caches/hard_010_seed_1101.qubo_cache.h5'), 'qubo_config': None, 'instance_dir': None, 'solution_dir': None, 'output_dir': None, 'solution_glob': '*_solution.yaml', 'ks': [1, 2], 'max_outer_passes': None, 'max_wall_seconds_per_pass': None, 'candidate_shortlist_k': 10, 'disable_unschedule': False, 'no_first_improvement': False, 'skip_h1': False, 'skip_k_opt': False, 'enable_pr3_pr4_purge': False, 'tie_break': 'soft_objective', 'no_extra_rules': False, 'no_pr5': False, 'room_set_rows': True, 'no_qubo_energy': False, 'dump_per_cycle': False, 'targeted_k_opt_first': False, 'targeted_k_opt_only': False, 'targeted_max_per_violation': 50, 'targeted_max_blockers_per_deficit': 10, 'verbose': False}
+
+LocalSearch summary:
+  cost          : (violations (time core + break + PR5 + MILP room-set rows), soft objective)
+  initial cost  : (5, 9244)
+  final cost    : (0, -1008)
+  Δ (final − initial) : violations -5, soft objective -10252  (both negative = improvement)
+  saved (init − final): violations +5, soft objective +10252  (both positive = improvement)
+  n outer passes: 2
+  n cycles      : 5
+  total wall    : 138.3s
+  terminated by : convergence
+
+Per-cycle trajectory:
+  [      H1_greedy_repair]  outer=0  violations    5 → 4    (Δ -1)  soft objective 9244 → 9505 (Δ +261)  placements   56 → 57    0.00s
+  [                H2_k=1]  outer=1  violations    4 → 0    (Δ -4)  soft objective 9505 → -505 (Δ -10010)  placements   57 → 55    0.55s
+  [                H2_k=2]  outer=1  violations    0 → 0    (Δ +0)  soft objective -505 → -1008 (Δ -503)  placements   55 → 55    112.51s
+  [                H2_k=1]  outer=2  violations    0 → 0    (Δ +0)  soft objective -1008 → -1008 (Δ +0)  placements   55 → 55    0.13s
+  [                H2_k=2]  outer=2  violations    0 → 0    (Δ +0)  soft objective -1008 → -1008 (Δ +0)  placements   55 → 55    25.11s

@@ -1,0 +1,5 @@
+tier,calls,calls_valid,instances,instances_valid,instances_with_optimum,valid_calls_with_optimum,calls_at_optimum,gap_median,gap_max,instances_best_at_optimum,best_gap_median,best_gap_max,repair_seconds_median,repair_seconds_max,calls_converged
+easy,60,60,20,20,20,60,55,0.0,1.6375545851528384,20,0.0,0.0,1.294,5.787,60
+medium,45,45,15,15,15,45,1,5.8482358627356215,13.926106374340236,1,4.244861483467382,9.922417313189056,21.24,46.054,45
+hard,60,60,20,20,12,36,0,15.922085651109963,43.97446129289705,0,12.433863261065408,27.197284043757072,80.09100000000001,174.147,60
+extreme,27,23,9,9,0,0,0,,,0,,,124.495,284.545,27

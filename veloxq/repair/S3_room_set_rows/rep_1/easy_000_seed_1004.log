@@ -1,0 +1,57 @@
+
+[run_pair] instance     = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\repository_ready\instances\synthetic\easy_000_seed_1004.yaml
+[run_pair] candidates    = 1
+[run_pair] output prefix = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq_ls\S3_room_set_rows\rep_1\easy_000_seed_1004_*
+[run_pair] cost          = (hard violations incl. break and PR5 and the MILP room-set rows, soft_objective)
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 5460.
+[run_pair] solution      = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq\S3\rep_1\easy_000_seed_1004_velox_solution.yaml
+  [greedy] pass 1: 0 deficit course(s) to process
+  [k=1] enumerating up to 5 tuples over 5 items
+  [k=1] tuples 1/5 (20%)  evaluated=1  accepted=1  elapsed=0.0s  remaining_tuples≈4
+  [k=1] tuples 2/5 (40%)  evaluated=2  accepted=1  elapsed=0.0s  remaining_tuples≈3
+  [k=1] tuples 3/5 (60%)  evaluated=3  accepted=2  elapsed=0.0s  remaining_tuples≈2
+  [k=1] tuples 4/5 (80%)  evaluated=4  accepted=3  elapsed=0.0s  remaining_tuples≈1
+  [k=1] enumerating up to 5 tuples over 5 items
+  [k=1] tuples 1/5 (20%)  evaluated=1  accepted=0  elapsed=0.0s  remaining_tuples≈4
+  [k=1] tuples 2/5 (40%)  evaluated=2  accepted=0  elapsed=0.0s  remaining_tuples≈3
+  [k=1] tuples 3/5 (60%)  evaluated=3  accepted=0  elapsed=0.0s  remaining_tuples≈2
+  [k=1] tuples 4/5 (80%)  evaluated=4  accepted=0  elapsed=0.0s  remaining_tuples≈1
+  [k=2] enumerating up to 10 tuples over 5 items
+  [k=2] tuples 1/10 (10%)  evaluated=1  accepted=0  elapsed=0.0s  remaining_tuples≈9
+  [k=2] tuples 2/10 (20%)  evaluated=2  accepted=0  elapsed=0.0s  remaining_tuples≈8
+  [k=2] tuples 3/10 (30%)  evaluated=3  accepted=0  elapsed=0.0s  remaining_tuples≈7
+  [k=2] tuples 4/10 (40%)  evaluated=4  accepted=0  elapsed=0.0s  remaining_tuples≈6
+  [k=2] tuples 5/10 (50%)  evaluated=5  accepted=0  elapsed=0.1s  remaining_tuples≈5
+  [k=2] tuples 6/10 (60%)  evaluated=6  accepted=0  elapsed=0.1s  remaining_tuples≈4
+  [k=2] tuples 7/10 (70%)  evaluated=7  accepted=0  elapsed=0.1s  remaining_tuples≈3
+  [k=2] tuples 8/10 (80%)  evaluated=8  accepted=0  elapsed=0.1s  remaining_tuples≈2
+  [k=2] tuples 9/10 (90%)  evaluated=9  accepted=0  elapsed=0.1s  remaining_tuples≈1
+  [k=1] enumerating up to 5 tuples over 5 items
+  [k=1] tuples 1/5 (20%)  evaluated=1  accepted=0  elapsed=0.0s  remaining_tuples≈4
+  [k=1] tuples 2/5 (40%)  evaluated=2  accepted=0  elapsed=0.0s  remaining_tuples≈3
+  [k=1] tuples 3/5 (60%)  evaluated=3  accepted=0  elapsed=0.0s  remaining_tuples≈2
+  [k=1] tuples 4/5 (80%)  evaluated=4  accepted=0  elapsed=0.0s  remaining_tuples≈1
+  [k=2] enumerating up to 10 tuples over 5 items
+  [k=2] tuples 1/10 (10%)  evaluated=1  accepted=0  elapsed=0.0s  remaining_tuples≈9
+  [k=2] tuples 2/10 (20%)  evaluated=2  accepted=0  elapsed=0.0s  remaining_tuples≈8
+  [k=2] tuples 3/10 (30%)  evaluated=3  accepted=0  elapsed=0.0s  remaining_tuples≈7
+  [k=2] tuples 4/10 (40%)  evaluated=4  accepted=0  elapsed=0.0s  remaining_tuples≈6
+  [k=2] tuples 5/10 (50%)  evaluated=5  accepted=0  elapsed=0.1s  remaining_tuples≈5
+  [k=2] tuples 6/10 (60%)  evaluated=6  accepted=0  elapsed=0.1s  remaining_tuples≈4
+  [k=2] tuples 7/10 (70%)  evaluated=7  accepted=0  elapsed=0.1s  remaining_tuples≈3
+  [k=2] tuples 8/10 (80%)  evaluated=8  accepted=0  elapsed=0.1s  remaining_tuples≈2
+  [k=2] tuples 9/10 (90%)  evaluated=9  accepted=0  elapsed=0.1s  remaining_tuples≈1
+LocalSearch summary:
+  cost          : (violations (time core + break + PR5 + MILP room-set rows), soft objective)
+  initial cost  : (0, -235)
+  final cost    : (0, -405)
+  Δ (final − initial) : violations +0, soft objective -170  (both negative = improvement)
+  saved (init − final): violations +0, soft objective +170  (both positive = improvement)
+  n outer passes: 2
+  n cycles      : 5
+  total wall    : 0.3s
+  terminated by : convergence
+
+improvement: violations 0 → 0  (Δ +0), soft objective -235 → -405  (Δ -170)  — negative Δ = improvement
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 5461.
+verdict: time core True, rooms True, full True

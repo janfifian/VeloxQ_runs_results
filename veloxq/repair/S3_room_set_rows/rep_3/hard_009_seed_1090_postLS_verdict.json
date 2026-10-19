@@ -1,0 +1,205 @@
+{
+ "solution_file": {
+  "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_ls\\S3_room_set_rows\\rep_3\\hard_009_seed_1090_postLS.yaml",
+  "sha256": "c93362a705fcae342b6fd83855899cf72bfc4a481f84eb0c423e5243378fd28f",
+  "sha256_file_bytes": "3e587557e71e07c2db58f0fa608243d0da1edc7c735e31a11ad00909968e80d0",
+  "bytes": 12600
+ },
+ "instance_file": {
+  "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_009_seed_1090.yaml",
+  "sha256": "b4488c4b869dfad08ba8d03fbfca906122c3da6635845ac4ea33b39bf230104d",
+  "sha256_file_bytes": "b4488c4b869dfad08ba8d03fbfca906122c3da6635845ac4ea33b39bf230104d",
+  "bytes": 200338
+ },
+ "lessons": 48,
+ "feasible_time_core": true,
+ "n_violations": 0,
+ "violations_by_constraint": {
+  "PR1_course_minutes": 0,
+  "MC_max_chunks": 0,
+  "PR3_PR4_lecturer_overlap": 0,
+  "PR3_PR4_group_overlap": 0,
+  "RU2_lecturer_availability": 0,
+  "PR2_lecturer_assigned": 0,
+  "CONJ_PHASE3_room_count": 0,
+  "CONJ_PHASE3_room_capacity": 0
+ },
+ "extra_violations_by_rule": {
+  "BREAK_lecturer": 0,
+  "BREAK_group": 0,
+  "PR5_mixed_modality": 0
+ },
+ "statuses": {
+  "time_core": true,
+  "room_rows": true,
+  "v_zero": true,
+  "rooms": true,
+  "policy_rules": true,
+  "extra_rules": true,
+  "full": true,
+  "pr5": true,
+  "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+ },
+ "room_assignment": {
+  "roomable": true,
+  "assignment": {
+   "465": 5,
+   "537": 0,
+   "569": 5,
+   "580": 5,
+   "624": 5,
+   "667": 5,
+   "705": 5,
+   "726": 13,
+   "739": 1,
+   "747": 5,
+   "802": 5,
+   "818": 8,
+   "830": 5,
+   "872": 0,
+   "896": 3,
+   "938": 13,
+   "1029": 1,
+   "1046": 11,
+   "1062": 8,
+   "1093": 5,
+   "1110": 0,
+   "1168": 8,
+   "1187": 9,
+   "1199": 5,
+   "1244": 0,
+   "1267": 0,
+   "1358": 8,
+   "1425": 7,
+   "1486": 0,
+   "1555": 13,
+   "1556": 1,
+   "1623": 13,
+   "1624": 1,
+   "1704": 5,
+   "1705": 1,
+   "1762": 8,
+   "1763": 11,
+   "1818": 11,
+   "1884": 2,
+   "1885": 7,
+   "1950": 11,
+   "1951": 6,
+   "2011": 11,
+   "2012": 2,
+   "2051": 5,
+   "2052": 5,
+   "2112": 13,
+   "2113": 5
+  },
+  "n_in_person": 48,
+  "n_remote_exempt": 0,
+  "n_roomed": 48,
+  "upper_bound": 48,
+  "n_without_admissible_free_room": 0,
+  "status": "OPTIMAL",
+  "unroomed": []
+ },
+ "soft_metrics": {
+  "lecturer_satisfaction_counts": {
+   "high_pref": 32,
+   "low_pref": 5,
+   "neutral": 11,
+   "not_available": 0
+  },
+  "lecturer_satisfaction_percent": {
+   "high_pref": 66.7,
+   "low_pref": 10.4,
+   "neutral": 22.9,
+   "not_available": 0.0
+  },
+  "time_of_day_counts": {
+   "morning": 31,
+   "afternoon": 7,
+   "evening": 10
+  },
+  "time_of_day_minutes": {
+   "morning": 2790.0,
+   "afternoon": 630.0,
+   "evening": 900.0
+  },
+  "total_student_gap_minutes": 705.0,
+  "gap_minutes_by_group": {
+   "grp_002": 45.0,
+   "grp_004": 45.0,
+   "grp_012": 90.0,
+   "grp_017": 60.0,
+   "grp_015": 60.0,
+   "grp_001": 45.0,
+   "grp_003": 30.0,
+   "grp_007": 60.0,
+   "grp_010": 15.0,
+   "grp_005": 45.0,
+   "grp_013": 15.0,
+   "grp_006": 90.0,
+   "grp_016": 45.0,
+   "grp_008": 15.0,
+   "grp_009": 30.0,
+   "grp_014": 15.0
+  },
+  "days_per_group": {
+   "avg": 4.71,
+   "min": 3,
+   "max": 5,
+   "by_group": {
+    "grp_002": 5,
+    "grp_004": 5,
+    "grp_011": 4,
+    "grp_012": 5,
+    "grp_017": 5,
+    "grp_015": 5,
+    "grp_003": 5,
+    "grp_009": 5,
+    "grp_001": 5,
+    "grp_007": 5,
+    "grp_008": 5,
+    "grp_010": 3,
+    "grp_005": 5,
+    "grp_013": 5,
+    "grp_006": 5,
+    "grp_016": 5,
+    "grp_014": 3
+   }
+  }
+ },
+ "environment": {
+  "python_version": "3.13.12",
+  "python_implementation": "CPython",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_processors": 20,
+  "hostname": "FifianJanPC",
+  "timestamp": "2026-10-16T20:13:49+02:00",
+  "git_commit": "539da11656ff",
+  "git_dirty": true,
+  "code": {
+   "commit": "539da11656ffab6031b0bf6abb9aa3c9825b254f",
+   "tags_at_commit": [],
+   "describe": "campaign-2026-10-qubo-4-g539da11-dirty",
+   "dirty": true,
+   "modified_tracked_files": [
+    "notebooks/velox_vs_gurobi_comparison.ipynb",
+    "scripts/LATO_instructions.txt"
+   ],
+   "n_modified_tracked_files": 2
+  },
+  "packages": {
+   "gurobipy": "12.0.3",
+   "veloxq_sdk": "0.1.dev125+ge290bd081",
+   "dimod": "0.12.21",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "torch": "2.11.0+cpu",
+   "networkx": "3.6.1",
+   "h5py": "3.16.0",
+   "PyYAML": "6.0.3",
+   "gurobi_library": "12.0.3"
+  }
+ }
+}

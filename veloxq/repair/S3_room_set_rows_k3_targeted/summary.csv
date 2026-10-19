@@ -1,0 +1,5 @@
+setting,instance,tier,rep,veloxq_energy,veloxq_lessons,veloxq_solver_s,veloxq_time_core,violations_before,violations_after,soft_before,soft_after,ls_wall_s,ls_time_to_zero_s,ls_cycles,ls_converged,time_core,room_rows,rooms,policy_rules,full,call_wall_s
+S3,extreme_014_seed_1140,extreme,1,,,,,1,0,10765.0,13197.0,0.147,0.147,3,True,True,True,True,True,True,13.821
+S3,extreme_014_seed_1140,extreme,3,,,,,1,1,10806.0,10806.0,0.443,,2,True,False,True,True,True,False,7.105
+S3,extreme_014_seed_1142,extreme,3,,,,,1,1,9772.0,9772.0,0.572,,2,True,False,True,True,True,False,7.026
+S3,extreme_014_seed_1143,extreme,3,,,,,1,1,10109.0,10109.0,0.639,,2,True,False,True,True,True,False,7.222

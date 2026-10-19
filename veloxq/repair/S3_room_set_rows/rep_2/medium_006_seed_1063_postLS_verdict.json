@@ -1,0 +1,174 @@
+{
+ "solution_file": {
+  "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_ls\\S3_room_set_rows\\rep_2\\medium_006_seed_1063_postLS.yaml",
+  "sha256": "e4c5f356bea9b9cfde315a81f06b2a38ffd7436c329502f487e7632ecef5796f",
+  "sha256_file_bytes": "293ecae98948671b54538822e304035f242a9b3d26bbdbc12cf23c956a64f546",
+  "bytes": 10269
+ },
+ "instance_file": {
+  "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_006_seed_1063.yaml",
+  "sha256": "2bd52e2e43b3c0bd35c5cdac3511812e5d99146174451984b042d11cf650e48c",
+  "sha256_file_bytes": "2bd52e2e43b3c0bd35c5cdac3511812e5d99146174451984b042d11cf650e48c",
+  "bytes": 135689
+ },
+ "lessons": 32,
+ "feasible_time_core": true,
+ "n_violations": 0,
+ "violations_by_constraint": {
+  "PR1_course_minutes": 0,
+  "MC_max_chunks": 0,
+  "PR3_PR4_lecturer_overlap": 0,
+  "PR3_PR4_group_overlap": 0,
+  "RU2_lecturer_availability": 0,
+  "PR2_lecturer_assigned": 0,
+  "CONJ_PHASE3_room_count": 0,
+  "CONJ_PHASE3_room_capacity": 0
+ },
+ "extra_violations_by_rule": {
+  "BREAK_lecturer": 0,
+  "BREAK_group": 0,
+  "PR5_mixed_modality": 0
+ },
+ "statuses": {
+  "time_core": true,
+  "room_rows": true,
+  "v_zero": true,
+  "rooms": true,
+  "policy_rules": true,
+  "extra_rules": true,
+  "full": true,
+  "pr5": true,
+  "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+ },
+ "room_assignment": {
+  "roomable": true,
+  "assignment": {
+   "329": 9,
+   "379": 0,
+   "480": 0,
+   "522": 9,
+   "548": 0,
+   "586": 9,
+   "732": 0,
+   "1109": 0,
+   "1170": 5,
+   "1171": 9,
+   "1253": 2,
+   "1254": 9,
+   "1325": 1,
+   "1326": 0,
+   "1398": 0,
+   "1399": 0,
+   "1466": 1,
+   "1545": 8,
+   "1546": 2,
+   "1616": 3,
+   "1617": 1,
+   "1680": 9,
+   "1737": 9,
+   "1738": 9,
+   "1810": 1,
+   "1874": 1,
+   "1875": 1,
+   "1969": 1,
+   "1970": 2,
+   "2095": 1,
+   "2180": 1,
+   "2181": 9
+  },
+  "n_in_person": 32,
+  "n_remote_exempt": 0,
+  "n_roomed": 32,
+  "upper_bound": 32,
+  "n_without_admissible_free_room": 0,
+  "status": "OPTIMAL",
+  "unroomed": []
+ },
+ "soft_metrics": {
+  "lecturer_satisfaction_counts": {
+   "high_pref": 27,
+   "low_pref": 5,
+   "neutral": 0,
+   "not_available": 0
+  },
+  "lecturer_satisfaction_percent": {
+   "high_pref": 84.4,
+   "low_pref": 15.6,
+   "neutral": 0.0,
+   "not_available": 0.0
+  },
+  "time_of_day_counts": {
+   "morning": 21,
+   "afternoon": 2,
+   "evening": 9
+  },
+  "time_of_day_minutes": {
+   "morning": 1890.0,
+   "afternoon": 180.0,
+   "evening": 810.0
+  },
+  "total_student_gap_minutes": 105.0,
+  "gap_minutes_by_group": {
+   "grp_003": 15.0,
+   "grp_007": 15.0,
+   "grp_010": 15.0,
+   "grp_004": 15.0,
+   "grp_008": 15.0,
+   "grp_012": 30.0
+  },
+  "days_per_group": {
+   "avg": 4.25,
+   "min": 2,
+   "max": 5,
+   "by_group": {
+    "grp_011": 5,
+    "grp_008": 5,
+    "grp_012": 4,
+    "grp_005": 3,
+    "grp_003": 5,
+    "grp_010": 5,
+    "grp_007": 5,
+    "grp_001": 4,
+    "grp_009": 4,
+    "grp_004": 5,
+    "grp_002": 4,
+    "grp_006": 2
+   }
+  }
+ },
+ "environment": {
+  "python_version": "3.13.12",
+  "python_implementation": "CPython",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_processors": 20,
+  "hostname": "FifianJanPC",
+  "timestamp": "2026-10-16T22:48:53+02:00",
+  "git_commit": "2ebf72ef815c",
+  "git_dirty": true,
+  "code": {
+   "commit": "2ebf72ef815cba4f8e141c0c1383eb69ac0178df",
+   "tags_at_commit": [],
+   "describe": "campaign-2026-10-qubo-5-g2ebf72e-dirty",
+   "dirty": true,
+   "modified_tracked_files": [
+    "notebooks/velox_vs_gurobi_comparison.ipynb",
+    "scripts/LATO_instructions.txt"
+   ],
+   "n_modified_tracked_files": 2
+  },
+  "packages": {
+   "gurobipy": "12.0.3",
+   "veloxq_sdk": "0.1.dev125+ge290bd081",
+   "dimod": "0.12.21",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "torch": "2.11.0+cpu",
+   "networkx": "3.6.1",
+   "h5py": "3.16.0",
+   "PyYAML": "6.0.3",
+   "gurobi_library": "12.0.3"
+  }
+ }
+}

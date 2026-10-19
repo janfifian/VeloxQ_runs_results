@@ -1,0 +1,124 @@
+[
+ {
+  "call": "rep_1/extreme_014_seed_1140",
+  "first_key": 1,
+  "rules": {
+   "PR1_course_minutes": 1
+  },
+  "short": [
+   {
+    "course": 34,
+    "missing_minutes": 45,
+    "lessons_now": 0,
+    "groups": 8,
+    "students": 122,
+    "places": 20,
+    "places_by_clashing_lessons": {
+     "1": 5,
+     "2": 8,
+     "3": 2,
+     "4": 4,
+     "5": 1
+    },
+    "places_with_room_rules_broken": 0
+   }
+  ],
+  "lessons": 99,
+  "valid_after_1_move": 0,
+  "lessons_whose_removal_frees_a_place": 5,
+  "valid_after_2_moves": 0,
+  "of_them_on_the_repair_shortlists": 0,
+  "examples": []
+ },
+ {
+  "call": "rep_3/extreme_014_seed_1140",
+  "first_key": 1,
+  "rules": {
+   "PR1_course_minutes": 1
+  },
+  "short": [
+   {
+    "course": 36,
+    "missing_minutes": 45,
+    "lessons_now": 0,
+    "groups": 10,
+    "students": 189,
+    "places": 25,
+    "places_by_clashing_lessons": {
+     "1": 5,
+     "2": 8,
+     "3": 7,
+     "4": 5
+    },
+    "places_with_room_rules_broken": 2
+   }
+  ],
+  "lessons": 99,
+  "valid_after_1_move": 0,
+  "lessons_whose_removal_frees_a_place": 5,
+  "valid_after_2_moves": 0,
+  "of_them_on_the_repair_shortlists": 0,
+  "examples": []
+ },
+ {
+  "call": "rep_3/extreme_014_seed_1142",
+  "first_key": 1,
+  "rules": {
+   "PR1_course_minutes": 1
+  },
+  "short": [
+   {
+    "course": 47,
+    "missing_minutes": 45,
+    "lessons_now": 0,
+    "groups": 12,
+    "students": 250,
+    "places": 20,
+    "places_by_clashing_lessons": {
+     "1": 6,
+     "2": 4,
+     "3": 6,
+     "4": 3,
+     "5": 1
+    },
+    "places_with_room_rules_broken": 11
+   }
+  ],
+  "lessons": 99,
+  "valid_after_1_move": 0,
+  "lessons_whose_removal_frees_a_place": 6,
+  "valid_after_2_moves": 0,
+  "of_them_on_the_repair_shortlists": 0,
+  "examples": []
+ },
+ {
+  "call": "rep_3/extreme_014_seed_1143",
+  "first_key": 1,
+  "rules": {
+   "PR1_course_minutes": 1
+  },
+  "short": [
+   {
+    "course": 47,
+    "missing_minutes": 45,
+    "lessons_now": 0,
+    "groups": 9,
+    "students": 164,
+    "places": 15,
+    "places_by_clashing_lessons": {
+     "1": 4,
+     "2": 4,
+     "3": 5,
+     "4": 2
+    },
+    "places_with_room_rules_broken": 9
+   }
+  ],
+  "lessons": 99,
+  "valid_after_1_move": 0,
+  "lessons_whose_removal_frees_a_place": 4,
+  "valid_after_2_moves": 0,
+  "of_them_on_the_repair_shortlists": 0,
+  "examples": []
+ }
+]
