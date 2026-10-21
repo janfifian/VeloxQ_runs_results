@@ -1,0 +1,11 @@
+schema_version: 1
+metadata:
+  empty_start: true
+  note: 'no lessons: the start of the empty-start control of run_veloxq_ls_campaign.py'
+  instance_file:
+    path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\repository_ready\instances\synthetic\medium_004_seed_1041.yaml
+    sha256: fb54ab2b1d994905b6c9af130cfe58d72e6d21ba9ce35c8d63ad6f3345ec8655
+    sha256_file_bytes: fb54ab2b1d994905b6c9af130cfe58d72e6d21ba9ce35c8d63ad6f3345ec8655
+    bytes: 97765
+lessons: []
+room_assignments: []

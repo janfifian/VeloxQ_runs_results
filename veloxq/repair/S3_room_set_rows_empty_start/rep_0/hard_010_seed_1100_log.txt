@@ -1,0 +1,23 @@
+# LocalSearch run — 2026-10-21 08:03:59
+#
+# instance : C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\repository_ready\instances\synthetic\hard_010_seed_1100.yaml
+# solution : C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\artifacts\campaign\veloxq_ls\S3_room_set_rows_empty_start\inputs\hard_010_seed_1100_empty.yaml
+# args     : {'instance_yaml': WindowsPath('C:/Users/21034/OneDrive/Dokumenty/Badania/Plany Zajęć - Quantum Approach/MILP-to-QUBO-transition-on-UCTTP/.claude/worktrees/null-seed-synthetic/repository_ready/instances/synthetic/hard_010_seed_1100.yaml'), 'input_solution': [WindowsPath('C:/Users/21034/OneDrive/Dokumenty/Badania/Plany Zajęć - Quantum Approach/MILP-to-QUBO-transition-on-UCTTP/.claude/worktrees/null-seed-synthetic/artifacts/campaign/veloxq_ls/S3_room_set_rows_empty_start/inputs/hard_010_seed_1100_empty.yaml')], 'output_prefix': WindowsPath('C:/Users/21034/OneDrive/Dokumenty/Badania/Plany Zajęć - Quantum Approach/MILP-to-QUBO-transition-on-UCTTP/.claude/worktrees/null-seed-synthetic/artifacts/campaign/veloxq_ls/S3_room_set_rows_empty_start/rep_0/hard_010_seed_1100'), 'qubo_cache': WindowsPath('C:/Users/21034/OneDrive/Dokumenty/Badania/Plany Zajęć - Quantum Approach/MILP-to-QUBO-transition-on-UCTTP/.claude/worktrees/null-seed-synthetic/artifacts/campaign/veloxq/S3/caches/hard_010_seed_1100.qubo_cache.h5'), 'qubo_config': None, 'instance_dir': None, 'solution_dir': None, 'output_dir': None, 'solution_glob': '*_solution.yaml', 'ks': [1, 2], 'max_outer_passes': None, 'max_wall_seconds_per_pass': None, 'candidate_shortlist_k': 10, 'disable_unschedule': False, 'no_first_improvement': False, 'skip_h1': False, 'skip_k_opt': False, 'enable_pr3_pr4_purge': False, 'tie_break': 'soft_objective', 'no_extra_rules': False, 'no_pr5': False, 'room_set_rows': True, 'no_qubo_energy': False, 'dump_per_cycle': False, 'targeted_k_opt_first': False, 'targeted_k_opt_only': False, 'targeted_max_per_violation': 50, 'targeted_max_blockers_per_deficit': 10, 'verbose': False}
+
+LocalSearch summary:
+  cost          : (violations (time core + break + PR5 + MILP room-set rows), soft objective)
+  initial cost  : (55, 0)
+  final cost    : (0, -1698)
+  Δ (final − initial) : violations -55, soft objective -1698  (both negative = improvement)
+  saved (init − final): violations +55, soft objective +1698  (both positive = improvement)
+  n outer passes: 2
+  n cycles      : 5
+  total wall    : 97.3s
+  terminated by : convergence
+
+Per-cycle trajectory:
+  [      H1_greedy_repair]  outer=0  violations   55 → 0    (Δ -55)  soft objective 0 → 5696 (Δ +5696)  placements    0 → 55    0.03s
+  [                H2_k=1]  outer=1  violations    0 → 0    (Δ +0)  soft objective 5696 → -1412 (Δ -7108)  placements   55 → 55    0.44s
+  [                H2_k=2]  outer=1  violations    0 → 0    (Δ +0)  soft objective -1412 → -1698 (Δ -286)  placements   55 → 55    70.44s
+  [                H2_k=1]  outer=2  violations    0 → 0    (Δ +0)  soft objective -1698 → -1698 (Δ +0)  placements   55 → 55    0.13s
+  [                H2_k=2]  outer=2  violations    0 → 0    (Δ +0)  soft objective -1698 → -1698 (Δ +0)  placements   55 → 55    26.26s

@@ -1,0 +1,18 @@
+{
+ "setting": "S3",
+ "ks": [
+  1,
+  2
+ ],
+ "candidate_shortlist_k": 10,
+ "max_outer_passes": "none",
+ "max_wall_seconds_per_pass": "none",
+ "extra": [
+  "--room-set-rows"
+ ],
+ "calls": null,
+ "input_run": null,
+ "in_name": "veloxq",
+ "instance_files": [],
+ "empty_start": true
+}

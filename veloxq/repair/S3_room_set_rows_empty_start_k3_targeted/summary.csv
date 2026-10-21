@@ -1,0 +1,2 @@
+setting,instance,tier,rep,veloxq_energy,veloxq_lessons,veloxq_solver_s,veloxq_time_core,violations_before,violations_after,soft_before,soft_after,ls_wall_s,ls_time_to_zero_s,ls_cycles,ls_converged,time_core,room_rows,rooms,policy_rules,full,call_wall_s
+S3,extreme_014_seed_1140,extreme,0,,,,,1,1,11543.0,11324.0,1.136,,3,True,False,True,True,True,False,7.245

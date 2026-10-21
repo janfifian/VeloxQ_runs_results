@@ -1,0 +1,20 @@
+{
+ "setting": "S3",
+ "ks": [
+  3
+ ],
+ "candidate_shortlist_k": 10,
+ "max_outer_passes": "none",
+ "max_wall_seconds_per_pass": "none",
+ "extra": [
+  "--room-set-rows",
+  "--targeted-k-opt-only"
+ ],
+ "calls": [
+  "rep_0/extreme_014_seed_1140"
+ ],
+ "input_run": "S3_room_set_rows_empty_start",
+ "in_name": "veloxq",
+ "instance_files": [],
+ "empty_start": false
+}

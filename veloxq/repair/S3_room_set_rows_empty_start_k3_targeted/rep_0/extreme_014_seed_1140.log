@@ -1,0 +1,22 @@
+
+[run_pair] instance     = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\repository_ready\instances\synthetic\extreme_014_seed_1140.yaml
+[run_pair] candidates    = 1
+[run_pair] output prefix = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq_ls\S3_room_set_rows_empty_start_k3_targeted\rep_0\extreme_014_seed_1140_*
+[run_pair] cost          = (hard violations incl. break and PR5 and the MILP room-set rows, soft_objective)
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 5806.
+[run_pair] solution      = C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq_ls\S3_room_set_rows_empty_start\rep_0\extreme_014_seed_1140_postLS.yaml
+  [greedy] pass 1: 1 deficit course(s) to process
+LocalSearch summary:
+  cost          : (violations (time core + break + PR5 + MILP room-set rows), soft objective)
+  initial cost  : (1, 11543)
+  final cost    : (1, 11324)
+  Δ (final − initial) : violations +0, soft objective -219  (both negative = improvement)
+  saved (init − final): violations +0, soft objective +219  (both positive = improvement)
+  n outer passes: 2
+  n cycles      : 3
+  total wall    : 1.1s
+  terminated by : convergence
+
+improvement: violations 1 → 1  (Δ +0), soft objective 11543 → 11324  (Δ -219)  — negative Δ = improvement
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 5807.
+verdict: time core False, rooms True, full False

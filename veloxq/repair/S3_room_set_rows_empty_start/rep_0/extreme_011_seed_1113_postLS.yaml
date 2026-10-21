@@ -1,0 +1,517 @@
+schema_version: 1
+metadata:
+  applied_local_search: true
+  source_instance: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum
+    Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\repository_ready\instances\synthetic\extreme_011_seed_1113.yaml
+  source_instance_file:
+    path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\repository_ready\instances\synthetic\extreme_011_seed_1113.yaml
+    sha256: e674922c5942d0eac46890723f51d0f31de64c357f9970fdbc6abf3a63c1d218
+    sha256_file_bytes: e674922c5942d0eac46890723f51d0f31de64c357f9970fdbc6abf3a63c1d218
+    bytes: 274766
+  source_solution_file:
+    path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\artifacts\campaign\veloxq_ls\S3_room_set_rows_empty_start\inputs\extreme_011_seed_1113_empty.yaml
+    sha256: 9a38a479a3481489f3a6428832cabd42df0f9ae5cb7f9f85fff2d8d4becde22d
+    sha256_file_bytes: 642f201b14331ce095f3a947cae906c18bf14417ada09eb2e34f094a46d23925
+    bytes: 600
+  source_solution: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum
+    Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\artifacts\campaign\veloxq_ls\S3_room_set_rows_empty_start\inputs\extreme_011_seed_1113_empty.yaml
+  candidate_count: 1
+  candidates_considered:
+  - path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\artifacts\campaign\veloxq_ls\S3_room_set_rows_empty_start\inputs\extreme_011_seed_1113_empty.yaml
+    pre_cost: null
+  qubo_config: null
+  qubo_cache: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\artifacts\campaign\veloxq\S3\caches\extreme_011_seed_1113.qubo_cache.h5
+  environment:
+    python_version: 3.13.12
+    python_implementation: CPython
+    platform: Windows-11-10.0.26200-SP0
+    machine: AMD64
+    processor: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+    logical_processors: 20
+    hostname: FifianJanPC
+    timestamp: '2026-10-21T08:23:22+02:00'
+    git_commit: 5273311ae2fb
+    git_dirty: false
+    code:
+      commit: 5273311ae2fb3de530afcb4616033ac5a4858013
+      tags_at_commit: []
+      describe: campaign-2026-10-qubo-18-g5273311
+      dirty: false
+      modified_tracked_files: []
+      n_modified_tracked_files: 0
+    packages:
+      gurobipy: 12.0.3
+      veloxq_sdk: 0.1.dev125+ge290bd081
+      dimod: 0.12.21
+      numpy: 2.4.4
+      scipy: 1.17.1
+      torch: 2.11.0+cpu
+      networkx: 3.6.1
+      h5py: 3.16.0
+      PyYAML: 6.0.3
+      gurobi_library: 12.0.3
+  cli_args:
+    instance_yaml: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum
+      Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\repository_ready\instances\synthetic\extreme_011_seed_1113.yaml
+    input_solution:
+    - C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\artifacts\campaign\veloxq_ls\S3_room_set_rows_empty_start\inputs\extreme_011_seed_1113_empty.yaml
+    output_prefix: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum
+      Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\artifacts\campaign\veloxq_ls\S3_room_set_rows_empty_start\rep_0\extreme_011_seed_1113
+    qubo_cache: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\null-seed-synthetic\artifacts\campaign\veloxq\S3\caches\extreme_011_seed_1113.qubo_cache.h5
+    qubo_config: null
+    instance_dir: null
+    solution_dir: null
+    output_dir: null
+    solution_glob: '*_solution.yaml'
+    ks:
+    - 1
+    - 2
+    max_outer_passes: null
+    max_wall_seconds_per_pass: null
+    candidate_shortlist_k: 10
+    disable_unschedule: false
+    no_first_improvement: false
+    skip_h1: false
+    skip_k_opt: false
+    enable_pr3_pr4_purge: false
+    tie_break: soft_objective
+    no_extra_rules: false
+    no_pr5: false
+    room_set_rows: true
+    no_qubo_energy: false
+    dump_per_cycle: false
+    targeted_k_opt_first: false
+    targeted_k_opt_only: false
+    targeted_max_per_violation: 50
+    targeted_max_blockers_per_deficit: 10
+    verbose: false
+  initial_cost:
+  - 75
+  - 0.0
+  final_cost:
+  - 0
+  - 3869.0
+  cost_definition:
+    first_key: time-core violations + break and PR5 pairs + exceeded MILP room-set
+      rows
+    tie_break: soft_objective
+    pr5: true
+    room_set_rows: true
+  initial:
+    violations_time_core: 75
+    extra_rule_pairs:
+      BREAK_lecturer: 0
+      BREAK_group: 0
+      PR5_mixed_modality: 0
+    soft_objective: 0.0
+    soft_objective_terms:
+      lecturers_satisfaction: -0.0
+      min_gaps_students: 0.0
+      min_days_students: 0.0
+      time_of_day: 0.0
+    room_set_rows_exceeded:
+      room_set_count: 0
+      room_set_capacity: 0
+    qubo_decision_energy: 133693947.0
+  final:
+    violations_time_core: 0
+    extra_rule_pairs:
+      BREAK_lecturer: 0
+      BREAK_group: 0
+      PR5_mixed_modality: 0
+    soft_objective: 3869.0
+    soft_objective_terms:
+      lecturers_satisfaction: -1580.0
+      min_gaps_students: 5295.0
+      min_days_students: 99.0
+      time_of_day: 55.0
+    room_set_rows_exceeded:
+      room_set_count: 0
+      room_set_capacity: 0
+    qubo_decision_energy: 109683155.0
+  local_search_args:
+    ks:
+    - 1
+    - 2
+    max_outer_passes: null
+    max_wall_seconds_per_pass: null
+    candidate_shortlist_k: 10
+    disable_unschedule: false
+    first_improvement: true
+lessons:
+- l_idx: 62
+  course_unique_id: grp_015__1063_Course 63__Seminarium
+  lecturer_unique_id: lec_020
+  slot_str: 8:00-9:30
+  dayname: Piątek
+- l_idx: 63
+  course_unique_id: grp_009__1064_Course 64__Inne
+  lecturer_unique_id: lec_010
+  slot_str: 9:45-11:15
+  dayname: Piątek
+- l_idx: 65
+  course_unique_id: grp_006__1066_Course 66__Seminarium
+  lecturer_unique_id: lec_008
+  slot_str: 11:30-13:00
+  dayname: Piątek
+- l_idx: 66
+  course_unique_id: grp_005__1067_Course 67__E-learning
+  lecturer_unique_id: lec_009
+  slot_str: 13:15-14:45
+  dayname: Piątek
+- l_idx: 68
+  course_unique_id: grp_005__1069_Course 69__Ćwiczenia
+  lecturer_unique_id: lec_017
+  slot_str: 15:00-16:30
+  dayname: Piątek
+- l_idx: 70
+  course_unique_id: grp_012__1071_Course 71__Projekt
+  lecturer_unique_id: lec_019
+  slot_str: 16:45-18:15
+  dayname: Piątek
+- l_idx: 102
+  course_unique_id: grp_002__1002_Course 2__Projekt
+  lecturer_unique_id: lec_009
+  slot_str: 13:15-14:45
+  dayname: Wtorek
+- l_idx: 138
+  course_unique_id: grp_004__1004_Course 4__Inne
+  lecturer_unique_id: lec_018
+  slot_str: 15:00-16:30
+  dayname: Wtorek
+- l_idx: 280
+  course_unique_id: grp_014__1014_Course 14__Ćwiczenia
+  lecturer_unique_id: lec_011
+  slot_str: 16:45-18:15
+  dayname: Wtorek
+- l_idx: 389
+  course_unique_id: grp_020__1020_Course 20__E-learning
+  lecturer_unique_id: lec_005
+  slot_str: 11:30-13:00
+  dayname: Piątek
+- l_idx: 393
+  course_unique_id: grp_011__1029_Course 29__Projekt
+  lecturer_unique_id: lec_009
+  slot_str: 8:00-9:30
+  dayname: Poniedziałek
+- l_idx: 427
+  course_unique_id: grp_002__1050_Course 50__Laboratorium
+  lecturer_unique_id: lec_007
+  slot_str: 15:00-16:30
+  dayname: Wtorek
+- l_idx: 434
+  course_unique_id: grp_005__1059_Course 59__Inne
+  lecturer_unique_id: lec_002
+  slot_str: 16:45-18:15
+  dayname: Piątek
+- l_idx: 458
+  course_unique_id: grp_014__1065_Course 65__Laboratorium
+  lecturer_unique_id: lec_006
+  slot_str: 9:45-11:15
+  dayname: Piątek
+- l_idx: 467
+  course_unique_id: grp_017__1068_Course 68__Projekt
+  lecturer_unique_id: lec_018
+  slot_str: 15:00-16:30
+  dayname: Czwartek
+- l_idx: 476
+  course_unique_id: grp_003__1070_Course 70__Projekt
+  lecturer_unique_id: lec_018
+  slot_str: 13:15-14:45
+  dayname: Środa
+- l_idx: 566
+  course_unique_id: grp_006__1006_Course 6__Projekt
+  lecturer_unique_id: lec_017
+  slot_str: 13:15-14:45
+  dayname: Czwartek
+- l_idx: 680
+  course_unique_id: grp_012__1044_Course 44__Projekt
+  lecturer_unique_id: lec_012
+  slot_str: 13:15-14:45
+  dayname: Poniedziałek
+- l_idx: 712
+  course_unique_id: grp_004__1024_Course 24__Seminarium
+  lecturer_unique_id: lec_008
+  slot_str: 11:30-13:00
+  dayname: Poniedziałek
+- l_idx: 728
+  course_unique_id: grp_004__1025_Course 25__Projekt
+  lecturer_unique_id: lec_018
+  slot_str: 16:45-18:15
+  dayname: Czwartek
+- l_idx: 729
+  course_unique_id: grp_007__1061_Course 61__Projekt
+  lecturer_unique_id: lec_009
+  slot_str: 15:00-16:30
+  dayname: Poniedziałek
+- l_idx: 753
+  course_unique_id: grp_001__1026_Course 26__Laboratorium
+  lecturer_unique_id: lec_011
+  slot_str: 16:45-18:15
+  dayname: Poniedziałek
+- l_idx: 769
+  course_unique_id: grp_005__1027_Course 27__Ćwiczenia
+  lecturer_unique_id: lec_008
+  slot_str: 16:45-18:15
+  dayname: Czwartek
+- l_idx: 770
+  course_unique_id: grp_011__1028_Course 28__Projekt
+  lecturer_unique_id: lec_002
+  slot_str: 9:45-11:15
+  dayname: Poniedziałek
+- l_idx: 866
+  course_unique_id: grp_010__1046_Course 46__Seminarium
+  lecturer_unique_id: lec_005
+  slot_str: 16:45-18:15
+  dayname: Środa
+- l_idx: 900
+  course_unique_id: grp_013__1035_Course 35__Laboratorium
+  lecturer_unique_id: lec_004
+  slot_str: 15:00-16:30
+  dayname: Wtorek
+- l_idx: 901
+  course_unique_id: grp_009__1009_Course 9__Ćwiczenia
+  lecturer_unique_id: lec_013
+  slot_str: 11:30-13:00
+  dayname: Wtorek
+- l_idx: 936
+  course_unique_id: grp_019__1036_Course 36__Seminarium
+  lecturer_unique_id: lec_019
+  slot_str: 11:30-13:00
+  dayname: Wtorek
+- l_idx: 937
+  course_unique_id: grp_016__1016_Course 16__E-learning
+  lecturer_unique_id: lec_012
+  slot_str: 11:30-13:00
+  dayname: Poniedziałek
+- l_idx: 972
+  course_unique_id: grp_012__1038_Course 38__Projekt
+  lecturer_unique_id: lec_016
+  slot_str: 16:45-18:15
+  dayname: Wtorek
+- l_idx: 973
+  course_unique_id: grp_019__1019_Course 19__Wykład
+  lecturer_unique_id: lec_007
+  slot_str: 11:30-13:00
+  dayname: Poniedziałek
+- l_idx: 1025
+  course_unique_id: grp_013__1047_Course 47__E-learning
+  lecturer_unique_id: lec_013
+  slot_str: 15:00-16:30
+  dayname: Środa
+- l_idx: 1026
+  course_unique_id: grp_018__1018_Course 18__Ćwiczenia
+  lecturer_unique_id: lec_008
+  slot_str: 16:45-18:15
+  dayname: Piątek
+- l_idx: 1074
+  course_unique_id: grp_003__1055_Course 55__Seminarium
+  lecturer_unique_id: lec_019
+  slot_str: 8:00-9:30
+  dayname: Czwartek
+- l_idx: 1108
+  course_unique_id: grp_008__1042_Course 42__Inne
+  lecturer_unique_id: lec_019
+  slot_str: 9:45-11:15
+  dayname: Czwartek
+- l_idx: 1145
+  course_unique_id: grp_010__1010_Course 10__E-learning
+  lecturer_unique_id: lec_013
+  slot_str: 13:15-14:45
+  dayname: Środa
+- l_idx: 1146
+  course_unique_id: grp_017__1072_Course 72__Projekt
+  lecturer_unique_id: lec_008
+  slot_str: 9:45-11:15
+  dayname: Środa
+- l_idx: 1189
+  course_unique_id: grp_011__1011_Course 11__Projekt
+  lecturer_unique_id: lec_013
+  slot_str: 9:45-11:15
+  dayname: Piątek
+- l_idx: 1268
+  course_unique_id: grp_016__1039_Course 39__Seminarium
+  lecturer_unique_id: lec_016
+  slot_str: 18:30-20:00
+  dayname: Wtorek
+- l_idx: 1282
+  course_unique_id: grp_018__1058_Course 58__E-learning
+  lecturer_unique_id: lec_017
+  slot_str: 18:30-20:00
+  dayname: Piątek
+- l_idx: 1283
+  course_unique_id: grp_012__1043_Course 43__Ćwiczenia
+  lecturer_unique_id: lec_017
+  slot_str: 15:00-16:30
+  dayname: Czwartek
+- l_idx: 1302
+  course_unique_id: grp_005__1062_Course 62__Seminarium
+  lecturer_unique_id: lec_007
+  slot_str: 18:30-20:00
+  dayname: Czwartek
+- l_idx: 1303
+  course_unique_id: grp_015__1060_Course 60__Laboratorium
+  lecturer_unique_id: lec_010
+  slot_str: 13:15-14:45
+  dayname: Poniedziałek
+- l_idx: 1314
+  course_unique_id: grp_015__1073_Course 73__Wykład
+  lecturer_unique_id: lec_003
+  slot_str: 11:30-13:00
+  dayname: Środa
+- l_idx: 1315
+  course_unique_id: grp_013__1023_Course 23__E-learning
+  lecturer_unique_id: lec_004
+  slot_str: 18:30-20:00
+  dayname: Poniedziałek
+- l_idx: 1393
+  course_unique_id: grp_004__1049_Course 49__Inne
+  lecturer_unique_id: lec_013
+  slot_str: 13:15-14:45
+  dayname: Wtorek
+- l_idx: 1485
+  course_unique_id: grp_007__1056_Course 56__Seminarium
+  lecturer_unique_id: lec_007
+  slot_str: 8:00-9:30
+  dayname: Środa
+- l_idx: 1516
+  course_unique_id: grp_002__1045_Course 45__Seminarium
+  lecturer_unique_id: lec_005
+  slot_str: 13:15-14:45
+  dayname: Środa
+- l_idx: 1540
+  course_unique_id: grp_015__1041_Course 41__Laboratorium
+  lecturer_unique_id: lec_019
+  slot_str: 9:45-11:15
+  dayname: Środa
+- l_idx: 1565
+  course_unique_id: grp_020__1052_Course 52__E-learning
+  lecturer_unique_id: lec_010
+  slot_str: 16:45-18:15
+  dayname: Środa
+- l_idx: 1566
+  course_unique_id: grp_008__1037_Course 37__Ćwiczenia
+  lecturer_unique_id: lec_005
+  slot_str: 13:15-14:45
+  dayname: Czwartek
+- l_idx: 1638
+  course_unique_id: grp_018__1048_Course 48__Ćwiczenia
+  lecturer_unique_id: lec_016
+  slot_str: 11:30-13:00
+  dayname: Środa
+- l_idx: 1677
+  course_unique_id: grp_003__1051_Course 51__Projekt
+  lecturer_unique_id: lec_014
+  slot_str: 11:30-13:00
+  dayname: Środa
+- l_idx: 1678
+  course_unique_id: grp_017__1017_Course 17__Projekt
+  lecturer_unique_id: lec_014
+  slot_str: 13:15-14:45
+  dayname: Środa
+- l_idx: 1702
+  course_unique_id: grp_001__1001_Course 1__Laboratorium
+  lecturer_unique_id: lec_011
+  slot_str: 18:30-20:00
+  dayname: Środa
+- l_idx: 1703
+  course_unique_id: grp_005__1054_Course 54__Wykład
+  lecturer_unique_id: lec_012
+  slot_str: 9:45-11:15
+  dayname: Czwartek
+- l_idx: 1848
+  course_unique_id: grp_002__1057_Course 57__Projekt
+  lecturer_unique_id: lec_009
+  slot_str: 11:30-13:00
+  dayname: Czwartek
+- l_idx: 1849
+  course_unique_id: grp_005__1005_Course 5__Wykład
+  lecturer_unique_id: lec_011
+  slot_str: 11:30-13:00
+  dayname: Środa
+- l_idx: 1860
+  course_unique_id: grp_014__1030_Course 30__E-learning
+  lecturer_unique_id: lec_018
+  slot_str: 13:15-14:45
+  dayname: Wtorek
+- l_idx: 1861
+  course_unique_id: grp_015__1034_Course 34__E-learning
+  lecturer_unique_id: lec_005
+  slot_str: 8:00-9:30
+  dayname: Wtorek
+- l_idx: 1892
+  course_unique_id: grp_006__1032_Course 32__E-learning
+  lecturer_unique_id: lec_007
+  slot_str: 9:45-11:15
+  dayname: Wtorek
+- l_idx: 1893
+  course_unique_id: grp_013__1013_Course 13__Ćwiczenia
+  lecturer_unique_id: lec_015
+  slot_str: 9:45-11:15
+  dayname: Wtorek
+- l_idx: 1928
+  course_unique_id: grp_007__1007_Course 7__Inne
+  lecturer_unique_id: lec_006
+  slot_str: 16:45-18:15
+  dayname: Czwartek
+- l_idx: 1950
+  course_unique_id: grp_005__1033_Course 33__Seminarium
+  lecturer_unique_id: lec_016
+  slot_str: 11:30-13:00
+  dayname: Wtorek
+- l_idx: 1951
+  course_unique_id: grp_007__1040_Course 40__Projekt
+  lecturer_unique_id: lec_014
+  slot_str: 13:15-14:45
+  dayname: Wtorek
+- l_idx: 2008
+  course_unique_id: grp_003__1003_Course 3__Projekt
+  lecturer_unique_id: lec_001
+  slot_str: 16:45-18:15
+  dayname: Wtorek
+- l_idx: 2009
+  course_unique_id: grp_007__1031_Course 31__Seminarium
+  lecturer_unique_id: lec_011
+  slot_str: 9:45-11:15
+  dayname: Piątek
+- l_idx: 2022
+  course_unique_id: grp_020__1075_Course 75__Laboratorium
+  lecturer_unique_id: lec_006
+  slot_str: 18:30-20:00
+  dayname: Środa
+- l_idx: 2023
+  course_unique_id: grp_011__1053_Course 53__Inne
+  lecturer_unique_id: lec_012
+  slot_str: 13:15-14:45
+  dayname: Czwartek
+- l_idx: 2064
+  course_unique_id: grp_012__1021_Course 21__Wykład
+  lecturer_unique_id: lec_004
+  slot_str: 16:45-18:15
+  dayname: Poniedziałek
+- l_idx: 2065
+  course_unique_id: grp_012__1012_Course 12__Seminarium
+  lecturer_unique_id: lec_002
+  slot_str: 16:45-18:15
+  dayname: Środa
+- l_idx: 2134
+  course_unique_id: grp_008__1008_Course 8__Laboratorium
+  lecturer_unique_id: lec_014
+  slot_str: 18:30-20:00
+  dayname: Poniedziałek
+- l_idx: 2135
+  course_unique_id: grp_015__1015_Course 15__Ćwiczenia
+  lecturer_unique_id: lec_014
+  slot_str: 11:30-13:00
+  dayname: Wtorek
+- l_idx: 2191
+  course_unique_id: grp_011__1022_Course 22__Ćwiczenia
+  lecturer_unique_id: lec_004
+  slot_str: 15:00-16:30
+  dayname: Środa
+- l_idx: 2192
+  course_unique_id: grp_011__1074_Course 74__E-learning
+  lecturer_unique_id: lec_004
+  slot_str: 11:30-13:00
+  dayname: Piątek
+room_assignments: []
