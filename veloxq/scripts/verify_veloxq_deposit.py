@@ -21,10 +21,12 @@ project's code (16.10.2026). Needs only numpy, h5py and PyYAML.
    instances with a valid timetable agree with ``analysis/tier_view.csv``.
 5. The repair (``repair/<run>/``, when present): every call of a run has its
    files; its run record names as input the deposited VeloxQ timetable of the
-   call (for a continuation, the repaired timetable it continues) and the
-   call's instance, by content hash; the verdict is of that timetable and
-   instance; the record's cost has the run's options; the run holds exactly
-   the calls its ``settings.json`` names. The repair tables
+   call (for a continuation, the repaired timetable it continues; for an empty
+   start, the timetable without lessons in ``inputs/``) and the call's
+   instance, by content hash; the verdict is of that timetable and instance;
+   the record's cost has the run's options; the run holds exactly the calls
+   its ``settings.json`` names (an empty-start run: one per instance, call 0).
+   The repair tables
    (``analysis/repair_*.csv``) are recomputed from the records with
    ``analyze_veloxq_repair.py`` (next to this script; PyYAML only) and
    compared with the deposited ones cell by cell.
@@ -233,10 +235,14 @@ def content_sha256(path: Path) -> str:
 def check_repair(root: Path, calls: list, rep: Report) -> int:
     """Step 5 for every run in repair/; returns the number of calls checked."""
     instance_of = {(c["setting"], c["instance"], c["rep"]): c["instance_sha256"] for c in calls}
+    # Call 0 (an empty start, or its continuation) has no VeloxQ call: its instance is the
+    # instance of the VeloxQ calls on it.
+    instance_of.update({(c["setting"], c["instance"], 0): c["instance_sha256"] for c in calls})
     n = 0
     for run in sorted(p for p in (root / "repair").iterdir() if p.is_dir()):
         options = json.loads((run / "settings.json").read_text(encoding="utf-8"))
         setting, source_run = options.get("setting"), options.get("input_run")
+        empty_start = bool(options.get("empty_start"))
         room_set_rows = "--room-set-rows" in (options.get("extra") or [])
         seen = set()
         for verdict_file in sorted(run.glob("rep_*/*_postLS_verdict.json")):
@@ -252,9 +258,15 @@ def check_repair(root: Path, calls: list, rep: Report) -> int:
             post = verdict_file.parent / f"{stem}_postLS.yaml"
             md = (yaml.safe_load(open(post, encoding="utf-8")) or {}).get("metadata") or {}
             source = (root / "repair" / source_run / verdict_file.parent.name / f"{stem}_postLS.yaml" if source_run
+                      else run / "inputs" / f"{stem}_empty.yaml" if empty_start
                       else root / setting / verdict_file.parent.name / f"{stem}_velox_solution.yaml")
+            if not source.is_file():
+                rep.fail(f"{tag}: its input {source.relative_to(root)} is missing")
+                continue
             if (md.get("source_solution_file") or {}).get("sha256") != content_sha256(source):
                 rep.fail(f"{tag}: the record's input is not {source.relative_to(root)}")
+            if empty_start and (yaml.safe_load(open(source, encoding="utf-8")) or {}).get("lessons"):
+                rep.fail(f"{tag}: the empty timetable {source.name} has lessons")
             instance = instance_of.get((setting, stem, r))
             verdict = json.loads(verdict_file.read_text(encoding="utf-8"))
             if not (instance and (md.get("source_instance_file") or {}).get("sha256") == instance
@@ -265,7 +277,7 @@ def check_repair(root: Path, calls: list, rep: Report) -> int:
             if bool((md.get("cost_definition") or {}).get("room_set_rows")) != room_set_rows:
                 rep.fail(f"{tag}: the record's cost does not have the run's options")
         wanted = set(options["calls"]) if options.get("calls") else \
-            {f"rep_{c['rep']}/{c['instance']}" for c in calls if c["setting"] == setting}
+            {f"rep_{0 if empty_start else c['rep']}/{c['instance']}" for c in calls if c["setting"] == setting}
         if seen != wanted:
             rep.fail(f"repair {run.name}: {len(seen)} calls, its settings.json names {len(wanted)}")
     return n
@@ -275,6 +287,7 @@ def check_repair_tables(root: Path, rep: Report) -> None:
     """The repair tables recomputed from the records (analyze_veloxq_repair.py) and compared."""
     import tempfile
     sys.path.insert(0, str(Path(__file__).resolve().parent))
+    sys.dont_write_bytecode = True          # leave no __pycache__ in the deposit's scripts/
     import analyze_veloxq_repair as ar
     optima = {}
     for r in read_csv(root / "analysis" / "energy_separation.csv"):

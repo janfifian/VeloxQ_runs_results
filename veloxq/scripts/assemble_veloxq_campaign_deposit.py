@@ -34,13 +34,16 @@ files no longer expected are removed. Run it again after more settings finish.
 
 The repair runs in ``artifacts/campaign/veloxq_ls`` named in ``REPAIR_RUNS``
 (``scripts/run_veloxq_ls_campaign.py``: the repair with the MILP's room-set
-rows on every S3 call, and its continuation of the calls left invalid) go to
-``repair/<run>/``, with their console log in ``logs/`` and the tables of
-``scripts/analyze_veloxq_repair.py`` in ``analysis/``. Every call is checked
-first: its files are there; its run record names as input the deposited
-VeloxQ timetable of the call (for a continuation, the repaired timetable it
-continues) and the deposited instance, by content hash; the verdict is of
-that timetable and instance; the record's cost has the run's options.
+rows on every S3 call, and its continuation of the calls left invalid; the
+same repair from an empty timetable on every instance, ``--empty-start``, and
+its continuation, 21.10.2026) go to ``repair/<run>/``, with their console logs
+in ``logs/`` and the tables of ``scripts/analyze_veloxq_repair.py`` in
+``analysis/``. Every call is checked first: its files are there; its run
+record names as input the deposited VeloxQ timetable of the call (for a
+continuation, the repaired timetable it continues; for an empty start, the
+empty timetable, deposited in ``repair/<run>/inputs/``) and the deposited
+instance, by content hash; the verdict is of that timetable and instance; the
+record's cost has the run's options.
 
 Usage:
     python scripts/assemble_veloxq_campaign_deposit.py
@@ -83,13 +86,17 @@ SCRIPTS = (REPO / "scripts" / "verify_veloxq_deposit.py", REPO / "scripts" / "an
            REPO / "scripts" / "run_veloxq_ls_campaign.py", REPO / "scripts" / "run_local_search.py",
            REPO / "scripts" / "analyze_veloxq_repair.py", REPO / "checks" / "two_move_neighbourhood.py")
 # The repair (scripts/run_veloxq_ls_campaign.py): the repair with the MILP's room-set rows on
-# every S3 call, and its continuation of the calls it left invalid with the targeted k = 3 moves.
+# every S3 call, and its continuation of the calls it left invalid with the targeted k = 3 moves;
+# the same from an empty timetable on every instance (the null-seed control), and its continuation.
 REPAIR_SRC = REPO / "artifacts" / "campaign" / "veloxq_ls"
-REPAIR_RUNS = ("S3_room_set_rows", "S3_room_set_rows_k3_targeted")
+REPAIR_RUNS = ("S3_room_set_rows", "S3_room_set_rows_k3_targeted",
+               "S3_room_set_rows_empty_start", "S3_room_set_rows_empty_start_k3_targeted")
 REPAIR_CALL_FILES = ("_postLS.yaml", "_postLS_verdict.json", "_stats.json", "_log.txt", ".log")
 REPAIR_RUN_FILES = ("settings.json", "calls.json", "summary.csv",       # and, where the run has them:
                     "rerun_calls.txt", "stuck_calls.txt", "two_move_neighbourhood.json")
-REPAIR_LOG_FILES = ("veloxq_ls_room_sets_run.log",)
+REPAIR_LOG_FILES = ("veloxq_ls_room_sets_run.log",                     # under artifacts/campaign
+                    "veloxq_ls/S3_room_set_rows_empty_start_driver.log",
+                    "veloxq_ls/S3_room_set_rows_empty_start_k3_targeted_driver.log")
 REPAIR_ANALYSIS_FILES = ("repair_calls.csv", "repair_tiers.csv", "repair_stuck.csv")
 # The code a repair run uses (scripts/run_veloxq_ls_campaign.py, CODE_PATHS).
 REPAIR_CODE = ("src", "cfg", "scripts/run_local_search.py", "scripts/_pipeline_helpers.py",
@@ -221,6 +228,7 @@ def check_repair_run(name: str, settings: List[str], registry: Dict[str, dict]) 
     run = REPAIR_SRC / name
     options = json.loads((run / "settings.json").read_text(encoding="utf-8"))
     setting, source_run = options.get("setting"), options.get("input_run")
+    empty_start = bool(options.get("empty_start"))
     if setting not in settings:
         raise SystemExit(f"repair run {name}: its setting {setting} is not in the deposit")
     room_set_rows = "--room-set-rows" in (options.get("extra") or [])
@@ -235,9 +243,12 @@ def check_repair_run(name: str, settings: List[str], registry: Dict[str, dict]) 
         post = verdict_file.parent / f"{stem}_postLS.yaml"
         md = load_yaml(post).get("metadata") or {}
         source = (REPAIR_SRC / source_run / rep / f"{stem}_postLS.yaml" if source_run
+                  else run / "inputs" / f"{stem}_empty.yaml" if empty_start
                   else SRC / setting / rep / f"{stem}_velox_solution.yaml")
         if (md.get("source_solution_file") or {}).get("sha256") != content_sha256(source):
             raise SystemExit(f"{tag}: the record's input is not {source.relative_to(REPO)}")
+        if empty_start and load_yaml(source).get("lessons"):
+            raise SystemExit(f"{tag}: the empty timetable {source.name} has lessons")
         inst = registry.get((md.get("source_instance_file") or {}).get("sha256"))
         if inst is None or Path(inst["instance"]).stem != stem:
             raise SystemExit(f"{tag}: the record's instance is not the deposited {stem}.yaml")
@@ -252,8 +263,9 @@ def check_repair_run(name: str, settings: List[str], registry: Dict[str, dict]) 
         modified |= set(code.get("modified_tracked_files") or [])
         calls.append({"stem": stem, "tier": stem.split("_")[0], "rep": int(rep.split("_")[1]),
                       "full": (verdict.get("statuses") or {}).get("full") is True})
+    jobs = [(e["stem"], e["rep"]) for e in read_jsonl(SRC / setting / "jobs.jsonl")]
     wanted = set(options["calls"]) if options.get("calls") else \
-        {f"rep_{r}/{s}" for s, r in ((e["stem"], e["rep"]) for e in read_jsonl(SRC / setting / "jobs.jsonl"))}
+        {f"rep_0/{s}" for s, _ in jobs} if empty_start else {f"rep_{r}/{s}" for s, r in jobs}
     if {f"rep_{c['rep']}/{c['stem']}" for c in calls} != wanted:
         raise SystemExit(f"repair run {name}: its calls are not the {len(wanted)} its settings.json names")
     used = [f for f in modified if any(f == p or f.startswith(p + "/") for p in REPAIR_CODE)]
@@ -307,6 +319,8 @@ def repair_command(name: str, options: Dict[str, Any]) -> str:
     cmd = [f"python scripts/run_veloxq_ls_campaign.py --settings {options['setting']}"]
     if options.get("input_run"):
         cmd.append(f"--input-run {options['input_run']}")
+    if options.get("empty_start"):
+        cmd.append("--empty-start")
     cmd.append(f"--output-name {name}")
     if options.get("calls"):
         cmd.append("--calls-file " + ("stuck_calls.txt" if (REPAIR_SRC / name / "stuck_calls.txt").exists()
@@ -340,15 +354,33 @@ def repair_readme(repair: Dict[str, Dict[str, Any]], tag_commit: str, with_table
         lines += ["`S3_room_set_rows` ran in two batches with the same options: first the calls listed in "
                   "`rerun_calls.txt` (those left without a room assignment by a repair without the room-set rows, "
                   "which is not deposited), then the others.", ""]
+    empty = [n for n, rr in repair.items() if rr["options"].get("empty_start")]
+    for name in empty:
+        calls = repair[name]["calls"]
+        valid = ", ".join(f"{sum(c['full'] for c in calls if c['tier'] == t)} / {sum(c['tier'] == t for c in calls)} {t}"
+                          for t in TIERS)
+        lines += [f"`{name}` is the same repair from an empty timetable, once per instance (`--empty-start`, "
+                  "21.10.2026: what the repair reaches without the solver); each call starts from the timetable "
+                  f"without lessons in `inputs/` and is kept as call 0. Valid: {valid} instances."]
+        for cont, rr in repair.items():
+            if rr["options"].get("input_run") == name:
+                done = rr["calls"]
+                lines[-1] += (f" `{cont}` continues the instance it leaves invalid, `{done[0]['stem']}`, which "
+                              f"{'ends valid' if done[0]['full'] else 'stays invalid'}." if len(done) == 1 else
+                              f" `{cont}` continues the {len(done)} instances it leaves invalid; "
+                              f"{sum(c['full'] for c in done)} of them end valid.")
+        lines.append("")
     lines += ["Code: the commit each call ran at, from its run record."]
     for name, rr in repair.items():
-        parts = [f"{c[:7]} ({n} calls)" for c, n in sorted(rr["commits"].items(), key=lambda kv: -kv[1])]
+        parts = [f"{c[:7]} ({n} call{'s' if n != 1 else ''})"
+                 for c, n in sorted(rr["commits"].items(), key=lambda kv: -kv[1])]
         lines.append(f"- `{name}`: {', '.join(parts)}.")
     newest = max((c for rr in repair.values() for c in rr["commits"]),
                  key=lambda c: int(git("rev-list", "--count", c) or 0))
     for c in sorted({c for rr in repair.values() for c in rr["commits"]} - {newest}):
-        files = git("diff", "--name-only", c, newest).splitlines()
-        lines.append(f"- {c[:7]} differs from {newest[:7]} only in {', '.join(f'`{f}`' for f in files) or 'nothing'}.")
+        files = git("diff", "--name-only", c, newest, "--", *REPAIR_CODE).splitlines()
+        lines.append(f"- In the code the repair uses, {c[:7]} differs from {newest[:7]} only in "
+                     f"{', '.join(f'`{f}`' for f in files) or 'nothing'}.")
     code = git("diff", "--name-only", tag_commit, newest, "--", *REPAIR_CODE).splitlines()
     lines.append(f"- In the code the repair uses, {newest[:7]} differs from the tag `{TAG}` in "
                  f"{', '.join(f'`{f}`' for f in code) or 'nothing'}: the room-set rows of the repair and the "
@@ -379,10 +411,18 @@ def repair_readme(repair: Dict[str, Dict[str, Any]], tag_commit: str, with_table
         "repair leaves invalid: for the course short of its minutes, what blocks each of its places, and how "
         "many moves of the missing lesson with at most one other lesson (every such move, not only the repair's "
         "10 candidates) give a valid timetable |",
-        "| `S3_room_set_rows/rerun_calls.txt`, `S3_room_set_rows_k3_targeted/stuck_calls.txt` | the calls of the "
+        "| `S3_room_set_rows/rerun_calls.txt`, `<continuation>/stuck_calls.txt` | the calls of the "
         "first batch; the calls continued |",
+    ]
+    if empty:
+        lines.append("| `" + "`, `".join(f"{n}/inputs/<stem>_empty.yaml" for n in empty) + "` | the timetable "
+                     "without lessons an empty-start call begins from (the input its run record names) |")
+    logs = [n.rsplit("/", 1)[-1] for n in REPAIR_LOG_FILES[1:] if (LOG_DIR / n).exists()]
+    lines += [
         "",
-        "`logs/veloxq_ls_room_sets_run.log` is the console of `S3_room_set_rows`. The tables in `analysis/` "
+        "`logs/veloxq_ls_room_sets_run.log` is the console of `S3_room_set_rows`"
+        + (", " + ", ".join(f"`logs/{n}`" for n in logs) + " those of the empty-start runs" if logs else "")
+        + ". The tables in `analysis/` "
         "(`scripts/analyze_veloxq_repair.py`; PyYAML only): per call (`repair_calls.csv`), per tier "
         "(`repair_tiers.csv`), the calls left invalid (`repair_stuck.csv`). The weighted objective is given only "
         "for timetables that pass every check, with its gap to the proven optimum of the weighted MILP "
@@ -679,6 +719,9 @@ def main() -> None:
             for suffix in REPAIR_CALL_FILES:
                 fname = f"{c['stem']}{suffix}"
                 add(run / f"rep_{c['rep']}" / fname, f"repair/{name}/rep_{c['rep']}/{fname}", {})
+            if rr["options"].get("empty_start"):
+                fname = f"{c['stem']}_empty.yaml"
+                add(run / "inputs" / fname, f"repair/{name}/inputs/{fname}", {})
     if repair:
         for log in [LOG_DIR / n for n in REPAIR_LOG_FILES if (LOG_DIR / n).exists()]:
             data = log.read_bytes()

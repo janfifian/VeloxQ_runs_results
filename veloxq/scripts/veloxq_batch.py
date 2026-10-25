@@ -3,8 +3,8 @@
 batches (13.10.2026).
 
 A setting is one of the penalty scenarios S0-S6 of
-``scripts/run_penalty_scenarios.py`` (encoding and penalties; plan in
-``paper/PLAN_penalty_scenarios.md``). For one setting:
+``scripts/run_penalty_scenarios.py`` (encoding and penalties; described in
+Section 7.6 of the paper and in the deposit's README). For one setting:
 
   prepare  build the setting's QUBO cache of every instance (local, no VeloxQ);
            the cache's metadata also records the setting, the room presolve's
@@ -34,6 +34,14 @@ No default budget: --reps, --num-steps and --num-rep are required. The script
 refuses to submit with uncommitted changes in the code the runs use, and
 checks every instance file against the deposit's registry. The local search on
 the pulled samples is a separate step: ``scripts/run_veloxq_ls_campaign.py``.
+
+Other instances (19.10.2026): --instance-files takes instance files instead of
+the synthetic suite (each must be a certified entry of the registry, e.g.
+``artifacts/3studies/3_studies_instance.yaml``), and --out-name puts the outputs
+in ``artifacts/campaign/<out-name>/<setting>/`` instead of
+``artifacts/campaign/veloxq/``, so the synthetic campaign's folders stay as
+deposited. Every command on those outputs (pull, status) takes the same
+--out-name.
 
 Examples:
     python scripts/veloxq_batch.py run --settings S0 S3 --reps 3 --num-steps 10000 --num-rep 4096 --wait 60
@@ -315,8 +323,8 @@ def pull_once(setting: str) -> Dict[str, int]:
             prefix.parent.mkdir(parents=True, exist_ok=True)
             with open(f"{prefix}.log", "w", encoding="utf-8") as log:
                 rc = subprocess.run([sys.executable, str(Path(__file__)), "_process", "--setting", setting,
-                                     "--job-id", e["job_id"]], cwd=REPO, stdout=log, stderr=subprocess.STDOUT,
-                                    env={**os.environ, "PYTHONIOENCODING": "utf-8"}).returncode
+                                     "--job-id", e["job_id"], "--out-name", OUT_ROOT.name], cwd=REPO, stdout=log,
+                                    stderr=subprocess.STDOUT, env={**os.environ, "PYTHONIOENCODING": "utf-8"}).returncode
             if rc == 0 and solution_path(e).exists():
                 counts["processed_now"] += 1
                 counts["saved"] += 1
@@ -469,14 +477,28 @@ def main() -> int:
                     help="(pull, run) seconds between pulls until no job is pending or running")
     ap.add_argument("--tiers", nargs="*")
     ap.add_argument("--only", nargs="*", help="instance names")
+    ap.add_argument("--instance-files", nargs="+", type=Path,
+                    help="instance files instead of the synthetic suite (certified entries of the registry)")
+    ap.add_argument("--out-name", default="veloxq",
+                    help="outputs in artifacts/campaign/<out-name>/<setting>/ (default: veloxq)")
     ap.add_argument("--allow-uncommitted", action="store_true", help="(smoke tests only)")
     args = ap.parse_args()
 
+    global OUT_ROOT
+    OUT_ROOT = REPO / "artifacts" / "campaign" / args.out_name
     if args.command == "_process":
         return process(args.setting, args.job_id)
     if not args.settings:
         ap.error("--settings is required")
-    files = instances(INSTANCES, args.tiers, args.only)
+    if args.instance_files:
+        if args.out_name == "veloxq":
+            ap.error("--instance-files needs its own --out-name (artifacts/campaign/veloxq holds the synthetic suite)")
+        files = [p if p.is_absolute() else REPO / p for p in args.instance_files]
+        missing = [str(p) for p in files if not p.is_file()]
+        if missing:
+            raise SystemExit("no such instance file: " + ", ".join(missing))
+    else:
+        files = instances(INSTANCES, args.tiers, args.only)
     if not files:
         raise SystemExit("no instance selected")
     if args.command in ("submit", "run"):

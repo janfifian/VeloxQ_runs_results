@@ -111,14 +111,24 @@ The repair of the paper (H1, then H2 with k = 1 and 2 and 10 candidate places pe
 
     python scripts/run_veloxq_ls_campaign.py --settings S3 --input-run S3_room_set_rows --output-name S3_room_set_rows_k3_targeted --calls-file stuck_calls.txt --ks 3 --candidate-shortlist-k 10 --max-outer-passes none --max-wall-seconds-per-pass none --extra --room-set-rows --targeted-k-opt-only
 
+    python scripts/run_veloxq_ls_campaign.py --settings S3 --empty-start --output-name S3_room_set_rows_empty_start --ks 1 2 --candidate-shortlist-k 10 --max-outer-passes none --max-wall-seconds-per-pass none --extra --room-set-rows
+
+    python scripts/run_veloxq_ls_campaign.py --settings S3 --input-run S3_room_set_rows_empty_start --output-name S3_room_set_rows_empty_start_k3_targeted --calls-file stuck_calls.txt --ks 3 --candidate-shortlist-k 10 --max-outer-passes none --max-wall-seconds-per-pass none --extra --room-set-rows --targeted-k-opt-only
+
 `S3_room_set_rows` ran in two batches with the same options: first the calls listed in `rerun_calls.txt` (those left without a room assignment by a repair without the room-set rows, which is not deposited), then the others.
+
+`S3_room_set_rows_empty_start` is the same repair from an empty timetable, once per instance (`--empty-start`, 21.10.2026: what the repair reaches without the solver); each call starts from the timetable without lessons in `inputs/` and is kept as call 0. Valid: 20 / 20 easy, 15 / 15 medium, 20 / 20 hard, 8 / 9 extreme instances. `S3_room_set_rows_empty_start_k3_targeted` continues the instance it leaves invalid, `extreme_014_seed_1140`, which stays invalid.
 
 Code: the commit each call ran at, from its run record.
 - `S3_room_set_rows`: 2ebf72e (141 calls), 539da11 (51 calls).
 - `S3_room_set_rows_k3_targeted`: 84b7eea (4 calls).
-- 2ebf72e differs from 84b7eea only in `checks/README.md`, `checks/two_move_neighbourhood.py`, `paper/RECENZJA.md`, `scripts/run_veloxq_ls_campaign.py`.
-- 539da11 differs from 84b7eea only in `checks/README.md`, `checks/two_move_neighbourhood.py`, `paper/RECENZJA.md`, `scripts/run_veloxq_ls_campaign.py`.
-- In the code the repair uses, 84b7eea differs from the tag `campaign-2026-10-qubo` in `scripts/run_local_search.py`, `scripts/run_veloxq_ls_campaign.py`, `src/etpmachine/ETPMachine_LocalSearch.py`, `src/etpmachine/ETPMachine_Schedule.py`: the room-set rows of the repair and the driver's options.
+- `S3_room_set_rows_empty_start`: 5273311 (64 calls).
+- `S3_room_set_rows_empty_start_k3_targeted`: 8827d09 (1 call).
+- In the code the repair uses, 2ebf72e differs from 8827d09 only in `scripts/run_veloxq_ls_campaign.py`.
+- In the code the repair uses, 5273311 differs from 8827d09 only in `scripts/run_veloxq_ls_campaign.py`.
+- In the code the repair uses, 539da11 differs from 8827d09 only in `scripts/run_veloxq_ls_campaign.py`.
+- In the code the repair uses, 84b7eea differs from 8827d09 only in `scripts/run_veloxq_ls_campaign.py`.
+- In the code the repair uses, 8827d09 differs from the tag `campaign-2026-10-qubo` in `scripts/run_local_search.py`, `scripts/run_veloxq_ls_campaign.py`, `src/etpmachine/ETPMachine_LocalSearch.py`, `src/etpmachine/ETPMachine_Schedule.py`: the room-set rows of the repair and the driver's options.
 - The records mark the checkout as modified; the files they list (`notebooks/velox_vs_gurobi_comparison.ipynb`, `scripts/LATO_instructions.txt`) are not used by the runs.
 
 Files, in `repair/<run>/` (`<stem>` the instance, `<r>` the call):
@@ -132,9 +142,10 @@ Files, in `repair/<run>/` (`<stem>` the instance, `<r>` the call):
 | `rep_<r>/<stem>_stats.json` | every cycle of the repair: the cost and the violations by rule before and after, seconds |
 | `rep_<r>/<stem>_log.txt`, `rep_<r>/<stem>.log` | the repair's log; the process log (repair and verification) |
 | `S3_room_set_rows/two_move_neighbourhood.json` | `checks/two_move_neighbourhood.py` on the calls the repair leaves invalid: for the course short of its minutes, what blocks each of its places, and how many moves of the missing lesson with at most one other lesson (every such move, not only the repair's 10 candidates) give a valid timetable |
-| `S3_room_set_rows/rerun_calls.txt`, `S3_room_set_rows_k3_targeted/stuck_calls.txt` | the calls of the first batch; the calls continued |
+| `S3_room_set_rows/rerun_calls.txt`, `<continuation>/stuck_calls.txt` | the calls of the first batch; the calls continued |
+| `S3_room_set_rows_empty_start/inputs/<stem>_empty.yaml` | the timetable without lessons an empty-start call begins from (the input its run record names) |
 
-`logs/veloxq_ls_room_sets_run.log` is the console of `S3_room_set_rows`. The tables in `analysis/` (`scripts/analyze_veloxq_repair.py`; PyYAML only): per call (`repair_calls.csv`), per tier (`repair_tiers.csv`), the calls left invalid (`repair_stuck.csv`). The weighted objective is given only for timetables that pass every check, with its gap to the proven optimum of the weighted MILP (`E_opt` of `analysis/energy_separation.csv`).
+`logs/veloxq_ls_room_sets_run.log` is the console of `S3_room_set_rows`, `logs/S3_room_set_rows_empty_start_driver.log`, `logs/S3_room_set_rows_empty_start_k3_targeted_driver.log` those of the empty-start runs. The tables in `analysis/` (`scripts/analyze_veloxq_repair.py`; PyYAML only): per call (`repair_calls.csv`), per tier (`repair_tiers.csv`), the calls left invalid (`repair_stuck.csv`). The weighted objective is given only for timetables that pass every check, with its gap to the proven optimum of the weighted MILP (`E_opt` of `analysis/energy_separation.csv`).
 
 | tier | calls valid | instances valid | at the MILP optimum | gap median (max), % | best call per instance, median (max), % | search seconds median (max) |
 |---|---:|---:|---:|---:|---:|---:|

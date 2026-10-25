@@ -30,6 +30,20 @@ A rerun of some calls with other repair options goes to its own folder:
 timetables: each call starts from that run's repaired timetable
 (``veloxq_ls/<input run>/rep_<r>/<instance>_postLS.yaml``).
 
+Other VeloxQ runs (19.10.2026): --in-name names the folder under
+artifacts/campaign that ``veloxq_batch.py --out-name`` wrote (default
+``veloxq``); the outputs then go to ``artifacts/campaign/<in name>_ls``.
+--instance-files gives the instance files of instances outside
+repository_ready/instances/synthetic (e.g. 3_studies); such an instance has
+the tier ``production``.
+
+--empty-start runs the same repair from an empty timetable instead, once per
+instance of the setting's saved timetables (a control: what the repair reaches
+without the solver). The empty timetable is written to
+``<output>/inputs/<instance>_empty.yaml`` and the outputs to
+``<output>/rep_0/``; --output-name is required. --input-run continues such a
+run too (21.10.2026): its calls are ``rep_0/<instance>``.
+
 Example:
     python scripts/run_veloxq_ls_campaign.py --settings S0 --ks 1 2 --candidate-shortlist-k 10 \\
         --max-outer-passes none --max-wall-seconds-per-pass none
@@ -38,6 +52,15 @@ Example:
         --max-wall-seconds-per-pass none --extra --room-set-rows
     python scripts/run_veloxq_ls_campaign.py --settings S3 --input-run S3_room_set_rows \\
         --output-name S3_room_set_rows_k3_targeted --calls-file stuck.txt --ks 3 \\
+        --candidate-shortlist-k 10 --max-outer-passes none --max-wall-seconds-per-pass none \\
+        --extra --room-set-rows --targeted-k-opt-only
+    python scripts/run_veloxq_ls_campaign.py --in-name veloxq_3studies --settings S3 \\
+        --instance-files artifacts/3studies/3_studies_instance.yaml --output-name S3_room_set_rows \\
+        --ks 1 2 --candidate-shortlist-k 10 --max-outer-passes none --max-wall-seconds-per-pass none \\
+        --extra --room-set-rows
+    (the same with --empty-start --output-name S3_room_set_rows_empty_start)
+    python scripts/run_veloxq_ls_campaign.py --settings S3 --input-run S3_room_set_rows_empty_start \\
+        --output-name S3_room_set_rows_empty_start_k3_targeted --calls-file stuck.txt --ks 3 \\
         --candidate-shortlist-k 10 --max-outer-passes none --max-wall-seconds-per-pass none \\
         --extra --room-set-rows --targeted-k-opt-only
 """
@@ -62,10 +85,13 @@ for _s in (sys.stdout, sys.stderr):
     except Exception:
         pass
 
-IN_ROOT = REPO / "artifacts" / "campaign" / "veloxq"
-OUT_ROOT = REPO / "artifacts" / "campaign" / "veloxq_ls"
+CAMPAIGN = REPO / "artifacts" / "campaign"
+IN_ROOT = CAMPAIGN / "veloxq"            # --in-name
+OUT_ROOT = CAMPAIGN / "veloxq_ls"        # <in name>_ls
 INSTANCES = REPO / "repository_ready" / "instances" / "synthetic"
+INSTANCE_FILES: Dict[str, Path] = {}     # --instance-files, by instance name
 TIER_ORDER = ("easy", "medium", "hard", "extreme")
+PRODUCTION = "production"                # the tier of any other instance
 CODE_PATHS = ("src", "cfg", "scripts/run_local_search.py", "scripts/_pipeline_helpers.py",
               "scripts/run_veloxq_ls_campaign.py")
 
@@ -76,31 +102,68 @@ def uncommitted_code() -> List[str]:
     return [line[3:] for line in out.splitlines() if line.strip()]
 
 
+def tier_of(stem: str) -> str:
+    head = stem.split("_")[0]
+    return head if head in TIER_ORDER else PRODUCTION
+
+
+def started_empty(run: str) -> bool:
+    """Whether an earlier repair run started from empty timetables (--empty-start)."""
+    settings = OUT_ROOT / run / "settings.json"
+    return settings.exists() and bool(json.loads(settings.read_text(encoding="utf-8")).get("empty_start"))
+
+
 def inputs(setting: str, tiers: Optional[List[str]], only: Optional[List[str]],
            out_dir: Path, calls: Optional[List[str]] = None,
-           input_run: Optional[str] = None) -> List[Dict[str, Any]]:
+           input_run: Optional[str] = None, empty_start: bool = False) -> List[Dict[str, Any]]:
     """Every saved VeloxQ timetable of the setting (or the listed calls), in tier order;
-    with ``input_run``, each call starts from that run's repaired timetable instead."""
-    out = []
+    with ``input_run``, each call starts from that run's repaired timetable instead;
+    with ``empty_start``, one call per instance, from an empty timetable (rep 0), and
+    the same when ``input_run`` is such a run (each call continues its rep 0)."""
+    per_instance = empty_start or (input_run is not None and started_empty(input_run))
+    out, seen = [], set()
     for sol in (IN_ROOT / setting).glob("rep_*/*_velox_solution.yaml"):
         stem = sol.name[: -len("_velox_solution.yaml")]
-        tier = stem.split("_")[0]
+        tier = tier_of(stem)
         if tiers and tier not in tiers:
             continue
         if only and stem not in only:
             continue
-        if calls is not None and f"{sol.parent.name}/{stem}" not in calls:
+        key = f"rep_0/{stem}" if per_instance else f"{sol.parent.name}/{stem}"
+        if calls is not None and key not in calls:
             continue
-        rep = int(sol.parent.name.split("_")[1])
+        rep = 0 if per_instance else int(sol.parent.name.split("_")[1])
+        if per_instance:
+            if stem in seen:
+                continue
+            seen.add(stem)
+        if empty_start:
+            sol = out_dir / "inputs" / f"{stem}_empty.yaml"
         if input_run is not None:
             sol = OUT_ROOT / input_run / f"rep_{rep}" / f"{stem}_postLS.yaml"
             if not sol.exists():
                 raise SystemExit(f"{input_run}: no repaired timetable for rep_{rep}/{stem}")
         out.append({"setting": setting, "stem": stem, "tier": tier, "rep": rep, "solution": sol,
-                    "instance": INSTANCES / f"{stem}.yaml",
+                    "instance": INSTANCE_FILES.get(stem, INSTANCES / f"{stem}.yaml"),
                     "cache": IN_ROOT / setting / "caches" / f"{stem}.qubo_cache.h5",
                     "prefix": out_dir / f"rep_{rep}" / stem})
-    return sorted(out, key=lambda e: (TIER_ORDER.index(e["tier"]), e["stem"], e["rep"]))
+    order = TIER_ORDER + (PRODUCTION,)
+    return sorted(out, key=lambda e: (order.index(e["tier"]), e["stem"], e["rep"]))
+
+
+def write_empty_start(e: Dict[str, Any]) -> None:
+    """The empty timetable an --empty-start call begins from (kept if it exists)."""
+    from _pipeline_helpers import setup_environment
+    setup_environment(REPO)
+    from etpmachine.ETPMachine_SolutionIO import TimetableSolution, save_solution_yaml
+    from etpmachine.utils import run_record
+    if e["solution"].exists():
+        return
+    save_solution_yaml(e["solution"], TimetableSolution(lessons=[], room_assignments=[], metadata={
+        "empty_start": True,
+        "note": "no lessons: the start of the empty-start control of run_veloxq_ls_campaign.py",
+        "instance_file": run_record.file_identity(e["instance"]),
+    }))
 
 
 def read_calls(path: Optional[str]) -> Optional[List[str]]:
@@ -244,6 +307,13 @@ def main() -> int:
                                           "(default: the setting's name; one setting only)")
     ap.add_argument("--input-run", help="start each call from this earlier run's repaired timetable "
                                         "(a folder under artifacts/campaign/veloxq_ls; one setting only)")
+    ap.add_argument("--in-name", default="veloxq",
+                    help="the VeloxQ run folder under artifacts/campaign (veloxq_batch.py --out-name); "
+                         "outputs go to artifacts/campaign/<in name>_ls")
+    ap.add_argument("--instance-files", nargs="+", type=Path, default=[],
+                    help="instance files outside repository_ready/instances/synthetic, e.g. 3_studies")
+    ap.add_argument("--empty-start", action="store_true",
+                    help="start each instance once from an empty timetable instead (needs --output-name)")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--summarize-only", action="store_true")
     ap.add_argument("--allow-uncommitted", action="store_true", help="(smoke tests only)")
@@ -257,14 +327,28 @@ def main() -> int:
         ap.error("--output-name and --input-run take one setting")
     if args.input_run and (args.output_name or args.settings[0]) == args.input_run:
         ap.error("--input-run must differ from the output folder")
+    if args.empty_start and (not args.output_name or args.input_run or args.calls_file):
+        ap.error("--empty-start needs --output-name and takes neither --input-run nor --calls-file")
+    global IN_ROOT, OUT_ROOT
+    IN_ROOT, OUT_ROOT = CAMPAIGN / args.in_name, CAMPAIGN / f"{args.in_name}_ls"
+    for f in args.instance_files:
+        INSTANCE_FILES[f.stem] = f if f.is_absolute() else REPO / f
     calls = read_calls(args.calls_file)
 
     def out_dir(setting: str) -> Path:
         return OUT_ROOT / (args.output_name or setting)
 
+    def entries_of(setting: str) -> List[Dict[str, Any]]:
+        found = inputs(setting, args.tiers, args.only, out_dir(setting), calls, args.input_run,
+                       args.empty_start)
+        missing = sorted({str(e["instance"]) for e in found if not e["instance"].exists()})
+        if missing:
+            raise SystemExit("no instance file (see --instance-files): " + ", ".join(missing))
+        return found
+
     if args.summarize_only:
         for s in args.settings:
-            n = write_summary(out_dir(s), inputs(s, args.tiers, args.only, out_dir(s), calls, args.input_run))
+            n = write_summary(out_dir(s), entries_of(s))
             print(f"[{s}] summary.csv: {n} runs")
         return 0
     if None in (args.ks, args.candidate_shortlist_k, args.max_outer_passes, args.max_wall_seconds_per_pass):
@@ -275,12 +359,13 @@ def main() -> int:
         raise SystemExit("uncommitted changes in the code the runs use: " + ", ".join(dirty))
     for setting in args.settings:
         out = out_dir(setting)
-        entries = inputs(setting, args.tiers, args.only, out, calls, args.input_run)
+        entries = entries_of(setting)
         if calls is not None and len(entries) != len(calls):
             found = {f"rep_{e['rep']}/{e['stem']}" for e in entries}
             raise SystemExit(f"{args.calls_file}: no VeloxQ timetable of {setting} for "
                              + ", ".join(sorted(set(calls) - found)))
-        print(f"[{setting}] {len(entries)} VeloxQ timetables to repair -> {out}", flush=True)
+        start = "empty timetables" if args.empty_start else "VeloxQ timetables"
+        print(f"[{setting}] {len(entries)} {start} to repair -> {out}", flush=True)
         if args.dry_run:
             if entries:
                 print("  first command: " + " ".join(command(entries[0], args)))
@@ -290,12 +375,15 @@ def main() -> int:
             {"setting": setting, "ks": args.ks, "candidate_shortlist_k": args.candidate_shortlist_k,
              "max_outer_passes": args.max_outer_passes,
              "max_wall_seconds_per_pass": args.max_wall_seconds_per_pass, "extra": args.extra or [],
-             "calls": calls, "input_run": args.input_run},
+             "calls": calls, "input_run": args.input_run, "in_name": args.in_name,
+             "instance_files": [str(f) for f in args.instance_files], "empty_start": args.empty_start},
             indent=1), encoding="utf-8")
         for k, e in enumerate(entries, 1):
             verdict = Path(f"{e['prefix']}_postLS_verdict.json")
             if verdict.exists():
                 continue
+            if args.empty_start:
+                write_empty_start(e)
             e["prefix"].parent.mkdir(parents=True, exist_ok=True)
             t0 = time.time()
             with open(f"{e['prefix']}.log", "w", encoding="utf-8") as log:
