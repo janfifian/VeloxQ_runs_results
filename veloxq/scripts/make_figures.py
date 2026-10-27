@@ -9,7 +9,6 @@ Every number that appears in a generated float comes from a CSV under
 
 Outputs (all written next to this file):
 
-  fig_effort_sweep.pdf        VeloxQ-only feasibility vs solver effort
   fig_frustration.pdf         corrected balance / cycle-frustration profile
   tab_frustration.tex         corrected structural profile (per-tier medians)
   tab_soft_terms.tex          repaired S3 timetables against the MILP optima, term by term
@@ -24,7 +23,6 @@ Outputs (all written next to this file):
                               (alone: make_figures.py --only veloxq-settings)
 
 Consistency guards (the script aborts rather than emitting a stale float):
-  * instance sets must agree across sweep configurations;
   * per-tier counts must match the declared manifest;
   * no two columns describing different metrics may be numerically identical.
 
@@ -145,95 +143,6 @@ def row_decimals(vals):
 
 
 # ===================================================================== 1
-def load_sweep():
-    """VeloxQ parameter sweep -> {(steps, reps): {instance: row}}."""
-    files = sorted((ART / "velox_param_sweep").glob("velox_run_nsteps*_nreps*.csv"))
-    if not files:
-        die("no velox_param_sweep CSVs found")
-    grid = {}
-    for f in files:
-        stem = f.stem
-        steps = int(stem.split("nsteps")[1].split("_")[0])
-        reps = int(stem.split("nreps")[1])
-        grid[(steps, reps)] = {r["preset"]: r for r in read_csv(f)}
-
-    # Guard: use only the instance set common to every configuration, and
-    # say out loud what was dropped. Raw per-file sums are not comparable.
-    common = set.intersection(*(set(d) for d in grid.values()))
-    allnames = set.union(*(set(d) for d in grid.values()))
-    dropped = sorted(allnames - common)
-    if dropped:
-        print(f"[make_figures] sweep: {len(dropped)} instance(s) absent from at "
-              f"least one configuration, excluded from all curves: {dropped}")
-    # Restrict to the 64-instance paper suite present in generated_instances/
-    suite = {p.stem for p in (ART / "generated_instances").glob("*.yaml")}
-    if suite:
-        common &= suite
-    counts = collections.Counter(tier_of(n) for n in common)
-    print(f"[make_figures] sweep common instance set: {len(common)} "
-          f"({dict(counts)})")
-    return grid, sorted(common)
-
-
-def fig_effort_sweep(grid, names):
-    steps_vals = sorted({s for s, _ in grid})
-    reps_vals = sorted({r for _, r in grid})
-    n = len(names)
-
-    fig, axes = plt.subplots(1, 2, figsize=(TEXTWIDTH_IN, 2.35),
-                             gridspec_kw={"width_ratios": [1.15, 1]})
-
-    # -- (a) feasibility vs effort, one curve per num_rep
-    ax = axes[0]
-    shades = [OKABE["sky"], OKABE["blue"], OKABE["purple"], OKABE["red"]]
-    for k, reps in enumerate(reps_vals):
-        ys = []
-        for s in steps_vals:
-            d = grid.get((s, reps))
-            ys.append(100.0 * sum(
-                1 for nm in names if d[nm]["verifier_feasible"] == "True") / n)
-        ax.plot(steps_vals, ys, marker="o", ms=3.2, lw=1.3,
-                color=shades[k % len(shades)], label=f"{reps}")
-    ax.set_xscale("log")
-    ax.set_xlabel(r"solver effort $\mathtt{num\_steps}$ (log)")
-    ax.set_ylabel("instances feasible [%]")
-    ax.set_ylim(-2, 52)
-    ax.set_title("(a) solver-only feasibility vs effort", loc="left")
-    leg = ax.legend(title=r"$\mathtt{num\_rep}$", frameon=False,
-                    loc="upper left", handlelength=1.4, labelspacing=0.25,
-                    borderpad=0.2)
-    leg.get_title().set_fontsize(7.5)
-
-    # -- (b) per-tier feasibility at the configuration used in the paper
-    ax = axes[1]
-    ref = (5000, 4096)
-    d = grid[ref]
-    tb = collections.defaultdict(lambda: [0, 0])
-    for nm in names:
-        t = tier_of(nm)
-        tb[t][1] += 1
-        if d[nm]["verifier_feasible"] == "True":
-            tb[t][0] += 1
-    xs = np.arange(len(TIERS))
-    pct = [100.0 * tb[t][0] / tb[t][1] if tb[t][1] else 0 for t in TIERS]
-    bars = ax.bar(xs, pct, width=0.62, color=OKABE["blue"], edgecolor="none")
-    for x, t, p in zip(xs, TIERS, pct):
-        ax.text(x, p + 2.5, f"{tb[t][0]}/{tb[t][1]}", ha="center",
-                va="bottom", fontsize=7.5)
-    ax.set_xticks(xs)
-    ax.set_xticklabels(TIERS)
-    ax.set_ylim(0, 108)
-    ax.set_ylabel("instances feasible [%]")
-    ax.set_title(r"(b) per tier at $(\mathtt{5000},\mathtt{4096})$", loc="left")
-
-    fig.tight_layout(pad=0.3, w_pad=1.4)
-    fig.savefig(HERE / "fig_effort_sweep.pdf")
-    plt.close(fig)
-    print("[make_figures] wrote fig_effort_sweep.pdf")
-    return {t: tuple(tb[t]) for t in TIERS}, steps_vals, reps_vals
-
-
-# ===================================================================== 2
 def fig_and_tab_frustration(rows, rows_s3, prod):
     """``rows`` and ``rows_s3``: the structural profile of the S0 and the S3
     matrices of the 64 synthetic instances; ``prod``: the 3_studies matrix of
@@ -537,7 +446,9 @@ def tab_soft_terms() -> dict:
         return terms
 
     optimum = {}
-    files = sorted(MILP_DEPOSIT.glob("*/*_MIP_solution.yaml")) + \
+    # The tier folders and the superseded runs; extreme_no_limit/ holds a run stopped before a proof.
+    files = sorted(p for tier in ("easy", "medium", "hard", "extreme")
+                   for p in (MILP_DEPOSIT / tier).glob("*_MIP_solution.yaml")) + \
         sorted((MILP_DEPOSIT / "superseded").rglob("*_MIP_solution.yaml"))
     for f in files:
         with open(f, encoding="utf-8") as fh:
@@ -655,9 +566,6 @@ def tab_soft_terms() -> dict:
 
 # ===================================================================== main
 def main() -> int:
-    grid, names = load_sweep()
-    tier_feas, steps_vals, reps_vals = fig_effort_sweep(grid, names)
-
     frows = read_csv(ART / "qubo_frustration_paper_synth.csv")
     frows_s3 = read_csv(ART / "qubo_frustration_paper_synth_S3.csv")
     prod = read_csv(ART / "frustration_3studies_S3.csv")[0]
@@ -668,44 +576,8 @@ def main() -> int:
                                read_csv(ART / "frustration_convention_synth_S3.csv"), prod)
 
     # ---- in-text macros so prose numbers cannot drift from the floats
-    ref = (5000, 4096)
-    d = grid[ref]
-    tot_feas = sum(1 for nm in names if d[nm]["verifier_feasible"] == "True")
-    best = max(
-        (sum(1 for nm in names if grid[k][nm]["verifier_feasible"] == "True"), k)
-        for k in grid if all(nm in grid[k] for nm in names))
     M = [
         r"%% Auto-generated by paper/figures/make_figures.py -- do not edit.",
-        rf"\newcommand{{\SweepNInstances}}{{{len(names)}}}",
-        rf"\newcommand{{\SweepNConfigs}}{{{len(grid)}}}",
-        rf"\newcommand{{\SweepStepsMin}}{{{min(steps_vals)}}}",
-        rf"\newcommand{{\SweepStepsMax}}{{{max(steps_vals)}}}",
-        rf"\newcommand{{\SweepRepsMin}}{{{min(reps_vals)}}}",
-        rf"\newcommand{{\SweepRepsMax}}{{{max(reps_vals)}}}",
-        rf"\newcommand{{\AnnealerFeasRef}}{{{tot_feas}}}",
-        rf"\newcommand{{\AnnealerFeasBest}}{{{best[0]}}}",
-        rf"\newcommand{{\AnnealerFeasBestCfg}}{{({best[1][0]},{best[1][1]})}}",
-    ]
-    for t in TIERS:
-        k, n = tier_feas[t]
-        M.append(rf"\newcommand{{\AnnealerFeas{t.capitalize()}}}{{{k}/{n}}}")
-    # Failure mode of the raw synthetic samples at the reference configuration.
-    # The prose says every course's minutes are scheduled and every remaining
-    # violation is a lecturer or student-group clash; fail loudly if not.
-    clash_cols = ("viol_PR3_PR4_lecturer_overlap", "viol_PR3_PR4_group_overlap")
-    for nm in names:
-        v = int(float(d[nm]["verifier_n_violations"]))
-        c = sum(int(float(d[nm][col])) for col in clash_cols)
-        if int(float(d[nm]["viol_PR1_course_minutes"])) != 0 or v != c:
-            die(f"raw sample of {nm} at {ref} is not clash-only (V={v}, clashes={c})")
-    for t in ("hard", "extreme"):
-        vs = [int(float(d[nm]["verifier_n_violations"])) for nm in names
-              if tier_of(nm) == t]
-        med = stats.median(vs)
-        if med != int(med):
-            die(f"median raw V on {t} tier is not an integer: {med}")
-        M.append(rf"\newcommand{{\RawClash{t.capitalize()}}}{{{int(med)}}}")
-    M += [
         rf"\newcommand{{\FrustBalanced}}{{{fr['n_balanced']}}}",
         rf"\newcommand{{\FrustTotal}}{{{fr['n_total']}}}",
         rf"\newcommand{{\FrustRFCLo}}{{{fr['rfc_lo']:.2f}}}",
@@ -724,27 +596,19 @@ def main() -> int:
     ]
     # Soft-cost quality of the repaired timetables against the MILP optima.
     M += [rf"\newcommand{{\{k}}}{{{v}}}" for k, v in tab_soft_terms().items()]
-    # Main benchmark run (seeds handed to the repair stage), kept apart from the
-    # effort-sweep numbers above.
-    n_main, pre_main, post_main = fig_synth_feasibility()
-    M.append(rf"\newcommand{{\MainFeasPre}}{{{sum(pre_main.values())}}}")
-    M.append(rf"\newcommand{{\MainFeasPost}}{{{sum(post_main.values())}}}")
-    for t in TIERS:
-        M.append(rf"\newcommand{{\MainFeas{t.capitalize()}}}{{{pre_main[t]}/{n_main[t]}}}")
     M += [rf"\newcommand{{\{k}}}{{{v}}}" for k, v in tab_veloxq_3studies().items()]
     # Sections 4 and 6: matrices of the VeloxQ runs, Table 2 and the census.
     census = read_csv(ART / "qubo_family_census.csv")
     for numbers in (tab_penalty_sufficiency(), section4_numbers(), census_numbers(census),
                     milp_campaign_numbers(), prod_presolve_numbers(),
-                    prod_pr5_numbers(), qpu_numbers(), margin_numbers()):
+                    prod_pr5_numbers(), qpu_numbers(), margin_numbers(), prod_milp_numbers(),
+                    milp_no_limit_numbers()):
         M += [rf"\newcommand{{\{k}}}{{{v}}}" for k, v in numbers.items()]
     (HERE / "generated_numbers.tex").write_text("\n".join(M) + "\n")
     fig_family_census(census)
     fig_sparsity()
     tab_lambdas()
     tab_veloxq_settings()
-    fig_vqls_vs_milp()
-    fig_lato_time_of_day()
     print("[make_figures] wrote generated_numbers.tex")
     print("[make_figures] done.")
     return 0
@@ -1060,11 +924,6 @@ def milp_campaign_numbers() -> dict:
     longest, tier = max(proof)
     if tier != "hard":
         die("MILP: the text says the longest proof is on the hard tier")
-    # The text: the run on one more hard instance was interrupted by the pause
-    # (its log is kept in the deposit), and the other hard instances never ran.
-    interrupted = sorted((MILP_DEPOSIT / "hard").glob("*.interrupted-*.log"))
-    if len(interrupted) != 1:
-        die(f"MILP: {len(interrupted)} interrupted hard runs; the text says one")
     # The same paragraph counts the solved instances with \VqSepInstances and
     # \VqSepHard (the energy check), so both must cover the instances solved here.
     sep = {(r["instance"], r["tier"]) for r in read_csv(VELOXQ / "analysis" / "energy_separation.csv")}
@@ -1073,7 +932,7 @@ def milp_campaign_numbers() -> dict:
     return {
         "MilpThreads": threads,
         "MilpGurobi": gurobi,
-        "MilpNotRunHard": str(MANIFEST["hard"] - done["hard"] - len(interrupted)),
+        "MilpNotRunHard": str(MANIFEST["hard"] - done["hard"]),
         "MilpNotRunExtreme": str(MANIFEST["extreme"] - done["extreme"]),
         "MilpFirstMaxSec": f"{math.ceil(10 * max(first)) / 10:.1f}",   # "at most": round up
         "MilpProofMaxHours": fmt(longest / 3600, 1),
@@ -2141,149 +2000,118 @@ def tab_veloxq_3studies():
     }
 
 
-# ===================================================================== 6
-# Re-drawn inherited figures (vector, house style). Each reads its numbers
-# from the single place they already live, never from a new transcription.
-
-def fig_synth_feasibility():
-    """Pre/post-LS feasibility and violations of the MAIN benchmark run,
-    read per instance from the repair stage's own summary."""
-    rows = read_csv(ART / "local_search_results" / "synthetic_demo" / "sweep_summary.csv")
-    T = by_tier(rows, key="instance_stem")
-    for t in TIERS:
-        if len(T[t]) != MANIFEST[t]:
-            die(f"synth feasibility: tier {t} has {len(T[t])} rows, manifest {MANIFEST[t]}")
-    n = {t: len(T[t]) for t in TIERS}
-    pre_f = {t: sum(int(r["pre_violations"]) == 0 for r in T[t]) for t in TIERS}
-    post_f = {t: sum(int(r["post_violations"]) == 0 for r in T[t]) for t in TIERS}
-    pre_v = {t: sum(int(r["pre_violations"]) for r in T[t]) for t in TIERS}
-    post_v = {t: sum(int(r["post_violations"]) for r in T[t]) for t in TIERS}
-    fig, axes = plt.subplots(1, 2, figsize=(TEXTWIDTH_IN, 2.2))
-    xs = np.arange(len(TIERS)); w = 0.36
-    c_pre, c_post = OKABE["grey"], OKABE["blue"]
-
-    ax = axes[0]
-    for off, d, c, lab, hatch in [(-w/2, pre_f, c_pre, "solver only", "//"),
-                                  (w/2, post_f, c_post, "after repair", None)]:
-        vals = [100.0 * d[t] / n[t] for t in TIERS]
-        ax.bar(xs + off, vals, w, color=c, edgecolor="white", linewidth=0.5,
-               hatch=hatch, label=lab)
-        for x, t, v in zip(xs + off, TIERS, vals):
-            ax.text(x, v + 2, f"{d[t]}", ha="center", va="bottom", fontsize=6.8)
-    ax.set_xticks(xs); ax.set_xticklabels(TIERS)
-    ax.set_ylim(0, 115); ax.set_ylabel("instances feasible [%]")
-    ax.set_title("(a) feasibility", loc="left")
+MILP_3STUDIES = "campaign/milp_3studies"   # under artifacts/: the cold MILP of 21.10.2026
+MILP_NO_LIMIT = "campaign/milp_extreme_no_limit"   # under artifacts/: one extreme instance, 22-25.10.2026
 
 
-    ax = axes[1]
-    for off, d, c, hatch in [(-w/2, pre_v, c_pre, "//"), (w/2, post_v, c_post, None)]:
-        vals = [d[t] for t in TIERS]
-        ax.bar(xs + off, vals, w, color=c, edgecolor="white", linewidth=0.5, hatch=hatch)
-        for x, v in zip(xs + off, vals):
-            ax.text(x, max(v, 0.0) * 1.15 + (0.06 if v == 0 else 0), f"{v}",
-                    ha="center", va="bottom", fontsize=6.8)
-    ax.set_yscale("symlog", linthresh=1)
-    ax.set_ylim(0, 900)
-    ax.set_xticks(xs); ax.set_xticklabels(TIERS)
-    ax.set_ylabel(r"$\Sigma V$ (hard violations)")
-    ax.set_title("(b) residual violations", loc="left")
-    h, l = axes[0].get_legend_handles_labels()
-    fig.legend(h, l, frameon=False, fontsize=7, ncol=2, loc="upper center",
-               bbox_to_anchor=(0.5, 1.04))
-    fig.tight_layout(pad=0.3, w_pad=1.5, rect=(0, 0, 1, 0.93))
-    fig.savefig(HERE / "fig2_synth_feasibility.pdf")
-    plt.close(fig)
-    print("[make_figures] wrote fig2_synth_feasibility.pdf")
-    return n, pre_f, post_f
+def milp_no_limit_numbers() -> dict:
+    """The MILP on extreme_011_seed_1110 without a time limit, stopped after 62.6 h: its run
+    record and Gurobi's log in artifacts/campaign/milp_extreme_no_limit. Its machine, threads and
+    Gurobi version differ from the campaign's; the setup names them, and the guards check that."""
+    import yaml
+    folder = ART / MILP_NO_LIMIT / "extreme"
+    with open(folder / "extreme_011_seed_1110_MIP_solution.yaml", encoding="utf-8") as fh:
+        meta = yaml.safe_load(fh)["metadata"]
+    p2 = meta["phase2"]
+    summary, solver = p2["solve_summary"], p2["solver_settings"]
+    if summary["status"] != "INTERRUPTED" or solver["TimeLimit"] is not None or float(solver["MIPGap"]) != 0:
+        die("MILP without a limit: the text says it ran without a time limit until it was stopped")
+    if meta["verifier"]["statuses"]["full"] is not True:
+        die("MILP without a limit: its best timetable fails a check")
+    found = [r for r in p2["incumbents"] if r.get("objective") is not None]
+    best = min(float(r["objective"]) for r in found)
+    if best != float(summary["objective"]):
+        die("MILP without a limit: the record's objective is not its best incumbent")
+    best_at = min(float(r["runtime_s"]) for r in found if float(r["objective"]) == best)
+    log = (folder / "extreme_011_seed_1110_MIP_phase2_gurobi.log").read_text(encoding="utf-8")
+    if ("Core(TM) i7-1365U" not in log or int(solver["Threads"]) != 12
+            or meta["environment"]["packages"]["gurobi_library"] != "13.0.2"):
+        die("MILP without a limit: the setup names an Intel Core i7-1365U, 12 threads and Gurobi 13.0.2")
+    hours = float(p2["time_solve_s"]) / 3600
+    return {
+        "MilpNoLimitHours": fmt(hours, 1),
+        "MilpNoLimitStaleHours": fmt(hours - best_at / 3600, 0),
+        "MilpNoLimitGap": fmt(100 * float(summary["mip_gap"]), 0),
+        "MilpNoLimitOtherExtreme": str(MANIFEST["extreme"] - 1),
+    }
 
 
-def _lato_rows():
-    """LATO head-to-head data, imported from the authors' own plot script."""
-    import importlib.util
-    spec = importlib.util.spec_from_file_location(
-        "plot_vqls_vs_milp", ROOT / "scripts" / "plot_vqls_vs_milp.py")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod.ROWS, getattr(mod, "MILP_OBJ_SCALE", 1.0)
+def _hm(seconds: float) -> str:
+    """A duration rounded half-up to the minute, for the prose."""
+    import decimal
+    m = int(decimal.Decimal(seconds / 60).quantize(decimal.Decimal(1), rounding=decimal.ROUND_HALF_UP))
+    return rf"{m // 60}\,h~{m % 60}\,min" if m >= 60 else rf"{m}\,min"
 
 
-def fig_vqls_vs_milp():
-    rows, scale = _lato_rows()
-    qubo = [r for r in rows if not r["label"].startswith("MILP")]
-    milp = sorted([r for r in rows if r["label"].startswith("MILP")],
-                  key=lambda r: r["runtime_s"])
-    snap = [r["label"].split("—")[-1].strip() for r in milp]
-    panels = [("gap_min", "student gap minutes", 1.0),
-              ("days_grp", "days per group", 1.0),
-              ("qubo_E", r"QUBO energy $[10^{7}]$", 1e-7),
-              ("milp_obj", "MILP weighted objective", scale)]
-    fig, axes = plt.subplots(2, 2, figsize=(TEXTWIDTH_IN, 3.6), sharex=True)
-    for ax, (key, lab, k), tag in zip(axes.flat, panels, "abcd"):
-        xm = [r["runtime_s"] for r in milp]; ym = [r[key] * k for r in milp]
-        ax.plot(xm, ym, "-", color=OKABE["orange"], lw=1.1, zorder=2)
-        ax.scatter(xm, ym, s=22, color=OKABE["orange"], edgecolor="white",
-                   linewidth=0.6, zorder=3, label="MILP snapshots")
-        if tag == "a":
-            for i, (x, y, t) in enumerate(zip(xm, ym, snap)):
-                ax.annotate(t, (x, y), textcoords="offset points",
-                            xytext=(6, 4) if i else (6, -2), ha="left",
-                            fontsize=6.2, color=OKABE["grey"])
-        for r in qubo:
-            ax.scatter(r["runtime_s"], r[key] * k, s=34, marker="s",
-                       color=OKABE["blue"], edgecolor="white", linewidth=0.6,
-                       zorder=4, label="QUBO+LS")
-        ax.set_xscale("log")
-        ax.set_title(f"({tag}) {lab}", loc="left", fontsize=8)
-        ax.margins(y=0.22)
-    for ax in axes[1]:
-        ax.set_xlabel("wall time [s] (log)")
-    h, l = axes[0, 0].get_legend_handles_labels()
-    fig.legend(h[:2], l[:2], frameon=False, fontsize=7, loc="upper center",
-               ncol=2, bbox_to_anchor=(0.5, 1.03))
-    fig.tight_layout(pad=0.3, h_pad=0.8, w_pad=1.2, rect=(0, 0, 1, 0.95))
-    fig.savefig(HERE / "fig_vqls_vs_milp.pdf")
-    plt.close(fig)
-    print("[make_figures] wrote fig_vqls_vs_milp.pdf  (lower is better in every panel)")
+def prod_milp_numbers() -> dict:
+    """The cold MILP on 3_studies under the current rules (21.10.2026; 550 min of search) against
+    the QUBO route of 19.10.2026: fig_3studies_time.pdf
+    (scripts/plot_3studies_objective_vs_time.py) and the in-text numbers, from the run records
+    in artifacts/campaign/milp_3studies and of the S3 runs. Every sentence they feed is guarded."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import plot_3studies_objective_vs_time as p3
+    from recover_milp_snapshots import terms
+    r = p3.draw(HERE, "fig_3studies_time", formats=("pdf",), title=False, paper=True)
+    print("[make_figures] wrote fig_3studies_time.pdf")
+    prod = ART / MILP_3STUDIES / "production"
+    checked = json.loads((prod / "recovered_snapshots_20261022.json").read_text(encoding="utf-8"))
+    log = [json.loads(line) for line in (prod / "3_studies_instance_MIP_incumbents.jsonl")
+           .read_text(encoding="utf-8").splitlines()]
+    if not checked or not all(c["full"] and abs(c["terms_sum"] - c["gurobi_objective"]) < 1e-6 for c in checked):
+        die("3_studies MILP: a kept timetable fails a check, or its terms do not add up to Gurobi's objective")
+    kept = {c["incumbent"]: c for c in checked}
+    build = r["milp_build"]
 
+    def best_at(route_s: float) -> dict:
+        """The MILP's best timetable at this time since the start of its route; it must be a kept one."""
+        n = max((k for x, _, k in r["steps"] if x <= route_s), default=None)
+        if n not in kept:
+            die(f"3_studies MILP: the best incumbent at {route_s:.0f} s was not kept, so it is not checked")
+        return kept[n]
 
-def fig_lato_time_of_day():
-    """Morning/afternoon/evening shares of placed lessons on LATO, computed
-    from the decoded schedules with the authors' own bucketing
-    (scripts/plot_lato_time_of_day.py: morning = start before 12:00)."""
-    import importlib.util
-    spec = importlib.util.spec_from_file_location(
-        "plot_lato_time_of_day", ROOT / "scripts" / "plot_lato_time_of_day.py")
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    if abs(mod.MORNING_END - 12.0) > 1e-9:
-        die("LATO time-of-day: expected a noon morning threshold")
-    routes = []
-    for r in mod.ROUTES:
-        c = mod._shares(r["stem"])["counts"]
-        routes.append((r["label"].replace("—", "–"), c["morning"], c["afternoon"], c["evening"]))
-    fig, ax = plt.subplots(figsize=(TEXTWIDTH_IN, 1.9))
-    cols = [OKABE["sky"], OKABE["blue"], OKABE["orange"]]
-    labs = ["before 12:00", "12:00–16:00", "from 16:00"]
-    ys = np.arange(len(routes))[::-1]
-    for y, (name, m_, a_, e_) in zip(ys, routes):
-        tot = m_ + a_ + e_; left = 0.0
-        for v, c, lab in zip((m_, a_, e_), cols, labs):
-            share = 100.0 * v / tot
-            ax.barh(y, share, left=left, color=c, edgecolor="white", linewidth=0.6,
-                    label=lab if y == ys[0] else None)
-            if share >= 6:
-                ax.text(left + share / 2, y, f"{share:.0f}%", ha="center", va="center",
-                        fontsize=6.8, color="white" if c != OKABE["sky"] else "black")
-            left += share
-    ax.set_yticks(ys); ax.set_yticklabels([r[0] for r in routes], fontsize=7.4)
-    ax.set_xlim(0, 100); ax.set_xlabel("share of placed lessons [%]")
-    ax.grid(axis="y", visible=False)
-    ax.legend(frameon=False, fontsize=7, ncol=3, loc="upper center",
-              bbox_to_anchor=(0.45, 1.22))
-    fig.tight_layout(pad=0.3)
-    fig.savefig(HERE / "fig_lato_time_of_day.pdf")
-    plt.close(fig)
-    print("[make_figures] wrote fig_lato_time_of_day.pdf")
+    best = best_at(r["milp_end"])
+    half, hour = best_at(build + 1800), best_at(build + 3600)
+    qubo, empty = r["objective"], r["empty_objective"]
+    ls = ART / REPAIR_3STUDIES
+    q_terms = [terms(json.loads((ls / run / f"rep_{rep}" / "3_studies_instance_postLS_verdict.json")
+                                .read_text(encoding="utf-8"))["soft_metrics"])
+               for run, rep in (("S3_room_set_rows", 4), ("S3_room_set_rows_empty_start", 0))]
+    if [sum(t.values()) for t in q_terms] != [qubo, empty]:
+        die("3_studies MILP: the QUBO route's objectives do not match their verdicts")
+    if not (half["gurobi_objective"] > max(qubo, empty) and hour["gurobi_objective"] < min(qubo, empty)):
+        die("3_studies MILP: the prose says it is behind both QUBO-route timetables at 30 min, ahead at 1 h")
+    if any(best["terms"][k] > t[k] for t in q_terms for k in best["terms"]):
+        die("3_studies MILP: the prose says its best timetable is no worse on any term")
+    # Gurobi's progress line at the reported search time (run_times_20261022.json): incumbent,
+    # bound and gap.
+    times = json.loads((prod / "run_times_20261022.json").read_text(encoding="utf-8"))
+    line = times["progress_line_at_reported"].split()
+    if float(times["reported_search_s"]) != p3.REPORT_S or not p3.REPORT_S - 60 <= int(line[-1][:-1]) <= p3.REPORT_S:
+        die("3_studies MILP: no progress line of Gurobi at the reported search time")
+    incumbent, bound, gap = float(line[5]), float(line[6]), line[7].rstrip("%")
+    if incumbent != best["gurobi_objective"]:
+        die("3_studies MILP: Gurobi's progress line disagrees with the best kept timetable")
+    return {
+        "ProdMilpBuildSec": fmt(build),
+        "ProdMilpFirstSec": fmt(log[0]["runtime_s"]),
+        "ProdMilpRunMin": fmt(p3.REPORT_S / 60),
+        "ProdMilpKept": str(len(checked)),
+        "ProdMilpBest": fmt(best["gurobi_objective"]),
+        "ProdMilpBestFound": _hm(best["found_s"]),
+        "ProdMilpBound": fmt(bound),
+        "ProdMilpGap": gap,
+        "ProdMilpHalfHour": fmt(half["gurobi_objective"]),
+        "ProdMilpHour": fmt(hour["gurobi_objective"]),
+        "ProdMilpAtAnswer": fmt(best_at(r["answer_ready"])["gurobi_objective"]),
+        "ProdMilpAtRepaired": fmt(best_at(r["best_t"])["gurobi_objective"]),
+        "ProdMilpSat": fmt(-best["terms"]["satisfaction"]),
+        "ProdMilpIdle": fmt(best["terms"]["idle"]),
+        "ProdQuboAnswerTime": _hm(r["answer_ready"]),
+        "ProdQuboBestTime": _hm(r["best_t"]),
+        "ProdQuboFiveTime": _hm(r["valid4"]),
+        "ProdQuboFiveDone": _hm(r["five_end"]),
+        "ProdEmptyTime": _hm(r["empty_t"]),
+    }
 
 
 if __name__ == "__main__":
