@@ -24,13 +24,16 @@ timetable. Before anything is copied, every call is checked:
 Calls whose QUBO file, submission or processing ran at a commit other than the
 tag ``campaign-2026-10-qubo`` are listed in the README with the files in which
 that commit differs from the tag. The analysis tables are copied only when
-they cover exactly the copied settings. Everything is copied byte for byte
-(each copy checked against its source), with ``SHA256SUMS`` and
-``.gitattributes`` (no line-end conversion), and the README with the results
-per setting and tier. Each run brings the destination to exactly this
-content: files already there with the right hash are left untouched (the
-folder is under a sync client: about 0.5 GB per setting), the rest is copied,
-files no longer expected are removed. Run it again after more settings finish.
+they cover exactly the copied settings. Binary files are copied byte for
+byte, text files with Unix line ends (the runs wrote them on Windows); each
+copy is checked against its source. ``SHA256SUMS`` lists every file by its
+bytes, ``.gitattributes`` stops git from converting line ends, and the README
+gives the results per setting and tier. (Until 25.11.2026 text files were
+copied as written and listed by their content with Unix line ends.) Each run
+brings the destination to exactly this content: files already there with the
+right hash are left untouched (the folder is under a sync client: about 0.5 GB
+per setting), the rest is copied, files no longer expected are removed. Run it
+again after more settings finish.
 
 The repair runs in ``artifacts/campaign/veloxq_ls`` named in ``REPAIR_RUNS``
 (``scripts/run_veloxq_ls_campaign.py``: the repair with the MILP's room-set
@@ -126,8 +129,14 @@ def gunzip_identity(path: Path) -> tuple:
     return h.hexdigest(), n
 
 
+# Text files go into the deposit with Unix line ends (the runs wrote them on Windows), binary
+# files byte for byte; SHA256SUMS lists every file by its bytes.
+TEXT_SUFFIXES = (".yaml", ".jsonl", ".json", ".csv", ".log", ".txt", ".md", ".py")
+
+
 def content_sha256(path: Path) -> str:
-    """The run records' instance hash: CRLF turned into LF first."""
+    """The run records' hash of a text file: CRLF turned into LF first (here: of the raw outputs,
+    which have Windows line ends, and of the instances)."""
     return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
 
 
@@ -399,7 +408,7 @@ def repair_readme(repair: Dict[str, Dict[str, Any]], tag_commit: str, with_table
         "| `calls.json`, `summary.csv` | seconds per call (repair and verification); one line per call: the cost "
         "before and after, the verifier's statuses, the search's seconds and cycles |",
         "| `rep_<r>/<stem>_postLS.yaml` | the repaired timetable with its run record: input timetable and instance "
-        "(path and content hash), the cost's definition, the cost and its parts before and after, code version, "
+        "(path and sha256), the cost's definition, the cost and its parts before and after, code version, "
         "command-line arguments |",
         "| `rep_<r>/<stem>_postLS_verdict.json` | the verifier's verdict on it: every check, and the exact room "
         "assignment (a room for every in-person lesson when one exists) |",
@@ -454,7 +463,7 @@ def repair_readme(repair: Dict[str, Dict[str, Any]], tag_commit: str, with_table
         lines.append("")
     lines += [
         "To check: `scripts/verify_veloxq_deposit.py` (*How to check*, above) checks every repair call's files "
-        "and links (input timetable, instance and verdict by content hash) and recomputes the three tables from "
+        "and links (input timetable, instance and verdict by sha256) and recomputes the three tables from "
         "the records. The exhaustive check of the calls left invalid needs the project's code:",
         "",
         "    python checks/two_move_neighbourhood.py --run repository_ready/veloxq_synthetic/repair/S3_room_set_rows "
@@ -546,13 +555,13 @@ def readme(settings: List[str], checked: Dict[str, Dict[str, Any]], pending: Lis
            "(`energy_separation.csv`), and every timetable one move from that optimum on five instances "
            "(`optimum_neighbours.csv`)." if with_analysis else ""),
         "",
-        "Each run record names its instance by the sha256 of the file's content (CRLF turned into LF); every one "
-        "of them is the registry entry of a file in `../instances/synthetic`, which the assembly script checks. "
-        "`SHA256SUMS` lists every file here: binary files by their bytes, text files (`.yaml`, `.jsonl`, `.json`, "
-        "`.csv`, `.log`, `.txt`, `.md`, `.py`) by their content with Windows line ends turned into Unix ones, "
-        "because git may store them with either. `sha256sum -c SHA256SUMS` holds on a checkout with Unix line "
-        "ends; `scripts/verify_veloxq_deposit.py` holds on either. Every hash inside the run records is of a "
-        "binary file or independent of line ends.",
+        "The runs wrote these files on Windows. Here every text file (`.yaml`, `.jsonl`, `.json`, `.csv`, "
+        "`.log`, `.txt`, `.md`, `.py`) has Unix line ends, and `.gitattributes` stops git from converting them. "
+        "`SHA256SUMS` lists every file by its bytes, so `sha256sum -c SHA256SUMS` checks the folder. Every hash "
+        "a run record gives for a file in this folder is that file's sha256, except `sha256_file_bytes` of a text "
+        "file: that is of the copy with Windows line ends the run wrote (`sha256` next to it is of the file "
+        "here). Each run record names its instance by the hash that `../instances/registry.csv` lists for its "
+        "file in `../instances/synthetic`; the assembly script checks every one.",
         "",
         "## How to check",
         "",
@@ -691,7 +700,11 @@ def main() -> None:
     expected: Dict[str, tuple] = {}             # published path -> (source, sha256)
 
     def add(src: Path, rel: str, known: Dict[Path, str]) -> None:
-        expected[rel] = (src, known.get(src) or sha256(src))
+        if Path(rel).suffix in TEXT_SUFFIXES:
+            data = src.read_bytes().replace(b"\r\n", b"\n")
+            expected[rel] = (data, hashlib.sha256(data).hexdigest())
+        else:
+            expected[rel] = (src, known.get(src) or sha256(src))
 
     for s in settings:
         known, sdir = checked[s]["hashes"], SRC / s
@@ -705,7 +718,7 @@ def main() -> None:
                 add(sdir / f"rep_{c['rep']}" / name, f"{s}/rep_{c['rep']}/{name}", known)
     # Logs as a snapshot: a running campaign keeps appending to its log.
     for log in [LOG_DIR / n for n in LOG_FILES if (LOG_DIR / n).exists()] + sorted(LOG_DIR.glob("veloxq_prepare_*.log")):
-        data = log.read_bytes()
+        data = log.read_bytes().replace(b"\r\n", b"\n")
         expected[f"logs/{log.name}"] = (data, hashlib.sha256(data).hexdigest())
     if with_analysis:
         for name in ANALYSIS_FILES:
@@ -724,7 +737,7 @@ def main() -> None:
                 add(run / "inputs" / fname, f"repair/{name}/inputs/{fname}", {})
     if repair:
         for log in [LOG_DIR / n for n in REPAIR_LOG_FILES if (LOG_DIR / n).exists()]:
-            data = log.read_bytes()
+            data = log.read_bytes().replace(b"\r\n", b"\n")
             expected[f"logs/{log.name}"] = (data, hashlib.sha256(data).hexdigest())
     if with_repair_tables:
         for name in REPAIR_ANALYSIS_FILES:
@@ -738,14 +751,10 @@ def main() -> None:
         readme(settings, checked, pending, tag_commit, off_tag, with_analysis, repair,
                with_repair_tables).encode("utf-8"))
     (OUT / ".gitattributes").write_bytes(
-        b"# Keep the bytes as they are: the hashes in the run records refer to them.\n* -text\n")
-    # Text files are listed by their content with Windows line ends turned into Unix ones: git
-    # stores them with either (the published repository has Unix ones), binary files by their bytes.
-    text = (".yaml", ".jsonl", ".json", ".csv", ".log", ".txt", ".md", ".py")
-    sums = {}
-    for rel, (_src, digest) in list(expected.items()) + [(n, (None, sha256(OUT / n))) for n in ("README.md", ".gitattributes")]:
-        is_text = Path(rel).suffix in text or Path(rel).name == ".gitattributes"
-        sums[rel] = content_sha256(OUT / rel) if is_text else digest
+        b"# Keep the bytes as they are (text files have Unix line ends): SHA256SUMS lists them.\n* -text\n")
+    # Every file by its bytes.
+    sums = {rel: digest for rel, (_src, digest) in expected.items()}
+    sums.update({n: sha256(OUT / n) for n in ("README.md", ".gitattributes")})
     (OUT / "SHA256SUMS").write_bytes(("\n".join(f"{d}  {rel}" for rel, d in sorted(sums.items())) + "\n").encode())
     print(f"{OUT}: settings {', '.join(settings)} ({sum(len(checked[s]['calls']) for s in settings)} calls checked); "
           f"repair runs {', '.join(repair) or 'none'}; "

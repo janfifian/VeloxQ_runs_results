@@ -40,7 +40,7 @@ One folder per setting (`<stem>` is the instance file name without `.yaml`, `<r>
 
 `logs/` holds the campaign's console transcripts and logs, `scripts/` the scripts (see *How to check*). `analysis/` holds the tables of the analysis of these files: per call (`calls.csv`), per setting and tier (`tiers.csv`), the settings per instance (`paired.csv`), the 16 lowest-energy samples of each call decoded and checked (`topk.csv`), how the lowest-energy sample and the sample with the fewest violations among the 16 break, rule by rule (`breakdown.csv`, per tier `breakdown_tiers.csv`), the settings side by side per tier (`tier_view.csv`); and, from `scripts/check_energy_separation.py`, where each call's samples lie relative to the best legal timetable, the MILP optimum (`energy_separation.csv`), and every timetable one move from that optimum on five instances (`optimum_neighbours.csv`).
 
-Each run record names its instance by the sha256 of the file's content (CRLF turned into LF); every one of them is the registry entry of a file in `../instances/synthetic`, which the assembly script checks. `SHA256SUMS` lists every file here: binary files by their bytes, text files (`.yaml`, `.jsonl`, `.json`, `.csv`, `.log`, `.txt`, `.md`, `.py`) by their content with Windows line ends turned into Unix ones, because git may store them with either. `sha256sum -c SHA256SUMS` holds on a checkout with Unix line ends; `scripts/verify_veloxq_deposit.py` holds on either. Every hash inside the run records is of a binary file or independent of line ends.
+The runs wrote these files on Windows. Here every text file (`.yaml`, `.jsonl`, `.json`, `.csv`, `.log`, `.txt`, `.md`, `.py`) has Unix line ends, and `.gitattributes` stops git from converting them. `SHA256SUMS` lists every file by its bytes, so `sha256sum -c SHA256SUMS` checks the folder. Every hash a run record gives for a file in this folder is that file's sha256, except `sha256_file_bytes` of a text file: that is of the copy with Windows line ends the run wrote (`sha256` next to it is of the file here). Each run record names its instance by the hash that `../instances/registry.csv` lists for its file in `../instances/synthetic`; the assembly script checks every one.
 
 ## How to check
 
@@ -137,7 +137,7 @@ Files, in `repair/<run>/` (`<stem>` the instance, `<r>` the call):
 |---|---|
 | `settings.json` | the run's options (of its last invocation) and, for a continuation, the run it continues |
 | `calls.json`, `summary.csv` | seconds per call (repair and verification); one line per call: the cost before and after, the verifier's statuses, the search's seconds and cycles |
-| `rep_<r>/<stem>_postLS.yaml` | the repaired timetable with its run record: input timetable and instance (path and content hash), the cost's definition, the cost and its parts before and after, code version, command-line arguments |
+| `rep_<r>/<stem>_postLS.yaml` | the repaired timetable with its run record: input timetable and instance (path and sha256), the cost's definition, the cost and its parts before and after, code version, command-line arguments |
 | `rep_<r>/<stem>_postLS_verdict.json` | the verifier's verdict on it: every check, and the exact room assignment (a room for every in-person lesson when one exists) |
 | `rep_<r>/<stem>_stats.json` | every cycle of the repair: the cost and the violations by rule before and after, seconds |
 | `rep_<r>/<stem>_log.txt`, `rep_<r>/<stem>.log` | the repair's log; the process log (repair and verification) |
@@ -163,7 +163,7 @@ Calls left invalid (`repair_stuck.csv`): the course short of its minutes, its pl
 | `extreme_014_seed_1142` call 3 | 47 (45 min missing) | 12 / 250 | 1:6 2:4 3:6 4:3 5:1 | 0 / 0 | False |
 | `extreme_014_seed_1143` call 3 | 47 (45 min missing) | 9 / 164 | 1:4 2:4 3:5 4:2 | 0 / 0 | False |
 
-To check: `scripts/verify_veloxq_deposit.py` (*How to check*, above) checks every repair call's files and links (input timetable, instance and verdict by content hash) and recomputes the three tables from the records. The exhaustive check of the calls left invalid needs the project's code:
+To check: `scripts/verify_veloxq_deposit.py` (*How to check*, above) checks every repair call's files and links (input timetable, instance and verdict by sha256) and recomputes the three tables from the records. The exhaustive check of the calls left invalid needs the project's code:
 
     python checks/two_move_neighbourhood.py --run repository_ready/veloxq_synthetic/repair/S3_room_set_rows --caches repository_ready/veloxq_synthetic
 

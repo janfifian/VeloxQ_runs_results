@@ -2,9 +2,8 @@
 """Check the VeloxQ deposit (``repository_ready/veloxq_synthetic``) without the
 project's code (16.10.2026). Needs only numpy, h5py and PyYAML.
 
-1. ``SHA256SUMS`` (when present): every file it lists has that hash; text files are hashed
-   with Windows line ends turned into Unix ones, so the list holds on either kind of checkout
-   (git stores the text files of the published repository with Unix line ends).
+1. ``SHA256SUMS`` (when present): every file it lists has that hash, of its bytes (text files
+   have Unix line ends).
 2. Every call (``<setting>/jobs.jsonl``): the timetable's run record parses and
    carries the verifier's verdict; the job id agrees in ``jobs.jsonl``, the
    record and the job-id file; the sample archive, the gzipped server file and
@@ -23,7 +22,7 @@ project's code (16.10.2026). Needs only numpy, h5py and PyYAML.
    files; its run record names as input the deposited VeloxQ timetable of the
    call (for a continuation, the repaired timetable it continues; for an empty
    start, the timetable without lessons in ``inputs/``) and the call's
-   instance, by content hash; the verdict is of that timetable and instance;
+   instance, by sha256; the verdict is of that timetable and instance;
    the record's cost has the run's options; the run holds exactly the calls
    its ``settings.json`` names (an empty-start run: one per instance, call 0).
    The repair tables
@@ -117,17 +116,6 @@ class Report:
             print("  PROBLEM:", msg, flush=True)
 
 
-TEXT_SUFFIXES = (".yaml", ".jsonl", ".json", ".csv", ".log", ".txt", ".md", ".py")
-
-
-def listed_hash(path: Path) -> str:
-    """The hash SHA256SUMS gives: of the bytes for binary files, of the content with Windows line
-    ends turned into Unix ones for text files (git may store either)."""
-    if path.suffix in TEXT_SUFFIXES or path.name == ".gitattributes":
-        return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
-    return sha256(path)
-
-
 def check_sums(root: Path, rep: Report) -> int:
     if not (root / "SHA256SUMS").exists():
         return 0                                   # e.g. the raw outputs as published, without the list
@@ -137,7 +125,7 @@ def check_sums(root: Path, rep: Report) -> int:
         p = root / rel
         if not p.is_file():
             rep.fail(f"SHA256SUMS lists a missing file: {rel}")
-        elif listed_hash(p) != digest:
+        elif sha256(p) != digest:
             rep.fail(f"hash differs from SHA256SUMS: {rel}")
     return len(lines)
 
@@ -227,11 +215,6 @@ def check_calls(root: Path, setting: str, rep: Report) -> list:
     return calls
 
 
-def content_sha256(path: Path) -> str:
-    """The run records' hash of a text file: CRLF turned into LF first."""
-    return hashlib.sha256(path.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
-
-
 def check_repair(root: Path, calls: list, rep: Report) -> int:
     """Step 5 for every run in repair/; returns the number of calls checked."""
     instance_of = {(c["setting"], c["instance"], c["rep"]): c["instance_sha256"] for c in calls}
@@ -263,7 +246,7 @@ def check_repair(root: Path, calls: list, rep: Report) -> int:
             if not source.is_file():
                 rep.fail(f"{tag}: its input {source.relative_to(root)} is missing")
                 continue
-            if (md.get("source_solution_file") or {}).get("sha256") != content_sha256(source):
+            if (md.get("source_solution_file") or {}).get("sha256") != sha256(source):
                 rep.fail(f"{tag}: the record's input is not {source.relative_to(root)}")
             if empty_start and (yaml.safe_load(open(source, encoding="utf-8")) or {}).get("lessons"):
                 rep.fail(f"{tag}: the empty timetable {source.name} has lessons")
@@ -272,7 +255,7 @@ def check_repair(root: Path, calls: list, rep: Report) -> int:
             if not (instance and (md.get("source_instance_file") or {}).get("sha256") == instance
                     == (verdict.get("instance_file") or {}).get("sha256")):
                 rep.fail(f"{tag}: the record or the verdict names another instance than the VeloxQ call")
-            if (verdict.get("solution_file") or {}).get("sha256") != content_sha256(post):
+            if (verdict.get("solution_file") or {}).get("sha256") != sha256(post):
                 rep.fail(f"{tag}: the verdict is not of this timetable")
             if bool((md.get("cost_definition") or {}).get("room_set_rows")) != room_set_rows:
                 rep.fail(f"{tag}: the record's cost does not have the run's options")
@@ -375,7 +358,7 @@ def main() -> int:
         print("4. analysis tables checked against the records")
         if (root / "repair").is_dir():
             n = check_repair(root, calls, rep)
-            print(f"5. repair: {n} calls checked (files, input, instance and verdict by content hash, options)")
+            print(f"5. repair: {n} calls checked (files, input, instance and verdict by sha256, options)")
             if (root / "analysis" / "repair_calls.csv").exists():
                 print("   repair tables recomputed from the records:")
                 check_repair_tables(root, rep)
