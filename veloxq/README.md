@@ -151,7 +151,7 @@ Files, in `repair/<run>/` (`<stem>` the instance, `<r>` the call):
 |---|---:|---:|---:|---:|---:|---:|
 | easy | 60 / 60 | 20 / 20 | 55 / 60 | 0.0 (1.6) | 0.0 (0.0) | 1.3 (5.8) |
 | medium | 45 / 45 | 15 / 15 | 1 / 45 | 5.8 (13.9) | 4.2 (9.9) | 21.2 (46.1) |
-| hard | 60 / 60 | 20 / 20 | 0 / 36 | 15.9 (44.0) | 12.4 (27.2) | 80.1 (174.1) |
+| hard | 60 / 60 | 20 / 20 | 0 / 45 | 18.7 (44.2) | 13.4 (39.2) | 80.1 (174.1) |
 | extreme | 23 / 27 | 9 / 9 | -- | -- | -- | 124.5 (284.5) |
 
 Calls left invalid (`repair_stuck.csv`): the course short of its minutes, its places by the number of lessons in the way (`clashing lessons: places`), the valid moves of at most two lessons, and the continuation at k = 3:

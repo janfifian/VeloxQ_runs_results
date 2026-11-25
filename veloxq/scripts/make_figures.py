@@ -16,7 +16,7 @@ Outputs (all written next to this file):
   tab_veloxq_settings.tex     VeloxQ campaign: valid timetables per penalty setting
   tab_veloxq_breakdown.tex    VeloxQ campaign: how the solver's answers break
   tab_veloxq_repair.tex       VeloxQ campaign: the repair of the S3 answers
-  tab_veloxq_3studies.tex     S3 on 3_studies: the VeloxQ answers and their repair
+  tab_veloxq_3studies.tex     S3 and S0 on 3_studies: the VeloxQ answers and their repair
                               (artifacts/campaign/veloxq_3studies and _ls)
   generated_numbers_veloxq.tex  in-text numbers of the VeloxQ campaign; these four
                               come from repository_ready/veloxq_synthetic/analysis
@@ -236,6 +236,7 @@ def fig_and_tab_frustration(rows, rows_s3, prod):
 
 
 UPLOADED_3STUDIES = "campaign/veloxq_3studies/S3"   # under artifacts/: the S3 runs on 3_studies
+UPLOADED_3STUDIES_S0 = "campaign/veloxq_3studies/S0"   # under artifacts/: the S0 runs on 3_studies
 
 
 def uploaded_cache_sha256(run_dir: Path) -> set:
@@ -394,6 +395,11 @@ SOFT_TERMS = [  # (row of the table, key)
     ("active group-days", "days"),
     ("time of day", "time_of_day"),
 ]
+# The table's columns: against the optimum on the easy and medium tiers and levels 7-9 of the hard
+# one; against the MILP's best timetable on level 10 (runs stopped before a proof) and the extreme tier.
+SOFT_GROUPS = ("easy", "medium", "hard", "hard10", "extreme")
+SOFT_GROUP_LABEL = {"easy": "easy", "medium": "medium", "hard": "hard, levels 7--9",
+                    "hard10": "hard, level 10", "extreme": "extreme"}
 # The verifier's satisfaction levels and the configuration's names for them.
 SATISFACTION_LEVEL = {"high_pref": "preferred", "low_pref": "undesired",
                       "neutral": "neutral", "not_available": "not_available"}
@@ -446,22 +452,59 @@ def tab_soft_terms() -> dict:
         return terms
 
     optimum = {}
-    # The tier folders and the superseded runs; extreme_no_limit/ holds a run stopped before a proof.
+    # Without a proven optimum the reference is the MILP's best timetable: on the extreme tier at its
+    # time limit, on level 10 of the hard tier when its run without a limit was stopped.
+    reference, first_reference, limits, at_hour = {}, {}, set(), {}
+    # One run per instance, in the tier folders (extreme_no_limit/ holds an experimental run).
     files = sorted(p for tier in ("easy", "medium", "hard", "extreme")
-                   for p in (MILP_DEPOSIT / tier).glob("*_MIP_solution.yaml")) + \
-        sorted((MILP_DEPOSIT / "superseded").rglob("*_MIP_solution.yaml"))
+                   for p in (MILP_DEPOSIT / tier).glob("*_MIP_solution.yaml"))
     for f in files:
         with open(f, encoding="utf-8") as fh:
             md = yaml.safe_load(fh)["metadata"]
         stem = f.name[: -len("_MIP_solution.yaml")]
-        if stem in optimum:
-            die(f"soft terms: two MILP optima for {stem}")
-        if md["phase2"]["solve_summary"]["status"] != "OPTIMAL":
-            die(f"soft terms: {stem} is not solved to optimality")
-        optimum[stem] = checked(_soft_terms(md["verifier"]["soft_metrics"], weights),
-                                float(md["phase2"]["solve_summary"]["objective"]), stem)
+        if stem in optimum or stem in reference:
+            die(f"soft terms: two MILP runs for {stem}")
+        terms = checked(_soft_terms(md["verifier"]["soft_metrics"], weights),
+                        float(md["phase2"]["solve_summary"]["objective"]), stem)
+        status = md["phase2"]["solve_summary"]["status"]
+        if status == "OPTIMAL":
+            optimum[stem] = terms
+            continue
+        limit = md["phase2"]["solver_settings"]["TimeLimit"]
+        at_limit = status == "TIME_LIMIT" and tier_of(stem) == "extreme" and limit is not None
+        stopped = status == "INTERRUPTED" and tier_of(stem) == "hard" and limit is None
+        if not (at_limit or stopped) or md["verifier"]["statuses"]["full"] is not True:
+            die(f"soft terms: {stem} is neither solved to optimality, nor a valid extreme run stopped at its "
+                "limit, nor a valid hard run without a limit stopped before a proof")
+        reference[stem] = terms
+        if at_limit:
+            limits.add(limit)
+        else:   # level 10: the best incumbent after 1 h of search, by Gurobi's objective (never below
+            # the verifier's score of its timetable), for the Conclusion
+            at_hour[stem] = min(float(e["objective"]) for e in md["phase2"]["incumbents"]
+                                if float(e["runtime_s"]) <= 3600)
+        # The MILP's first timetable, scored by the verifier: Gurobi's objective there can be
+        # higher, since the MILP's idle-time markers are tight only at an optimum.
+        with open(f.with_name(f"{stem}_MIP_first_incumbent_solution.yaml"), encoding="utf-8") as fh:
+            first_md = yaml.safe_load(fh)["metadata"]
+        if first_md["verifier"]["statuses"]["full"] is not True:
+            die(f"soft terms: the MILP's first timetable of {stem} fails a check")
+        first_reference[stem] = sum(_soft_terms(first_md["verifier"]["soft_metrics"], weights).values())
     if set(optimum) != {r["instance"] for r in read_csv(VELOXQ / "analysis" / "energy_separation.csv")}:
         die("soft terms: the MILP optima are not those of the energy separation")
+    if len(optimum) + len(reference) != sum(MANIFEST.values()):
+        die("soft terms: the text says every instance of the suite has a MILP run")
+    if sum(tier_of(s) == "extreme" for s in reference) != MANIFEST["extreme"] or limits != {3600.0}:
+        die("soft terms: the text compares every extreme instance with the MILP's timetable after 1 h")
+    # The hard tier's two columns: levels 7-9, each instance with an optimum, and level 10, none.
+    level10 = {s for s in list(optimum) + list(reference) if s.startswith("hard_010_")}
+    if {s for s in reference if tier_of(s) == "hard"} != level10 or \
+            {int(s.split("_")[1]) for s in optimum if tier_of(s) == "hard"} != {7, 8, 9}:
+        die("soft terms: the text says the hard instances of levels 7-9 have an optimum, those of level 10 not")
+
+    def group(stem: str) -> str:
+        """The table's column: the tier, the hard one split at level 10."""
+        return "hard10" if stem in level10 else tier_of(stem)
 
     # Repaired timetables that pass every check, on instances with an optimum.
     repair = read_csv(VELOXQ / "analysis" / "repair_calls.csv")
@@ -473,7 +516,8 @@ def tab_soft_terms() -> dict:
         if r["full"] != "True":
             continue
         repaired[(r["instance"], r["rep"])] = float(r["objective"])
-        if r["instance"] not in optimum:
+        opt = optimum.get(r["instance"]) or reference.get(r["instance"])
+        if opt is None:
             continue
         verdict = json.loads((VELOXQ / "repair" / "S3_room_set_rows" / f"rep_{r['rep']}"
                               / f"{r['instance']}_postLS_verdict.json").read_text(encoding="utf-8"))
@@ -481,21 +525,49 @@ def tab_soft_terms() -> dict:
             die(f"soft terms: {r['instance']} rep {r['rep']} fails a check in its verdict")
         terms = checked(_soft_terms(verdict["soft_metrics"], weights), float(r["objective"]),
                         f"{r['instance']} rep {r['rep']}")
-        opt = optimum[r["instance"]]
-        tier = tier_of(r["instance"])
+        tier = group(r["instance"])
         for key in terms:
             diff[tier][key].append(terms[key] - opt[key])
         diff[tier]["total"].append(sum(terms.values()) - sum(opt.values()))
-    tiers = [t for t in TIERS if diff[t]["total"]]
-    if tiers != ["easy", "medium", "hard"]:
-        die(f"soft terms: tiers with an optimum {tiers}")
-    if any(x < 0 for t in tiers for x in diff[t]["total"]):
+        if r["instance"] in reference and sum(terms.values()) >= first_reference[r["instance"]]:
+            die(f"soft terms: {r['instance']} rep {r['rep']} is not better than the MILP's first timetable; "
+                "the text says every valid repaired answer is where there is no optimum")
+    tiers = [t for t in SOFT_GROUPS if diff[t]["total"]]
+    if tiers != list(SOFT_GROUPS):
+        die(f"soft terms: columns with a reference {tiers}")
+    if any(x < 0 for t in ("easy", "medium", "hard") for x in diff[t]["total"]):
         die("soft terms: a repaired timetable lies below the MILP optimum")
+    if not all(x > 0 for t in ("hard10", "extreme") for x in diff[t]["total"]):
+        die("soft terms: the text says every valid repaired answer lies above the MILP's best timetable "
+            "where there is no optimum")
+    # The text and the Conclusion: on every instance without an optimum (extreme: after 1 h; level 10:
+    # when stopped) the MILP's best timetable beats every valid timetable of the QUBO route, the k = 3
+    # continuation and the solver's own answers included.
+    route = collections.defaultdict(list)
+    for r in read_csv(VELOXQ / "repair" / "S3_room_set_rows_k3_targeted" / "summary.csv"):
+        if r["full"] == "True":
+            route[r["instance"]].append(float(r["soft_after"]))
+    for c in read_csv(VELOXQ / "analysis" / "calls.csv"):
+        if c["full"] == "True":
+            route[c["instance"]].append(float(c["soft_objective"]))
+    for (instance, _), objective in repaired.items():
+        route[instance].append(objective)
+    best_gap = {s: min(route[s]) - sum(reference[s].values()) for s in reference if route[s]}
+    if len(best_gap) != len(reference) or min(best_gap.values()) <= 0:
+        die("soft terms: the text says the MILP's best timetable beats every QUBO-route timetable on every "
+            "instance without an optimum, each of which has one")
+    if not at_hour or any(at_hour[s] >= min(route[s]) for s in at_hour):
+        die("soft terms: the Conclusion says the MILP has, after 1 h of search, a better timetable than the "
+            "QUBO route on every hard instance of level 10")
 
+    n_opt, n_ref = 3, 2             # the columns against an optimum, then against a best timetable
     L = [r"\setlength{\tabcolsep}{4pt}\small",
          r"\begin{tabular}{@{}l" + "rr" * len(tiers) + "@{}}", r"\toprule",
-         " & " + " & ".join(rf"\multicolumn{{2}}{{c}}{{{t} ({len(diff[t]['total'])} calls)}}"
-                            for t in tiers) + r" \\",
+         rf" & \multicolumn{{{2 * n_opt}}}{{c}}{{against the MILP optimum}} & "
+         rf"\multicolumn{{{2 * n_ref}}}{{c}}{{against the MILP's best timetable}} \\",
+         rf"\cmidrule(lr){{2-{1 + 2 * n_opt}}}\cmidrule(lr){{{2 + 2 * n_opt}-{1 + 2 * (n_opt + n_ref)}}}",
+         " & " + " & ".join(rf"\multicolumn{{2}}{{c}}{{{SOFT_GROUP_LABEL[t]}}}" for t in tiers) + r" \\",
+         " & " + " & ".join(rf"\multicolumn{{2}}{{c}}{{{len(diff[t]['total'])} calls}}" for t in tiers) + r" \\",
          "".join(rf"\cmidrule(lr){{{2 + 2 * i}-{3 + 2 * i}}}" for i in range(len(tiers))),
          "term & " + " & ".join(r"$\Delta$ & worse/better" for _ in tiers) + r" \\",
          r"\midrule"]
@@ -523,6 +595,39 @@ def tab_soft_terms() -> dict:
         die("soft terms: a hard call reaches the optimum; the text says none does")
     if not all(x > 0 for x in diff["hard"]["satisfaction"]):
         die("soft terms: the text says every hard call has less lecturer satisfaction than the optimum")
+    # The prose: the median satisfaction gaps are "the reward of one lesson and of six and a half
+    # lessons in a preferred slot".
+    pref = weights["satisfaction_weights"]["preferred"]
+    lessons = [stats.median(diff[t]["satisfaction"]) / pref for t in ("medium", "hard")]
+    if lessons != [1, 6.5]:
+        die("soft terms: the median satisfaction gaps are not one and six and a half preferred lessons")
+    # The prose on the extreme tier: every call has less lecturer satisfaction (the reward of
+    # "about fourteen lessons" at the median) and more idle minutes than the MILP's timetable,
+    # while active group-days and time of day go either way.
+    ext = diff["extreme"]
+    if not (all(x > 0 for x in ext["satisfaction"]) and all(x > 0 for x in ext["idle"])):
+        die("soft terms: the text says every extreme call has less satisfaction and more idle minutes")
+    if not all(any(x > 0 for x in ext[k]) and any(x < 0 for x in ext[k]) for k in ("days", "time_of_day")):
+        die("soft terms: the text says active group-days and time of day go either way on the extreme tier")
+    ext_lessons = stats.median(ext["satisfaction"]) / pref
+    if round(ext_lessons) != 14 or ext_lessons == 14:
+        die("soft terms: the median extreme satisfaction gap is not about fourteen preferred lessons")
+    best_call = collections.defaultdict(list)       # the best call of each instance without an optimum
+    for (instance, _), objective in repaired.items():
+        if instance in reference:
+            best_call[instance].append(objective - sum(reference[instance].values()))
+    if len(best_call) != len(reference):
+        die("soft terms: an instance without an optimum has no valid repaired call")
+    best_ext = [min(v) for s, v in best_call.items() if tier_of(s) == "extreme"]
+    best_ten = [min(v) for s, v in best_call.items() if s in level10]
+    # The prose on level 10: every call has lower lecturer satisfaction than the MILP's best
+    # timetable (the reward of "about seventeen lessons" at the median).
+    ten = diff["hard10"]
+    if not all(x > 0 for x in ten["satisfaction"]):
+        die("soft terms: the text says every level-10 call has less lecturer satisfaction than the MILP's timetable")
+    ten_lessons = stats.median(ten["satisfaction"]) / pref
+    if round(ten_lessons) != 17 or ten_lessons == 17:
+        die("soft terms: the median level-10 satisfaction gap is not about seventeen preferred lessons")
 
     # The solver's own valid answers (S3) before the repair: how far above the
     # optimum, and whether the repair improved every one of them.
@@ -561,6 +666,19 @@ def tab_soft_terms() -> dict:
         "SoftAnswerCallsMedium": str(len(gap["medium"])),
         "SoftAnswerGapEasy": fmt(stats.median(gap["easy"])),
         "SoftAnswerGapMedium": fmt(stats.median(gap["medium"])),
+        "SoftCallsExtreme": str(len(ext["total"])),
+        "SoftTotalMedianExtreme": fmt(stats.median(ext["total"])),
+        "SoftSatMedianExtreme": fmt(stats.median(ext["satisfaction"])),
+        "SoftIdleMedianExtreme": fmt(stats.median(ext["idle"])),
+        "SoftBestLoExtreme": fmt(min(best_ext)),
+        "SoftBestHiExtreme": fmt(max(best_ext)),
+        "SoftCallsLevelTen": str(len(ten["total"])),
+        "SoftTotalMedianLevelTen": fmt(stats.median(ten["total"])),
+        "SoftSatMedianLevelTen": fmt(stats.median(ten["satisfaction"])),
+        "SoftIdleWorseLevelTen": str(count("hard10", "idle", 1)),
+        "SoftDaysFewerLevelTen": str(count("hard10", "days", -1)),
+        "SoftBestLoLevelTen": fmt(min(best_ten)),
+        "SoftBestHiLevelTen": fmt(max(best_ten)),
     }
 
 
@@ -609,6 +727,7 @@ def main() -> int:
     fig_sparsity()
     tab_lambdas()
     tab_veloxq_settings()
+    tab_milp_instances()
     print("[make_figures] wrote generated_numbers.tex")
     print("[make_figures] done.")
     return 0
@@ -787,6 +906,13 @@ def section4_numbers() -> dict:
                 builds.append(float(json.loads(h.attrs["metadata"])["extra"]["build_time_seconds"]))
             per[tier_of(f.name)].append(100 * off / (n * (n - 1) / 2))
         dens[s] = [stats.median(per[t]) for t in TIERS]
+    # Section 6 gives the build time of every matrix of every setting, not only of S0 and S3.
+    for s in ("S1", "S2", "S4", "S5", "S6"):
+        files = sorted((VELOXQ / s / "caches").glob("*.qubo_cache.h5"))
+        if len(files) != sum(MANIFEST.values()):
+            die(f"{s} caches: {len(files)} matrices")
+        for f in files:
+            builds.append(float(_cache_metadata(f)["extra"]["build_time_seconds"]))
     prod_file = ART / UPLOADED_3STUDIES / "caches" / "3_studies_instance.qubo_cache.h5"
     with h5py.File(prod_file, "r") as h:
         n = int(h["qubo"].attrs["n_vars"])
@@ -795,22 +921,29 @@ def section4_numbers() -> dict:
         prod_md = json.loads(h.attrs["metadata"])
     prod_coef = prod_coef[prod_coef != 0]
     # Soft objective S of the MILP runs (Section 7.6): first feasible solution and
-    # optimum, every instance with a proven optimum (summary + superseded runs).
+    # optimum, every instance with a proven optimum.
     import yaml
     milp = ROOT / "repository_ready" / "milp_synthetic_weighted"
     first, optimum = [], []
+    weights = _objective_weights()
+
+    def first_s(path: Path) -> float:
+        """S of the first incumbent's timetable. Gurobi's objective there can be higher:
+        the MILP's idle-time markers are tight only at an optimum."""
+        with open(path, encoding="utf-8") as fh:
+            md = yaml.safe_load(fh)["metadata"]
+        if md["verifier"]["statuses"]["full"] is not True:
+            die(f"{path.name}: the first incumbent does not pass every check")
+        return sum(_soft_terms(md["verifier"]["soft_metrics"], weights).values())
+
     for r in read_csv(milp / "summary.csv"):
+        if (r["status"], r["tier"]) in (("TIME_LIMIT", "extreme"), ("INTERRUPTED", "hard")):
+            continue                # stopped at its time limit or before a proof: no optimum
         if r["status"] != "OPTIMAL":
-            die(f"MILP summary: {r['instance']} is not optimal")
-        first.append(float(r["first_objective"]))
+            die(f"MILP summary: {r['instance']} is neither optimal nor stopped at a limit or before a proof")
+        stem = r["instance"].removesuffix(".yaml")
+        first.append(first_s(milp / r["tier"] / f"{stem}_MIP_first_incumbent_solution.yaml"))
         optimum.append(float(r["objective"]))
-    for f in sorted((milp / "superseded").rglob("*_MIP_solution.yaml")):
-        with open(f, encoding="utf-8") as fh:
-            summary = yaml.safe_load(fh)["metadata"]["phase2"]["solve_summary"]
-        if summary["status"] != "OPTIMAL":
-            die(f"MILP superseded: {f.name} is not optimal")
-        first.append(float(summary["first_incumbent_objective"]))
-        optimum.append(float(summary["objective"]))
     sep = {r["instance"] for r in read_csv(VELOXQ / "analysis" / "energy_separation.csv")}
     if len(first) != len(sep):
         die(f"MILP: {len(first)} optima, energy separation has {len(sep)} instances")
@@ -839,6 +972,8 @@ def section4_numbers() -> dict:
         "ProdDecisionBits": fmt(prod_md["n_x_index"]),
         "ProdSThreeEntriesM": fmt(prod_md["n_q_entries"] / 1e6, 1),
         "ProdSThreeBuildSec": fmt(prod_md["extra"]["build_time_seconds"]),
+        "ProdSZeroBuildSec": fmt(_cache_metadata(ART / UPLOADED_3STUDIES_S0 / "caches" / "3_studies_instance.qubo_cache.h5")
+                                 ["extra"]["build_time_seconds"]),
         "ProdSThreeCoefMin": fmt(prod_coef.min()) if float(prod_coef.min()).is_integer()
         else sci(prod_coef.min()),
         "ProdSThreeCoefMax": sci(prod_coef.max()),
@@ -884,39 +1019,73 @@ PR5_PAIRS_3STUDIES = ART / "pr5_pairs_3studies.json"
 DWAVE_RESULTS = ROOT / "repository_ready" / "dwave_capacity" / "results"
 
 
+def _hours(h: float) -> str:
+    """Hours with at most two decimals, for the prose: 12, 21.5, 13.25."""
+    return f"{h:.2f}".rstrip("0").rstrip(".")
+
+
 def milp_campaign_numbers() -> dict:
-    """The MILP runs behind the optima: settings, what was solved, the first
-    incumbent and the longest proof (summary + superseded runs of the deposit)."""
+    """The MILP run of every synthetic instance, one per instance (the deposit's summary.csv):
+    settings; the optima, their first incumbents and the longest proof; the extreme tier, run with a
+    time limit, every instance stopped at it with a valid timetable; and level 10 of the hard tier,
+    run without a limit like the rest of its tier and stopped before a proof, with valid timetables."""
     import math
     import yaml
     rows = read_csv(MILP_DEPOSIT / "summary.csv")
-    done = collections.Counter(r["tier"] for r in rows)
+    if sorted(r["tier"] for r in rows) != sorted(t for t, n in MANIFEST.items() for _ in range(n)) \
+            or len({r["instance"] for r in rows}) != len(rows):
+        die("MILP: the text says every instance of the suite has one run")
+    optimal = [r for r in rows if r["status"] == "OPTIMAL"]
+    limited = [r for r in rows if r["status"] == "TIME_LIMIT"]
+    stopped = [r for r in rows if r["status"] == "INTERRUPTED"]
+    if len(optimal) + len(limited) + len(stopped) != len(rows):
+        die("MILP: a run ended other than at an optimum, at its time limit or stopped before a proof")
+    done = collections.Counter(r["tier"] for r in optimal)
     first, full, proof = [], [], []
-    for r in rows:
-        if r["status"] != "OPTIMAL" or float(r["mip_gap"]) != 0:
+    for r in optimal:
+        if float(r["mip_gap"]) != 0:
             die(f"MILP: {r['instance']} is not solved to a proven optimum")
+        proof.append((float(r["time_solve_s"]), r["tier"]))
+    for r in optimal + stopped:
         first.append(float(r["first_runtime_s"]))
         full.append(r["first_full"] == "True")
-        proof.append((float(r["time_solve_s"]), r["tier"]))
     settings = {(r["threads"], r["gurobi"], float(r["mip_gap_setting"])) for r in rows}
     if len(settings) != 1:
         die(f"MILP: the runs have different settings {settings}")
     threads, gurobi, gap = settings.pop()
-    for f in sorted((MILP_DEPOSIT / "superseded").rglob("*_MIP_solution.yaml")):
-        with open(f, encoding="utf-8") as fh:
-            phase2 = yaml.safe_load(fh)["metadata"]["phase2"]
-        summary, solver = phase2["solve_summary"], phase2["solver_settings"]
-        if summary["status"] != "OPTIMAL" or float(summary["mip_gap"]) != 0:
-            die(f"MILP: {f.name} is not solved to a proven optimum")
-        if str(solver["Threads"]) != threads or float(solver["MIPGap"]) != gap or solver["TimeLimit"] is not None:
-            die(f"MILP: {f.name} ran with other settings")
-        done[tier_of(f.name)] += 1
-        first.append(float(summary["time_to_first_incumbent_s"]))
-        full.append(phase2["first_incumbent"]["verifier"]["statuses"]["full"] is True)
-        proof.append((float(summary["runtime_s"]), tier_of(f.name)))
-    campaign = json.loads((MILP_DEPOSIT / "CAMPAIGN.json").read_text(encoding="utf-8"))["settings"]
-    if campaign["time_limit"] is not None or gap != 0:
-        die("MILP: the text says a MIPGap of 0 and no time limit")
+
+    def time_limit(r: dict):
+        """The time limit in the run's record (None: no limit)."""
+        with open(MILP_DEPOSIT / r["tier"] / f"{r['instance'][:-5]}_MIP_solution.yaml", encoding="utf-8") as fh:
+            return yaml.safe_load(fh)["metadata"]["phase2"]["solver_settings"]["TimeLimit"]
+    if any(time_limit(r) is not None for r in optimal + stopped):
+        die("MILP: the text says the easy, medium and hard instances ran with no time limit")
+    # The extreme tier: every instance ran with one time limit, 1 h (the Conclusion puts it next to
+    # the hour of 3_studies), and stopped at it with a timetable, and a first one, that pass every check.
+    if len(limited) != MANIFEST["extreme"] or any(r["tier"] != "extreme" for r in limited):
+        die("MILP: the text says every extreme instance, and no other, stopped at the time limit")
+    if {time_limit(r) for r in limited} != {3600.0}:
+        die("MILP: the text says the extreme instances ran with a limit of 1 h")
+    if not all(r["final_full"] == "True" and r["first_full"] == "True" for r in limited):
+        die("MILP: the text says every extreme timetable, first and final, passes every check")
+    extreme_gaps = [100 * float(r["mip_gap"]) for r in limited]
+    # Level 10: every one of its instances, and no other, was stopped before a proof, with a timetable
+    # that passes every check, found well before the stop.
+    if {r["instance"] for r in stopped} != {r["instance"] for r in rows if r["instance"].startswith("hard_010_")}:
+        die("MILP: the text says the hard instances of level 10, and no other, were stopped before a proof")
+    if not all(r["final_full"] == "True" for r in stopped):
+        die("MILP: the text says every stopped run's timetable passes every check")
+    stopped_hours = [float(r["time_solve_s"]) / 3600 for r in stopped]
+    stopped_gaps = [100 * float(r["mip_gap"]) for r in stopped]
+    stopped_best = [float(r["time_to_best_incumbent_s"]) / 3600 for r in stopped]
+    # When Gurobi's objective of the incumbent first fell below the best repaired QUBO answer of the
+    # instance (summary.csv), where the MILP has no optimum: every such run gets there.
+    if not all(r["time_to_beat_qubo_ls_s"] for r in stopped + limited):
+        die("MILP: the text says the MILP's incumbent beats the best repaired answer on level 10 and the extreme tier")
+    beat_ten = [float(r["time_to_beat_qubo_ls_s"]) for r in stopped]
+    beat_ext = [float(r["time_to_beat_qubo_ls_s"]) for r in limited]
+    if gap != 0:
+        die("MILP: the text says a MIPGap of 0")
     if not all(full):
         die("MILP: a first incumbent fails a check; the text says every one passes")
     if done["easy"] != MANIFEST["easy"] or done["medium"] != MANIFEST["medium"]:
@@ -932,11 +1101,75 @@ def milp_campaign_numbers() -> dict:
     return {
         "MilpThreads": threads,
         "MilpGurobi": gurobi,
-        "MilpNotRunHard": str(MANIFEST["hard"] - done["hard"]),
-        "MilpNotRunExtreme": str(MANIFEST["extreme"] - done["extreme"]),
+        "MilpOptima": str(len(optimal)),
         "MilpFirstMaxSec": f"{math.ceil(10 * max(first)) / 10:.1f}",   # "at most": round up
         "MilpProofMaxHours": fmt(longest / 3600, 1),
+        "MilpExtremeRuns": str(len(limited)),
+        "MilpExtremeLimitHours": f"{time_limit(limited[0]) / 3600:g}",
+        "MilpExtremeGapLo": fmt(min(extreme_gaps)),
+        "MilpExtremeGapHi": fmt(max(extreme_gaps)),
+        "MilpFirstMaxSecExtreme": f"{math.ceil(10 * max(float(r['first_runtime_s']) for r in limited)) / 10:.1f}",
+        "MilpStoppedRuns": str(len(stopped)),
+        "MilpStoppedHoursLo": _hours(min(stopped_hours)),
+        "MilpStoppedHoursHi": _hours(max(stopped_hours)),
+        "MilpStoppedGapLo": fmt(min(stopped_gaps), 1),
+        "MilpStoppedGapHi": fmt(max(stopped_gaps), 1),
+        "MilpStoppedBestMaxHours": _hours(math.ceil(10 * max(stopped_best)) / 10),   # "within": round up
+        "MilpBeatMaxSecLevelTen": str(math.ceil(max(beat_ten))),
+        "MilpBeatMaxSecExtreme": str(math.ceil(max(beat_ext))),
     }
+
+
+MILP_STATUS = {"OPTIMAL": "optimal", "TIME_LIMIT": "time limit", "INTERRUPTED": "stopped"}
+
+
+def _seconds(x) -> str:
+    """A time for the per-instance tables, to about three significant digits."""
+    x = float(x)
+    return fmt(x, 2 if x < 1 else 1 if x < 100 else 0)
+
+
+def tab_milp_instances() -> None:
+    """Appendix tables tab:milp-instances-a (easy, medium) and -b (hard, extreme): the MILP run of
+    every synthetic instance from the deposit's summary.csv, and the best repaired QUBO answer of the
+    instance that passes every check, with the time at which the MILP's incumbent first had a lower
+    objective (Gurobi's objective of each incumbent)."""
+    rows = read_csv(MILP_DEPOSIT / "summary.csv")
+    if sorted(r["tier"] for r in rows) != sorted(t for t, n in MANIFEST.items() for _ in range(n)):
+        die("MILP instance tables: summary.csv does not hold one run per instance of the suite")
+    for r in rows:
+        if r["status"] not in MILP_STATUS or r["final_full"] != "True":
+            die(f"MILP instance tables: {r['instance']} ended {r['status']}, or its timetable fails a check")
+        if not r["qubo_ls_best_objective"] or not r["time_to_best_incumbent_s"]:
+            die(f"MILP instance tables: {r['instance']} lacks a column of summary.csv")
+        # The caption: the time is missing only where the repaired answer has the optimum's objective.
+        if not r["time_to_beat_qubo_ls_s"] and not (
+                r["status"] == "OPTIMAL" and float(r["qubo_ls_best_objective"]) == float(r["objective"])):
+            die(f"MILP instance tables: {r['instance']}: no time, yet the repaired answer is not optimal")
+    head = [r"\setlength{\tabcolsep}{3pt}\footnotesize",
+            r"\begin{tabular}{@{}llrrrrrr@{}}", r"\toprule",
+            r" & \multicolumn{5}{c}{MILP} & \multicolumn{2}{c}{best repaired QUBO answer} \\",
+            r"\cmidrule(lr){2-6}\cmidrule(l){7-8}",
+            r"instance & status & $\mathcal{O}$ & gap, \% & solve, s & best, s & $\mathcal{O}$ & beaten, s \\",
+            r"\midrule"]
+
+    def line(r: dict) -> str:
+        name = r["instance"][:-5].replace("_", r"\_")
+        gap = 100 * float(r["mip_gap"])
+        beaten = rf"${_seconds(r['time_to_beat_qubo_ls_s'])}$" if r["time_to_beat_qubo_ls_s"] else "--"
+        return (rf"\texttt{{{name}}} & {MILP_STATUS[r['status']]} & ${fmt(float(r['objective']))}$ & "
+                rf"${fmt(gap, 1 if 0 < gap < 100 else 0)}$ & ${_seconds(r['time_solve_s'])}$ & "
+                rf"${_seconds(r['time_to_best_incumbent_s'])}$ & ${fmt(float(r['qubo_ls_best_objective']))}$ & "
+                rf"{beaten} \\")
+    for part, tiers in (("a", ("easy", "medium")), ("b", ("hard", "extreme"))):
+        L = list(head)
+        for i, t in enumerate(tiers):
+            if i:
+                L.append(r"\midrule")
+            L += [line(r) for r in rows if r["tier"] == t]
+        L += [r"\bottomrule", r"\end{tabular}"]
+        (HERE / f"tab_milp_instances_{part}.tex").write_text("\n".join(L) + "\n")
+    print("[make_figures] wrote tab_milp_instances_a.tex and tab_milp_instances_b.tex")
 
 
 def prod_presolve_numbers() -> dict:
@@ -957,6 +1190,11 @@ def prod_presolve_numbers() -> dict:
     if (table["variables"]["counts"], table["matrix entries"]["counts"], table["x"]["counts"]) != \
             (md["n_vars"], md["n_q_entries"], md["n_x_index"]):
         die("presolve sizes: the counts level is not the matrix of the S3 runs on 3_studies")
+    # ... and its none level the matrix of the S0 runs (Section 7.3 gives ProdNoneVars as its size).
+    md0 = _cache_metadata(ART / UPLOADED_3STUDIES_S0 / "caches" / "3_studies_instance.qubo_cache.h5")
+    if (table["variables"]["none"], table["matrix entries"]["none"], table["x"]["none"]) != \
+            (md0["n_vars"], md0["n_q_entries"], md0["n_x_index"]):
+        die("presolve sizes: the none level is not the matrix of the S0 runs on 3_studies")
     none = {k: v["none"] for k, v in table.items()}
     aux = none["variables"] - none["x"]
     if aux != sum(none[k] for k in ("y", "z", "MC slack", "room count slack", "room capacity slack",
@@ -1372,6 +1610,10 @@ def _veloxq_repair() -> list:
         die("a call at zero in the repair's cost fails a check: the prose says the room rows close that gap")
     if any(r["gap_percent"] and float(r["gap_percent"]) < -1e-6 for r in calls):
         die("a valid repaired timetable lies below the MILP optimum")
+    # The caption: the gap is taken over |O*|; every optimum is negative and no extreme instance has one.
+    optima = {r["instance"]: float(r["milp_optimum"]) for r in calls if r["milp_optimum"]}
+    if any(o >= 0 for o in optima.values()) or any(tier_of(i) == "extreme" for i in optima):
+        die("tab:repair caption: a MILP optimum is not negative, or an extreme instance has one")
     invalid = [r for r in calls if r["full"] != "True"]
     by_call = {(r["instance"], r["rep"]): r for r in stuck}
     if {(r["instance"], r["rep"]) for r in invalid} != set(by_call):
@@ -1456,7 +1698,7 @@ def _veloxq_repair() -> list:
             rf"\newcommand{{\VqRepairStuckClashMax}}{{{clash_max}}}",
             rf"\newcommand{{\VqRepairStuckFreeMin}}{{{rng('lessons_freeing_a_place')[0]}}}",
             rf"\newcommand{{\VqRepairStuckFreeMax}}{{{rng('lessons_freeing_a_place')[1]}}}",
-            rf"\newcommand{{\VqRepairContinuedValid}}{{{freed}}}"] + empty_macros
+            rf"\newcommand{{\VqRepairContinuedValid}}{{{freed}}}"] + empty_macros + _veloxq_kept(calls)
 
 
 def _veloxq_empty_start(answers: list) -> tuple:
@@ -1506,6 +1748,41 @@ def _veloxq_empty_start(answers: list) -> tuple:
             die(f"empty start: {c['instance']} is not valid with no violation after H1 alone")
     if answer_h1["extreme"]:
         die("from an answer, H1 alone leaves an extreme call no violation: the prose says none")
+    # Why H1 alone does not finish from the answers: it only adds lessons, where they break no rule.
+    # On the hard tier every course-hour violation left after H1 is a surplus course of the answer;
+    # on the extreme tier H1 also leaves out lessons the answers lack.
+    over = {(r["instance"], r["rep"]): (int(float(r["PR1_courses_over"])), int(float(r["PR1_courses_under"])),
+                                        int(float(r["PR1_units_under"])))
+            for r in read_csv(VELOXQ / "analysis" / "breakdown.csv")
+            if r["setting"] == "S3" and r["sample"] == "lowest energy"}
+    short_before = short_after = calls_short = 0
+    for r in answers:
+        first = json.loads((rdir / "S3_room_set_rows" / f"rep_{r['rep']}" / f"{r['instance']}_stats.json")
+                           .read_text(encoding="utf-8"))["cycles"][0]
+        surplus, short, units = over[(r["instance"], r["rep"])]
+        # H1 starts from the answer that breakdown.csv describes, and it only adds lessons.
+        if int(first["violations_by_family_in"].get("PR1_course_minutes", 0)) != surplus + short:
+            die(f"{r['instance']} rep {r['rep']}: the repair does not start from the answer of breakdown.csv")
+        left = int(first["violations_by_family_out"].get("PR1_course_minutes", 0)) - surplus
+        if not 0 <= left <= short:
+            die(f"{r['instance']} rep {r['rep']}: after H1 the surplus or the short courses are not those of the answer")
+        tier = r["instance"].split("_")[0]
+        if tier == "hard" and left:
+            die(f"{r['instance']} rep {r['rep']}: H1 leaves a course short on the hard tier; the prose says surplus only")
+        if tier == "hard" and first["violations_out"] and not surplus:
+            die(f"{r['instance']} rep {r['rep']}: H1 leaves a hard call invalid without a surplus course; "
+                "the prose gives the surplus lessons as the reason")
+        if tier == "extreme":
+            # The prose counts lessons; the counts are of courses, so each short course must lack one lesson.
+            if units != short:
+                die(f"{r['instance']} rep {r['rep']}: a short course lacks more than one lesson; the prose counts lessons")
+            if first["placements_out"] - first["placements_in"] != short - left:
+                die(f"{r['instance']} rep {r['rep']}: H1 does not place one lesson per course it completes")
+            short_before += short
+            short_after += left
+            calls_short += left > 0
+            if not (surplus or left):
+                die(f"{r['instance']} rep {r['rep']}: neither surplus nor missing lessons left after H1")
 
     # The weighted objective, empty start against each valid repaired answer of the instance
     # (both valid), and against the best of them.
@@ -1530,6 +1807,8 @@ def _veloxq_empty_start(answers: list) -> tuple:
         die("empty start: one start is lower in every comparison of a tier; the prose says neither")
     if any(best[t][0] <= best[t][1] for t in ("hard", "extreme")):
         die("empty start: the best repaired answer is not lower more often on the hard and extreme tiers")
+    if best["medium"][1] <= best["medium"][0]:
+        die("empty start: on the medium tier the empty start is not lower more often than the best answer")
 
     # The instance it leaves invalid: one course without its lesson, as two repaired answers of the
     # same instance; the continuation at k = 3 does not free it.
@@ -1543,21 +1822,126 @@ def _veloxq_empty_start(answers: list) -> tuple:
     if invalid[0]["left"] != "PR1_course_minutes=1" or lessons != {invalid[0]["lessons"] + 1} \
             or REPAIR_STUCK_INSTANCES.get(stem) != 2:
         die("empty start: the invalid instance does not fail as two of its repaired answers do")
+    # The prose: the k = 3 continuation frees one of the two failing answers of that instance.
+    freed = [r["continued_full"] == "True" for r in read_csv(VELOXQ / "analysis" / "repair_stuck.csv")
+             if r["instance"] == stem]
+    if sorted(freed) != [False, True]:
+        die("empty start: the k = 3 continuation does not free exactly one of the two failing answers")
+    # The prose: from the empty start it places the missing lesson but leaves another course without
+    # its lesson, so the timetable still lacks one.
+    import yaml
+
+    def courses(run_dir: Path) -> set:
+        with open(run_dir / "rep_0" / f"{stem}_postLS.yaml", encoding="utf-8") as fh:
+            return {lesson["course_unique_id"] for lesson in yaml.safe_load(fh)["lessons"]}
+    before, after = courses(run), courses(cont)
+    if continued[0]["left"] != "PR1_course_minutes=1" or continued[0]["lessons"] != invalid[0]["lessons"] \
+            or len(before - after) != 1 or len(after - before) != 1:
+        die("empty start: at k = 3 the empty start's timetable does not trade one course without a lesson for another")
 
     macros = [rf"\newcommand{{\VqEmptyValid}}{{{sum(c['full'] for c in calls)}}}",
               rf"\newcommand{{\VqEmptyExtremeValid}}{{{tiers['extreme']['instances_valid']}}}",
               rf"\newcommand{{\VqEmptyGreedyExtreme}}{{{sum(empty_h1[c['instance']] for c in calls if c['tier'] == 'extreme')}}}",
               rf"\newcommand{{\VqAnswerGreedyHard}}{{{answer_h1['hard']}}}",
               rf"\newcommand{{\VqRepairHardCalls}}{{{3 * MANIFEST['hard']}}}",
-              rf"\newcommand{{\VqRepairExtremeCalls}}{{{3 * MANIFEST['extreme']}}}"]
+              rf"\newcommand{{\VqRepairExtremeCalls}}{{{3 * MANIFEST['extreme']}}}",
+              rf"\newcommand{{\VqHOneShortExtreme}}{{{short_before}}}",
+              rf"\newcommand{{\VqHOneLeftExtreme}}{{{short_after}}}",
+              rf"\newcommand{{\VqHOneLeftCallsExtreme}}{{{calls_short}}}"]
     for t, name in (("medium", "Medium"), ("hard", "Hard"), ("extreme", "Extreme")):
         macros += [rf"\newcommand{{\VqEmptyLower{name}}}{{{pairs[t][0]}}}",
                    rf"\newcommand{{\VqEmptyHigher{name}}}{{{pairs[t][1]}}}",
                    rf"\newcommand{{\VqEmptyPairs{name}}}{{{pairs[t][2]}}}"]
-    for t, name in (("hard", "Hard"), ("extreme", "Extreme")):
+    for t, name in (("medium", "Medium"), ("hard", "Hard"), ("extreme", "Extreme")):
         macros += [rf"\newcommand{{\VqBestLower{name}}}{{{best[t][0]}}}",
+                   rf"\newcommand{{\VqBestHigher{name}}}{{{best[t][1]}}}",
                    rf"\newcommand{{\VqBestPairs{name}}}{{{best[t][2]}}}"]
-    return tiers, macros
+    return tiers, macros + _h1_order(empty_h1)
+
+
+def _h1_order(empty_h1: dict) -> list:
+    """H1 alone from the empty timetable in other orders (checks/h1_order.py -> artifacts/h1_order.csv):
+    the courses in a random order, each lesson in a random one of the places it may take, or both,
+    once per seed. ``empty_h1``: whether H1 alone, in its own order, left no violation in the
+    deposited empty-start run of each instance. The prose: on the easy, medium and hard tiers every
+    run ends with no violation; on the extreme tier random places do so in few runs and on no
+    instance in all of them, a random course order about as often as H1's own order; a run that
+    fails leaves only courses short of their hours."""
+    rows = read_csv(ART / "h1_order.csv")
+    own = {r["instance"]: r["violations"] == "0" for r in rows if r["variant"] == "default"}
+    if own != empty_h1:
+        die("h1_order.csv: H1 in its own order does not give what the empty-start runs record")
+    randoms = ("random_courses", "random_places", "random_both")
+    seeds = collections.defaultdict(set)
+    for r in rows:
+        if r["variant"] in randoms:
+            seeds[(r["instance"], r["variant"])].add(r["seed"])
+    if {i for i, _ in seeds} != set(own) or {v for _, v in seeds} != set(randoms) \
+            or len({frozenset(s) for s in seeds.values()}) != 1:
+        die("h1_order.csv: not the same seeds for every instance and random order")
+    n = len(next(iter(seeds.values())))
+    if any(r["violations"] != "0" for r in rows if tier_of(r["instance"]) != "extreme"):
+        die("h1_order.csv: on the easy, medium or hard tier a run of H1 alone leaves a violation")
+    if any(r["rules"] and {k.split("=")[0] for k in r["rules"].split()} != {"PR1_course_minutes"} for r in rows):
+        die("h1_order.csv: a run of H1 alone leaves a violation other than a course short of its hours")
+    ext = [r for r in rows if tier_of(r["instance"]) == "extreme"]
+    runs = n * MANIFEST["extreme"]
+
+    def no_violation(variant: str) -> int:
+        return sum(r["violations"] == "0" for r in ext if r["variant"] == variant)
+
+    def every_run(variant: str) -> int:
+        by = collections.defaultdict(list)
+        for r in ext:
+            if r["variant"] == variant:
+                by[r["instance"]].append(r["violations"] == "0")
+        return sum(all(v) for v in by.values())
+    own_rate = sum(v for i, v in own.items() if tier_of(i) == "extreme") / MANIFEST["extreme"]
+    if every_run("random_places") or no_violation("random_places") / runs >= own_rate / 2:
+        die("h1_order.csv: on the extreme tier random places are not far worse than H1's own order")
+    if abs(no_violation("random_courses") / runs - own_rate) > 0.1:
+        die("h1_order.csv: on the extreme tier a random course order is not about as good as H1's own")
+    return [rf"\newcommand{{\VqHOneOrderSeeds}}{{{n}}}",
+            rf"\newcommand{{\VqHOneOrderExtremeRuns}}{{{runs}}}",
+            rf"\newcommand{{\VqHOneRandomPlacesExtreme}}{{{no_violation('random_places')}}}",
+            rf"\newcommand{{\VqHOneRandomCoursesExtreme}}{{{no_violation('random_courses')}}}"]
+
+
+def _veloxq_kept(answers: list) -> list:
+    """How much of each repaired answer the solver placed (same course, lecturer, day and time),
+    per tier: the median share of the repaired timetable's lessons that its answer has, and the
+    median share it has in common with the repaired timetables of the instance's other calls (their
+    mean). Computed from the deposit's answers and repairs by scripts/analyze_answer_overlap.py,
+    whose CSV artifacts/answer_overlap_S3.csv must agree; ``answers``: repair_calls.csv. The prose:
+    most lessons of a repaired timetable are not in its answer; it has more in common with the
+    other calls' repaired timetables than with its answer on the easy and medium tiers, about as
+    much on the hard tier and less on the extreme tier."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import analyze_answer_overlap as ao
+    rows = ao.synthetic_rows()
+    by_call = {(r["instance"], int(r["rep"])): r for r in answers}
+    if sorted((r["instance"], r["rep"]) for r in rows) != sorted(by_call) or any(
+            r["final_lessons"] != int(by_call[(r["instance"], r["rep"])]["lessons"])
+            or r["valid"] != (by_call[(r["instance"], r["rep"])]["full"] == "True") for r in rows):
+        die("answer overlap: the repaired timetables are not those of repair_calls.csv")
+    saved = {(r["instance"], int(r["rep"])): r for r in read_csv(ART / "answer_overlap_S3.csv") if r["tier"] in TIERS}
+    if sorted(saved) != sorted(by_call) or any(
+            abs(float(saved[(r["instance"], r["rep"])][k]) - r[k]) > 1e-9
+            for r in rows for k in ("share_final_exact", "reference_exact")):
+        die("answer_overlap_S3.csv differs from the deposit; rerun scripts/analyze_answer_overlap.py --csv")
+    own = {t: stats.median(r["share_final_exact"] for r in rows if r["tier"] == t) for t in TIERS}
+    other = {t: stats.median(r["reference_exact"] for r in rows if r["tier"] == t) for t in TIERS}
+    if max(own.values()) >= 0.5:
+        die("answer overlap: on some tier most lessons of a repaired answer are the answer's; the prose says not")
+    if not (other["easy"] > own["easy"] and other["medium"] > own["medium"]
+            and abs(other["hard"] - own["hard"]) <= 0.2 * own["hard"] and other["extreme"] < own["extreme"]):
+        die("answer overlap: against the other calls' repaired timetables the shares do not compare as the "
+            "prose says (more on easy and medium, about as much on hard, less on extreme)")
+    macros = []
+    for t in TIERS:
+        macros += [rf"\newcommand{{\VqKept{t.capitalize()}}}{{{fmt(100 * own[t], 1)}}}",
+                   rf"\newcommand{{\VqKeptOther{t.capitalize()}}}{{{fmt(100 * other[t], 1)}}}"]
+    return macros
 
 
 # ===================================================================== 4
@@ -1803,9 +2187,9 @@ def tab_lambdas():
 
 
 # ===================================================================== 5b
-# Setting S3 on 3_studies (19.10.2026): the VeloxQ answers (artifacts/campaign/
-# veloxq_3studies), their repair and the same repair from an empty timetable
-# (artifacts/campaign/veloxq_3studies_ls), all kept in this private repository.
+# Settings S3 (19.10.2026) and S0 (28-29.10.2026) on 3_studies: the VeloxQ answers
+# (artifacts/campaign/veloxq_3studies), their repair and the same repair from an empty
+# timetable (artifacts/campaign/veloxq_3studies_ls), all kept in this private repository.
 REPAIR_3STUDIES = "campaign/veloxq_3studies_ls"      # under artifacts/
 NUMBER_WORDS = {0: "no", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five"}
 LEFT_WORDS = {"PR1_course_minutes": "hours", "MC_max_chunks": "blocks",
@@ -1826,52 +2210,69 @@ def _same_file(path, sha256):
 
 
 def tab_veloxq_3studies():
-    """tab_veloxq_3studies.tex and the in-text numbers of the S3 runs on
+    """tab_veloxq_3studies.tex and the in-text numbers of the S3 and S0 runs on
     3_studies; {} (and no table) without their outputs."""
     import hashlib
     import yaml
-    run_dir, ls_dir = ART / UPLOADED_3STUDIES, ART / REPAIR_3STUDIES
-    answers = sorted(run_dir.glob("rep_*/3_studies_instance_velox_solution.yaml"))
-    if not answers or not ls_dir.exists():
-        print("[make_figures] 3_studies S3 outputs missing; skipping tab_veloxq_3studies")
+    run_dir, s0_dir, ls_dir = ART / UPLOADED_3STUDIES, ART / UPLOADED_3STUDIES_S0, ART / REPAIR_3STUDIES
+    if not any(run_dir.glob("rep_*/3_studies_instance_velox_solution.yaml")) or not ls_dir.exists() \
+            or not any(s0_dir.glob("rep_*/3_studies_instance_velox_solution.yaml")):
+        print("[make_figures] 3_studies S3 or S0 outputs missing; skipping tab_veloxq_3studies")
         return {}
     check_uploaded(hashlib.sha256((run_dir / "caches" / "3_studies_instance.qubo_cache.h5")
                                   .read_bytes()).hexdigest(), "3_studies S3 runs")
-    calls = {}
-    for path in answers:
-        with open(path, encoding="utf-8") as fh:
-            doc = yaml.safe_load(fh)
-        md = doc["metadata"]
-        ver = md["verifier"]
-        calls[int(path.parent.name.split("_")[1])] = {
-            "path": path, "lessons": len(doc["lessons"]), "verifier": ver,
-            "solver_s": float(md["phase2"]["veloxq_solver_time_seconds"]),
-            "steps": int(md["veloxq"]["num_steps"]), "reps": int(md["veloxq"]["num_rep"])}
-    if len({(c["steps"], c["reps"]) for c in calls.values()}) != 1:
-        die("3_studies S3: the calls ran with different budgets")
+    if uploaded_cache_sha256(s0_dir) != {hashlib.sha256((s0_dir / "caches" / "3_studies_instance.qubo_cache.h5")
+                                                        .read_bytes()).hexdigest()}:
+        die("3_studies S0: the matrix in its caches is not the one its calls received")
+    # The prose: S3 is the counts presolve with every penalty 1.5 times its requirement, S0 the
+    # configured encoding; both start from the same configuration.
+    setting = {d.name: json.loads((d / "setting.json").read_text(encoding="utf-8")) for d in (run_dir, s0_dir)}
+    if setting["S3"]["overrides"] != {"room_presolve": "counts", "penalty_profile": "sufficient",
+                                      "penalty_margin": 1.5} or setting["S0"]["overrides"] != {} \
+            or {s["base_config"] for s in setting.values()} != {"cfg/qubo_cfg.yaml"}:
+        die("3_studies: the settings are not S3 and S0 as the prose describes them")
 
-    def repair(run, empty_start):
+    def answers(folder, name):
+        """The lowest-energy sample of each call, decoded, with its verdict."""
+        out = {}
+        for path in sorted(folder.glob("rep_*/3_studies_instance_velox_solution.yaml")):
+            with open(path, encoding="utf-8") as fh:
+                doc = yaml.safe_load(fh)
+            md = doc["metadata"]
+            out[int(path.parent.name.split("_")[1])] = {
+                "path": path, "lessons": len(doc["lessons"]), "verifier": md["verifier"],
+                "courses": {lesson["course_unique_id"] for lesson in doc["lessons"]},
+                "solver_s": float(md["phase2"]["veloxq_solver_time_seconds"]),
+                "steps": int(md["veloxq"]["num_steps"]), "reps": int(md["veloxq"]["num_rep"])}
+        if len({(c["steps"], c["reps"]) for c in out.values()}) != 1:
+            die(f"3_studies {name}: the calls ran with different budgets")
+        return out
+
+    calls, calls0 = answers(run_dir, "S3"), answers(s0_dir, "S0")
+
+    def repair(run, name, empty_start, answered):
         """The repair run's settings checked against the prose, then its rows."""
         settings = json.loads((ls_dir / run / "settings.json").read_text(encoding="utf-8"))
-        same = (settings["setting"] == "S3" and settings["ks"] == [1, 2]
+        same = (settings["setting"] == name and settings["ks"] == [1, 2]
                 and settings["candidate_shortlist_k"] == 10 and settings["extra"] == ["--room-set-rows"]
                 and settings["max_outer_passes"] == "none" and settings["max_wall_seconds_per_pass"] == "none"
                 and bool(settings.get("empty_start")) == empty_start)
         if not same:
-            die(f"3_studies S3: {run} did not run with the settings of Table tab:repair")
+            die(f"3_studies {name}: {run} did not run with the settings of Table tab:repair")
         out = {}
         for r in read_csv(ls_dir / run / "summary.csv"):
             rep = int(r["rep"])
             d = ls_dir / run / f"rep_{rep}"
             verdict = json.loads((d / "3_studies_instance_postLS_verdict.json").read_text(encoding="utf-8"))
             with open(d / "3_studies_instance_postLS.yaml", encoding="utf-8") as fh:
-                meta = (yaml.safe_load(fh) or {})["metadata"]
+                doc = yaml.safe_load(fh) or {}
+            meta = doc["metadata"]
             stats = json.loads((d / "3_studies_instance_stats.json").read_text(encoding="utf-8"))
             full = verdict["statuses"]["full"] is True
             if full != (r["full"] == "True"):
-                die(f"3_studies S3: {run} rep {rep}: the summary and the verdict disagree")
-            if not empty_start and not _same_file(calls[rep]["path"], meta["source_solution_file"]["sha256"]):
-                die(f"3_studies S3: the repair of call {rep} did not start from its answer file")
+                die(f"3_studies {name}: {run} rep {rep}: the summary and the verdict disagree")
+            if not empty_start and not _same_file(answered[rep]["path"], meta["source_solution_file"]["sha256"]):
+                die(f"3_studies {name}: the repair of call {rep} did not start from its answer file")
             left = collections.Counter()
             for counts in (verdict["violations_by_constraint"], verdict["extra_violations_by_rule"],
                            meta["final"]["room_set_rows_exceeded"]):
@@ -1881,6 +2282,8 @@ def tab_veloxq_3studies():
                 left["rooms"] += 1
             out[rep] = {"before": int(r["violations_before"]), "after": int(r["violations_after"]),
                         "lessons": int(verdict["lessons"]), "full": full,
+                        "courses": {lesson["course_unique_id"] for lesson in doc["lessons"]},
+                        "kinds": {w for w, n in left.items() if n},
                         "left": ", ".join(f"{w} {n}" for w, n in left.items() if n),
                         "objective": float(meta["final"]["soft_objective"]) if full else None,
                         "terms": meta["final"]["soft_objective_terms"] if full else None,
@@ -1889,10 +2292,12 @@ def tab_veloxq_3studies():
                         "cycles": stats["cycles"]}
         return out
 
-    fixed = repair("S3_room_set_rows", False)
-    empty = repair("S3_room_set_rows_empty_start", True)
-    if sorted(fixed) != sorted(calls) or sorted(empty) != [0]:
-        die("3_studies S3: the repair runs do not cover the five calls and one empty start")
+    fixed = repair("S3_room_set_rows", "S3", False, calls)
+    empty = repair("S3_room_set_rows_empty_start", "S3", True, calls)
+    fixed0 = repair("S0_room_set_rows", "S0", False, calls0)
+    if sorted(fixed) != sorted(calls) or sorted(empty) != [0] or sorted(fixed0) != sorted(calls0) \
+            or len(calls0) != len(calls):
+        die("3_studies: the repair runs do not cover the five calls of each setting and one empty start")
     e = empty[0]
 
     # The prose: no answer is valid; exactly one repaired answer is; the empty start
@@ -1936,11 +2341,67 @@ def tab_veloxq_3studies():
         die("3_studies S3: answer_overlap_S3.csv does not match the answers and their repairs")
     kept = [int(overlap[rep]["kept_exact"]) for rep in fixed]
 
+    # S0, the same five calls and repair on the configured encoding (28-29.10.2026). The prose:
+    # the same budget; no answer is valid; a valid timetable has one lesson for each of the 130
+    # courses; the S3 answers place more lessons than that, the S0 ones fewer, on fewer courses
+    # and with more clashes than any S3 answer; the greedy fill then leaves more lessons than a
+    # valid timetable has and single-lesson moves delete most of the surplus; one repaired answer
+    # is valid, the rest stop at kinds of violation also left under S3; its objective lies
+    # between the S3 one and the empty start's, with the least lecturer satisfaction of the three
+    # and fewer idle minutes than the S3 one. Under either setting the repair of an answer takes
+    # about as long as the empty start and keeps almost none of the answer.
+    if {(c["steps"], c["reps"]) for c in list(calls.values()) + list(calls0.values())} \
+            != {(c["steps"], c["reps"]) for c in calls.values()}:
+        die("3_studies S0: the calls did not run with the budget of the S3 calls")
+    if any(c["verifier"]["statuses"]["full"] for c in calls0.values()):
+        die("3_studies S0: a VeloxQ answer is valid; the prose says none is")
+    valid0 = [rep for rep, x in fixed0.items() if x["full"]]
+    if len(valid0) != 1:
+        die(f"3_studies S0: valid repairs {valid0}; the prose says one")
+    best0 = fixed0[valid0[0]]
+    need = len(e["courses"])
+    if need != 130 or any(x["lessons"] != need or x["courses"] != e["courses"] for x in (best, best0, e)) \
+            or any(not c["courses"] <= e["courses"] for c in list(calls.values()) + list(calls0.values())):
+        die("3_studies: the valid timetables do not have one lesson for each of the 130 courses")
+    if not max(c["lessons"] for c in calls0.values()) < need < min(c["lessons"] for c in calls.values()):
+        die("3_studies: the prose says the S3 answers place more lessons than a timetable has, the S0 ones fewer")
+    clash0 = [c["verifier"]["violations_by_constraint"]["PR3_PR4_lecturer_overlap"]
+              + c["verifier"]["violations_by_constraint"]["PR3_PR4_group_overlap"] for c in calls0.values()]
+    if min(clash0) <= max(clash):
+        die("3_studies S0: the prose says every S0 answer has more clashes than any S3 answer")
+    rule0 = lambda k: [c["verifier"]["violations_by_constraint"][k] for c in calls0.values()]
+    for x in fixed0.values():
+        if x["cycles"][0]["name"] != "H1_greedy_repair" or x["cycles"][-1]["outer_pass"] != 2 or any(
+                c["improvement_violations"] or c["improvement_second_key"] for c in x["cycles"]
+                if c["outer_pass"] == 2):
+            die("3_studies S0: a repair does not start with H1 and end with a second pass that changes nothing")
+    greedy0 = [x["cycles"][0]["placements_out"] - x["cycles"][0]["placements_in"] for x in fixed0.values()]
+    single0 = [c for x in fixed0.values() for c in x["cycles"] if c["name"] == "H2_k=1" and c["outer_pass"] == 1]
+    if any(x["cycles"][0]["placements_out"] <= need for x in fixed0.values()) \
+            or any(c["placements_out"] - need > (c["placements_in"] - need) / 2 for c in single0):
+        die("3_studies S0: the greedy fill does not overshoot, or single-lesson moves do not delete most of the surplus")
+    overlap0 = {int(r["rep"]): r for r in read_csv(ART / "answer_overlap_S0.csv") if r["tier"] == "3_studies"}
+    if sorted(overlap0) != sorted(fixed0) or any(
+            int(overlap0[rep]["answer_lessons"]) != calls0[rep]["lessons"]
+            or int(overlap0[rep]["final_lessons"]) != fixed0[rep]["lessons"] for rep in fixed0):
+        die("3_studies S0: answer_overlap_S0.csv does not match the answers and their repairs")
+    kept0 = [int(overlap0[rep]["kept_exact"]) for rep in fixed0]
+    stuck0 = [x for x in fixed0.values() if not x["full"]]
+    if not set().union(*(x["kinds"] for x in stuck0)) <= set().union(*(x["kinds"] for x in stuck)):
+        die("3_studies S0: the prose says the violations left are of kinds also left under S3")
+    if not (e["objective"] < best0["objective"] < best["objective"] and sat(best0) < min(sat(best), sat(e))
+            and idle(best0) < idle(best)):
+        die("3_studies S0: the comparison of the three valid timetables is not the one the prose states")
+    if any(not 0.5 * e["minutes"] <= x["minutes"] <= 1.1 * e["minutes"]
+           for x in list(fixed.values()) + list(fixed0.values())) or max(kept + kept0) > need / 10:
+        die("3_studies: the prose says the repair of an answer takes about as long as the empty start "
+            "and keeps almost none of the answer")
+
     L = [r"\setlength{\tabcolsep}{4pt}\small",
-         r"\begin{tabular}{@{}lrrrrlcrr@{}}", r"\toprule",
-         r" & \multicolumn{2}{c}{start} & \multicolumn{6}{c}{after the repair} \\",
-         r"\cmidrule(lr){2-3}\cmidrule(lr){4-9}",
-         r"start & lessons & violations & violations & lessons & left & valid & objective & time (min) \\",
+         r"\begin{tabular}{@{}llrrrrlcrr@{}}", r"\toprule",
+         r" & & \multicolumn{2}{c}{start} & \multicolumn{6}{c}{after the repair} \\",
+         r"\cmidrule(lr){3-4}\cmidrule(lr){5-10}",
+         r"setting & start & lessons & violations & violations & lessons & left & valid & objective & time (min) \\",
          r"\midrule"]
 
     def line(label, lessons0, x):
@@ -1949,10 +2410,11 @@ def tab_veloxq_3studies():
                  f"{x['left'] or '--'} & {'yes' if x['full'] else 'no'} & {obj} & "
                  f"${fmt(x['minutes'])}$ \\\\")
 
-    for rep in sorted(fixed):
-        line(f"call {rep}", calls[rep]["lessons"], fixed[rep])
-    L.append(r"\midrule")
-    line("empty timetable", 0, e)
+    for name, answered, repaired in (("S3", calls, fixed), ("S0", calls0, fixed0)):
+        for i, rep in enumerate(sorted(repaired)):
+            line(f"{name if i == 0 else ''} & call {rep}", answered[rep]["lessons"], repaired[rep])
+        L.append(r"\midrule")
+    line(r"\multicolumn{2}{@{}l}{empty timetable}", 0, e)
     L += [r"\bottomrule", r"\end{tabular}"]
     (HERE / "tab_veloxq_3studies.tex").write_text("\n".join(L) + "\n")
     print("[make_figures] wrote tab_veloxq_3studies.tex")
@@ -1997,6 +2459,35 @@ def tab_veloxq_3studies():
         "ProdSThreeIdleEmpty": fmt(idle(e)),
         "ProdSThreeSatAnswer": fmt(sat(best)),
         "ProdSThreeSatEmpty": fmt(sat(e)),
+        "ProdSZeroSolverMin": fmt(stats.mean(c["solver_s"] for c in calls0.values()) / 60),
+        "ProdSZeroLessonsLo": str(min(c["lessons"] for c in calls0.values())),
+        "ProdSZeroLessonsHi": str(max(c["lessons"] for c in calls0.values())),
+        "ProdSZeroCoursesLo": str(min(len(c["courses"]) for c in calls0.values())),
+        "ProdSZeroCoursesHi": str(max(len(c["courses"]) for c in calls0.values())),
+        "ProdSZeroHoursLo": str(min(rule0("PR1_course_minutes"))),
+        "ProdSZeroHoursHi": str(max(rule0("PR1_course_minutes"))),
+        "ProdSZeroBlocksLo": str(min(rule0("MC_max_chunks"))),
+        "ProdSZeroBlocksHi": str(max(rule0("MC_max_chunks"))),
+        "ProdSZeroClashLo": str(min(clash0)),
+        "ProdSZeroClashHi": str(max(clash0)),
+        "ProdSZeroRoomsWord": NUMBER_WORDS[sum(bool(c["verifier"]["statuses"]["rooms"]) for c in calls0.values())],
+        "ProdSZeroNoLessonLo": str(min(need - len(c["courses"]) for c in calls0.values())),
+        "ProdSZeroNoLessonHi": str(max(need - len(c["courses"]) for c in calls0.values())),
+        "ProdSZeroGreedyLo": str(min(greedy0)),
+        "ProdSZeroGreedyHi": str(max(greedy0)),
+        "ProdSZeroSingleSecMax": fmt(max(c["wall_seconds"] for c in single0)),
+        "ProdSZeroAfterSingleLo": str(min(c["violations_out"] for c in single0)),
+        "ProdSZeroAfterSingleHi": str(max(c["violations_out"] for c in single0)),
+        "ProdSZeroKeptLo": str(min(kept0)),
+        "ProdSZeroKeptHi": str(max(kept0)),
+        "ProdSZeroValidCall": str(valid0[0]),
+        "ProdSZeroStuckWord": NUMBER_WORDS[len(stuck0)],
+        "ProdSZeroStuckLo": str(min(x["after"] for x in stuck0)),
+        "ProdSZeroStuckHi": str(max(x["after"] for x in stuck0)),
+        "ProdSZeroAnswerObjective": fmt(best0["objective"]),
+        "ProdSZeroAnswerToValidMin": fmt(best0["to_valid"]),
+        "ProdSZeroSatAnswer": fmt(sat(best0)),
+        "ProdSZeroIdleAnswer": fmt(idle(best0)),
     }
 
 
@@ -2027,12 +2518,16 @@ def milp_no_limit_numbers() -> dict:
     if ("Core(TM) i7-1365U" not in log or int(solver["Threads"]) != 12
             or meta["environment"]["packages"]["gurobi_library"] != "13.0.2"):
         die("MILP without a limit: the setup names an Intel Core i7-1365U, 12 threads and Gurobi 13.0.2")
+    # The text says the extreme runs with a time limit include this instance: the same model.
+    with open(MILP_DEPOSIT / "extreme" / "extreme_011_seed_1110_MIP_solution.yaml", encoding="utf-8") as fh:
+        limited = yaml.safe_load(fh)["metadata"]["phase2"]
+    if limited["model_fingerprint"] != p2["model_fingerprint"]:
+        die("MILP without a limit: its model differs from the run of the same instance with a time limit")
     hours = float(p2["time_solve_s"]) / 3600
     return {
         "MilpNoLimitHours": fmt(hours, 1),
         "MilpNoLimitStaleHours": fmt(hours - best_at / 3600, 0),
         "MilpNoLimitGap": fmt(100 * float(summary["mip_gap"]), 0),
-        "MilpNoLimitOtherExtreme": str(MANIFEST["extreme"] - 1),
     }
 
 
@@ -2045,9 +2540,9 @@ def _hm(seconds: float) -> str:
 
 def prod_milp_numbers() -> dict:
     """The cold MILP on 3_studies under the current rules (21.10.2026; 550 min of search) against
-    the QUBO route of 19.10.2026: fig_3studies_time.pdf
+    the QUBO route under S3 (19.10.2026) and S0 (28-29.10.2026): fig_3studies_time.pdf
     (scripts/plot_3studies_objective_vs_time.py) and the in-text numbers, from the run records
-    in artifacts/campaign/milp_3studies and of the S3 runs. Every sentence they feed is guarded."""
+    in artifacts/campaign/milp_3studies and of the S3 and S0 runs. Every sentence they feed is guarded."""
     sys.path.insert(0, str(ROOT / "scripts"))
     import plot_3studies_objective_vs_time as p3
     from recover_milp_snapshots import terms
@@ -2073,15 +2568,29 @@ def prod_milp_numbers() -> dict:
     half, hour = best_at(build + 1800), best_at(build + 3600)
     qubo, empty = r["objective"], r["empty_objective"]
     ls = ART / REPAIR_3STUDIES
+    # The valid timetables of the QUBO route: the repaired S3 answer, the empty start and the
+    # repaired S0 answer (one call of each setting ends valid; Section 7.3).
+    s0_valid = [int(x["rep"]) for x in read_csv(ls / "S0_room_set_rows" / "summary.csv") if x["full"] == "True"]
+    if len(s0_valid) != 1:
+        die("3_studies MILP: the S0 runs do not have exactly one valid repaired answer")
     q_terms = [terms(json.loads((ls / run / f"rep_{rep}" / "3_studies_instance_postLS_verdict.json")
                                 .read_text(encoding="utf-8"))["soft_metrics"])
-               for run, rep in (("S3_room_set_rows", 4), ("S3_room_set_rows_empty_start", 0))]
-    if [sum(t.values()) for t in q_terms] != [qubo, empty]:
+               for run, rep in (("S3_room_set_rows", 4), ("S3_room_set_rows_empty_start", 0),
+                                ("S0_room_set_rows", s0_valid[0]))]
+    if [sum(t.values()) for t in q_terms][:2] != [qubo, empty]:
         die("3_studies MILP: the QUBO route's objectives do not match their verdicts")
-    if not (half["gurobi_objective"] > max(qubo, empty) and hour["gurobi_objective"] < min(qubo, empty)):
-        die("3_studies MILP: the prose says it is behind both QUBO-route timetables at 30 min, ahead at 1 h")
+    objectives = [sum(t.values()) for t in q_terms]
+    if not (half["gurobi_objective"] > max(objectives) and hour["gurobi_objective"] < min(objectives)):
+        die("3_studies MILP: the prose says it is behind all three QUBO-route timetables at 30 min, ahead at 1 h")
+    # The abstract: that better timetable is found within an hour of the start of the route.
+    if hour["found_s"] + build > 3600:
+        die("3_studies MILP: the abstract says a better timetable comes within an hour of the start")
     if any(best["terms"][k] > t[k] for t in q_terms for k in best["terms"]):
         die("3_studies MILP: the prose says its best timetable is no worse on any term")
+    # "against at most" the repaired S3 answer's satisfaction, "at least" the empty start's idle minutes.
+    if max(-t["satisfaction"] for t in q_terms) != -q_terms[0]["satisfaction"] \
+            or min(t["idle"] for t in q_terms) != q_terms[1]["idle"]:
+        die("3_studies MILP: the QUBO route's most satisfaction or fewest idle minutes is not where the prose puts it")
     # Gurobi's progress line at the reported search time (run_times_20261022.json): incumbent,
     # bound and gap.
     times = json.loads((prod / "run_times_20261022.json").read_text(encoding="utf-8"))
@@ -2091,9 +2600,48 @@ def prod_milp_numbers() -> dict:
     incumbent, bound, gap = float(line[5]), float(line[6]), line[7].rstrip("%")
     if incumbent != best["gurobi_objective"]:
         die("3_studies MILP: Gurobi's progress line disagrees with the best kept timetable")
+    # Section 6: the settings of the synthetic campaign (the same Gurobi, its default seed), but a
+    # time limit in whole hours.
+    camp = json.loads((ART / MILP_3STUDIES / "CAMPAIGN.json").read_text(encoding="utf-8"))
+    syn_camp = json.loads((MILP_DEPOSIT / "CAMPAIGN.json").read_text(encoding="utf-8"))
+    cfg, syn = camp["settings"], syn_camp["settings"]
+    library = lambda c: c["environment"]["packages"]["gurobi_library"]  # noqa: E731
+    if any(cfg[k] != syn[k] for k in ("objective_mode", "threads", "mip_gap", "seed")) or cfg["seed"] is not None \
+            or library(camp) != library(syn_camp) \
+            or not cfg["time_limit"] or cfg["time_limit"] % 3600 or cfg["time_limit"] < p3.REPORT_S:
+        die("3_studies MILP: not the settings of the synthetic campaign with a limit in whole hours")
+    # 7.6: the best incumbent was kept every 30 min of search and at three times of the QUBO route
+    # (VeloxQ's solve time, the solver's answer, the repaired answer of the valid call); the five
+    # VeloxQ calls were submitted together.
+    import datetime
+    q = p3.qubo_points()
+    solves = [c["solve"] for c in q["calls"].values()]
+    marks = cfg["snapshot_at"]
+    if cfg["snapshot_every"] != 1800 or len(marks) != 3 or not min(solves) - 1 <= marks[0] <= max(solves) + 1 \
+            or abs(marks[1] - r["answer_ready"]) > 1 or abs(marks[2] - r["best_t"]) > 1:
+        die("3_studies MILP: the snapshots are not every 30 min of search and at the three times of the QUBO route")
+    sent = [datetime.datetime.fromisoformat(c["submitted"]) for c in q["calls"].values()]
+    if (max(sent) - min(sent)).total_seconds() > 60:
+        die("3_studies MILP: the text says the five VeloxQ calls were submitted together")
+    # 7.3 and Fig. 5, the QUBO route under S0 (29.10.2026): its five calls were submitted together
+    # too; its valid timetable is the repaired S0 answer; it takes longer than under S3 at every
+    # mark, and its five attempts end after the end of the figure.
+    s0r, q0 = r["s0"], p3.qubo_points("S0")
+    sent0 = [datetime.datetime.fromisoformat(c["submitted"]) for c in q0["calls"].values()]
+    if (max(sent0) - min(sent0)).total_seconds() > 60:
+        die("3_studies MILP: the text says the five S0 calls were submitted together")
+    if s0r["objective"] != objectives[2]:
+        die("3_studies MILP: the S0 route's valid timetable is not the repaired S0 answer")
+    if not (s0r["best_t"] > r["best_t"] and s0r["valid4"] > r["valid4"] and s0r["five_end"] > r["five_end"]
+            and s0r["five_end"] > r["milp_end"]):
+        die("3_studies MILP: the text says the S0 route takes longer and its five attempts end after the figure")
+    # The text: no optimum within the reported search.
+    if float(gap) <= 0:
+        die("3_studies MILP: the text says it proves no optimum within the reported search")
     return {
         "ProdMilpBuildSec": fmt(build),
         "ProdMilpFirstSec": fmt(log[0]["runtime_s"]),
+        "ProdMilpLimitHours": fmt(cfg["time_limit"] / 3600),
         "ProdMilpRunMin": fmt(p3.REPORT_S / 60),
         "ProdMilpKept": str(len(checked)),
         "ProdMilpBest": fmt(best["gurobi_objective"]),
@@ -2110,6 +2658,9 @@ def prod_milp_numbers() -> dict:
         "ProdQuboBestTime": _hm(r["best_t"]),
         "ProdQuboFiveTime": _hm(r["valid4"]),
         "ProdQuboFiveDone": _hm(r["five_end"]),
+        "ProdQuboSZeroBestTime": _hm(r["s0"]["best_t"]),
+        "ProdQuboSZeroFiveTime": _hm(r["s0"]["valid4"]),
+        "ProdQuboSZeroFiveDone": _hm(r["s0"]["five_end"]),
         "ProdEmptyTime": _hm(r["empty_t"]),
     }
 

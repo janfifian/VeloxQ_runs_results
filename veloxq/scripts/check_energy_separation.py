@@ -48,6 +48,7 @@ for _s in (sys.stdout, sys.stderr):
 
 import benchmark_pipeline as BP  # noqa: E402,F401  (loads the environment)
 import h5py  # noqa: E402
+import yaml  # noqa: E402
 from analyze_veloxq_campaign import delete_surplus  # noqa: E402,F401
 from run_penalty_scenarios import SCENARIOS  # noqa: E402
 from etpmachine import ETPMachine_DataLoader as DataLoader  # noqa: E402
@@ -62,12 +63,16 @@ TIERS = ("easy", "medium", "hard", "extreme")
 
 def milp_optima(root: Path) -> Dict[str, Path]:
     """The optimal timetables, by instance; runs repeated at the tag come first, the superseded
-    first runs (same code, an earlier commit of the notes) fill the rest."""
+    first runs (same code, an earlier commit of the notes) fill the rest. Runs stopped by a time
+    limit (the extreme tier) have no proven optimum and are left out."""
     out: Dict[str, Path] = {}
     for tier in TIERS:
         for p in sorted((root / tier).glob("*_MIP_solution.yaml")) + \
                 sorted((root / "superseded" / tier).glob("*_MIP_solution.yaml")):
-            out.setdefault(p.name[: -len("_MIP_solution.yaml")], p)
+            with open(p, encoding="utf-8") as fh:
+                status = yaml.safe_load(fh)["metadata"]["phase2"]["solve_summary"]["status"]
+            if status == "OPTIMAL":
+                out.setdefault(p.name[: -len("_MIP_solution.yaml")], p)
     return out
 
 
