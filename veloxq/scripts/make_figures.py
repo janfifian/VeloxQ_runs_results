@@ -198,7 +198,7 @@ def fig_and_tab_frustration(rows, rows_s3, prod):
          r"tier & $n$ & $|x|$ & $|Q|_{\mathrm{off}}$ & minority-sign "
          r"& $R_F^C$ (BFS) & balanced \\"]
     for title, tiers in ((r"S0: configured encoding", T),
-                         (r"S3: presolve and sufficient penalties", T3)):
+                         (r"S3: presolve and the threshold profile", T3)):
         L += [r"\midrule", rf"\multicolumn{{7}}{{@{{}}l}}{{\emph{{{title}}}}} \\"]
         for t in TIERS:
             r = tiers[t]
@@ -854,12 +854,12 @@ def tab_penalty_sufficiency() -> dict:
     prod_cells = cells["3_studies_instance"]
     clash = {c: worst[("Lambda_nonoverlap", c)] for c in cols}
     if min(clash.values()) < 1:
-        die("penalty sufficiency: a clash costs less than its requirement; the text says "
-            "the non-overlap penalty is sufficient everywhere")
+        die("penalty thresholds: a clash costs less than its threshold; the text says "
+            "the non-overlap penalty is above its threshold everywhere")
     pr1 = [worst[("Lambda_PR1", c)] for c in cols]
     linking = {worst[(k, c)] for k in ("Lambda_y", "Lambda_z") for c in cols}
     if len(linking) != 1:
-        die(f"penalty sufficiency: the linking penalties exceed their requirements {linking} times; "
+        die(f"penalty thresholds: the linking penalties exceed their thresholds {linking} times; "
             "the text gives one value")
     requirement = lambda col, key: max(r[4] for r in ratios if r[0] == col and r[2] == key)
     margin = float(json.loads((VELOXQ / "S3" / "setting.json").read_text(encoding="utf-8"))
@@ -1335,11 +1335,11 @@ VELOXQ = ROOT / "repository_ready" / "veloxq_synthetic"
 VELOXQ_SETTINGS = [  # setting, presolve level, penalties
     ("S0", "none", "configured"),
     ("S1", "implied", r"configured, room count $100$"),
-    ("S2", "counts", r"$\max$(configured, $1.5\times$ requirement)"),
-    ("S3", "counts", r"$1.5\times$ requirement"),
-    ("S4", "none", r"$1.5\times$ requirement, seats configured"),
+    ("S2", "counts", r"$\max$(configured, $1.5\times$ threshold)"),
+    ("S3", "counts", r"$1.5\times$ threshold"),
+    ("S4", "none", r"$1.5\times$ threshold, seats configured"),
     ("S5", "counts", "configured"),
-    ("S6", "counts", r"$5\times$ requirement"),
+    ("S6", "counts", r"$5\times$ threshold"),
 ]
 VELOXQ_MACRO = {"S0": "SZero", "S1": "SOne", "S2": "STwo", "S3": "SThree",
                 "S4": "SFour", "S5": "SFive", "S6": "SSix"}
@@ -1534,7 +1534,7 @@ def _veloxq_separation_macros(calls) -> list:
     if any(int(r["illegal_below_opt"]) for r in nb):
         die("a neighbour of the optimum is illegal and below it: the prose says none is")
     if any(int(r["illegal_below_worst_legal"]) for r in nb if r["setting"] in ("S2", "S3", "S4", "S6")):
-        die("with a sufficient room-count penalty an illegal neighbour lies below a legal one: the prose says none does")
+        die("with a room-count penalty above its threshold an illegal neighbour lies below a legal one: the prose says none does")
     if not all(any(int(r["illegal_below_worst_legal"]) for r in nb if r["setting"] == s) for s in ("S0", "S1", "S5")):
         die("with a room-count penalty of 10 or 100 no illegal neighbour lies below a legal one: the prose says some do")
     valid = collections.defaultdict(set)
@@ -2359,6 +2359,25 @@ def tab_veloxq_3studies():
     if len(valid0) != 1:
         die(f"3_studies S0: valid repairs {valid0}; the prose says one")
     best0 = fixed0[valid0[0]]
+
+    # The prose: in each valid repair the violations reach zero during the two-lesson moves of the
+    # first full pass, which start at about the same second in all three and end at the time the
+    # summary gives (to_valid); the stats record each pass, not the moment within it.
+    def zero_pass_start(x: dict) -> float:
+        t = 0.0
+        for c in x["cycles"]:
+            if c["violations_out"] == 0:
+                if (c["cycle_kind"], c["k"], c["outer_pass"]) != ("H2", 2, 1) or \
+                        abs(t + c["wall_seconds"] - 60 * x["to_valid"]) > 0.01:
+                    die("3_studies: a valid repair reaches zero violations outside the two-lesson moves of "
+                        "the first full pass, or not when its summary says; the prose says it does")
+                return t
+            t += c["wall_seconds"]
+        die("3_studies: a valid repair never reaches zero violations")
+    zero_starts = {round(zero_pass_start(x)) for x in (e, best, best0)}
+    if len(zero_starts) != 1:
+        die(f"3_studies: the two-lesson moves of the first full pass start at {sorted(zero_starts)} s; "
+            "the prose gives one time")
     need = len(e["courses"])
     if need != 130 or any(x["lessons"] != need or x["courses"] != e["courses"] for x in (best, best0, e)) \
             or any(not c["courses"] <= e["courses"] for c in list(calls.values()) + list(calls0.values())):
@@ -2486,6 +2505,7 @@ def tab_veloxq_3studies():
         "ProdSZeroStuckHi": str(max(x["after"] for x in stuck0)),
         "ProdSZeroAnswerObjective": fmt(best0["objective"]),
         "ProdSZeroAnswerToValidMin": fmt(best0["to_valid"]),
+        "ProdZeroPhaseStartSec": str(next(iter(zero_starts))),
         "ProdSZeroSatAnswer": fmt(sat(best0)),
         "ProdSZeroIdleAnswer": fmt(idle(best0)),
     }
