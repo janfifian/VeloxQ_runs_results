@@ -717,11 +717,21 @@ def main() -> int:
     M += [rf"\newcommand{{\{k}}}{{{v}}}" for k, v in tab_veloxq_3studies().items()]
     # Sections 4 and 6: matrices of the VeloxQ runs, Table 2 and the census.
     census = read_csv(ART / "qubo_family_census.csv")
+    allnums = dict(fnum)
     for numbers in (tab_penalty_sufficiency(), section4_numbers(), census_numbers(census),
                     milp_campaign_numbers(), prod_presolve_numbers(),
                     prod_pr5_numbers(), qpu_numbers(), margin_numbers(), prod_milp_numbers(),
                     milp_no_limit_numbers()):
+        allnums.update(numbers)
         M += [rf"\newcommand{{\{k}}}{{{v}}}" for k, v in numbers.items()]
+    # Table tab:qpu-fit gives the 3_studies row through the macros of its encodings: the D-Wave
+    # deposit's placements and coupled variables of the default and presolved encodings must be those.
+    p3 = read_csv(DWAVE_RESULTS / "paper_3studies.csv")
+    counts = lambda col, enc=None: {fmt(int(r[col])) for r in p3 if enc is None or r["encoding"] == enc}
+    if (counts("candidate_placements"), counts("coupled_variables", "default"),
+            counts("coupled_variables", "presolved")) != \
+            ({allnums["ProdDecisionBits"]}, {allnums["ProdNoneVars"]}, {allnums["ProdVars"]}):
+        die("QPU table: the D-Wave deposit's 3_studies placements or coupled variables are not those of the prose")
     (HERE / "generated_numbers.tex").write_text("\n".join(M) + "\n")
     fig_family_census(census)
     fig_sparsity()
@@ -1024,6 +1034,39 @@ def _hours(h: float) -> str:
     return f"{h:.2f}".rstrip("0").rstrip(".")
 
 
+# Level 10 of the hard tier is reported at 12 h of search (the authors, 27.11.2026).
+LEVEL_TEN_MARK_S = 12 * 3600
+
+
+def level_ten_at_mark() -> dict:
+    """The runs stopped before a proof (level 10) at 12 h of search, from the deposit: the best
+    incumbent by then (the run record's list of incumbents) and the bound of Gurobi's last progress
+    line by then (its log), with the end of each run (summary.csv) for the footnote.
+    Returns {instance file name: {objective, gap, end_s, end_gap, final}}."""
+    import re
+    import yaml
+    progress_line = re.compile(r"^[ H*]?\s*\d+\s+\d+\s.*?(-?\d+\.\d+|-)\s+(-?\d+\.\d+)\s+(\d+\.\d+)%\s+\S+\s+(\d+)s\s*$")
+    out = {}
+    for r in read_csv(MILP_DEPOSIT / "summary.csv"):
+        if r["status"] != "INTERRUPTED":
+            continue
+        stem = r["instance"][:-5]
+        with open(MILP_DEPOSIT / r["tier"] / f"{stem}_MIP_solution.yaml", encoding="utf-8") as fh:
+            p2 = yaml.safe_load(fh)["metadata"]["phase2"]
+        found = [(float(e["runtime_s"]), float(e["objective"])) for e in p2["incumbents"]
+                 if e.get("objective") is not None]
+        objective = min(o for t, o in found if t <= LEVEL_TEN_MARK_S)
+        log = (MILP_DEPOSIT / r["tier"] / f"{stem}_MIP_phase2_gurobi.log").read_text(encoding="utf-8")
+        bounds = [(int(m.group(4)), float(m.group(2))) for m in map(progress_line.match, log.splitlines()) if m]
+        by_mark = [b for t, b in bounds if t <= LEVEL_TEN_MARK_S]
+        if not by_mark:
+            die(f"MILP: {stem}: Gurobi's log has no progress line within 12 h of search")
+        out[r["instance"]] = {"objective": objective, "gap": 100 * abs(objective - by_mark[-1]) / abs(objective),
+                              "end_s": float(r["time_solve_s"]), "end_gap": 100 * float(r["mip_gap"]),
+                              "final": float(r["objective"])}
+    return out
+
+
 def milp_campaign_numbers() -> dict:
     """The MILP run of every synthetic instance, one per instance (the deposit's summary.csv):
     settings; the optima, their first incumbents and the longest proof; the extreme tier, run with a
@@ -1075,8 +1118,21 @@ def milp_campaign_numbers() -> dict:
         die("MILP: the text says the hard instances of level 10, and no other, were stopped before a proof")
     if not all(r["final_full"] == "True" for r in stopped):
         die("MILP: the text says every stopped run's timetable passes every check")
-    stopped_hours = [float(r["time_solve_s"]) / 3600 for r in stopped]
-    stopped_gaps = [100 * float(r["mip_gap"]) for r in stopped]
+    # Level 10 is reported at 12 h of search (Section 7.1 and its footnote): by then every run had its
+    # final timetable, so no run found a better one afterwards, and the search some ran on narrowed
+    # their gaps only a little.
+    marked = level_ten_at_mark()
+    if set(marked) != {r["instance"] for r in stopped}:
+        die("MILP: the level-10 runs at 12 h are not the runs stopped before a proof")
+    if any(abs(m["objective"] - m["final"]) > 1e-6 * max(1.0, abs(m["final"])) for m in marked.values()):
+        die("MILP: the footnote says no level-10 run found a better timetable after 12 h of search")
+    if any(m["end_s"] < LEVEL_TEN_MARK_S - 60 for m in marked.values()):
+        die("MILP: a level-10 run stopped before 12 h of search; the text reports each at 12 h")
+    went_on = [m for m in marked.values() if m["end_s"] > LEVEL_TEN_MARK_S + 60]
+    if not went_on:
+        die("MILP: the footnote says some level-10 runs went on after 12 h of search")
+    stopped_gaps = [m["gap"] for m in marked.values()]
+    gap_gain = max(m["gap"] - m["end_gap"] for m in went_on)
     stopped_best = [float(r["time_to_best_incumbent_s"]) / 3600 for r in stopped]
     # When Gurobi's objective of the incumbent first fell below the best repaired QUBO answer of the
     # instance (summary.csv), where the MILP has no optimum: every such run gets there.
@@ -1110,8 +1166,11 @@ def milp_campaign_numbers() -> dict:
         "MilpExtremeGapHi": fmt(max(extreme_gaps)),
         "MilpFirstMaxSecExtreme": f"{math.ceil(10 * max(float(r['first_runtime_s']) for r in limited)) / 10:.1f}",
         "MilpStoppedRuns": str(len(stopped)),
-        "MilpStoppedHoursLo": _hours(min(stopped_hours)),
-        "MilpStoppedHoursHi": _hours(max(stopped_hours)),
+        "MilpLevelTenMarkHours": str(LEVEL_TEN_MARK_S // 3600),
+        "MilpLevelTenContinued": str(len(went_on)),
+        "MilpLevelTenEndLo": _hours(min(m["end_s"] for m in went_on) / 3600),
+        "MilpLevelTenEndHi": _hours(max(m["end_s"] for m in went_on) / 3600),
+        "MilpLevelTenGapGain": f"{math.ceil(10 * gap_gain) / 10:.1f}",   # "at most": round up
         "MilpStoppedGapLo": fmt(min(stopped_gaps), 1),
         "MilpStoppedGapHi": fmt(max(stopped_gaps), 1),
         "MilpStoppedBestMaxHours": _hours(math.ceil(10 * max(stopped_best)) / 10),   # "within": round up
@@ -1120,7 +1179,8 @@ def milp_campaign_numbers() -> dict:
     }
 
 
-MILP_STATUS = {"OPTIMAL": "optimal", "TIME_LIMIT": "time limit", "INTERRUPTED": "stopped"}
+# Level 10 (stopped before a proof) is reported at 12 h of search.
+MILP_STATUS = {"OPTIMAL": "optimal", "TIME_LIMIT": "time limit", "INTERRUPTED": rf"{LEVEL_TEN_MARK_S // 3600}\,h"}
 
 
 def _seconds(x) -> str:
@@ -1153,12 +1213,17 @@ def tab_milp_instances() -> None:
             r"instance & status & $\mathcal{O}$ & gap, \% & solve, s & best, s & $\mathcal{O}$ & beaten, s \\",
             r"\midrule"]
 
+    marked = level_ten_at_mark()     # level 10: its state at 12 h of search
+
     def line(r: dict) -> str:
         name = r["instance"][:-5].replace("_", r"\_")
-        gap = 100 * float(r["mip_gap"])
+        m = marked.get(r["instance"])
+        gap = m["gap"] if m else 100 * float(r["mip_gap"])
+        objective = m["objective"] if m else float(r["objective"])
+        solve = LEVEL_TEN_MARK_S if m else r["time_solve_s"]
         beaten = rf"${_seconds(r['time_to_beat_qubo_ls_s'])}$" if r["time_to_beat_qubo_ls_s"] else "--"
-        return (rf"\texttt{{{name}}} & {MILP_STATUS[r['status']]} & ${fmt(float(r['objective']))}$ & "
-                rf"${fmt(gap, 1 if 0 < gap < 100 else 0)}$ & ${_seconds(r['time_solve_s'])}$ & "
+        return (rf"\texttt{{{name}}} & {MILP_STATUS[r['status']]} & ${fmt(objective)}$ & "
+                rf"${fmt(gap, 1 if 0 < gap < 100 else 0)}$ & ${_seconds(solve)}$ & "
                 rf"${_seconds(r['time_to_best_incumbent_s'])}$ & ${fmt(float(r['qubo_ls_best_objective']))}$ & "
                 rf"{beaten} \\")
     for part, tiers in (("a", ("easy", "medium")), ("b", ("hard", "extreme"))):
@@ -1296,7 +1361,13 @@ def qpu_numbers() -> dict:
     m = re.search(r"on 2 thinned stand-ins: K_(\d+) \(chains <= (\d+)\), K_(\d+) \(chains <= (\d+)\)", lines[k + 1])
     if m is None:
         die("QPU: facts.txt has no stand-in embeddings for Advantage_system4")
+    # Table tab:qpu-fit: the coupled variables of the feasibility-only 3_studies encoding.
+    feasible = {int(r["coupled_variables"]) for r in read_csv(DWAVE_RESULTS / "paper_3studies.csv")
+                if r["encoding"] == "feasibility"}
+    if len(feasible) != 1:
+        die("QPU: the D-Wave deposit gives the feasibility-only 3_studies encoding more than one size")
     return {
+        "QpuProdCoupledFeas": fmt(feasible.pop()),
         "QpuPrecSZero": fmt(100 * s0),
         "QpuPrecSThree": fmt(100 * s3),
         "QpuPrecFeas": fmt(100 * share("precision_easy000_sufficient_penalties", "feasibility")),
