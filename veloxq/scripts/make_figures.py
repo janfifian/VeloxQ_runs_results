@@ -22,6 +22,9 @@ Outputs (all written next to this file):
                               come from repository_ready/veloxq_synthetic/analysis
                               (alone: make_figures.py --only veloxq-settings)
 
+The VeloxQ deposit must be in repository_ready/veloxq_synthetic (repository_ready/HOW_TO_VERIFY.md,
+Pinned versions); the script stops with a message saying what is missing otherwise.
+
 Consistency guards (the script aborts rather than emitting a stale float):
   * per-tier counts must match the declared manifest;
   * no two columns describing different metrics may be numerically identical.
@@ -425,6 +428,8 @@ def _objective_weights() -> dict:
             "delta_days_per_group", "reward_unit")
     seen = {json.dumps({k: _cache_metadata(f)["config"][k] for k in keys}, sort_keys=True)
             for f in S0_CACHES.glob("*.qubo_cache.h5")}
+    if not seen:
+        die(f"soft terms: no S0 matrices in {S0_CACHES.relative_to(ROOT).as_posix()}")
     if len(seen) != 1:
         die("soft terms: the S0 matrices record different objective weights")
     weights = json.loads(seen.pop())
@@ -684,6 +689,7 @@ def tab_soft_terms() -> dict:
 
 # ===================================================================== main
 def main() -> int:
+    require_veloxq_deposit()
     frows = read_csv(ART / "qubo_frustration_paper_synth.csv")
     frows_s3 = read_csv(ART / "qubo_frustration_paper_synth_S3.csv")
     prod = read_csv(ART / "frustration_3studies_S3.csv")[0]
@@ -1167,9 +1173,8 @@ def milp_campaign_numbers() -> dict:
         "MilpFirstMaxSecExtreme": f"{math.ceil(10 * max(float(r['first_runtime_s']) for r in limited)) / 10:.1f}",
         "MilpStoppedRuns": str(len(stopped)),
         "MilpLevelTenMarkHours": str(LEVEL_TEN_MARK_S // 3600),
-        "MilpLevelTenContinued": str(len(went_on)),
-        "MilpLevelTenEndLo": _hours(min(m["end_s"] for m in went_on) / 3600),
-        "MilpLevelTenEndHi": _hours(max(m["end_s"] for m in went_on) / 3600),
+        "MilpLevelTenRunLo": _hours(min(m["end_s"] for m in marked.values()) / 3600),
+        "MilpLevelTenRunHi": _hours(max(m["end_s"] for m in marked.values()) / 3600),
         "MilpLevelTenGapGain": f"{math.ceil(10 * gap_gain) / 10:.1f}",   # "at most": round up
         "MilpStoppedGapLo": fmt(min(stopped_gaps), 1),
         "MilpStoppedGapHi": fmt(max(stopped_gaps), 1),
@@ -1414,6 +1419,33 @@ VELOXQ_SETTINGS = [  # setting, presolve level, penalties
 ]
 VELOXQ_MACRO = {"S0": "SZero", "S1": "SOne", "S2": "STwo", "S3": "SThree",
                 "S4": "SFour", "S5": "SFive", "S6": "SSix"}
+VELOXQ_SOURCE = "https://github.com/janfifian/VeloxQ_runs_results"
+
+
+def _lf_bytes(path: Path) -> bytes:
+    return path.read_bytes().replace(b"\r\n", b"\n")
+
+
+def require_veloxq_deposit() -> None:
+    """Stop with a plain message unless the VeloxQ deposit is in VELOXQ (repository_ready/HOW_TO_VERIFY.md,
+    Pinned versions). Note it when the deposit's copies of this script and of
+    scripts/check_energy_separation.py are other versions than the ones here."""
+    where = VELOXQ.relative_to(ROOT).as_posix()
+    fix = f"put there the veloxq/ folder of {VELOXQ_SOURCE} at the commit repository_ready/HOW_TO_VERIFY.md pins"
+    if not VELOXQ.is_dir():
+        die(f"the VeloxQ deposit is not in place: {where} does not exist; {fix}")
+    missing = [p.relative_to(VELOXQ).as_posix() for p in (S0_CACHES, S3_CACHES, VELOXQ / "analysis")
+               if not p.is_dir()]
+    if not missing and not any(S0_CACHES.glob("*.qubo_cache.h5")):
+        missing = ["the S0 matrices"]
+    if missing:
+        die(f"the VeloxQ deposit in {where} is incomplete (missing: {', '.join(missing)}); {fix}")
+    for ours in (Path(__file__).resolve(), ROOT / "scripts" / "check_energy_separation.py"):
+        theirs = VELOXQ / "scripts" / ours.name
+        if not theirs.exists() or _lf_bytes(theirs) != _lf_bytes(ours):
+            print(f"[make_figures] note: {where}/scripts/{ours.name} is not {ours.relative_to(ROOT).as_posix()}: "
+                  "the deposit was assembled with another version of it (repository_ready/HOW_TO_VERIFY.md, "
+                  "Pinned versions)")
 
 
 def _sci(x: float) -> str:
@@ -2758,6 +2790,7 @@ def prod_milp_numbers() -> dict:
 
 if __name__ == "__main__":
     if sys.argv[1:] == ["--only", "veloxq-settings"]:   # the VeloxQ campaign's floats alone
+        require_veloxq_deposit()
         tab_veloxq_settings()
         raise SystemExit(0)
     raise SystemExit(main())
