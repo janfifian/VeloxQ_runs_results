@@ -1,0 +1,307 @@
+=== 2026-10-28T23:29:34+01:00 start: 3_studies under S0 (as configured), 5 VeloxQ calls, then the S3 repair of each answer
+code: as in the S3 run (calls 8783d1b, repair 2fa811c); changed since, in parts this run does not execute, and as at 47de895: scripts/benchmark_pipeline.py (timed MILP incumbent snapshots only); scripts/run_milp_campaign.py (MILP driver options only; check_registry and instances, which veloxq_batch.py imports, unchanged); scripts/run_veloxq_ls_campaign.py (--input-run continuing an --empty-start run; neither is used here); scripts/veloxq_batch.py (its docstring only); src/etpmachine/utils/gurobi_multiobj.py (timed snapshots of MILP solves, off unless set; this run solves no MILP)
+instance: artifacts/3studies/3_studies_instance.yaml, content sha256 6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b (S3 records, registry)
+VeloxQ: VELOX_TOKEN set from .env; the SDK imports; gurobipy 12.0.3, veloxq_sdk 0.1.dev125+ge290bd081, dimod 0.12.21, numpy 2.4.4, scipy 1.17.1, torch 2.11.0+cpu, networkx 3.6.1, h5py 3.16.0, PyYAML 6.0.3
+VeloxQ calls: python scripts/veloxq_batch.py run --settings S0 --reps 5 --num-steps 10000 --num-rep 4096 --backend h100-1 --wait 60 --instance-files artifacts/3studies/3_studies_instance.yaml --out-name veloxq_3studies
+repair: python scripts/run_veloxq_ls_campaign.py --in-name veloxq_3studies --settings S0 --instance-files artifacts/3studies/3_studies_instance.yaml --output-name S0_room_set_rows --ks 1 2 --candidate-shortlist-k 10 --max-outer-passes none --max-wall-seconds-per-pass none --extra --room-set-rows
+outputs: artifacts/campaign/veloxq_3studies/S0, artifacts/campaign/veloxq_3studies_ls/S0_room_set_rows; state: 0 of 5 calls submitted, 0 answers saved, 0 repaired
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 5813.
+[QUBO/pre] start @ t=0.0s
+[QUBO/pre] slots done  (|T|=1410) @ t=0.0s
+[QUBO/pre] course reqs + max_chunks @ t=0.0s
+[QUBO/pre] course_allowed_lecturers @ t=0.0s
+[QUBO/pre] available_pt  (55*1410=77550 cells) @ t=47.8s
+[QUBO/pre] feasible_triples  (|x|=31,151) @ t=137.8s
+[QUBO/pre] PT_c + c_t_map @ t=137.8s
+[QUBO/pre] p_k_map + g_k_map + g_d_map (inverted-index fast path) @ t=138.4s
+[QUBO/pre] satisfaction + tod @ t=225.5s
+[QUBO/pre] signatures  (|sigs|=26,152) @ t=313.0s
+[QUBO/pre] room rows per cell  (|rows|=5,426) @ t=314.3s
+[QUBO/pre] mixed_modality_pairs  (|F_mix|=1,107,562) @ t=420.2s
+[QUBO/pre] lecture_before_pairs SKIPPED (enable_lecture_before=False) @ t=420.2s
+[QUBO/time] >> alloc_x ...
+[QUBO/time] << alloc_x  (0.03s, |Q|=0, |vars|=31,151)
+[QUBO/time] >> alloc_y ...
+[QUBO/time] << alloc_y  (0.01s, |Q|=0, |vars|=48,071)
+[QUBO/time] >> alloc_z ...
+[QUBO/time] << alloc_z  (0.00s, |Q|=0, |vars|=48,131)
+[QUBO/time] |X|=31,151  |y|=16,920  |z|=60
+[QUBO/time] >> PR1 ...
+[QUBO/time] << PR1  (4.14s, |Q|=4,754,310, |vars|=48,131)
+[QUBO/time] >> MAX_CHUNKS ...
+[QUBO/time] << MAX_CHUNKS  (3.38s, |Q|=4,785,591, |vars|=48,261)
+[QUBO/time] >> PR4_lecturers ...
+[QUBO/time]    PR4_lecturers: 2/55 (3%)  elapsed=0.2s  |Q|=4,807,119
+[QUBO/time]    PR4_lecturers: 4/55 (7%)  elapsed=0.4s  |Q|=4,828,647
+[QUBO/time]    PR4_lecturers: 6/55 (10%)  elapsed=0.9s  |Q|=4,910,763
+[QUBO/time]    PR4_lecturers: 8/55 (14%)  elapsed=1.0s  |Q|=4,945,023
+[QUBO/time]    PR4_lecturers: 10/55 (18%)  elapsed=1.1s  |Q|=4,945,023
+[QUBO/time]    PR4_lecturers: 12/55 (21%)  elapsed=1.3s  |Q|=4,981,301
+[QUBO/time]    PR4_lecturers: 14/55 (25%)  elapsed=1.4s  |Q|=5,014,259
+[QUBO/time]    PR4_lecturers: 16/55 (29%)  elapsed=1.7s  |Q|=5,058,439
+[QUBO/time]    PR4_lecturers: 18/55 (32%)  elapsed=2.6s  |Q|=5,186,523
+[QUBO/time]    PR4_lecturers: 20/55 (36%)  elapsed=3.0s  |Q|=5,209,673
+[QUBO/time]    PR4_lecturers: 22/55 (40%)  elapsed=3.0s  |Q|=5,212,097
+[QUBO/time]    PR4_lecturers: 24/55 (43%)  elapsed=3.1s  |Q|=5,215,623
+[QUBO/time]    PR4_lecturers: 26/55 (47%)  elapsed=3.7s  |Q|=5,308,763
+[QUBO/time]    PR4_lecturers: 28/55 (50%)  elapsed=3.7s  |Q|=5,314,511
+[QUBO/time]    PR4_lecturers: 30/55 (54%)  elapsed=3.8s  |Q|=5,327,163
+[QUBO/time]    PR4_lecturers: 32/55 (58%)  elapsed=3.8s  |Q|=5,327,163
+[QUBO/time]    PR4_lecturers: 34/55 (61%)  elapsed=4.3s  |Q|=5,396,455
+[QUBO/time]    PR4_lecturers: 36/55 (65%)  elapsed=5.0s  |Q|=5,501,915
+[QUBO/time]    PR4_lecturers: 38/55 (69%)  elapsed=5.2s  |Q|=5,534,963
+[QUBO/time]    PR4_lecturers: 40/55 (72%)  elapsed=5.3s  |Q|=5,551,723
+[QUBO/time]    PR4_lecturers: 42/55 (76%)  elapsed=6.5s  |Q|=5,650,623
+[QUBO/time]    PR4_lecturers: 44/55 (80%)  elapsed=6.8s  |Q|=5,697,801
+[QUBO/time]    PR4_lecturers: 46/55 (83%)  elapsed=6.9s  |Q|=5,716,241
+[QUBO/time]    PR4_lecturers: 48/55 (87%)  elapsed=6.9s  |Q|=5,716,241
+[QUBO/time]    PR4_lecturers: 50/55 (90%)  elapsed=6.9s  |Q|=5,716,241
+[QUBO/time]    PR4_lecturers: 52/55 (94%)  elapsed=7.0s  |Q|=5,716,241
+[QUBO/time]    PR4_lecturers: 54/55 (98%)  elapsed=7.0s  |Q|=5,716,241
+[QUBO/time] << PR4_lecturers  (7.04s, |Q|=5,716,241, |vars|=48,261)
+[QUBO/time] >> PR4_students ...
+[QUBO/time]    PR4_students: 1/12 (8%)  elapsed=4.0s  |Q|=6,392,708
+[QUBO/time]    PR4_students: 2/12 (16%)  elapsed=5.0s  |Q|=6,516,143
+[QUBO/time]    PR4_students: 3/12 (25%)  elapsed=7.0s  |Q|=6,922,905
+[QUBO/time]    PR4_students: 4/12 (33%)  elapsed=10.4s  |Q|=7,302,927
+[QUBO/time]    PR4_students: 5/12 (41%)  elapsed=15.1s  |Q|=7,709,660
+[QUBO/time]    PR4_students: 6/12 (50%)  elapsed=15.3s  |Q|=7,745,618
+[QUBO/time]    PR4_students: 7/12 (58%)  elapsed=16.7s  |Q|=7,974,891
+[QUBO/time]    PR4_students: 8/12 (66%)  elapsed=17.5s  |Q|=8,076,929
+[QUBO/time]    PR4_students: 9/12 (75%)  elapsed=20.0s  |Q|=8,476,914
+[QUBO/time]    PR4_students: 10/12 (83%)  elapsed=21.7s  |Q|=8,668,151
+[QUBO/time]    PR4_students: 11/12 (91%)  elapsed=23.2s  |Q|=8,871,679
+[QUBO/time] << PR4_students  (24.28s, |Q|=8,991,214, |vars|=48,261)
+[QUBO/time] >> mixed_modality ...
+[QUBO/time] << mixed_modality  (1.31s, |Q|=9,578,255, |vars|=48,261)
+[QUBO/time] >> CONJ_PHASE3 ...
+[QUBO/time]    CONJ_PHASE3: 271/5,426 rows (4%)  elapsed=0.7s  |Q|=9,750,043
+[QUBO/time]    CONJ_PHASE3: 542/5,426 rows (9%)  elapsed=2.5s  |Q|=10,040,067
+[QUBO/time]    CONJ_PHASE3: 813/5,426 rows (14%)  elapsed=4.6s  |Q|=10,421,701
+[QUBO/time]    CONJ_PHASE3: 1,084/5,426 rows (19%)  elapsed=5.3s  |Q|=10,584,759
+[QUBO/time]    CONJ_PHASE3: 1,355/5,426 rows (24%)  elapsed=7.2s  |Q|=10,966,092
+[QUBO/time]    CONJ_PHASE3: 1,626/5,426 rows (29%)  elapsed=9.1s  |Q|=11,194,010
+[QUBO/time]    CONJ_PHASE3: 1,897/5,426 rows (34%)  elapsed=9.6s  |Q|=11,339,939
+[QUBO/time]    CONJ_PHASE3: 2,168/5,426 rows (39%)  elapsed=10.7s  |Q|=11,611,535
+[QUBO/time]    CONJ_PHASE3: 2,439/5,426 rows (44%)  elapsed=13.3s  |Q|=12,117,204
+[QUBO/time]    CONJ_PHASE3: 2,710/5,426 rows (49%)  elapsed=15.2s  |Q|=12,511,805
+[QUBO/time]    CONJ_PHASE3: 2,981/5,426 rows (54%)  elapsed=15.7s  |Q|=12,658,893
+[QUBO/time]    CONJ_PHASE3: 3,252/5,426 rows (59%)  elapsed=17.6s  |Q|=13,057,645
+[QUBO/time]    CONJ_PHASE3: 3,523/5,426 rows (64%)  elapsed=21.3s  |Q|=13,693,105
+[QUBO/time]    CONJ_PHASE3: 3,794/5,426 rows (69%)  elapsed=24.9s  |Q|=14,259,532
+[QUBO/time]    CONJ_PHASE3: 4,065/5,426 rows (74%)  elapsed=27.2s  |Q|=14,558,387
+[QUBO/time]    CONJ_PHASE3: 4,336/5,426 rows (79%)  elapsed=27.6s  |Q|=14,688,574
+[QUBO/time]    CONJ_PHASE3: 4,607/5,426 rows (84%)  elapsed=28.7s  |Q|=14,938,339
+[QUBO/time]    CONJ_PHASE3: 4,878/5,426 rows (89%)  elapsed=29.5s  |Q|=15,127,286
+[QUBO/time]    CONJ_PHASE3: 5,149/5,426 rows (94%)  elapsed=29.8s  |Q|=15,239,313
+[QUBO/time]    CONJ_PHASE3: 5,420/5,426 rows (99%)  elapsed=93.8s  |Q|=29,920,127
+[QUBO/time] << CONJ_PHASE3  (94.05s, |Q|=30,007,429, |vars|=114,800)
+[QUBO/time] >> y_linking ...
+[QUBO/time]    y_linking: pre-indexed 6,355 populated (g,t) pairs (of 16,920 total) in 0.0s
+[QUBO/time]    y_linking: g=1/12 (8%)  elapsed=0.0s  |Q|=30,014,513
+[QUBO/time]    y_linking: g=2/12 (16%)  elapsed=0.0s  |Q|=30,018,121
+[QUBO/time]    y_linking: g=3/12 (25%)  elapsed=0.1s  |Q|=30,023,990
+[QUBO/time]    y_linking: g=4/12 (33%)  elapsed=0.1s  |Q|=30,030,591
+[QUBO/time]    y_linking: g=5/12 (41%)  elapsed=0.1s  |Q|=30,035,378
+[QUBO/time]    y_linking: g=6/12 (50%)  elapsed=0.1s  |Q|=30,038,074
+[QUBO/time]    y_linking: g=7/12 (58%)  elapsed=0.1s  |Q|=30,042,903
+[QUBO/time]    y_linking: g=8/12 (66%)  elapsed=0.1s  |Q|=30,046,344
+[QUBO/time]    y_linking: g=9/12 (75%)  elapsed=0.1s  |Q|=30,051,932
+[QUBO/time]    y_linking: g=10/12 (83%)  elapsed=0.2s  |Q|=30,057,024
+[QUBO/time]    y_linking: g=11/12 (91%)  elapsed=0.2s  |Q|=30,062,163
+[QUBO/time] << y_linking  (0.19s, |Q|=30,065,578, |vars|=114,800)
+[QUBO/time] >> z_linking ...
+[QUBO/time]    z_linking: g=1/12 (8%)  elapsed=0.0s  |Q|=30,066,988
+[QUBO/time]    z_linking: g=2/12 (16%)  elapsed=0.0s  |Q|=30,068,398
+[QUBO/time]    z_linking: g=3/12 (25%)  elapsed=0.0s  |Q|=30,069,808
+[QUBO/time]    z_linking: g=4/12 (33%)  elapsed=0.0s  |Q|=30,071,218
+[QUBO/time]    z_linking: g=5/12 (41%)  elapsed=0.0s  |Q|=30,072,628
+[QUBO/time]    z_linking: g=6/12 (50%)  elapsed=0.0s  |Q|=30,074,038
+[QUBO/time]    z_linking: g=7/12 (58%)  elapsed=0.0s  |Q|=30,075,448
+[QUBO/time]    z_linking: g=8/12 (66%)  elapsed=0.0s  |Q|=30,076,858
+[QUBO/time]    z_linking: g=9/12 (75%)  elapsed=0.0s  |Q|=30,078,268
+[QUBO/time]    z_linking: g=10/12 (83%)  elapsed=0.0s  |Q|=30,079,678
+[QUBO/time]    z_linking: g=11/12 (91%)  elapsed=0.0s  |Q|=30,081,088
+[QUBO/time] << z_linking  (0.02s, |Q|=30,082,498, |vars|=114,800)
+[QUBO/time] >> satisfaction ...
+[QUBO/time] << satisfaction  (0.03s, |Q|=30,082,498, |vars|=114,800)
+[QUBO/time] >> time_of_day ...
+[QUBO/time] << time_of_day  (0.02s, |Q|=30,082,498, |vars|=114,800)
+[QUBO/time] >> min_days ...
+[QUBO/time] << min_days  (0.00s, |Q|=30,082,558, |vars|=114,800)
+[QUBO/time] >> gap ...
+[QUBO/time] << gap  (0.11s, |Q|=30,177,622, |vars|=119,876)
+[QUBO/time] >> lecture_before ...
+[QUBO/time] << lecture_before  (0.00s, |Q|=30,177,622, |vars|=119,876)
+[QUBO/time] BUILD DONE  (134.6s total)  N_total=119,876  |Q|=30,177,622  const=56234513990.00
+[S0 prepare 1/1] 3_studies_instance: n_vars 119,876, |Q| 30,177,622, build 554.8 s
+[S0] submitting: 1 instances x 5 calls, num_steps 10000, num_rep 4096, backend h100-1 (2026-10-28T23:39:13+01:00)
+[S0 submit] 3_studies_instance rep 1: job 1c71180f-6848-426b-8efe-455961807b6f
+job id of rep 1 -> artifacts/campaign/veloxq_3studies/S0/rep_1/3_studies_instance_veloxq_job_id_phase2.txt
+[S0 submit] 3_studies_instance rep 2: job 3c5e9b3a-400f-4d8e-8dac-0b434627dd14
+job id of rep 2 -> artifacts/campaign/veloxq_3studies/S0/rep_2/3_studies_instance_veloxq_job_id_phase2.txt
+[S0 submit] 3_studies_instance rep 3: job d884cdec-5cca-4fc2-9e3c-e9da7e811197
+job id of rep 3 -> artifacts/campaign/veloxq_3studies/S0/rep_3/3_studies_instance_veloxq_job_id_phase2.txt
+[S0 submit] 3_studies_instance rep 4: job fdefe565-9e70-445f-8c91-9bd0984838e1
+job id of rep 4 -> artifacts/campaign/veloxq_3studies/S0/rep_4/3_studies_instance_veloxq_job_id_phase2.txt
+[S0 submit] 3_studies_instance rep 5: job b87de4fe-ed61-430b-aa76-f9193e26ac97
+job id of rep 5 -> artifacts/campaign/veloxq_3studies/S0/rep_5/3_studies_instance_veloxq_job_id_phase2.txt
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:42:53+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:43:54+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:44:56+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:45:57+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:46:58+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:48:00+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:49:01+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:50:02+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:51:04+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:52:05+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:53:06+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:54:08+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:55:09+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:56:11+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:57:12+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:58:13+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-28T23:59:15+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:00:17+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:01:18+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:02:19+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:03:20+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:04:22+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:05:23+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:06:25+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:07:26+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:08:27+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:09:29+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:10:30+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:11:31+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:12:33+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:13:36+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:14:38+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:15:39+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:16:40+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:17:42+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:18:43+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:19:44+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:20:46+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:21:47+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:22:49+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:23:50+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:24:51+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:25:53+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:26:54+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:27:55+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:28:57+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:29:58+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:30:59+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:32:01+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:33:02+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:34:04+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:35:05+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:36:07+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:37:08+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:38:11+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:39:12+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:40:13+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:41:15+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:42:16+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:43:18+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:44:19+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:45:20+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:46:22+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:47:23+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:48:24+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:49:26+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:50:27+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:51:28+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:52:30+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:53:31+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:54:32+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:55:34+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:56:35+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:57:37+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:58:38+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T00:59:40+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:00:41+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:01:42+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:02:44+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:03:45+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:04:46+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:05:48+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:06:49+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:07:51+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:08:52+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:09:53+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:10:55+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:11:56+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:12:57+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:13:59+01:00)
+[S0 pull] 0 saved, 5 pending or running, 0 failed, 0 processing errors (2026-10-29T01:15:00+01:00)
+[S0 pull] 3_studies_instance rep 1: saved
+[S0 pull] 3_studies_instance rep 2: saved
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:20:36+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:21:37+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:22:38+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:23:39+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:24:40+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:25:41+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:26:41+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:27:42+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:28:43+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:29:44+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:30:45+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:31:46+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:32:47+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:33:48+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:34:49+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:35:50+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:36:51+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:37:51+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:38:52+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:39:53+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:40:54+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:41:55+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:42:56+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:43:57+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:44:58+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:45:59+01:00)
+[S0 pull] 2 saved, 3 pending or running, 0 failed, 0 processing errors (2026-10-29T02:47:00+01:00)
+[S0 pull] 3_studies_instance rep 3: saved
+[S0 pull] 3_studies_instance rep 4: saved
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T03:52:18+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T03:53:18+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T03:54:19+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T03:55:19+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T03:56:20+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T03:57:20+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T03:58:21+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T03:59:21+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:00:21+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:01:22+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:02:22+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:03:23+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:04:23+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:05:24+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:06:24+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:07:25+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:08:25+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:09:25+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:10:26+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:11:26+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:12:27+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:13:27+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:14:27+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:15:28+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:16:28+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:17:29+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:18:29+01:00)
+[S0 pull] 4 saved, 1 pending or running, 0 failed, 0 processing errors (2026-10-29T04:19:30+01:00)
+[S0 pull] 3_studies_instance rep 5: saved
+[S0 pull] 5 saved, 0 pending or running, 0 failed, 0 processing errors (2026-10-29T04:52:24+01:00)
+[S0] 5 VeloxQ timetables to repair -> .\artifacts\campaign\veloxq_3studies_ls\S0_room_set_rows
+[S0 1/5] 3_studies_instance rep 1: violations 251 -> 2, all checks False, 1719.205 s
+[S0 2/5] 3_studies_instance rep 2: violations 206 -> 1, all checks False, 1368.103 s
+[S0 3/5] 3_studies_instance rep 3: violations 204 -> 2, all checks False, 1622.117 s
+[S0 4/5] 3_studies_instance rep 4: violations 192 -> 0, all checks True, 1330.414 s
+[S0 5/5] 3_studies_instance rep 5: violations 180 -> 1, all checks False, 1467.725 s
+=== 2026-10-29T06:57:34+01:00 ended, exit code 0

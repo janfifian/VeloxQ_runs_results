@@ -1,0 +1,8285 @@
+schema_version: 1
+faculties:
+  FAC1:
+    name: Synthetic Faculty
+    short_name: FAC1
+buildings:
+  BLDG1:
+    short_name: BLDG1
+    faculty: FAC1
+institutes:
+  INST1:
+    name: Synthetic Institute
+    short_name: INST1
+    faculty: FAC1
+study_fields:
+  SYNTH-1:
+    name: Synthetic Field, year 1
+    short_name: SYNTH-1
+    level: 1st
+    degree: lic
+    URL_program: ''
+    institute: INST1
+semesters:
+  SYNTH-1_1:
+    semester_nr: 1
+    study_field: SYNTH-1
+classrooms:
+  BLDG1_001:
+    name: BLDG1-R001
+    building: BLDG1
+    capacity: 119
+    type_of_classroom: Computing lab
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_002:
+    name: BLDG1-R002
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Audytorium
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_003:
+    name: BLDG1-R003
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Audytorium
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_004:
+    name: BLDG1-R004
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Computing lab
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_005:
+    name: BLDG1-R005
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Audytorium
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_006:
+    name: BLDG1-R006
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Computing lab
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_007:
+    name: BLDG1-R007
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Audytorium
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_008:
+    name: BLDG1-R008
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Audytorium
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_009:
+    name: BLDG1-R009
+    building: BLDG1
+    capacity: 80
+    type_of_classroom: Computing lab
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_010:
+    name: BLDG1-R010
+    building: BLDG1
+    capacity: 80
+    type_of_classroom: Audytorium
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_011:
+    name: BLDG1-R011
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Audytorium
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_012:
+    name: BLDG1-R012
+    building: BLDG1
+    capacity: 50
+    type_of_classroom: Computing lab
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  BLDG1_013:
+    name: BLDG1-R013
+    building: BLDG1
+    capacity: 80
+    type_of_classroom: Audytorium
+    area: null
+    computers: null
+    comments: null
+    special: false
+    special_used_flag: false
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+lecturers:
+  lec_001:
+    first_name: Teacher1
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1013_Projekt
+    - 1014_E-learning
+    - 1018_Ćwiczenia
+    - 1020_Projekt
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_002:
+    first_name: Teacher2
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1009_Laboratorium
+    - 1017_Seminarium
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_003:
+    first_name: Teacher3
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects: []
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_004:
+    first_name: Teacher4
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1031_Seminarium
+    - 1040_E-learning
+    - 1041_Projekt
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_005:
+    first_name: Teacher5
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1007_Ćwiczenia
+    - 1025_Ćwiczenia
+    - 1034_Projekt
+    - 1036_Ćwiczenia
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_006:
+    first_name: Teacher6
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1006_Ćwiczenia
+    - 1008_Seminarium
+    - 1021_Wykład
+    - 1042_Wykład
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_007:
+    first_name: Teacher7
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1032_Ćwiczenia
+    - 1039_E-learning
+    - 1044_E-learning
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_008:
+    first_name: Teacher8
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1016_Wykład
+    - 1023_E-learning
+    - 1035_Projekt
+    - 1043_Laboratorium
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_009:
+    first_name: Teacher9
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1003_Inne
+    - 1005_Laboratorium
+    - 1011_E-learning
+    - 1015_Seminarium
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_010:
+    first_name: Teacher10
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1002_Inne
+    - 1012_Seminarium
+    - 1022_Wykład
+    - 1026_E-learning
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_011:
+    first_name: Teacher11
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1019_Inne
+    - 1027_Inne
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_012:
+    first_name: Teacher12
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1010_E-learning
+    - 1024_E-learning
+    - 1028_Inne
+    - 1030_Laboratorium
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_013:
+    first_name: Teacher13
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects: []
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_014:
+    first_name: Teacher14
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects: []
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_015:
+    first_name: Teacher15
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1029_Wykład
+    - 1033_Ćwiczenia
+    - 1038_E-learning
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 11:30-13:00
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+  lec_016:
+    first_name: Teacher16
+    surname: Synth
+    title: dr
+    institute: INST1
+    desiderata_id: -1
+    full_name_surname: ''
+    work_hours: 40
+    min_desiderata_hours: 0
+    declared_hours: 0
+    declared_less_than_minimum: false
+    work_0hours: false
+    lecturer_requests: []
+    additional_notes: null
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      RU1: true
+    semestral_hours: 210
+    subjects:
+    - 1001_E-learning
+    - 1004_Inne
+    - 1037_Wykład
+    weekCalendar:
+      not_available:
+      - __class__: TimeSlot
+        slot_str: 9:45-11:15
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 13:15-14:45
+        dayname: Friday
+        init_division_intro: true
+      high_pref:
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Friday
+        init_division_intro: true
+      low_pref:
+      - __class__: TimeSlot
+        slot_str: 8:00-9:30
+        dayname: Monday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Tuesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 16:45-18:15
+        dayname: Wednesday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 15:00-16:30
+        dayname: Thursday
+        init_division_intro: true
+      - __class__: TimeSlot
+        slot_str: 18:30-20:00
+        dayname: Friday
+        init_division_intro: true
+      busy: []
+subjects:
+  1001_E-learning:
+    name: Course 1
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 1
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 1
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 20
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_016
+    students_groups:
+    - grp_001
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1002_Inne:
+    name: Course 2
+    type_of_lesson: Inne
+    semester: SYNTH-1_1
+    ects: 5
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 2
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 18
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_010
+    students_groups:
+    - grp_002
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1003_Inne:
+    name: Course 3
+    type_of_lesson: Inne
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 3
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 14
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_009
+    students_groups:
+    - grp_003
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1004_Inne:
+    name: Course 4
+    type_of_lesson: Inne
+    semester: SYNTH-1_1
+    ects: 3
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 4
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 29
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_016
+    students_groups:
+    - grp_004
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1005_Laboratorium:
+    name: Course 5
+    type_of_lesson: Laboratorium
+    semester: SYNTH-1_1
+    ects: 4
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 5
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 26
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_009
+    students_groups:
+    - grp_005
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1006_Ćwiczenia:
+    name: Course 6
+    type_of_lesson: Ćwiczenia
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 6
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 46
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_006
+    students_groups:
+    - grp_006
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1007_Ćwiczenia:
+    name: Course 7
+    type_of_lesson: Ćwiczenia
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 7
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 27
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_005
+    students_groups:
+    - grp_007
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1008_Seminarium:
+    name: Course 8
+    type_of_lesson: Seminarium
+    semester: SYNTH-1_1
+    ects: 4
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 8
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 20
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_006
+    students_groups:
+    - grp_008
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1009_Laboratorium:
+    name: Course 9
+    type_of_lesson: Laboratorium
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 9
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 13
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_002
+    students_groups:
+    - grp_009
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1010_E-learning:
+    name: Course 10
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 4
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 10
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 11
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_012
+    students_groups:
+    - grp_010
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1011_E-learning:
+    name: Course 11
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 1
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 11
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 26
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_009
+    students_groups:
+    - grp_011
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1012_Seminarium:
+    name: Course 12
+    type_of_lesson: Seminarium
+    semester: SYNTH-1_1
+    ects: 6
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 12
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 20
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_010
+    students_groups:
+    - grp_012
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1013_Projekt:
+    name: Course 13
+    type_of_lesson: Projekt
+    semester: SYNTH-1_1
+    ects: 5
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 13
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 16
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_001
+    students_groups:
+    - grp_013
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1014_E-learning:
+    name: Course 14
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 4
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 14
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 20
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_001
+    students_groups:
+    - grp_014
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1015_Seminarium:
+    name: Course 15
+    type_of_lesson: Seminarium
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 15
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 15
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_009
+    students_groups:
+    - grp_015
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1016_Wykład:
+    name: Course 16
+    type_of_lesson: Wykład
+    semester: SYNTH-1_1
+    ects: 4
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 16
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 24
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_008
+    students_groups:
+    - grp_016
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1017_Seminarium:
+    name: Course 17
+    type_of_lesson: Seminarium
+    semester: SYNTH-1_1
+    ects: 3
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 17
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 55
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_002
+    students_groups:
+    - grp_014
+    - grp_012
+    - grp_015
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1018_Ćwiczenia:
+    name: Course 18
+    type_of_lesson: Ćwiczenia
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 18
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 44
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_001
+    students_groups:
+    - grp_016
+    - grp_001
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1019_Inne:
+    name: Course 19
+    type_of_lesson: Inne
+    semester: SYNTH-1_1
+    ects: 5
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 19
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 24
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_011
+    students_groups:
+    - grp_009
+    - grp_010
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1020_Projekt:
+    name: Course 20
+    type_of_lesson: Projekt
+    semester: SYNTH-1_1
+    ects: 4
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 20
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 63
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_001
+    students_groups:
+    - grp_013
+    - grp_007
+    - grp_014
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1021_Wykład:
+    name: Course 21
+    type_of_lesson: Wykład
+    semester: SYNTH-1_1
+    ects: 3
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 21
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 69
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_006
+    students_groups:
+    - grp_008
+    - grp_002
+    - grp_010
+    - grp_014
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1022_Wykład:
+    name: Course 22
+    type_of_lesson: Wykład
+    semester: SYNTH-1_1
+    ects: 6
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 22
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 92
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_010
+    students_groups:
+    - grp_007
+    - grp_004
+    - grp_013
+    - grp_014
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1023_E-learning:
+    name: Course 23
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 1
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 23
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 46
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_008
+    students_groups:
+    - grp_011
+    - grp_012
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1024_E-learning:
+    name: Course 24
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 6
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 24
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 115
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_012
+    students_groups:
+    - grp_004
+    - grp_001
+    - grp_005
+    - grp_013
+    - grp_016
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1025_Ćwiczenia:
+    name: Course 25
+    type_of_lesson: Ćwiczenia
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 25
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 103
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_005
+    students_groups:
+    - grp_013
+    - grp_002
+    - grp_003
+    - grp_008
+    - grp_010
+    - grp_016
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1026_E-learning:
+    name: Course 26
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 4
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 26
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 49
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_010
+    students_groups:
+    - grp_008
+    - grp_004
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1027_Inne:
+    name: Course 27
+    type_of_lesson: Inne
+    semester: SYNTH-1_1
+    ects: 5
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 27
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 44
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_011
+    students_groups:
+    - grp_002
+    - grp_005
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1028_Inne:
+    name: Course 28
+    type_of_lesson: Inne
+    semester: SYNTH-1_1
+    ects: 1
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 28
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 42
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_012
+    students_groups:
+    - grp_013
+    - grp_010
+    - grp_015
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1029_Wykład:
+    name: Course 29
+    type_of_lesson: Wykład
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 29
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 16
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_015
+    students_groups:
+    - grp_013
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1030_Laboratorium:
+    name: Course 30
+    type_of_lesson: Laboratorium
+    semester: SYNTH-1_1
+    ects: 3
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 30
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 26
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_012
+    students_groups:
+    - grp_005
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1031_Seminarium:
+    name: Course 31
+    type_of_lesson: Seminarium
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 31
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 45
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_004
+    students_groups:
+    - grp_013
+    - grp_004
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1032_Ćwiczenia:
+    name: Course 32
+    type_of_lesson: Ćwiczenia
+    semester: SYNTH-1_1
+    ects: 6
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 32
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 34
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_007
+    students_groups:
+    - grp_012
+    - grp_003
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1033_Ćwiczenia:
+    name: Course 33
+    type_of_lesson: Ćwiczenia
+    semester: SYNTH-1_1
+    ects: 4
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 33
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 71
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_015
+    students_groups:
+    - grp_013
+    - grp_008
+    - grp_010
+    - grp_016
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1034_Projekt:
+    name: Course 34
+    type_of_lesson: Projekt
+    semester: SYNTH-1_1
+    ects: 5
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 34
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 66
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_005
+    students_groups:
+    - grp_006
+    - grp_014
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1035_Projekt:
+    name: Course 35
+    type_of_lesson: Projekt
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 35
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 119
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_008
+    students_groups:
+    - grp_012
+    - grp_002
+    - grp_006
+    - grp_010
+    - grp_016
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1036_Ćwiczenia:
+    name: Course 36
+    type_of_lesson: Ćwiczenia
+    semester: SYNTH-1_1
+    ects: 6
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 36
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 92
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_005
+    students_groups:
+    - grp_014
+    - grp_006
+    - grp_011
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1037_Wykład:
+    name: Course 37
+    type_of_lesson: Wykład
+    semester: SYNTH-1_1
+    ects: 5
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 37
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 18
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_016
+    students_groups:
+    - grp_002
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1038_E-learning:
+    name: Course 38
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 3
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 38
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 69
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_015
+    students_groups:
+    - grp_007
+    - grp_011
+    - grp_013
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1039_E-learning:
+    name: Course 39
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 1
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 39
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 66
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_007
+    students_groups:
+    - grp_011
+    - grp_004
+    - grp_010
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1040_E-learning:
+    name: Course 40
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 5
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 40
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 44
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_004
+    students_groups:
+    - grp_002
+    - grp_011
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1041_Projekt:
+    name: Course 41
+    type_of_lesson: Projekt
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 41
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 30
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_004
+    students_groups:
+    - grp_013
+    - grp_003
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1042_Wykład:
+    name: Course 42
+    type_of_lesson: Wykład
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 42
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 68
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_006
+    students_groups:
+    - grp_011
+    - grp_002
+    - grp_016
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1043_Laboratorium:
+    name: Course 43
+    type_of_lesson: Laboratorium
+    semester: SYNTH-1_1
+    ects: 2
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 43
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 87
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_008
+    students_groups:
+    - grp_002
+    - grp_008
+    - grp_009
+    - grp_013
+    - grp_014
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+  1044_E-learning:
+    name: Course 44
+    type_of_lesson: E-learning
+    semester: SYNTH-1_1
+    ects: 3
+    end_exam: false
+    hours_total: 15
+    optional: false
+    constraints_dict:
+      MAX_CHUNKS_VALUE: 1
+      SOFT_LECTURE_BEFORE: true
+    how_many_weeks: 15
+    weeks: 1-15
+    hours_per_week:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    potential_group: ''
+    name_to_print: Course 44
+    is_CJ: false
+    is_mixed_CJ: false
+    is_CS: false
+    number_of_students: 91
+    weeks_hours_lecturers: {}
+    lecturers:
+    - lec_007
+    students_groups:
+    - grp_004
+    - grp_006
+    - grp_013
+    possible_classrooms:
+      BLDG1:
+        BLDG1_001: BLDG1_001
+        BLDG1_002: BLDG1_002
+        BLDG1_003: BLDG1_003
+        BLDG1_004: BLDG1_004
+        BLDG1_005: BLDG1_005
+        BLDG1_006: BLDG1_006
+        BLDG1_007: BLDG1_007
+        BLDG1_008: BLDG1_008
+        BLDG1_009: BLDG1_009
+        BLDG1_010: BLDG1_010
+        BLDG1_011: BLDG1_011
+        BLDG1_012: BLDG1_012
+        BLDG1_013: BLDG1_013
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+students_groups:
+  grp_001:
+    name: grp_001
+    short_name: G1
+    semester: SYNTH-1_1
+    quantity: 20
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_001
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_001
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_001
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_001
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_001
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_001
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_001
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_001
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_001
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_001
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_001
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_001
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_001
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_001
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_001
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_001
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_001
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_001
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_001
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_001
+    subjects:
+    - 1001_E-learning
+    - 1018_Ćwiczenia
+    - 1024_E-learning
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_002:
+    name: grp_002
+    short_name: G2
+    semester: SYNTH-1_1
+    quantity: 18
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_002
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_002
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_002
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_002
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_002
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_002
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_002
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_002
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_002
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_002
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_002
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_002
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_002
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_002
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_002
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_002
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_002
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_002
+    subjects:
+    - 1002_Inne
+    - 1021_Wykład
+    - 1025_Ćwiczenia
+    - 1027_Inne
+    - 1035_Projekt
+    - 1037_Wykład
+    - 1040_E-learning
+    - 1042_Wykład
+    - 1043_Laboratorium
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_003:
+    name: grp_003
+    short_name: G3
+    semester: SYNTH-1_1
+    quantity: 14
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_003
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_003
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_003
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_003
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_003
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_003
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_003
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_003
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_003
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_003
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_003
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_003
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_003
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_003
+    subjects:
+    - 1003_Inne
+    - 1025_Ćwiczenia
+    - 1032_Ćwiczenia
+    - 1041_Projekt
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_004:
+    name: grp_004
+    short_name: G4
+    semester: SYNTH-1_1
+    quantity: 29
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_004
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_004
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_004
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_004
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_004
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_004
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_004
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_004
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_004
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_004
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_004
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_004
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_004
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_004
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_004
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_004
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_004
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_004
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_004
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_004
+      21:
+        name: Student nr 21
+        student_unique_id: Student nr 21_grupa_grp_004
+      22:
+        name: Student nr 22
+        student_unique_id: Student nr 22_grupa_grp_004
+      23:
+        name: Student nr 23
+        student_unique_id: Student nr 23_grupa_grp_004
+      24:
+        name: Student nr 24
+        student_unique_id: Student nr 24_grupa_grp_004
+      25:
+        name: Student nr 25
+        student_unique_id: Student nr 25_grupa_grp_004
+      26:
+        name: Student nr 26
+        student_unique_id: Student nr 26_grupa_grp_004
+      27:
+        name: Student nr 27
+        student_unique_id: Student nr 27_grupa_grp_004
+      28:
+        name: Student nr 28
+        student_unique_id: Student nr 28_grupa_grp_004
+      29:
+        name: Student nr 29
+        student_unique_id: Student nr 29_grupa_grp_004
+    subjects:
+    - 1004_Inne
+    - 1022_Wykład
+    - 1024_E-learning
+    - 1026_E-learning
+    - 1031_Seminarium
+    - 1039_E-learning
+    - 1044_E-learning
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_005:
+    name: grp_005
+    short_name: G5
+    semester: SYNTH-1_1
+    quantity: 26
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_005
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_005
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_005
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_005
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_005
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_005
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_005
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_005
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_005
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_005
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_005
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_005
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_005
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_005
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_005
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_005
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_005
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_005
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_005
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_005
+      21:
+        name: Student nr 21
+        student_unique_id: Student nr 21_grupa_grp_005
+      22:
+        name: Student nr 22
+        student_unique_id: Student nr 22_grupa_grp_005
+      23:
+        name: Student nr 23
+        student_unique_id: Student nr 23_grupa_grp_005
+      24:
+        name: Student nr 24
+        student_unique_id: Student nr 24_grupa_grp_005
+      25:
+        name: Student nr 25
+        student_unique_id: Student nr 25_grupa_grp_005
+      26:
+        name: Student nr 26
+        student_unique_id: Student nr 26_grupa_grp_005
+    subjects:
+    - 1005_Laboratorium
+    - 1024_E-learning
+    - 1027_Inne
+    - 1030_Laboratorium
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_006:
+    name: grp_006
+    short_name: G6
+    semester: SYNTH-1_1
+    quantity: 46
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_006
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_006
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_006
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_006
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_006
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_006
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_006
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_006
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_006
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_006
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_006
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_006
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_006
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_006
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_006
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_006
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_006
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_006
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_006
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_006
+      21:
+        name: Student nr 21
+        student_unique_id: Student nr 21_grupa_grp_006
+      22:
+        name: Student nr 22
+        student_unique_id: Student nr 22_grupa_grp_006
+      23:
+        name: Student nr 23
+        student_unique_id: Student nr 23_grupa_grp_006
+      24:
+        name: Student nr 24
+        student_unique_id: Student nr 24_grupa_grp_006
+      25:
+        name: Student nr 25
+        student_unique_id: Student nr 25_grupa_grp_006
+      26:
+        name: Student nr 26
+        student_unique_id: Student nr 26_grupa_grp_006
+      27:
+        name: Student nr 27
+        student_unique_id: Student nr 27_grupa_grp_006
+      28:
+        name: Student nr 28
+        student_unique_id: Student nr 28_grupa_grp_006
+      29:
+        name: Student nr 29
+        student_unique_id: Student nr 29_grupa_grp_006
+      30:
+        name: Student nr 30
+        student_unique_id: Student nr 30_grupa_grp_006
+      31:
+        name: Student nr 31
+        student_unique_id: Student nr 31_grupa_grp_006
+      32:
+        name: Student nr 32
+        student_unique_id: Student nr 32_grupa_grp_006
+      33:
+        name: Student nr 33
+        student_unique_id: Student nr 33_grupa_grp_006
+      34:
+        name: Student nr 34
+        student_unique_id: Student nr 34_grupa_grp_006
+      35:
+        name: Student nr 35
+        student_unique_id: Student nr 35_grupa_grp_006
+      36:
+        name: Student nr 36
+        student_unique_id: Student nr 36_grupa_grp_006
+      37:
+        name: Student nr 37
+        student_unique_id: Student nr 37_grupa_grp_006
+      38:
+        name: Student nr 38
+        student_unique_id: Student nr 38_grupa_grp_006
+      39:
+        name: Student nr 39
+        student_unique_id: Student nr 39_grupa_grp_006
+      40:
+        name: Student nr 40
+        student_unique_id: Student nr 40_grupa_grp_006
+      41:
+        name: Student nr 41
+        student_unique_id: Student nr 41_grupa_grp_006
+      42:
+        name: Student nr 42
+        student_unique_id: Student nr 42_grupa_grp_006
+      43:
+        name: Student nr 43
+        student_unique_id: Student nr 43_grupa_grp_006
+      44:
+        name: Student nr 44
+        student_unique_id: Student nr 44_grupa_grp_006
+      45:
+        name: Student nr 45
+        student_unique_id: Student nr 45_grupa_grp_006
+      46:
+        name: Student nr 46
+        student_unique_id: Student nr 46_grupa_grp_006
+    subjects:
+    - 1006_Ćwiczenia
+    - 1034_Projekt
+    - 1035_Projekt
+    - 1036_Ćwiczenia
+    - 1044_E-learning
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_007:
+    name: grp_007
+    short_name: G7
+    semester: SYNTH-1_1
+    quantity: 27
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_007
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_007
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_007
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_007
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_007
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_007
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_007
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_007
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_007
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_007
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_007
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_007
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_007
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_007
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_007
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_007
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_007
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_007
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_007
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_007
+      21:
+        name: Student nr 21
+        student_unique_id: Student nr 21_grupa_grp_007
+      22:
+        name: Student nr 22
+        student_unique_id: Student nr 22_grupa_grp_007
+      23:
+        name: Student nr 23
+        student_unique_id: Student nr 23_grupa_grp_007
+      24:
+        name: Student nr 24
+        student_unique_id: Student nr 24_grupa_grp_007
+      25:
+        name: Student nr 25
+        student_unique_id: Student nr 25_grupa_grp_007
+      26:
+        name: Student nr 26
+        student_unique_id: Student nr 26_grupa_grp_007
+      27:
+        name: Student nr 27
+        student_unique_id: Student nr 27_grupa_grp_007
+    subjects:
+    - 1007_Ćwiczenia
+    - 1020_Projekt
+    - 1022_Wykład
+    - 1038_E-learning
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_008:
+    name: grp_008
+    short_name: G8
+    semester: SYNTH-1_1
+    quantity: 20
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_008
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_008
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_008
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_008
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_008
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_008
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_008
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_008
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_008
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_008
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_008
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_008
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_008
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_008
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_008
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_008
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_008
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_008
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_008
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_008
+    subjects:
+    - 1008_Seminarium
+    - 1021_Wykład
+    - 1025_Ćwiczenia
+    - 1026_E-learning
+    - 1033_Ćwiczenia
+    - 1043_Laboratorium
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_009:
+    name: grp_009
+    short_name: G9
+    semester: SYNTH-1_1
+    quantity: 13
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_009
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_009
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_009
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_009
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_009
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_009
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_009
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_009
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_009
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_009
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_009
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_009
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_009
+    subjects:
+    - 1009_Laboratorium
+    - 1019_Inne
+    - 1043_Laboratorium
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_010:
+    name: grp_010
+    short_name: G10
+    semester: SYNTH-1_1
+    quantity: 11
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_010
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_010
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_010
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_010
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_010
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_010
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_010
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_010
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_010
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_010
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_010
+    subjects:
+    - 1010_E-learning
+    - 1019_Inne
+    - 1021_Wykład
+    - 1025_Ćwiczenia
+    - 1028_Inne
+    - 1033_Ćwiczenia
+    - 1035_Projekt
+    - 1039_E-learning
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_011:
+    name: grp_011
+    short_name: G11
+    semester: SYNTH-1_1
+    quantity: 26
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_011
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_011
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_011
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_011
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_011
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_011
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_011
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_011
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_011
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_011
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_011
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_011
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_011
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_011
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_011
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_011
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_011
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_011
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_011
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_011
+      21:
+        name: Student nr 21
+        student_unique_id: Student nr 21_grupa_grp_011
+      22:
+        name: Student nr 22
+        student_unique_id: Student nr 22_grupa_grp_011
+      23:
+        name: Student nr 23
+        student_unique_id: Student nr 23_grupa_grp_011
+      24:
+        name: Student nr 24
+        student_unique_id: Student nr 24_grupa_grp_011
+      25:
+        name: Student nr 25
+        student_unique_id: Student nr 25_grupa_grp_011
+      26:
+        name: Student nr 26
+        student_unique_id: Student nr 26_grupa_grp_011
+    subjects:
+    - 1011_E-learning
+    - 1023_E-learning
+    - 1036_Ćwiczenia
+    - 1038_E-learning
+    - 1039_E-learning
+    - 1040_E-learning
+    - 1042_Wykład
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_012:
+    name: grp_012
+    short_name: G12
+    semester: SYNTH-1_1
+    quantity: 20
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_012
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_012
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_012
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_012
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_012
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_012
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_012
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_012
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_012
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_012
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_012
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_012
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_012
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_012
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_012
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_012
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_012
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_012
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_012
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_012
+    subjects:
+    - 1012_Seminarium
+    - 1017_Seminarium
+    - 1023_E-learning
+    - 1032_Ćwiczenia
+    - 1035_Projekt
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_013:
+    name: grp_013
+    short_name: G13
+    semester: SYNTH-1_1
+    quantity: 16
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_013
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_013
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_013
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_013
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_013
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_013
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_013
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_013
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_013
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_013
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_013
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_013
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_013
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_013
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_013
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_013
+    subjects:
+    - 1013_Projekt
+    - 1020_Projekt
+    - 1022_Wykład
+    - 1024_E-learning
+    - 1025_Ćwiczenia
+    - 1028_Inne
+    - 1029_Wykład
+    - 1031_Seminarium
+    - 1033_Ćwiczenia
+    - 1038_E-learning
+    - 1041_Projekt
+    - 1043_Laboratorium
+    - 1044_E-learning
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_014:
+    name: grp_014
+    short_name: G14
+    semester: SYNTH-1_1
+    quantity: 20
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_014
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_014
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_014
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_014
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_014
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_014
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_014
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_014
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_014
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_014
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_014
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_014
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_014
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_014
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_014
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_014
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_014
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_014
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_014
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_014
+    subjects:
+    - 1014_E-learning
+    - 1017_Seminarium
+    - 1020_Projekt
+    - 1021_Wykład
+    - 1022_Wykład
+    - 1034_Projekt
+    - 1036_Ćwiczenia
+    - 1043_Laboratorium
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_015:
+    name: grp_015
+    short_name: G15
+    semester: SYNTH-1_1
+    quantity: 15
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_015
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_015
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_015
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_015
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_015
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_015
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_015
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_015
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_015
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_015
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_015
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_015
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_015
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_015
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_015
+    subjects:
+    - 1015_Seminarium
+    - 1017_Seminarium
+    - 1028_Inne
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+  grp_016:
+    name: grp_016
+    short_name: G16
+    semester: SYNTH-1_1
+    quantity: 24
+    constraints_dict:
+      PR4: true
+      MIXED-MODALITY: true
+      SPORT-GAP: true
+      RU1: true
+    students:
+      1:
+        name: Student nr 1
+        student_unique_id: Student nr 1_grupa_grp_016
+      2:
+        name: Student nr 2
+        student_unique_id: Student nr 2_grupa_grp_016
+      3:
+        name: Student nr 3
+        student_unique_id: Student nr 3_grupa_grp_016
+      4:
+        name: Student nr 4
+        student_unique_id: Student nr 4_grupa_grp_016
+      5:
+        name: Student nr 5
+        student_unique_id: Student nr 5_grupa_grp_016
+      6:
+        name: Student nr 6
+        student_unique_id: Student nr 6_grupa_grp_016
+      7:
+        name: Student nr 7
+        student_unique_id: Student nr 7_grupa_grp_016
+      8:
+        name: Student nr 8
+        student_unique_id: Student nr 8_grupa_grp_016
+      9:
+        name: Student nr 9
+        student_unique_id: Student nr 9_grupa_grp_016
+      10:
+        name: Student nr 10
+        student_unique_id: Student nr 10_grupa_grp_016
+      11:
+        name: Student nr 11
+        student_unique_id: Student nr 11_grupa_grp_016
+      12:
+        name: Student nr 12
+        student_unique_id: Student nr 12_grupa_grp_016
+      13:
+        name: Student nr 13
+        student_unique_id: Student nr 13_grupa_grp_016
+      14:
+        name: Student nr 14
+        student_unique_id: Student nr 14_grupa_grp_016
+      15:
+        name: Student nr 15
+        student_unique_id: Student nr 15_grupa_grp_016
+      16:
+        name: Student nr 16
+        student_unique_id: Student nr 16_grupa_grp_016
+      17:
+        name: Student nr 17
+        student_unique_id: Student nr 17_grupa_grp_016
+      18:
+        name: Student nr 18
+        student_unique_id: Student nr 18_grupa_grp_016
+      19:
+        name: Student nr 19
+        student_unique_id: Student nr 19_grupa_grp_016
+      20:
+        name: Student nr 20
+        student_unique_id: Student nr 20_grupa_grp_016
+      21:
+        name: Student nr 21
+        student_unique_id: Student nr 21_grupa_grp_016
+      22:
+        name: Student nr 22
+        student_unique_id: Student nr 22_grupa_grp_016
+      23:
+        name: Student nr 23
+        student_unique_id: Student nr 23_grupa_grp_016
+      24:
+        name: Student nr 24
+        student_unique_id: Student nr 24_grupa_grp_016
+    subjects:
+    - 1016_Wykład
+    - 1018_Ćwiczenia
+    - 1024_E-learning
+    - 1025_Ćwiczenia
+    - 1033_Ćwiczenia
+    - 1035_Projekt
+    - 1042_Wykład
+    weekCalendar:
+      not_available: []
+      high_pref: []
+      low_pref: []
+      busy: []
+    possible_classrooms_names: []
+    possible_timesets_lengths: []
+students:
+  Student nr 1_grupa_grp_001:
+    name: Student nr 1
+    students_group: grp_001
+  Student nr 2_grupa_grp_001:
+    name: Student nr 2
+    students_group: grp_001
+  Student nr 3_grupa_grp_001:
+    name: Student nr 3
+    students_group: grp_001
+  Student nr 4_grupa_grp_001:
+    name: Student nr 4
+    students_group: grp_001
+  Student nr 5_grupa_grp_001:
+    name: Student nr 5
+    students_group: grp_001
+  Student nr 6_grupa_grp_001:
+    name: Student nr 6
+    students_group: grp_001
+  Student nr 7_grupa_grp_001:
+    name: Student nr 7
+    students_group: grp_001
+  Student nr 8_grupa_grp_001:
+    name: Student nr 8
+    students_group: grp_001
+  Student nr 9_grupa_grp_001:
+    name: Student nr 9
+    students_group: grp_001
+  Student nr 10_grupa_grp_001:
+    name: Student nr 10
+    students_group: grp_001
+  Student nr 11_grupa_grp_001:
+    name: Student nr 11
+    students_group: grp_001
+  Student nr 12_grupa_grp_001:
+    name: Student nr 12
+    students_group: grp_001
+  Student nr 13_grupa_grp_001:
+    name: Student nr 13
+    students_group: grp_001
+  Student nr 14_grupa_grp_001:
+    name: Student nr 14
+    students_group: grp_001
+  Student nr 15_grupa_grp_001:
+    name: Student nr 15
+    students_group: grp_001
+  Student nr 16_grupa_grp_001:
+    name: Student nr 16
+    students_group: grp_001
+  Student nr 17_grupa_grp_001:
+    name: Student nr 17
+    students_group: grp_001
+  Student nr 18_grupa_grp_001:
+    name: Student nr 18
+    students_group: grp_001
+  Student nr 19_grupa_grp_001:
+    name: Student nr 19
+    students_group: grp_001
+  Student nr 20_grupa_grp_001:
+    name: Student nr 20
+    students_group: grp_001
+  Student nr 1_grupa_grp_002:
+    name: Student nr 1
+    students_group: grp_002
+  Student nr 2_grupa_grp_002:
+    name: Student nr 2
+    students_group: grp_002
+  Student nr 3_grupa_grp_002:
+    name: Student nr 3
+    students_group: grp_002
+  Student nr 4_grupa_grp_002:
+    name: Student nr 4
+    students_group: grp_002
+  Student nr 5_grupa_grp_002:
+    name: Student nr 5
+    students_group: grp_002
+  Student nr 6_grupa_grp_002:
+    name: Student nr 6
+    students_group: grp_002
+  Student nr 7_grupa_grp_002:
+    name: Student nr 7
+    students_group: grp_002
+  Student nr 8_grupa_grp_002:
+    name: Student nr 8
+    students_group: grp_002
+  Student nr 9_grupa_grp_002:
+    name: Student nr 9
+    students_group: grp_002
+  Student nr 10_grupa_grp_002:
+    name: Student nr 10
+    students_group: grp_002
+  Student nr 11_grupa_grp_002:
+    name: Student nr 11
+    students_group: grp_002
+  Student nr 12_grupa_grp_002:
+    name: Student nr 12
+    students_group: grp_002
+  Student nr 13_grupa_grp_002:
+    name: Student nr 13
+    students_group: grp_002
+  Student nr 14_grupa_grp_002:
+    name: Student nr 14
+    students_group: grp_002
+  Student nr 15_grupa_grp_002:
+    name: Student nr 15
+    students_group: grp_002
+  Student nr 16_grupa_grp_002:
+    name: Student nr 16
+    students_group: grp_002
+  Student nr 17_grupa_grp_002:
+    name: Student nr 17
+    students_group: grp_002
+  Student nr 18_grupa_grp_002:
+    name: Student nr 18
+    students_group: grp_002
+  Student nr 1_grupa_grp_003:
+    name: Student nr 1
+    students_group: grp_003
+  Student nr 2_grupa_grp_003:
+    name: Student nr 2
+    students_group: grp_003
+  Student nr 3_grupa_grp_003:
+    name: Student nr 3
+    students_group: grp_003
+  Student nr 4_grupa_grp_003:
+    name: Student nr 4
+    students_group: grp_003
+  Student nr 5_grupa_grp_003:
+    name: Student nr 5
+    students_group: grp_003
+  Student nr 6_grupa_grp_003:
+    name: Student nr 6
+    students_group: grp_003
+  Student nr 7_grupa_grp_003:
+    name: Student nr 7
+    students_group: grp_003
+  Student nr 8_grupa_grp_003:
+    name: Student nr 8
+    students_group: grp_003
+  Student nr 9_grupa_grp_003:
+    name: Student nr 9
+    students_group: grp_003
+  Student nr 10_grupa_grp_003:
+    name: Student nr 10
+    students_group: grp_003
+  Student nr 11_grupa_grp_003:
+    name: Student nr 11
+    students_group: grp_003
+  Student nr 12_grupa_grp_003:
+    name: Student nr 12
+    students_group: grp_003
+  Student nr 13_grupa_grp_003:
+    name: Student nr 13
+    students_group: grp_003
+  Student nr 14_grupa_grp_003:
+    name: Student nr 14
+    students_group: grp_003
+  Student nr 1_grupa_grp_004:
+    name: Student nr 1
+    students_group: grp_004
+  Student nr 2_grupa_grp_004:
+    name: Student nr 2
+    students_group: grp_004
+  Student nr 3_grupa_grp_004:
+    name: Student nr 3
+    students_group: grp_004
+  Student nr 4_grupa_grp_004:
+    name: Student nr 4
+    students_group: grp_004
+  Student nr 5_grupa_grp_004:
+    name: Student nr 5
+    students_group: grp_004
+  Student nr 6_grupa_grp_004:
+    name: Student nr 6
+    students_group: grp_004
+  Student nr 7_grupa_grp_004:
+    name: Student nr 7
+    students_group: grp_004
+  Student nr 8_grupa_grp_004:
+    name: Student nr 8
+    students_group: grp_004
+  Student nr 9_grupa_grp_004:
+    name: Student nr 9
+    students_group: grp_004
+  Student nr 10_grupa_grp_004:
+    name: Student nr 10
+    students_group: grp_004
+  Student nr 11_grupa_grp_004:
+    name: Student nr 11
+    students_group: grp_004
+  Student nr 12_grupa_grp_004:
+    name: Student nr 12
+    students_group: grp_004
+  Student nr 13_grupa_grp_004:
+    name: Student nr 13
+    students_group: grp_004
+  Student nr 14_grupa_grp_004:
+    name: Student nr 14
+    students_group: grp_004
+  Student nr 15_grupa_grp_004:
+    name: Student nr 15
+    students_group: grp_004
+  Student nr 16_grupa_grp_004:
+    name: Student nr 16
+    students_group: grp_004
+  Student nr 17_grupa_grp_004:
+    name: Student nr 17
+    students_group: grp_004
+  Student nr 18_grupa_grp_004:
+    name: Student nr 18
+    students_group: grp_004
+  Student nr 19_grupa_grp_004:
+    name: Student nr 19
+    students_group: grp_004
+  Student nr 20_grupa_grp_004:
+    name: Student nr 20
+    students_group: grp_004
+  Student nr 21_grupa_grp_004:
+    name: Student nr 21
+    students_group: grp_004
+  Student nr 22_grupa_grp_004:
+    name: Student nr 22
+    students_group: grp_004
+  Student nr 23_grupa_grp_004:
+    name: Student nr 23
+    students_group: grp_004
+  Student nr 24_grupa_grp_004:
+    name: Student nr 24
+    students_group: grp_004
+  Student nr 25_grupa_grp_004:
+    name: Student nr 25
+    students_group: grp_004
+  Student nr 26_grupa_grp_004:
+    name: Student nr 26
+    students_group: grp_004
+  Student nr 27_grupa_grp_004:
+    name: Student nr 27
+    students_group: grp_004
+  Student nr 28_grupa_grp_004:
+    name: Student nr 28
+    students_group: grp_004
+  Student nr 29_grupa_grp_004:
+    name: Student nr 29
+    students_group: grp_004
+  Student nr 1_grupa_grp_005:
+    name: Student nr 1
+    students_group: grp_005
+  Student nr 2_grupa_grp_005:
+    name: Student nr 2
+    students_group: grp_005
+  Student nr 3_grupa_grp_005:
+    name: Student nr 3
+    students_group: grp_005
+  Student nr 4_grupa_grp_005:
+    name: Student nr 4
+    students_group: grp_005
+  Student nr 5_grupa_grp_005:
+    name: Student nr 5
+    students_group: grp_005
+  Student nr 6_grupa_grp_005:
+    name: Student nr 6
+    students_group: grp_005
+  Student nr 7_grupa_grp_005:
+    name: Student nr 7
+    students_group: grp_005
+  Student nr 8_grupa_grp_005:
+    name: Student nr 8
+    students_group: grp_005
+  Student nr 9_grupa_grp_005:
+    name: Student nr 9
+    students_group: grp_005
+  Student nr 10_grupa_grp_005:
+    name: Student nr 10
+    students_group: grp_005
+  Student nr 11_grupa_grp_005:
+    name: Student nr 11
+    students_group: grp_005
+  Student nr 12_grupa_grp_005:
+    name: Student nr 12
+    students_group: grp_005
+  Student nr 13_grupa_grp_005:
+    name: Student nr 13
+    students_group: grp_005
+  Student nr 14_grupa_grp_005:
+    name: Student nr 14
+    students_group: grp_005
+  Student nr 15_grupa_grp_005:
+    name: Student nr 15
+    students_group: grp_005
+  Student nr 16_grupa_grp_005:
+    name: Student nr 16
+    students_group: grp_005
+  Student nr 17_grupa_grp_005:
+    name: Student nr 17
+    students_group: grp_005
+  Student nr 18_grupa_grp_005:
+    name: Student nr 18
+    students_group: grp_005
+  Student nr 19_grupa_grp_005:
+    name: Student nr 19
+    students_group: grp_005
+  Student nr 20_grupa_grp_005:
+    name: Student nr 20
+    students_group: grp_005
+  Student nr 21_grupa_grp_005:
+    name: Student nr 21
+    students_group: grp_005
+  Student nr 22_grupa_grp_005:
+    name: Student nr 22
+    students_group: grp_005
+  Student nr 23_grupa_grp_005:
+    name: Student nr 23
+    students_group: grp_005
+  Student nr 24_grupa_grp_005:
+    name: Student nr 24
+    students_group: grp_005
+  Student nr 25_grupa_grp_005:
+    name: Student nr 25
+    students_group: grp_005
+  Student nr 26_grupa_grp_005:
+    name: Student nr 26
+    students_group: grp_005
+  Student nr 1_grupa_grp_006:
+    name: Student nr 1
+    students_group: grp_006
+  Student nr 2_grupa_grp_006:
+    name: Student nr 2
+    students_group: grp_006
+  Student nr 3_grupa_grp_006:
+    name: Student nr 3
+    students_group: grp_006
+  Student nr 4_grupa_grp_006:
+    name: Student nr 4
+    students_group: grp_006
+  Student nr 5_grupa_grp_006:
+    name: Student nr 5
+    students_group: grp_006
+  Student nr 6_grupa_grp_006:
+    name: Student nr 6
+    students_group: grp_006
+  Student nr 7_grupa_grp_006:
+    name: Student nr 7
+    students_group: grp_006
+  Student nr 8_grupa_grp_006:
+    name: Student nr 8
+    students_group: grp_006
+  Student nr 9_grupa_grp_006:
+    name: Student nr 9
+    students_group: grp_006
+  Student nr 10_grupa_grp_006:
+    name: Student nr 10
+    students_group: grp_006
+  Student nr 11_grupa_grp_006:
+    name: Student nr 11
+    students_group: grp_006
+  Student nr 12_grupa_grp_006:
+    name: Student nr 12
+    students_group: grp_006
+  Student nr 13_grupa_grp_006:
+    name: Student nr 13
+    students_group: grp_006
+  Student nr 14_grupa_grp_006:
+    name: Student nr 14
+    students_group: grp_006
+  Student nr 15_grupa_grp_006:
+    name: Student nr 15
+    students_group: grp_006
+  Student nr 16_grupa_grp_006:
+    name: Student nr 16
+    students_group: grp_006
+  Student nr 17_grupa_grp_006:
+    name: Student nr 17
+    students_group: grp_006
+  Student nr 18_grupa_grp_006:
+    name: Student nr 18
+    students_group: grp_006
+  Student nr 19_grupa_grp_006:
+    name: Student nr 19
+    students_group: grp_006
+  Student nr 20_grupa_grp_006:
+    name: Student nr 20
+    students_group: grp_006
+  Student nr 21_grupa_grp_006:
+    name: Student nr 21
+    students_group: grp_006
+  Student nr 22_grupa_grp_006:
+    name: Student nr 22
+    students_group: grp_006
+  Student nr 23_grupa_grp_006:
+    name: Student nr 23
+    students_group: grp_006
+  Student nr 24_grupa_grp_006:
+    name: Student nr 24
+    students_group: grp_006
+  Student nr 25_grupa_grp_006:
+    name: Student nr 25
+    students_group: grp_006
+  Student nr 26_grupa_grp_006:
+    name: Student nr 26
+    students_group: grp_006
+  Student nr 27_grupa_grp_006:
+    name: Student nr 27
+    students_group: grp_006
+  Student nr 28_grupa_grp_006:
+    name: Student nr 28
+    students_group: grp_006
+  Student nr 29_grupa_grp_006:
+    name: Student nr 29
+    students_group: grp_006
+  Student nr 30_grupa_grp_006:
+    name: Student nr 30
+    students_group: grp_006
+  Student nr 31_grupa_grp_006:
+    name: Student nr 31
+    students_group: grp_006
+  Student nr 32_grupa_grp_006:
+    name: Student nr 32
+    students_group: grp_006
+  Student nr 33_grupa_grp_006:
+    name: Student nr 33
+    students_group: grp_006
+  Student nr 34_grupa_grp_006:
+    name: Student nr 34
+    students_group: grp_006
+  Student nr 35_grupa_grp_006:
+    name: Student nr 35
+    students_group: grp_006
+  Student nr 36_grupa_grp_006:
+    name: Student nr 36
+    students_group: grp_006
+  Student nr 37_grupa_grp_006:
+    name: Student nr 37
+    students_group: grp_006
+  Student nr 38_grupa_grp_006:
+    name: Student nr 38
+    students_group: grp_006
+  Student nr 39_grupa_grp_006:
+    name: Student nr 39
+    students_group: grp_006
+  Student nr 40_grupa_grp_006:
+    name: Student nr 40
+    students_group: grp_006
+  Student nr 41_grupa_grp_006:
+    name: Student nr 41
+    students_group: grp_006
+  Student nr 42_grupa_grp_006:
+    name: Student nr 42
+    students_group: grp_006
+  Student nr 43_grupa_grp_006:
+    name: Student nr 43
+    students_group: grp_006
+  Student nr 44_grupa_grp_006:
+    name: Student nr 44
+    students_group: grp_006
+  Student nr 45_grupa_grp_006:
+    name: Student nr 45
+    students_group: grp_006
+  Student nr 46_grupa_grp_006:
+    name: Student nr 46
+    students_group: grp_006
+  Student nr 1_grupa_grp_007:
+    name: Student nr 1
+    students_group: grp_007
+  Student nr 2_grupa_grp_007:
+    name: Student nr 2
+    students_group: grp_007
+  Student nr 3_grupa_grp_007:
+    name: Student nr 3
+    students_group: grp_007
+  Student nr 4_grupa_grp_007:
+    name: Student nr 4
+    students_group: grp_007
+  Student nr 5_grupa_grp_007:
+    name: Student nr 5
+    students_group: grp_007
+  Student nr 6_grupa_grp_007:
+    name: Student nr 6
+    students_group: grp_007
+  Student nr 7_grupa_grp_007:
+    name: Student nr 7
+    students_group: grp_007
+  Student nr 8_grupa_grp_007:
+    name: Student nr 8
+    students_group: grp_007
+  Student nr 9_grupa_grp_007:
+    name: Student nr 9
+    students_group: grp_007
+  Student nr 10_grupa_grp_007:
+    name: Student nr 10
+    students_group: grp_007
+  Student nr 11_grupa_grp_007:
+    name: Student nr 11
+    students_group: grp_007
+  Student nr 12_grupa_grp_007:
+    name: Student nr 12
+    students_group: grp_007
+  Student nr 13_grupa_grp_007:
+    name: Student nr 13
+    students_group: grp_007
+  Student nr 14_grupa_grp_007:
+    name: Student nr 14
+    students_group: grp_007
+  Student nr 15_grupa_grp_007:
+    name: Student nr 15
+    students_group: grp_007
+  Student nr 16_grupa_grp_007:
+    name: Student nr 16
+    students_group: grp_007
+  Student nr 17_grupa_grp_007:
+    name: Student nr 17
+    students_group: grp_007
+  Student nr 18_grupa_grp_007:
+    name: Student nr 18
+    students_group: grp_007
+  Student nr 19_grupa_grp_007:
+    name: Student nr 19
+    students_group: grp_007
+  Student nr 20_grupa_grp_007:
+    name: Student nr 20
+    students_group: grp_007
+  Student nr 21_grupa_grp_007:
+    name: Student nr 21
+    students_group: grp_007
+  Student nr 22_grupa_grp_007:
+    name: Student nr 22
+    students_group: grp_007
+  Student nr 23_grupa_grp_007:
+    name: Student nr 23
+    students_group: grp_007
+  Student nr 24_grupa_grp_007:
+    name: Student nr 24
+    students_group: grp_007
+  Student nr 25_grupa_grp_007:
+    name: Student nr 25
+    students_group: grp_007
+  Student nr 26_grupa_grp_007:
+    name: Student nr 26
+    students_group: grp_007
+  Student nr 27_grupa_grp_007:
+    name: Student nr 27
+    students_group: grp_007
+  Student nr 1_grupa_grp_008:
+    name: Student nr 1
+    students_group: grp_008
+  Student nr 2_grupa_grp_008:
+    name: Student nr 2
+    students_group: grp_008
+  Student nr 3_grupa_grp_008:
+    name: Student nr 3
+    students_group: grp_008
+  Student nr 4_grupa_grp_008:
+    name: Student nr 4
+    students_group: grp_008
+  Student nr 5_grupa_grp_008:
+    name: Student nr 5
+    students_group: grp_008
+  Student nr 6_grupa_grp_008:
+    name: Student nr 6
+    students_group: grp_008
+  Student nr 7_grupa_grp_008:
+    name: Student nr 7
+    students_group: grp_008
+  Student nr 8_grupa_grp_008:
+    name: Student nr 8
+    students_group: grp_008
+  Student nr 9_grupa_grp_008:
+    name: Student nr 9
+    students_group: grp_008
+  Student nr 10_grupa_grp_008:
+    name: Student nr 10
+    students_group: grp_008
+  Student nr 11_grupa_grp_008:
+    name: Student nr 11
+    students_group: grp_008
+  Student nr 12_grupa_grp_008:
+    name: Student nr 12
+    students_group: grp_008
+  Student nr 13_grupa_grp_008:
+    name: Student nr 13
+    students_group: grp_008
+  Student nr 14_grupa_grp_008:
+    name: Student nr 14
+    students_group: grp_008
+  Student nr 15_grupa_grp_008:
+    name: Student nr 15
+    students_group: grp_008
+  Student nr 16_grupa_grp_008:
+    name: Student nr 16
+    students_group: grp_008
+  Student nr 17_grupa_grp_008:
+    name: Student nr 17
+    students_group: grp_008
+  Student nr 18_grupa_grp_008:
+    name: Student nr 18
+    students_group: grp_008
+  Student nr 19_grupa_grp_008:
+    name: Student nr 19
+    students_group: grp_008
+  Student nr 20_grupa_grp_008:
+    name: Student nr 20
+    students_group: grp_008
+  Student nr 1_grupa_grp_009:
+    name: Student nr 1
+    students_group: grp_009
+  Student nr 2_grupa_grp_009:
+    name: Student nr 2
+    students_group: grp_009
+  Student nr 3_grupa_grp_009:
+    name: Student nr 3
+    students_group: grp_009
+  Student nr 4_grupa_grp_009:
+    name: Student nr 4
+    students_group: grp_009
+  Student nr 5_grupa_grp_009:
+    name: Student nr 5
+    students_group: grp_009
+  Student nr 6_grupa_grp_009:
+    name: Student nr 6
+    students_group: grp_009
+  Student nr 7_grupa_grp_009:
+    name: Student nr 7
+    students_group: grp_009
+  Student nr 8_grupa_grp_009:
+    name: Student nr 8
+    students_group: grp_009
+  Student nr 9_grupa_grp_009:
+    name: Student nr 9
+    students_group: grp_009
+  Student nr 10_grupa_grp_009:
+    name: Student nr 10
+    students_group: grp_009
+  Student nr 11_grupa_grp_009:
+    name: Student nr 11
+    students_group: grp_009
+  Student nr 12_grupa_grp_009:
+    name: Student nr 12
+    students_group: grp_009
+  Student nr 13_grupa_grp_009:
+    name: Student nr 13
+    students_group: grp_009
+  Student nr 1_grupa_grp_010:
+    name: Student nr 1
+    students_group: grp_010
+  Student nr 2_grupa_grp_010:
+    name: Student nr 2
+    students_group: grp_010
+  Student nr 3_grupa_grp_010:
+    name: Student nr 3
+    students_group: grp_010
+  Student nr 4_grupa_grp_010:
+    name: Student nr 4
+    students_group: grp_010
+  Student nr 5_grupa_grp_010:
+    name: Student nr 5
+    students_group: grp_010
+  Student nr 6_grupa_grp_010:
+    name: Student nr 6
+    students_group: grp_010
+  Student nr 7_grupa_grp_010:
+    name: Student nr 7
+    students_group: grp_010
+  Student nr 8_grupa_grp_010:
+    name: Student nr 8
+    students_group: grp_010
+  Student nr 9_grupa_grp_010:
+    name: Student nr 9
+    students_group: grp_010
+  Student nr 10_grupa_grp_010:
+    name: Student nr 10
+    students_group: grp_010
+  Student nr 11_grupa_grp_010:
+    name: Student nr 11
+    students_group: grp_010
+  Student nr 1_grupa_grp_011:
+    name: Student nr 1
+    students_group: grp_011
+  Student nr 2_grupa_grp_011:
+    name: Student nr 2
+    students_group: grp_011
+  Student nr 3_grupa_grp_011:
+    name: Student nr 3
+    students_group: grp_011
+  Student nr 4_grupa_grp_011:
+    name: Student nr 4
+    students_group: grp_011
+  Student nr 5_grupa_grp_011:
+    name: Student nr 5
+    students_group: grp_011
+  Student nr 6_grupa_grp_011:
+    name: Student nr 6
+    students_group: grp_011
+  Student nr 7_grupa_grp_011:
+    name: Student nr 7
+    students_group: grp_011
+  Student nr 8_grupa_grp_011:
+    name: Student nr 8
+    students_group: grp_011
+  Student nr 9_grupa_grp_011:
+    name: Student nr 9
+    students_group: grp_011
+  Student nr 10_grupa_grp_011:
+    name: Student nr 10
+    students_group: grp_011
+  Student nr 11_grupa_grp_011:
+    name: Student nr 11
+    students_group: grp_011
+  Student nr 12_grupa_grp_011:
+    name: Student nr 12
+    students_group: grp_011
+  Student nr 13_grupa_grp_011:
+    name: Student nr 13
+    students_group: grp_011
+  Student nr 14_grupa_grp_011:
+    name: Student nr 14
+    students_group: grp_011
+  Student nr 15_grupa_grp_011:
+    name: Student nr 15
+    students_group: grp_011
+  Student nr 16_grupa_grp_011:
+    name: Student nr 16
+    students_group: grp_011
+  Student nr 17_grupa_grp_011:
+    name: Student nr 17
+    students_group: grp_011
+  Student nr 18_grupa_grp_011:
+    name: Student nr 18
+    students_group: grp_011
+  Student nr 19_grupa_grp_011:
+    name: Student nr 19
+    students_group: grp_011
+  Student nr 20_grupa_grp_011:
+    name: Student nr 20
+    students_group: grp_011
+  Student nr 21_grupa_grp_011:
+    name: Student nr 21
+    students_group: grp_011
+  Student nr 22_grupa_grp_011:
+    name: Student nr 22
+    students_group: grp_011
+  Student nr 23_grupa_grp_011:
+    name: Student nr 23
+    students_group: grp_011
+  Student nr 24_grupa_grp_011:
+    name: Student nr 24
+    students_group: grp_011
+  Student nr 25_grupa_grp_011:
+    name: Student nr 25
+    students_group: grp_011
+  Student nr 26_grupa_grp_011:
+    name: Student nr 26
+    students_group: grp_011
+  Student nr 1_grupa_grp_012:
+    name: Student nr 1
+    students_group: grp_012
+  Student nr 2_grupa_grp_012:
+    name: Student nr 2
+    students_group: grp_012
+  Student nr 3_grupa_grp_012:
+    name: Student nr 3
+    students_group: grp_012
+  Student nr 4_grupa_grp_012:
+    name: Student nr 4
+    students_group: grp_012
+  Student nr 5_grupa_grp_012:
+    name: Student nr 5
+    students_group: grp_012
+  Student nr 6_grupa_grp_012:
+    name: Student nr 6
+    students_group: grp_012
+  Student nr 7_grupa_grp_012:
+    name: Student nr 7
+    students_group: grp_012
+  Student nr 8_grupa_grp_012:
+    name: Student nr 8
+    students_group: grp_012
+  Student nr 9_grupa_grp_012:
+    name: Student nr 9
+    students_group: grp_012
+  Student nr 10_grupa_grp_012:
+    name: Student nr 10
+    students_group: grp_012
+  Student nr 11_grupa_grp_012:
+    name: Student nr 11
+    students_group: grp_012
+  Student nr 12_grupa_grp_012:
+    name: Student nr 12
+    students_group: grp_012
+  Student nr 13_grupa_grp_012:
+    name: Student nr 13
+    students_group: grp_012
+  Student nr 14_grupa_grp_012:
+    name: Student nr 14
+    students_group: grp_012
+  Student nr 15_grupa_grp_012:
+    name: Student nr 15
+    students_group: grp_012
+  Student nr 16_grupa_grp_012:
+    name: Student nr 16
+    students_group: grp_012
+  Student nr 17_grupa_grp_012:
+    name: Student nr 17
+    students_group: grp_012
+  Student nr 18_grupa_grp_012:
+    name: Student nr 18
+    students_group: grp_012
+  Student nr 19_grupa_grp_012:
+    name: Student nr 19
+    students_group: grp_012
+  Student nr 20_grupa_grp_012:
+    name: Student nr 20
+    students_group: grp_012
+  Student nr 1_grupa_grp_013:
+    name: Student nr 1
+    students_group: grp_013
+  Student nr 2_grupa_grp_013:
+    name: Student nr 2
+    students_group: grp_013
+  Student nr 3_grupa_grp_013:
+    name: Student nr 3
+    students_group: grp_013
+  Student nr 4_grupa_grp_013:
+    name: Student nr 4
+    students_group: grp_013
+  Student nr 5_grupa_grp_013:
+    name: Student nr 5
+    students_group: grp_013
+  Student nr 6_grupa_grp_013:
+    name: Student nr 6
+    students_group: grp_013
+  Student nr 7_grupa_grp_013:
+    name: Student nr 7
+    students_group: grp_013
+  Student nr 8_grupa_grp_013:
+    name: Student nr 8
+    students_group: grp_013
+  Student nr 9_grupa_grp_013:
+    name: Student nr 9
+    students_group: grp_013
+  Student nr 10_grupa_grp_013:
+    name: Student nr 10
+    students_group: grp_013
+  Student nr 11_grupa_grp_013:
+    name: Student nr 11
+    students_group: grp_013
+  Student nr 12_grupa_grp_013:
+    name: Student nr 12
+    students_group: grp_013
+  Student nr 13_grupa_grp_013:
+    name: Student nr 13
+    students_group: grp_013
+  Student nr 14_grupa_grp_013:
+    name: Student nr 14
+    students_group: grp_013
+  Student nr 15_grupa_grp_013:
+    name: Student nr 15
+    students_group: grp_013
+  Student nr 16_grupa_grp_013:
+    name: Student nr 16
+    students_group: grp_013
+  Student nr 1_grupa_grp_014:
+    name: Student nr 1
+    students_group: grp_014
+  Student nr 2_grupa_grp_014:
+    name: Student nr 2
+    students_group: grp_014
+  Student nr 3_grupa_grp_014:
+    name: Student nr 3
+    students_group: grp_014
+  Student nr 4_grupa_grp_014:
+    name: Student nr 4
+    students_group: grp_014
+  Student nr 5_grupa_grp_014:
+    name: Student nr 5
+    students_group: grp_014
+  Student nr 6_grupa_grp_014:
+    name: Student nr 6
+    students_group: grp_014
+  Student nr 7_grupa_grp_014:
+    name: Student nr 7
+    students_group: grp_014
+  Student nr 8_grupa_grp_014:
+    name: Student nr 8
+    students_group: grp_014
+  Student nr 9_grupa_grp_014:
+    name: Student nr 9
+    students_group: grp_014
+  Student nr 10_grupa_grp_014:
+    name: Student nr 10
+    students_group: grp_014
+  Student nr 11_grupa_grp_014:
+    name: Student nr 11
+    students_group: grp_014
+  Student nr 12_grupa_grp_014:
+    name: Student nr 12
+    students_group: grp_014
+  Student nr 13_grupa_grp_014:
+    name: Student nr 13
+    students_group: grp_014
+  Student nr 14_grupa_grp_014:
+    name: Student nr 14
+    students_group: grp_014
+  Student nr 15_grupa_grp_014:
+    name: Student nr 15
+    students_group: grp_014
+  Student nr 16_grupa_grp_014:
+    name: Student nr 16
+    students_group: grp_014
+  Student nr 17_grupa_grp_014:
+    name: Student nr 17
+    students_group: grp_014
+  Student nr 18_grupa_grp_014:
+    name: Student nr 18
+    students_group: grp_014
+  Student nr 19_grupa_grp_014:
+    name: Student nr 19
+    students_group: grp_014
+  Student nr 20_grupa_grp_014:
+    name: Student nr 20
+    students_group: grp_014
+  Student nr 1_grupa_grp_015:
+    name: Student nr 1
+    students_group: grp_015
+  Student nr 2_grupa_grp_015:
+    name: Student nr 2
+    students_group: grp_015
+  Student nr 3_grupa_grp_015:
+    name: Student nr 3
+    students_group: grp_015
+  Student nr 4_grupa_grp_015:
+    name: Student nr 4
+    students_group: grp_015
+  Student nr 5_grupa_grp_015:
+    name: Student nr 5
+    students_group: grp_015
+  Student nr 6_grupa_grp_015:
+    name: Student nr 6
+    students_group: grp_015
+  Student nr 7_grupa_grp_015:
+    name: Student nr 7
+    students_group: grp_015
+  Student nr 8_grupa_grp_015:
+    name: Student nr 8
+    students_group: grp_015
+  Student nr 9_grupa_grp_015:
+    name: Student nr 9
+    students_group: grp_015
+  Student nr 10_grupa_grp_015:
+    name: Student nr 10
+    students_group: grp_015
+  Student nr 11_grupa_grp_015:
+    name: Student nr 11
+    students_group: grp_015
+  Student nr 12_grupa_grp_015:
+    name: Student nr 12
+    students_group: grp_015
+  Student nr 13_grupa_grp_015:
+    name: Student nr 13
+    students_group: grp_015
+  Student nr 14_grupa_grp_015:
+    name: Student nr 14
+    students_group: grp_015
+  Student nr 15_grupa_grp_015:
+    name: Student nr 15
+    students_group: grp_015
+  Student nr 1_grupa_grp_016:
+    name: Student nr 1
+    students_group: grp_016
+  Student nr 2_grupa_grp_016:
+    name: Student nr 2
+    students_group: grp_016
+  Student nr 3_grupa_grp_016:
+    name: Student nr 3
+    students_group: grp_016
+  Student nr 4_grupa_grp_016:
+    name: Student nr 4
+    students_group: grp_016
+  Student nr 5_grupa_grp_016:
+    name: Student nr 5
+    students_group: grp_016
+  Student nr 6_grupa_grp_016:
+    name: Student nr 6
+    students_group: grp_016
+  Student nr 7_grupa_grp_016:
+    name: Student nr 7
+    students_group: grp_016
+  Student nr 8_grupa_grp_016:
+    name: Student nr 8
+    students_group: grp_016
+  Student nr 9_grupa_grp_016:
+    name: Student nr 9
+    students_group: grp_016
+  Student nr 10_grupa_grp_016:
+    name: Student nr 10
+    students_group: grp_016
+  Student nr 11_grupa_grp_016:
+    name: Student nr 11
+    students_group: grp_016
+  Student nr 12_grupa_grp_016:
+    name: Student nr 12
+    students_group: grp_016
+  Student nr 13_grupa_grp_016:
+    name: Student nr 13
+    students_group: grp_016
+  Student nr 14_grupa_grp_016:
+    name: Student nr 14
+    students_group: grp_016
+  Student nr 15_grupa_grp_016:
+    name: Student nr 15
+    students_group: grp_016
+  Student nr 16_grupa_grp_016:
+    name: Student nr 16
+    students_group: grp_016
+  Student nr 17_grupa_grp_016:
+    name: Student nr 17
+    students_group: grp_016
+  Student nr 18_grupa_grp_016:
+    name: Student nr 18
+    students_group: grp_016
+  Student nr 19_grupa_grp_016:
+    name: Student nr 19
+    students_group: grp_016
+  Student nr 20_grupa_grp_016:
+    name: Student nr 20
+    students_group: grp_016
+  Student nr 21_grupa_grp_016:
+    name: Student nr 21
+    students_group: grp_016
+  Student nr 22_grupa_grp_016:
+    name: Student nr 22
+    students_group: grp_016
+  Student nr 23_grupa_grp_016:
+    name: Student nr 23
+    students_group: grp_016
+  Student nr 24_grupa_grp_016:
+    name: Student nr 24
+    students_group: grp_016
+subject_linkings: {}
+problem_instance:
+  P_list:
+  - lec_001
+  - lec_002
+  - lec_003
+  - lec_004
+  - lec_005
+  - lec_006
+  - lec_007
+  - lec_008
+  - lec_009
+  - lec_010
+  - lec_011
+  - lec_012
+  - lec_013
+  - lec_014
+  - lec_015
+  - lec_016
+  P_indeces:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  C_meta:
+    grp_001__1001_Course 1__E-learning:
+      max_hours: 1
+      subject_id: 1001_E-learning
+    grp_002__1002_Course 2__Inne:
+      max_hours: 1
+      subject_id: 1002_Inne
+    grp_003__1003_Course 3__Inne:
+      max_hours: 1
+      subject_id: 1003_Inne
+    grp_004__1004_Course 4__Inne:
+      max_hours: 1
+      subject_id: 1004_Inne
+    grp_005__1005_Course 5__Laboratorium:
+      max_hours: 1
+      subject_id: 1005_Laboratorium
+    grp_006__1006_Course 6__Ćwiczenia:
+      max_hours: 1
+      subject_id: 1006_Ćwiczenia
+    grp_007__1007_Course 7__Ćwiczenia:
+      max_hours: 1
+      subject_id: 1007_Ćwiczenia
+    grp_008__1008_Course 8__Seminarium:
+      max_hours: 1
+      subject_id: 1008_Seminarium
+    grp_009__1009_Course 9__Laboratorium:
+      max_hours: 1
+      subject_id: 1009_Laboratorium
+    grp_010__1010_Course 10__E-learning:
+      max_hours: 1
+      subject_id: 1010_E-learning
+    grp_011__1011_Course 11__E-learning:
+      max_hours: 1
+      subject_id: 1011_E-learning
+    grp_012__1012_Course 12__Seminarium:
+      max_hours: 1
+      subject_id: 1012_Seminarium
+    grp_013__1013_Course 13__Projekt:
+      max_hours: 1
+      subject_id: 1013_Projekt
+    grp_014__1014_Course 14__E-learning:
+      max_hours: 1
+      subject_id: 1014_E-learning
+    grp_015__1015_Course 15__Seminarium:
+      max_hours: 1
+      subject_id: 1015_Seminarium
+    grp_016__1016_Course 16__Wykład:
+      max_hours: 1
+      subject_id: 1016_Wykład
+    grp_014__1017_Course 17__Seminarium:
+      max_hours: 1
+      subject_id: 1017_Seminarium
+    grp_016__1018_Course 18__Ćwiczenia:
+      max_hours: 1
+      subject_id: 1018_Ćwiczenia
+    grp_009__1019_Course 19__Inne:
+      max_hours: 1
+      subject_id: 1019_Inne
+    grp_013__1020_Course 20__Projekt:
+      max_hours: 1
+      subject_id: 1020_Projekt
+    grp_008__1021_Course 21__Wykład:
+      max_hours: 1
+      subject_id: 1021_Wykład
+    grp_007__1022_Course 22__Wykład:
+      max_hours: 1
+      subject_id: 1022_Wykład
+    grp_011__1023_Course 23__E-learning:
+      max_hours: 1
+      subject_id: 1023_E-learning
+    grp_004__1024_Course 24__E-learning:
+      max_hours: 1
+      subject_id: 1024_E-learning
+    grp_013__1025_Course 25__Ćwiczenia:
+      max_hours: 1
+      subject_id: 1025_Ćwiczenia
+    grp_008__1026_Course 26__E-learning:
+      max_hours: 1
+      subject_id: 1026_E-learning
+    grp_002__1027_Course 27__Inne:
+      max_hours: 1
+      subject_id: 1027_Inne
+    grp_013__1028_Course 28__Inne:
+      max_hours: 1
+      subject_id: 1028_Inne
+    grp_013__1029_Course 29__Wykład:
+      max_hours: 1
+      subject_id: 1029_Wykład
+    grp_005__1030_Course 30__Laboratorium:
+      max_hours: 1
+      subject_id: 1030_Laboratorium
+    grp_013__1031_Course 31__Seminarium:
+      max_hours: 1
+      subject_id: 1031_Seminarium
+    grp_012__1032_Course 32__Ćwiczenia:
+      max_hours: 1
+      subject_id: 1032_Ćwiczenia
+    grp_013__1033_Course 33__Ćwiczenia:
+      max_hours: 1
+      subject_id: 1033_Ćwiczenia
+    grp_006__1034_Course 34__Projekt:
+      max_hours: 1
+      subject_id: 1034_Projekt
+    grp_012__1035_Course 35__Projekt:
+      max_hours: 1
+      subject_id: 1035_Projekt
+    grp_014__1036_Course 36__Ćwiczenia:
+      max_hours: 1
+      subject_id: 1036_Ćwiczenia
+    grp_002__1037_Course 37__Wykład:
+      max_hours: 1
+      subject_id: 1037_Wykład
+    grp_007__1038_Course 38__E-learning:
+      max_hours: 1
+      subject_id: 1038_E-learning
+    grp_011__1039_Course 39__E-learning:
+      max_hours: 1
+      subject_id: 1039_E-learning
+    grp_002__1040_Course 40__E-learning:
+      max_hours: 1
+      subject_id: 1040_E-learning
+    grp_013__1041_Course 41__Projekt:
+      max_hours: 1
+      subject_id: 1041_Projekt
+    grp_011__1042_Course 42__Wykład:
+      max_hours: 1
+      subject_id: 1042_Wykład
+    grp_002__1043_Course 43__Laboratorium:
+      max_hours: 1
+      subject_id: 1043_Laboratorium
+    grp_004__1044_Course 44__E-learning:
+      max_hours: 1
+      subject_id: 1044_E-learning
+  C_list:
+  - grp_001__1001_Course 1__E-learning
+  - grp_002__1002_Course 2__Inne
+  - grp_003__1003_Course 3__Inne
+  - grp_004__1004_Course 4__Inne
+  - grp_005__1005_Course 5__Laboratorium
+  - grp_006__1006_Course 6__Ćwiczenia
+  - grp_007__1007_Course 7__Ćwiczenia
+  - grp_008__1008_Course 8__Seminarium
+  - grp_009__1009_Course 9__Laboratorium
+  - grp_010__1010_Course 10__E-learning
+  - grp_011__1011_Course 11__E-learning
+  - grp_012__1012_Course 12__Seminarium
+  - grp_013__1013_Course 13__Projekt
+  - grp_014__1014_Course 14__E-learning
+  - grp_015__1015_Course 15__Seminarium
+  - grp_016__1016_Course 16__Wykład
+  - grp_014__1017_Course 17__Seminarium
+  - grp_016__1018_Course 18__Ćwiczenia
+  - grp_009__1019_Course 19__Inne
+  - grp_013__1020_Course 20__Projekt
+  - grp_008__1021_Course 21__Wykład
+  - grp_007__1022_Course 22__Wykład
+  - grp_011__1023_Course 23__E-learning
+  - grp_004__1024_Course 24__E-learning
+  - grp_013__1025_Course 25__Ćwiczenia
+  - grp_008__1026_Course 26__E-learning
+  - grp_002__1027_Course 27__Inne
+  - grp_013__1028_Course 28__Inne
+  - grp_013__1029_Course 29__Wykład
+  - grp_005__1030_Course 30__Laboratorium
+  - grp_013__1031_Course 31__Seminarium
+  - grp_012__1032_Course 32__Ćwiczenia
+  - grp_013__1033_Course 33__Ćwiczenia
+  - grp_006__1034_Course 34__Projekt
+  - grp_012__1035_Course 35__Projekt
+  - grp_014__1036_Course 36__Ćwiczenia
+  - grp_002__1037_Course 37__Wykład
+  - grp_007__1038_Course 38__E-learning
+  - grp_011__1039_Course 39__E-learning
+  - grp_002__1040_Course 40__E-learning
+  - grp_013__1041_Course 41__Projekt
+  - grp_011__1042_Course 42__Wykład
+  - grp_002__1043_Course 43__Laboratorium
+  - grp_004__1044_Course 44__E-learning
+  C_indeces:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  C_double_meta: {}
+  C_double_list: []
+  C_double_indeces: []
+  C_quantities:
+  - 20
+  - 18
+  - 14
+  - 29
+  - 26
+  - 46
+  - 27
+  - 20
+  - 13
+  - 11
+  - 26
+  - 20
+  - 16
+  - 20
+  - 15
+  - 24
+  - 55
+  - 44
+  - 24
+  - 63
+  - 69
+  - 92
+  - 46
+  - 115
+  - 103
+  - 49
+  - 44
+  - 42
+  - 16
+  - 26
+  - 45
+  - 34
+  - 71
+  - 66
+  - 119
+  - 92
+  - 18
+  - 69
+  - 66
+  - 44
+  - 30
+  - 68
+  - 87
+  - 91
+  C_zdalne: []
+  C_niezdalne:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  C_sportowe: []
+  C_jezykowe: []
+  C_niesportowe_niezdalne:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  - 35
+  - 36
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
+  C_linking_list: []
+  C_linking_indeces: []
+  C_indeces_in_linking: []
+  C_linking_dict: {}
+  triples: null
+  group_plus_code_list: null
+  G:
+  - grp_001
+  - grp_002
+  - grp_003
+  - grp_004
+  - grp_005
+  - grp_006
+  - grp_007
+  - grp_008
+  - grp_009
+  - grp_010
+  - grp_011
+  - grp_012
+  - grp_013
+  - grp_014
+  - grp_015
+  - grp_016
+  G_indeces:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  R_list:
+  - BLDG1_001
+  - BLDG1_002
+  - BLDG1_003
+  - BLDG1_004
+  - BLDG1_005
+  - BLDG1_006
+  - BLDG1_007
+  - BLDG1_008
+  - BLDG1_009
+  - BLDG1_010
+  - BLDG1_011
+  - BLDG1_012
+  - BLDG1_013
+  R_indeces:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  R_zdalne_list: []
+  R_zdalne_indeces: []
+  R_zdalne_indeces_in_R: []
+  R_CJ_list: []
+  R_CJ_indeces: []
+  R_CJ_indeces_in_R: []
+  R_CS_list: []
+  R_CS_indeces: []
+  R_CS_indeces_in_R: []
+  R_fizycznie_istniejace_list:
+  - BLDG1_001
+  - BLDG1_002
+  - BLDG1_003
+  - BLDG1_004
+  - BLDG1_005
+  - BLDG1_006
+  - BLDG1_007
+  - BLDG1_008
+  - BLDG1_009
+  - BLDG1_010
+  - BLDG1_011
+  - BLDG1_012
+  - BLDG1_013
+  R_fizycznie_istniejace_indeces:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  R_fizycznie_istniejace_indeces_in_R:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  possible_rooms:
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  - - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+  room_capacities:
+  - 119
+  - 50
+  - 50
+  - 50
+  - 50
+  - 50
+  - 50
+  - 50
+  - 80
+  - 80
+  - 50
+  - 50
+  - 80
+  classrooms_dists: null
+  classrooms_names_grouped_by_buildings: {}
+  buildings_existing_in_R: []
+  sport_timebreak_duration: null
+  remote_timebreak_duration: null
+  types_of_classrooms:
+  - Audytorium
+  - Computing lab
+  T:
+    1:
+    - __class__: TimeSlot
+      slot_str: 8:00-9:30
+      dayname: Monday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 9:45-11:15
+      dayname: Monday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 11:30-13:00
+      dayname: Monday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 13:15-14:45
+      dayname: Monday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 15:00-16:30
+      dayname: Monday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 16:45-18:15
+      dayname: Monday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 18:30-20:00
+      dayname: Monday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 8:00-9:30
+      dayname: Tuesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 9:45-11:15
+      dayname: Tuesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 11:30-13:00
+      dayname: Tuesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 13:15-14:45
+      dayname: Tuesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 15:00-16:30
+      dayname: Tuesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 16:45-18:15
+      dayname: Tuesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 18:30-20:00
+      dayname: Tuesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 8:00-9:30
+      dayname: Wednesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 9:45-11:15
+      dayname: Wednesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 11:30-13:00
+      dayname: Wednesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 13:15-14:45
+      dayname: Wednesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 15:00-16:30
+      dayname: Wednesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 16:45-18:15
+      dayname: Wednesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 18:30-20:00
+      dayname: Wednesday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 8:00-9:30
+      dayname: Thursday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 9:45-11:15
+      dayname: Thursday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 11:30-13:00
+      dayname: Thursday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 13:15-14:45
+      dayname: Thursday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 15:00-16:30
+      dayname: Thursday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 16:45-18:15
+      dayname: Thursday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 18:30-20:00
+      dayname: Thursday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 8:00-9:30
+      dayname: Friday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 9:45-11:15
+      dayname: Friday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 11:30-13:00
+      dayname: Friday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 13:15-14:45
+      dayname: Friday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 15:00-16:30
+      dayname: Friday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 16:45-18:15
+      dayname: Friday
+      init_division_intro: true
+    - __class__: TimeSlot
+      slot_str: 18:30-20:00
+      dayname: Friday
+      init_division_intro: true
+  T_list:
+  - '1_0'
+  - '1_1'
+  - '1_2'
+  - '1_3'
+  - '1_4'
+  - '1_5'
+  - '1_6'
+  - '1_7'
+  - '1_8'
+  - '1_9'
+  - '1_10'
+  - '1_11'
+  - '1_12'
+  - '1_13'
+  - '1_14'
+  - '1_15'
+  - '1_16'
+  - '1_17'
+  - '1_18'
+  - '1_19'
+  - '1_20'
+  - '1_21'
+  - '1_22'
+  - '1_23'
+  - '1_24'
+  - '1_25'
+  - '1_26'
+  - '1_27'
+  - '1_28'
+  - '1_29'
+  - '1_30'
+  - '1_31'
+  - '1_32'
+  - '1_33'
+  - '1_34'
+  T_indeces:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
+  - 32
+  - 33
+  - 34
+  grids_possible:
+  - 08:00-08:15
+  - 08:15-08:30
+  - 08:30-08:45
+  - 08:45-09:00
+  - 09:00-09:15
+  - 09:15-09:30
+  - 09:30-09:45
+  - 09:45-10:00
+  - 10:00-10:15
+  - 10:15-10:30
+  - 10:30-10:45
+  - 10:45-11:00
+  - 11:00-11:15
+  - 11:15-11:30
+  - 11:30-11:45
+  - 11:45-12:00
+  - 12:00-12:15
+  - 12:15-12:30
+  - 12:30-12:45
+  - 12:45-13:00
+  - 13:00-13:15
+  - 13:15-13:30
+  - 13:30-13:45
+  - 13:45-14:00
+  - 14:00-14:15
+  - 14:15-14:30
+  - 14:30-14:45
+  - 14:45-15:00
+  - 15:00-15:15
+  - 15:15-15:30
+  - 15:30-15:45
+  - 15:45-16:00
+  - 16:00-16:15
+  - 16:15-16:30
+  - 16:30-16:45
+  - 16:45-17:00
+  - 17:00-17:15
+  - 17:15-17:30
+  - 17:30-17:45
+  - 17:45-18:00
+  - 18:00-18:15
+  - 18:15-18:30
+  - 18:30-18:45
+  - 18:45-19:00
+  - 19:00-19:15
+  - 19:15-19:30
+  - 19:30-19:45
+  - 19:45-20:00
+  planning_start_datetime: '2002-08-12T08:00:00'
+  planning_end_datetime: '2002-08-16T20:00:00'
+  D:
+  - Monday
+  - Tuesday
+  - Wednesday
+  - Thursday
+  - Friday
+  D_indeces:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  days_possible:
+  - Monday
+  - Tuesday
+  - Wednesday
+  - Thursday
+  - Friday

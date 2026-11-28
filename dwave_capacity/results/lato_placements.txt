@@ -1,0 +1,1 @@
+artifacts/Corrected_lato_3fix.yaml: 504,309 candidate placements, 73 online courses; PR5 rows: groups 126,737,754 + lecturers 4,031,050 = 130,768,804  (6 s)

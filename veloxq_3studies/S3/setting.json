@@ -1,0 +1,10 @@
+{
+ "setting": "S3",
+ "description": "presolve (counts) + sufficient penalties (margin 1.5)",
+ "overrides": {
+  "room_presolve": "counts",
+  "penalty_profile": "sufficient",
+  "penalty_margin": 1.5
+ },
+ "base_config": "cfg/qubo_cfg.yaml"
+}

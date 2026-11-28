@@ -1,0 +1,2461 @@
+schema_version: 1
+metadata:
+  solver: MILP/Gurobi (autoplanner)
+  stages_solved:
+  - phase2
+  phase2:
+    wall_time_seconds: 43322.077
+    time_build_s: 120.802
+    time_solve_s: 43200.843
+    time_limit_seconds: 43200.0
+    lessons_planned: 130
+    first_incumbent:
+      runtime_s: 22.6
+      work: 27.113
+      objective: 13573.0
+      pass: 0
+      source: MIPSOL callback
+      time_build_s: 120.802
+      wall_time_to_first_incumbent_s: 143.402
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_first_incumbent.sol
+        sha256: cb04499237ff9831a845ad7d79bcdf8e5409372907572d15ac024728b828245c
+        sha256_file_bytes: cb04499237ff9831a845ad7d79bcdf8e5409372907572d15ac024728b828245c
+        bytes: 817719
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_first_incumbent_solution.yaml
+        sha256: b0b51e967b87f1e1a109fac646f0d6920a4704a912a90a09187a909a0383ce8e
+        sha256_file_bytes: 1993cad5d79782a5deb577f7f4ceaa240cf58ccd11d5c441d0442a4eaff2f8fb
+        bytes: 51427
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    snapshots:
+    - mark_s: 1800.0
+      reached: true
+      taken_at_s: 1826.745
+      seen: 89
+      objective_bound: -26927.0
+      incumbent: 89
+      objective: -8460.0
+      found_s: 1751.265
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_1800s.sol
+        sha256: e8602c2067cb13edb5d745fafce8b3b7572198a3cc08d11f6ab2de707d76fa2c
+        sha256_file_bytes: e8602c2067cb13edb5d745fafce8b3b7572198a3cc08d11f6ab2de707d76fa2c
+        bytes: 823951
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_1800s_solution.yaml
+        sha256: 5633eead4a7ff0922a7c435abcd1f4514bafeabc1c4fb41864bc276b78d90359
+        sha256_file_bytes: b2d5d5f5b0b72b04641861fcd858650f4d416bcb9cb6d0ed0fc648df09123963
+        bytes: 51070
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 3600.0
+      reached: true
+      taken_at_s: 3604.011
+      seen: 99
+      objective_bound: -16421.0
+      incumbent: 99
+      objective: -8638.0
+      found_s: 3021.276
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_3600s.sol
+        sha256: eeb5727052338b9644761634b6572764fc71ad76a7d73625ce4136cbb6ef6679
+        sha256_file_bytes: eeb5727052338b9644761634b6572764fc71ad76a7d73625ce4136cbb6ef6679
+        bytes: 823546
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_3600s_solution.yaml
+        sha256: 39bf6a646ee6d2cac0464af68b3958d9379b2abe40926411dae5cb9014fa2613
+        sha256_file_bytes: 34fec3e08ebac40dcba565978f4f62ebc1bc664a05af9ca1fcf790767b897231
+        bytes: 51121
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 5067.0
+      reached: true
+      taken_at_s: 5070.652
+      seen: 106
+      objective_bound: -14534.0
+      incumbent: 106
+      objective: -8705.0
+      found_s: 4397.879
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_5067s.sol
+        sha256: 00f5f31bfc2ae890abd7d4823c63a36c94b2686296b30287236a59d7a888c7ec
+        sha256_file_bytes: 00f5f31bfc2ae890abd7d4823c63a36c94b2686296b30287236a59d7a888c7ec
+        bytes: 825243
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_5067s_solution.yaml
+        sha256: 9996bf6667225d6af548a7c1144ca2879510ab0638b96a252db07f03960355b3
+        sha256_file_bytes: 2e228b70f97344d8bbfa8fa217eb11ff96dca99bd1d553a6c8792314a84379de
+        bytes: 51071
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 5400.0
+      reached: true
+      taken_at_s: 5400.661
+      seen: 106
+      objective_bound: -14486.0
+      incumbent: 106
+      objective: -8705.0
+      found_s: 4397.879
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_5067s.sol
+        sha256: 00f5f31bfc2ae890abd7d4823c63a36c94b2686296b30287236a59d7a888c7ec
+        sha256_file_bytes: 00f5f31bfc2ae890abd7d4823c63a36c94b2686296b30287236a59d7a888c7ec
+        bytes: 825243
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_5067s_solution.yaml
+        sha256: 9996bf6667225d6af548a7c1144ca2879510ab0638b96a252db07f03960355b3
+        sha256_file_bytes: 2e228b70f97344d8bbfa8fa217eb11ff96dca99bd1d553a6c8792314a84379de
+        bytes: 51071
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 5476.0
+      reached: true
+      taken_at_s: 5482.108
+      seen: 106
+      objective_bound: -14474.0
+      incumbent: 106
+      objective: -8705.0
+      found_s: 4397.879
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_5067s.sol
+        sha256: 00f5f31bfc2ae890abd7d4823c63a36c94b2686296b30287236a59d7a888c7ec
+        sha256_file_bytes: 00f5f31bfc2ae890abd7d4823c63a36c94b2686296b30287236a59d7a888c7ec
+        bytes: 825243
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_5067s_solution.yaml
+        sha256: 9996bf6667225d6af548a7c1144ca2879510ab0638b96a252db07f03960355b3
+        sha256_file_bytes: 2e228b70f97344d8bbfa8fa217eb11ff96dca99bd1d553a6c8792314a84379de
+        bytes: 51071
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 7081.0
+      reached: true
+      taken_at_s: 7090.173
+      seen: 107
+      objective_bound: -14379.0
+      incumbent: 107
+      objective: -8710.0
+      found_s: 6515.252
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_7081s.sol
+        sha256: 413ba6a462558b187ef62be601aae614d7ecc954df52f63d8c89eec417962f40
+        sha256_file_bytes: 413ba6a462558b187ef62be601aae614d7ecc954df52f63d8c89eec417962f40
+        bytes: 824908
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_7081s_solution.yaml
+        sha256: a935e202e5309b3ef26cb05419864bfbd4c60a3a4d676830c7b71259ed80a54e
+        sha256_file_bytes: 0f611acb5d76e09c26378ab351e8f02afb6a4a5237e8d965264ed0256e0f8b32
+        bytes: 51071
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 7200.0
+      reached: true
+      taken_at_s: 7227.988
+      seen: 107
+      objective_bound: -14372.0
+      incumbent: 107
+      objective: -8710.0
+      found_s: 6515.252
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_7081s.sol
+        sha256: 413ba6a462558b187ef62be601aae614d7ecc954df52f63d8c89eec417962f40
+        sha256_file_bytes: 413ba6a462558b187ef62be601aae614d7ecc954df52f63d8c89eec417962f40
+        bytes: 824908
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_7081s_solution.yaml
+        sha256: a935e202e5309b3ef26cb05419864bfbd4c60a3a4d676830c7b71259ed80a54e
+        sha256_file_bytes: 0f611acb5d76e09c26378ab351e8f02afb6a4a5237e8d965264ed0256e0f8b32
+        bytes: 51071
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 9000.0
+      reached: true
+      taken_at_s: 9036.961
+      seen: 110
+      objective_bound: -14334.0
+      incumbent: 110
+      objective: -8730.0
+      found_s: 7689.253
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_9000s.sol
+        sha256: 1653e374e83922f7dff3a944f031e3334dc6cce2a9d4083c40733acf591964a0
+        sha256_file_bytes: 1653e374e83922f7dff3a944f031e3334dc6cce2a9d4083c40733acf591964a0
+        bytes: 825366
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_9000s_solution.yaml
+        sha256: 5f1e8811fcd4c7133d4afcf7c88221505485bdad255cbc3dfc9c66dd9c26742d
+        sha256_file_bytes: 9db17b98b24400bc268e5436fb536da397ed15478ebdd056b369ae3196621a07
+        bytes: 51059
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 10800.0
+      reached: true
+      taken_at_s: 10801.083
+      seen: 113
+      objective_bound: -13989.0
+      incumbent: 113
+      objective: -8750.0
+      found_s: 10661.116
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_10800s.sol
+        sha256: 949f9453bd2049f071bb775df1f3efa94e9b64e37296757e7fa474fa1193b6ac
+        sha256_file_bytes: 949f9453bd2049f071bb775df1f3efa94e9b64e37296757e7fa474fa1193b6ac
+        bytes: 824849
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_10800s_solution.yaml
+        sha256: dd7e2833e35a8c0d7b262c2ac2a98954c8c648aeeaf01e4d6f270c4fbe365456
+        sha256_file_bytes: fb8139a4c3f7fba2cecb261b8ad5bc3a68c8ee7e4a418efef66f59d814f1f220
+        bytes: 51068
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 12600.0
+      reached: true
+      taken_at_s: 12611.089
+      seen: 113
+      objective_bound: -13921.0
+      incumbent: 113
+      objective: -8750.0
+      found_s: 10661.116
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_10800s.sol
+        sha256: 949f9453bd2049f071bb775df1f3efa94e9b64e37296757e7fa474fa1193b6ac
+        sha256_file_bytes: 949f9453bd2049f071bb775df1f3efa94e9b64e37296757e7fa474fa1193b6ac
+        bytes: 824849
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_10800s_solution.yaml
+        sha256: dd7e2833e35a8c0d7b262c2ac2a98954c8c648aeeaf01e4d6f270c4fbe365456
+        sha256_file_bytes: fb8139a4c3f7fba2cecb261b8ad5bc3a68c8ee7e4a418efef66f59d814f1f220
+        bytes: 51068
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 14400.0
+      reached: true
+      taken_at_s: 14408.824
+      seen: 114
+      objective_bound: -13834.991288465326
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 16200.0
+      reached: true
+      taken_at_s: 16202.898
+      seen: 114
+      objective_bound: -13701.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 18000.0
+      reached: true
+      taken_at_s: 18000.601
+      seen: 114
+      objective_bound: -13686.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 19800.0
+      reached: true
+      taken_at_s: 19804.046
+      seen: 114
+      objective_bound: -13578.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 21600.0
+      reached: true
+      taken_at_s: 21635.819
+      seen: 114
+      objective_bound: -13547.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 23400.0
+      reached: true
+      taken_at_s: 23414.023
+      seen: 114
+      objective_bound: -13476.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 25200.0
+      reached: true
+      taken_at_s: 25236.257
+      seen: 114
+      objective_bound: -13416.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 27000.0
+      reached: true
+      taken_at_s: 27063.658
+      seen: 114
+      objective_bound: -13379.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 28800.0
+      reached: true
+      taken_at_s: 28807.823
+      seen: 114
+      objective_bound: -13352.99971254226
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 30600.0
+      reached: true
+      taken_at_s: 30600.321
+      seen: 114
+      objective_bound: -13306.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 32400.0
+      reached: true
+      taken_at_s: 32438.895
+      seen: 114
+      objective_bound: -13273.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 34200.0
+      reached: true
+      taken_at_s: 34263.718
+      seen: 114
+      objective_bound: -13273.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 36000.0
+      reached: true
+      taken_at_s: 36083.166
+      seen: 114
+      objective_bound: -13273.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 37800.0
+      reached: true
+      taken_at_s: 37845.244
+      seen: 114
+      objective_bound: -13273.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 39600.0
+      reached: true
+      taken_at_s: 39845.337
+      seen: 114
+      objective_bound: -13273.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 41400.0
+      reached: true
+      taken_at_s: 41514.08
+      seen: 114
+      objective_bound: -13273.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    - mark_s: 43200.0
+      reached: true
+      taken_at_s: 43200.016
+      seen: 114
+      objective_bound: -13273.0
+      incumbent: 114
+      objective: -8755.0
+      found_s: 13204.132
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s.sol
+        sha256: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        sha256_file_bytes: d3aee9644b58e668c442116c10c7259f8756416160164fd3e8388a5b75b7c4e4
+        bytes: 824935
+      lessons_planned: 130
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_snapshot_14400s_solution.yaml
+        sha256: 47cd4df733545b4ffd584fc46c179f3421e7544b8e3ff361897902e40aa33721
+        sha256_file_bytes: 11b8d784faaa6bc0ce2da76161d6b4d6de002281987d331fe616fccd48390d0d
+        bytes: 51076
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    sol_file: C:\Users\21034\AppData\Local\Temp\gurobi_pipeline_b4kzjzem\artifacts/saved_solutions_phase2\rozwiazanie1_etap2.sol
+    sol_file_copy:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_phase2.sol
+      sha256: 27defb2e21fb3b82e354ccd75a5f9371158043e85f0abbcc31b24addacf14984
+      sha256_file_bytes: abb7946217fdfc31a18b014ee2c853c44af54f2ba0372786b16805c3568995c7
+      bytes: 863464
+    gurobi_log_copy:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_phase2_gurobi.log
+      sha256: 7d477c324e1ec9d03cde591571dd4f3ab573fb7a6b3f1c53d08531d7b1f751b3
+      sha256_file_bytes: 5dbda861e1a026052d2826cb98f030aa1289e6e6ff4a700a11426df884082271
+      bytes: 145509
+    objective_value: -8755.0
+    n_vars: 55901
+    gurobi_feasible: true
+    gurobi_status: TIME_LIMIT
+    objective_mode: weighted_sum
+    levels: []
+    model_fingerprint:
+      sha256: bb2fb21cd7196e9b25a2b43d7d2a42ec911613de23783df73524ca086aafb2dc
+      n_vars: 55901
+      n_constrs: 1416859
+      n_nonzeros: 4829514
+      n_objectives: 1
+    rules:
+      room_filter: 'RU3 filter of 07.10.2026: possible_rooms[c] keeps the rooms whose capacity is at least the course size; loading fails for a course with no such room unless ProblemInstance.strict_RU3 is False'
+      pr5: true
+      validation_profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+      remote_lessons: need no room; the room stage leaves them out
+      milp:
+        constraints:
+        - CONJ-PHASE3
+        - MAX_CHUNKS
+        - MIXED-MODALITY-LECTURERS
+        - MIXED-MODALITY-STUDENTS
+        - PR1
+        - PR4_LECTURERS
+        - PR4_STUDENTS
+        - RU2
+        - RU9
+        safety_buffer_min: 7.5
+        room_rows_per: cell
+        strong_CONJ_PHASE3: 1
+        objective_mode: weighted_sum
+        feasibility_only: false
+        reward_unit: lesson
+    solve_summary:
+      status: TIME_LIMIT
+      runtime_s: 43200.568
+      work: 41794.341
+      objective: -8755.0
+      objective_bound: -13273.0
+      mip_gap: 0.5160479725870931
+      node_count: 11419.0
+      n_incumbents: 114
+      time_to_first_incumbent_s: 22.6
+      work_to_first_incumbent: 27.113
+      first_incumbent_objective: 13573.0
+      first_incumbent_source: MIPSOL callback
+      time_to_last_incumbent_s: 13204.132
+    incumbents:
+    - runtime_s: 22.6
+      objective: 13573.0
+      pass: 0
+      work: 27.113
+    - runtime_s: 36.607
+      objective: 13378.0
+      pass: 0
+      work: 42.566
+    - runtime_s: 36.733
+      objective: 13203.0
+      pass: 0
+      work: 42.918
+    - runtime_s: 36.87
+      objective: 2865.0
+      pass: 0
+      work: 43.072
+    - runtime_s: 36.91
+      objective: -2430.0
+      pass: 0
+      work: 43.09
+    - runtime_s: 36.937
+      objective: -2490.0
+      pass: 0
+      work: 43.123
+    - runtime_s: 73.428
+      objective: -2699.0
+      pass: 0
+      work: 85.173
+    - runtime_s: 73.444
+      objective: -2787.0
+      pass: 0
+      work: 85.174
+    - runtime_s: 73.459
+      objective: -2877.0
+      pass: 0
+      work: 85.174
+    - runtime_s: 73.492
+      objective: -2922.0
+      pass: 0
+      work: 85.208
+    - runtime_s: 127.034
+      objective: -3132.0
+      pass: 0
+      work: 144.766
+    - runtime_s: 127.065
+      objective: -3162.0
+      pass: 0
+      work: 144.799
+    - runtime_s: 172.141
+      objective: -4097.0
+      pass: 0
+      work: 195.36
+    - runtime_s: 172.158
+      objective: -4356.0
+      pass: 0
+      work: 195.361
+    - runtime_s: 172.199
+      objective: -4461.0
+      pass: 0
+      work: 195.393
+    - runtime_s: 232.893
+      objective: -4791.0
+      pass: 0
+      work: 264.177
+    - runtime_s: 294.19
+      objective: -4977.0
+      pass: 0
+      work: 333.479
+    - runtime_s: 294.204
+      objective: -5022.0
+      pass: 0
+      work: 333.48
+    - runtime_s: 294.294
+      objective: -5092.0
+      pass: 0
+      work: 333.555
+    - runtime_s: 294.393
+      objective: -5162.0
+      pass: 0
+      work: 333.628
+    - runtime_s: 294.484
+      objective: -5192.0
+      pass: 0
+      work: 333.695
+    - runtime_s: 294.721
+      objective: -5431.0
+      pass: 0
+      work: 333.886
+    - runtime_s: 295.107
+      objective: -5436.0
+      pass: 0
+      work: 334.124
+    - runtime_s: 295.121
+      objective: -5446.0
+      pass: 0
+      work: 334.124
+    - runtime_s: 295.287
+      objective: -5591.0
+      pass: 0
+      work: 334.209
+    - runtime_s: 295.515
+      objective: -5621.0
+      pass: 0
+      work: 334.41
+    - runtime_s: 411.791
+      objective: -5912.0
+      pass: 0
+      work: 471.258
+    - runtime_s: 411.799
+      objective: -5937.0
+      pass: 0
+      work: 471.258
+    - runtime_s: 412.458
+      objective: -5952.0
+      pass: 0
+      work: 471.863
+    - runtime_s: 433.05
+      objective: -5972.0
+      pass: 0
+      work: 497.484
+    - runtime_s: 433.065
+      objective: -5987.0
+      pass: 0
+      work: 497.485
+    - runtime_s: 433.065
+      objective: -6072.0
+      pass: 0
+      work: 497.485
+    - runtime_s: 433.081
+      objective: -6086.0
+      pass: 0
+      work: 497.485
+    - runtime_s: 465.209
+      objective: -6101.0
+      pass: 0
+      work: 535.64
+    - runtime_s: 502.219
+      objective: -6191.0
+      pass: 0
+      work: 580.606
+    - runtime_s: 502.232
+      objective: -6206.0
+      pass: 0
+      work: 580.606
+    - runtime_s: 502.919
+      objective: -6236.0
+      pass: 0
+      work: 581.359
+    - runtime_s: 502.998
+      objective: -6296.0
+      pass: 0
+      work: 581.417
+    - runtime_s: 503.186
+      objective: -6506.0
+      pass: 0
+      work: 581.524
+    - runtime_s: 503.316
+      objective: -6566.0
+      pass: 0
+      work: 581.637
+    - runtime_s: 503.474
+      objective: -6581.0
+      pass: 0
+      work: 581.788
+    - runtime_s: 542.594
+      objective: -6686.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 542.608
+      objective: -6701.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 542.622
+      objective: -6791.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 542.634
+      objective: -6806.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 542.646
+      objective: -6866.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 542.656
+      objective: -6871.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 542.672
+      objective: -6936.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 542.687
+      objective: -6951.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 542.703
+      objective: -6975.0
+      pass: 0
+      work: 630.414
+    - runtime_s: 555.548
+      objective: -6990.0
+      pass: 0
+      work: 647.027
+    - runtime_s: 577.739
+      objective: -7005.0
+      pass: 0
+      work: 673.903
+    - runtime_s: 577.751
+      objective: -7020.0
+      pass: 0
+      work: 673.903
+    - runtime_s: 577.765
+      objective: -7025.0
+      pass: 0
+      work: 673.903
+    - runtime_s: 577.779
+      objective: -7030.0
+      pass: 0
+      work: 673.903
+    - runtime_s: 578.534
+      objective: -7045.0
+      pass: 0
+      work: 674.724
+    - runtime_s: 578.739
+      objective: -7050.0
+      pass: 0
+      work: 674.843
+    - runtime_s: 612.632
+      objective: -7060.0
+      pass: 0
+      work: 716.039
+    - runtime_s: 612.647
+      objective: -7065.0
+      pass: 0
+      work: 716.039
+    - runtime_s: 612.662
+      objective: -7075.0
+      pass: 0
+      work: 716.039
+    - runtime_s: 612.675
+      objective: -7095.0
+      pass: 0
+      work: 716.039
+    - runtime_s: 612.689
+      objective: -7100.0
+      pass: 0
+      work: 716.039
+    - runtime_s: 619.067
+      objective: -7105.0
+      pass: 0
+      work: 724.454
+    - runtime_s: 634.674
+      objective: -7115.0
+      pass: 0
+      work: 744.128
+    - runtime_s: 635.505
+      objective: -7120.0
+      pass: 0
+      work: 744.737
+    - runtime_s: 640.272
+      objective: -7181.0
+      pass: 0
+      work: 750.67
+    - runtime_s: 640.284
+      objective: -7290.0
+      pass: 0
+      work: 750.67
+    - runtime_s: 892.998
+      objective: -7380.0
+      pass: 0
+      work: 1125.551
+    - runtime_s: 1060.487
+      objective: -7455.0
+      pass: 0
+      work: 1320.888
+    - runtime_s: 1060.503
+      objective: -7586.0
+      pass: 0
+      work: 1322.759
+    - runtime_s: 1106.627
+      objective: -7601.0
+      pass: 0
+      work: 1384.964
+    - runtime_s: 1149.316
+      objective: -7746.0
+      pass: 0
+      work: 1438.934
+    - runtime_s: 1149.333
+      objective: -7775.0
+      pass: 0
+      work: 1443.017
+    - runtime_s: 1266.238
+      objective: -7790.0
+      pass: 0
+      work: 1590.43
+    - runtime_s: 1266.256
+      objective: -7795.0
+      pass: 0
+      work: 1590.43
+    - runtime_s: 1266.273
+      objective: -8045.0
+      pass: 0
+      work: 1596.231
+    - runtime_s: 1304.601
+      objective: -8115.0
+      pass: 0
+      work: 1645.095
+    - runtime_s: 1304.618
+      objective: -8135.0
+      pass: 0
+      work: 1645.837
+    - runtime_s: 1333.506
+      objective: -8150.0
+      pass: 0
+      work: 1688.649
+    - runtime_s: 1333.522
+      objective: -8165.0
+      pass: 0
+      work: 1690.385
+    - runtime_s: 1419.655
+      objective: -8246.0
+      pass: 0
+      work: 1824.03
+    - runtime_s: 1419.671
+      objective: -8255.0
+      pass: 0
+      work: 1825.902
+    - runtime_s: 1475.652
+      objective: -8300.0
+      pass: 0
+      work: 1894.71
+    - runtime_s: 1475.667
+      objective: -8310.0
+      pass: 0
+      work: 1894.71
+    - runtime_s: 1628.416
+      objective: -8325.0
+      pass: 0
+      work: 2077.924
+    - runtime_s: 1628.436
+      objective: -8340.0
+      pass: 0
+      work: 2077.924
+    - runtime_s: 1628.454
+      objective: -8400.0
+      pass: 0
+      work: 2097.759
+    - runtime_s: 1751.246
+      objective: -8430.0
+      pass: 0
+      work: 2241.577
+    - runtime_s: 1751.265
+      objective: -8460.0
+      pass: 0
+      work: 2279.166
+    - runtime_s: 1826.776
+      objective: -8475.0
+      pass: 0
+      work: 2380.134
+    - runtime_s: 1826.792
+      objective: -8520.0
+      pass: 0
+      work: 2380.135
+    - runtime_s: 1906.902
+      objective: -8565.0
+      pass: 0
+      work: 2490.33
+    - runtime_s: 2002.84
+      objective: -8610.0
+      pass: 0
+      work: 2598.278
+    - runtime_s: 2310.305
+      objective: -8615.0
+      pass: 0
+      work: 3009.823
+    - runtime_s: 2310.32
+      objective: -8620.0
+      pass: 0
+      work: 3009.823
+    - runtime_s: 2602.678
+      objective: -8625.0
+      pass: 0
+      work: 3427.842
+    - runtime_s: 2735.668
+      objective: -8630.0
+      pass: 0
+      work: 3575.933
+    - runtime_s: 2735.692
+      objective: -8633.0
+      pass: 0
+      work: 3580.65
+    - runtime_s: 3021.276
+      objective: -8638.0
+      pass: 0
+      work: 4025.864
+    - runtime_s: 3604.011
+      objective: -8652.0
+      pass: 0
+      work: 4724.86
+    - runtime_s: 3855.822
+      objective: -8662.0
+      pass: 0
+      work: 5019.786
+    - runtime_s: 3855.838
+      objective: -8667.0
+      pass: 0
+      work: 5019.786
+    - runtime_s: 3855.838
+      objective: -8672.0
+      pass: 0
+      work: 5019.786
+    - runtime_s: 4030.059
+      objective: -8690.0
+      pass: 0
+      work: 5216.903
+    - runtime_s: 4107.669
+      objective: -8700.0
+      pass: 0
+      work: 5308.324
+    - runtime_s: 4397.879
+      objective: -8705.0
+      pass: 0
+      work: 5612.83
+    - runtime_s: 6515.252
+      objective: -8710.0
+      pass: 0
+      work: 7467.481
+    - runtime_s: 7602.55
+      objective: -8720.0
+      pass: 0
+      work: 8358.116
+    - runtime_s: 7637.736
+      objective: -8725.0
+      pass: 0
+      work: 8399.823
+    - runtime_s: 7689.253
+      objective: -8730.0
+      pass: 0
+      work: 8475.453
+    - runtime_s: 9842.312
+      objective: -8740.0
+      pass: 0
+      work: 10383.823
+    - runtime_s: 10344.215
+      objective: -8745.0
+      pass: 0
+      work: 10859.716
+    - runtime_s: 10661.116
+      objective: -8750.0
+      pass: 0
+      work: 11145.06
+    - runtime_s: 13204.132
+      objective: -8755.0
+      pass: 0
+      work: 12955.102
+    objective_settings:
+    - name: null
+      priority: null
+      weight: 1.0
+      abs_tol: null
+      rel_tol: null
+      sense: min
+    solver_settings:
+      TimeLimit: 43200.0
+      MIPGap: 0.0
+      MIPGapAbs: 1.0e-10
+      FeasibilityTol: 1.0e-06
+      IntFeasTol: 1.0e-05
+      OptimalityTol: 1.0e-06
+      Threads: 14
+      Seed: 0
+      MIPFocus: 0
+  phase3: {}
+  environment:
+    python_version: 3.13.12
+    python_implementation: CPython
+    platform: Windows-11-10.0.26300-SP0
+    machine: AMD64
+    processor: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+    logical_processors: 20
+    hostname: FifianJanPC
+    timestamp: '2026-11-27T18:50:02+01:00'
+    git_commit: 8acb11f94ba2
+    git_dirty: false
+    code:
+      commit: 8acb11f94ba2e383ce5498edbf14c4345f9f7382
+      tags_at_commit: []
+      describe: campaign-2026-10-qubo-61-g8acb11f
+      dirty: false
+      modified_tracked_files: []
+      n_modified_tracked_files: 0
+    packages:
+      gurobipy: 12.0.3
+      veloxq_sdk: 0.1.dev125+ge290bd081
+      dimod: 0.12.21
+      numpy: 2.4.4
+      scipy: 1.17.1
+      torch: 2.11.0+cpu
+      networkx: 3.6.1
+      h5py: 3.16.0
+      PyYAML: 6.0.3
+      gurobi_library: 12.0.3
+  instance:
+    file:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-3studies-12h\artifacts\3studies\3_studies_instance.yaml
+      sha256: 6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b
+      sha256_file_bytes: f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530
+      bytes: 1525013
+    dimensions:
+      n_lecturers: 55
+      n_subjects: 130
+      n_groups: 12
+      n_rooms: 52
+      n_days: 5
+      n_time_slots: 1410
+    conflict_graph:
+      n_vertices: 130
+      n_edges: 1248
+      edge_density: 0.148837
+      avg_degree: 19.2
+      max_degree: 46
+      min_degree: 4
+      degree_std: 7.5012
+      n_components: 1
+      largest_component_size: 130
+      n_triangles: 6396
+      global_clustering: 0.727617
+      avg_local_clustering: 0.784217
+      chromatic_lower_bound: 21
+      chromatic_upper_bound: 21
+      chromatic_pressure: 0.014894
+      edges_by_source:
+        groups: 1124
+        teachers: 208
+  settings:
+    objective_mode: weighted_sum
+    objective_weights:
+      lecturers_satisfaction: 1.0
+      gap_obj: 1.0
+      min_days: 1.0
+      time_of_day: 1.0
+      soft_lecture: 1.0
+    enabled_constraints_phase2:
+    - CONJ-PHASE3
+    - MAX_CHUNKS
+    - MIXED-MODALITY-LECTURERS
+    - MIXED-MODALITY-STUDENTS
+    - PR1
+    - PR4_LECTURERS
+    - PR4_STUDENTS
+    - RU2
+    - RU9
+    pr5: true
+    enabled_objectives_phase2:
+    - gap_obj_students
+    - lecturers_satisfaction
+    - min_days_students
+    - time_of_day
+    priorities_phase2:
+      time_of_day: 1
+      gap_obj: 5
+      lecturers_satisfaction: 6
+      min_days: 3
+      soft_lecture: 1
+    constants_phase2:
+      reward_unit: lesson
+      buffer_time: 15
+      safety_buffer_min: 7.5
+      mixed_threshold_global: 120
+      sport_threshold_global: 30
+      lecture_before_penalty: 100.0
+      penalty_per_day: 1.0
+      gap_penalty_per_minute: 1.0
+    strong_CONJ_PHASE3: 1
+    room_rows_per: cell
+    enabled_constraints_phase3:
+    - EachLessonHasOneClassroom
+    - NC3
+    - OnlyAssignedClassroomsAllowed
+    - RU1_grupy
+    - RU1_prowadzący
+    - RU3
+    - RU7
+    enabled_objectives_phase3:
+    - min_lecturer_travel
+    - min_rooms_used
+    - min_student_travel
+    priorities_phase3:
+      min_student_travel: 3
+      min_rooms_used: 2
+      min_lecturer_travel: 1
+    constants_phase3:
+      KEEP_HARD_CONSTRAINT_RU1_STUDENTS: 15
+      RU1_GROUPS_PENALTY: 1000
+      KEEP_HARD_CONSTRAINT_RU1_LECTURERS: 15
+      RU1_LECTURERS_PENALTY: 1000
+      ROOM_USED_PENALTY: 10
+    time_limit_phase2: 43200.0
+    time_limit_phase3: null
+    threads: 14
+    mip_gap: 0.0
+    seed: null
+    feasibility_only: false
+    from_lp_path: null
+    warmstart_sol_path: null
+    snapshot_times:
+    - 1800.0
+    - 3600.0
+    - 5067.0
+    - 5400.0
+    - 5476.0
+    - 7081.0
+    - 7200.0
+    - 9000.0
+    - 10800.0
+    - 12600.0
+    - 14400.0
+    - 16200.0
+    - 18000.0
+    - 19800.0
+    - 21600.0
+    - 23400.0
+    - 25200.0
+    - 27000.0
+    - 28800.0
+    - 30600.0
+    - 32400.0
+    - 34200.0
+    - 36000.0
+    - 37800.0
+    - 39600.0
+    - 41400.0
+    - 43200.0
+  verifier:
+    feasible: true
+    n_violations: 0
+    violations_by_constraint:
+      PR1_course_minutes: 0
+      MC_max_chunks: 0
+      PR3_PR4_lecturer_overlap: 0
+      PR3_PR4_group_overlap: 0
+      RU2_lecturer_availability: 0
+      PR2_lecturer_assigned: 0
+      CONJ_PHASE3_room_count: 0
+      CONJ_PHASE3_room_capacity: 0
+    soft_metrics:
+      lecturer_satisfaction_counts:
+        high_pref: 129
+        low_pref: 1
+        neutral: 0
+        not_available: 0
+      lecturer_satisfaction_percent:
+        high_pref: 99.2
+        low_pref: 0.8
+        neutral: 0.0
+        not_available: 0.0
+      time_of_day_counts:
+        morning: 85
+        afternoon: 39
+        evening: 6
+      time_of_day_minutes:
+        morning: 9285.0
+        afternoon: 4995.0
+        evening: 630.0
+      total_student_gap_minutes: 1890.0
+      gap_minutes_by_group:
+        FTIMS_PB_Ist_2022_sem4_gr1: 240.0
+        FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1: 345.0
+        FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1: 300.0
+        FTIMS_PB_Ist_2022_sem6_gr1: 60.0
+        FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1: 60.0
+        FTIMS_PB_Ist_2024_sem2_gr1: 195.0
+        FTIMS_PB_Ist_2024_sem2_gr2: 195.0
+        FTIMS_PA_Ist_2023_SC_sem2_gr1: 180.0
+        FTIMS_PA_Ist_2023_SC_sem2_gr2: 135.0
+        FTIMS_PA_IIst_2023_SA_sem2_gr1: 105.0
+        FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1: 75.0
+      days_per_group:
+        avg: 5.0
+        min: 5
+        max: 5
+        by_group:
+          FTIMS_PB_Ist_2022_sem4_gr1: 5
+          FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1: 5
+          FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1: 5
+          FTIMS_PB_Ist_2022_sem6_gr1: 5
+          FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1: 5
+          FTIMS_PB_Ist_2024_sem2_gr1: 5
+          FTIMS_PB_Ist_2024_sem2_gr2: 5
+          FTIMS_PA_Ist_2023_SC_sem2_gr1: 5
+          FTIMS_PA_Ist_2023_SC_sem2_gr2: 5
+          FTIMS_PA_IIst_2023_SA_sem2_gr1: 5
+          FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1: 5
+          FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1: 5
+    statuses:
+      time_core: true
+      room_rows: true
+      v_zero: true
+      rooms: true
+      policy_rules: true
+      extra_rules: true
+      full: true
+      pr5: true
+      profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+    extra_violations_by_rule:
+      BREAK_lecturer: 0
+      BREAK_group: 0
+      PR5_mixed_modality: 0
+    room_assignment:
+      roomable: true
+      assignment:
+        '0': 27
+        '1': 31
+        '2': 27
+        '3': 27
+        '4': 27
+        '5': 27
+        '6': 27
+        '7': 17
+        '8': 15
+        '9': 13
+        '10': 30
+        '11': 30
+        '12': 26
+        '13': 26
+        '14': 27
+        '15': 27
+        '16': 27
+        '20': 38
+        '21': 15
+        '22': 15
+        '23': 31
+        '24': 30
+        '25': 27
+        '26': 18
+        '27': 30
+        '28': 30
+        '29': 27
+        '30': 30
+        '31': 30
+        '32': 20
+        '33': 20
+        '34': 29
+        '35': 30
+        '36': 31
+        '37': 13
+        '38': 8
+        '39': 21
+        '40': 20
+        '41': 30
+        '42': 30
+        '43': 31
+        '45': 12
+        '46': 8
+        '47': 39
+        '48': 42
+        '49': 20
+        '50': 13
+        '51': 13
+        '52': 27
+        '53': 13
+        '54': 21
+        '55': 20
+        '56': 32
+        '57': 30
+        '58': 32
+        '59': 30
+        '60': 31
+        '61': 31
+        '62': 31
+        '63': 12
+        '64': 40
+        '65': 31
+        '66': 32
+        '67': 30
+        '68': 27
+        '69': 0
+        '70': 33
+        '71': 30
+        '72': 34
+        '73': 33
+        '74': 15
+        '76': 34
+        '77': 33
+        '78': 10
+        '79': 35
+        '80': 32
+        '81': 32
+        '82': 18
+        '83': 16
+        '84': 28
+        '85': 21
+        '86': 12
+        '87': 27
+        '88': 35
+        '89': 35
+        '90': 32
+        '91': 35
+        '92': 36
+        '93': 27
+        '94': 34
+        '95': 41
+        '96': 43
+        '97': 21
+        '98': 20
+        '99': 22
+        '100': 32
+        '101': 33
+        '102': 32
+        '103': 14
+        '104': 21
+        '105': 37
+        '106': 31
+        '107': 35
+        '108': 32
+        '109': 31
+        '110': 19
+        '111': 22
+        '112': 33
+        '113': 7
+        '115': 15
+        '116': 11
+        '118': 19
+        '120': 29
+        '121': 33
+        '122': 34
+        '123': 29
+        '124': 29
+        '125': 17
+        '126': 28
+        '127': 35
+        '128': 35
+        '129': 34
+      n_in_person: 122
+      n_remote_exempt: 8
+      n_roomed: 122
+      upper_bound: 122
+      n_without_admissible_free_room: 0
+      status: OPTIMAL
+      unroomed: []
+lessons:
+- l_idx: 0
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 13:30-16:15
+  dayname: Czwartek
+- l_idx: 1
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grA
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 08:30-10:15
+  dayname: Piątek
+- l_idx: 2
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grB
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 11:30-13:15
+  dayname: Czwartek
+- l_idx: 3
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Projekt_grA
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 10:30-11:15
+  dayname: Czwartek
+- l_idx: 4
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Projekt_grB
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 08:15-09:00
+  dayname: Poniedziałek
+- l_idx: 5
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 11:15-13:00
+  dayname: Wtorek
+- l_idx: 6
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 08:30-10:15
+  dayname: Czwartek
+- l_idx: 7
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 10:15-11:00
+  dayname: Wtorek
+- l_idx: 8
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 09:15-10:00
+  dayname: Wtorek
+- l_idx: 9
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grC
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 10:30-11:15
+  dayname: Piątek
+- l_idx: 10
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 14:30-16:15
+  dayname: Piątek
+- l_idx: 11
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 08:15-09:00
+  dayname: Wtorek
+- l_idx: 12
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grA
+  lecturer_unique_id: Instytut_D_Lecturer26_L_44
+  slot_str: 11:30-14:15
+  dayname: Piątek
+- l_idx: 13
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grB
+  lecturer_unique_id: Instytut_D_Lecturer26_L_44
+  slot_str: 11:15-14:00
+  dayname: Poniedziałek
+- l_idx: 14
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0029 00_Course 38_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 09:15-11:00
+  dayname: Poniedziałek
+- l_idx: 15
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0016 00_Course 36_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 15:15-18:00
+  dayname: Poniedziałek
+- l_idx: 16
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0016 00_Course 36_Programme PB Ist (2022)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 14:15-15:00
+  dayname: Poniedziałek
+- l_idx: 17
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Laboratorium_grA
+  lecturer_unique_id: Instytut_D_Lecturer25_L_45
+  slot_str: 16:00-17:45
+  dayname: Środa
+- l_idx: 18
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Laboratorium_grB
+  lecturer_unique_id: Instytut_D_Lecturer25_L_45
+  slot_str: 18:00-19:45
+  dayname: Środa
+- l_idx: 19
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_D_Lecturer25_L_45
+  slot_str: 15:00-15:45
+  dayname: Środa
+- l_idx: 20
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0031 00_Course 19_Programme PB Ist (2022)__Ćwiczenia
+  lecturer_unique_id: Studium_Języków_CJ_PŁ_FTIMS_PB_Ist_2022_FTIMS_PB_Ist_2022_4_FTIMS_PB_Ist_2022_sem4_gr1_00 00 0031 00_Course 19_Programme PB Ist (2022)_Ćwiczenia
+  slot_str: 16:30-18:15
+  dayname: Piątek
+- l_idx: 21
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Projekt_grA
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 09:15-10:00
+  dayname: Czwartek
+- l_idx: 22
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Projekt_grB
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 08:15-09:00
+  dayname: Czwartek
+- l_idx: 23
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 08:15-10:00
+  dayname: Wtorek
+- l_idx: 24
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr1
+  lecturer_unique_id: Instytut_C_Lecturer04_L_13
+  slot_str: 08:30-12:15
+  dayname: Poniedziałek
+- l_idx: 25
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr2
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 11:45-15:30
+  dayname: Środa
+- l_idx: 26
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr3
+  lecturer_unique_id: Instytut_C_Lecturer35_L_17
+  slot_str: 15:45-19:30
+  dayname: Środa
+- l_idx: 27
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr4
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 10:15-14:00
+  dayname: Czwartek
+- l_idx: 28
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0017 00_Course 44_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer35_L_17
+  slot_str: 10:15-12:00
+  dayname: Wtorek
+- l_idx: 29
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0043 00_Course 20_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_A_Lecturer06_L_46
+  slot_str: 10:15-12:00
+  dayname: Piątek
+- l_idx: 30
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0005 00_Course 23_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 11:15-13:00
+  dayname: Środa
+- l_idx: 31
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0005 00_Course 23_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 09:15-11:00
+  dayname: Środa
+- l_idx: 32
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grA
+  lecturer_unique_id: Instytut_C_Lecturer18_L_10
+  slot_str: 09:45-11:30
+  dayname: Wtorek
+- l_idx: 33
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grC
+  lecturer_unique_id: Instytut_F_Lecturer20_L_38
+  slot_str: 13:30-15:15
+  dayname: Poniedziałek
+- l_idx: 34
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0038 00_Course 14_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_E_Lecturer23_L_36
+  slot_str: 15:15-17:00
+  dayname: Środa
+- l_idx: 35
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0047 00_Course 21_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 15:30-17:15
+  dayname: Poniedziałek
+- l_idx: 36
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0047 00_Course 21_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 08:30-10:15
+  dayname: Poniedziałek
+- l_idx: 37
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer39_L_39
+  slot_str: 11:45-12:30
+  dayname: Wtorek
+- l_idx: 38
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grC
+  lecturer_unique_id: Instytut_C_Lecturer39_L_39
+  slot_str: 08:15-09:00
+  dayname: Środa
+- l_idx: 39
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Projekt_grA
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 15:45-16:30
+  dayname: Czwartek
+- l_idx: 40
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Projekt_grC
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 12:30-13:15
+  dayname: Poniedziałek
+- l_idx: 41
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 14:45-15:30
+  dayname: Czwartek
+- l_idx: 42
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0049 00_Course 25_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 13:15-15:00
+  dayname: Środa
+- l_idx: 43
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0049 00_Course 25_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Instytut_F_Lecturer21_L_41
+  slot_str: 11:15-14:00
+  dayname: Wtorek
+- l_idx: 44
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__E-learning
+  lecturer_unique_id: Instytut_D_Lecturer32_L_37
+  slot_str: 08:30-09:15
+  dayname: Piątek
+- l_idx: 45
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grA
+  lecturer_unique_id: Instytut_D_Lecturer22_L_42
+  slot_str: 10:45-12:30
+  dayname: Czwartek
+- l_idx: 46
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grC
+  lecturer_unique_id: Instytut_D_Lecturer32_L_37
+  slot_str: 12:45-14:30
+  dayname: Czwartek
+- l_idx: 47
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0030 00_Course 32_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Studium_Języków_CJ_PŁ_FTIMS_PB_Ist_2024_FTIMS_PB_Ist_2024_2_FTIMS_PB_Ist_2024_sem2_gr1_00 00 0030 00_Course 32_Programme PB Ist (2024)_Ćwiczenia
+  slot_str: 10:30-12:15
+  dayname: Poniedziałek
+- l_idx: 48
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0050 00_Course 27_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Studium_Sportu_CS_PŁ_FTIMS_PB_Ist_2024_FTIMS_PB_Ist_2024_2_FTIMS_PB_Ist_2024_sem2_gr1_00 00 0050 00_Course 27_Programme PB Ist (2024)_Ćwiczenia
+  slot_str: 08:45-10:30
+  dayname: Czwartek
+- l_idx: 49
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grB
+  lecturer_unique_id: Instytut_C_Lecturer18_L_10
+  slot_str: 09:15-11:00
+  dayname: Środa
+- l_idx: 50
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer39_L_39
+  slot_str: 10:45-11:30
+  dayname: Czwartek
+- l_idx: 51
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0015 00_Course 28_Programme PB Ist (2024)__Projekt_grB
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 11:45-12:30
+  dayname: Czwartek
+- l_idx: 52
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0049 00_Course 25_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Instytut_F_Lecturer21_L_41
+  slot_str: 08:15-11:00
+  dayname: Wtorek
+- l_idx: 53
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grB
+  lecturer_unique_id: Instytut_D_Lecturer22_L_42
+  slot_str: 08:30-10:15
+  dayname: Poniedziałek
+- l_idx: 54
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0034 00_Course 40_Programme PA IIst (2023), spec. SA__Laboratorium
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 12:15-14:00
+  dayname: Poniedziałek
+- l_idx: 55
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0034 00_Course 40_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 10:15-12:00
+  dayname: Poniedziałek
+- l_idx: 56
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer28_L_16
+  slot_str: 10:15-12:00
+  dayname: Wtorek
+- l_idx: 57
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer28_L_16
+  slot_str: 12:15-14:00
+  dayname: Wtorek
+- l_idx: 58
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0019 00_Course 39_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 08:15-10:00
+  dayname: Wtorek
+- l_idx: 59
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0019 00_Course 39_Programme PA IIst (2023), spec. SA__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 08:15-10:00
+  dayname: Czwartek
+- l_idx: 60
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0009 00_Course 09_Programme PA IIst (2023), spec. SA__Wykład_grAD
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 10:15-15:00
+  dayname: Czwartek
+- l_idx: 61
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0009 00_Course 09_Programme PA IIst (2023), spec. SA__Wykład_grZRWFIU
+  lecturer_unique_id: Instytut_C_Lecturer03_L_9
+  slot_str: 15:15-20:00
+  dayname: Czwartek
+- l_idx: 62
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0032 00_Course 05_Programme PA IIst (2023), spec. SA__Projekt
+  lecturer_unique_id: Instytut_C_Lecturer03_L_9
+  slot_str: 14:15-20:00
+  dayname: Poniedziałek
+- l_idx: 63
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0035 00_Course 16_Programme PA IIst (2023), spec. SA__Projekt
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 14:15-20:00
+  dayname: Środa
+- l_idx: 64
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA__Ćwiczenia_grCJ
+  lecturer_unique_id: Studium_Języków_CJ_PŁ_FTIMS_PA_IIst_2023_FTIMS_PA_IIst_2023_SA_2_FTIMS_PA_IIst_2023_SA_sem2_gr1_00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA_Ćwiczenia_grCJ
+  slot_str: 09:45-12:30
+  dayname: Piątek
+- l_idx: 65
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA__Ćwiczenia_grWYDZ
+  lecturer_unique_id: Instytut_C_Lecturer45_L_47
+  slot_str: 11:15-14:00
+  dayname: Środa
+- l_idx: 66
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0022 00_Course 10_Programme PA IIst (2023), spec. SA__Seminarium_gr1
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 10:15-13:00
+  dayname: Czwartek
+- l_idx: 67
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0022 00_Course 10_Programme PA IIst (2023), spec. SA__Seminarium_gr2
+  lecturer_unique_id: Instytut_C_Lecturer14_L_12
+  slot_str: 12:15-15:00
+  dayname: Poniedziałek
+- l_idx: 68
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0053 00_Course 04_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 10:45-11:30
+  dayname: Środa
+- l_idx: 69
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0051 00_Course 12_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_B_Lecturer07_L_49
+  slot_str: 11:45-13:30
+  dayname: Piątek
+- l_idx: 70
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0021 00_Course 02_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_A_Lecturer16_L_48
+  slot_str: 11:00-12:45
+  dayname: Wtorek
+- l_idx: 71
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 11:30-12:15
+  dayname: Piątek
+- l_idx: 72
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer12_L_30
+  slot_str: 14:15-16:00
+  dayname: Czwartek
+- l_idx: 73
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer27_L_25
+  slot_str: 08:15-10:00
+  dayname: Wtorek
+- l_idx: 74
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SB__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer43_L_1
+  slot_str: 16:15-18:00
+  dayname: Poniedziałek
+- l_idx: 75
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0052 00_Course 34_Programme PA Ist (2023), spec. SB__E-learning
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 08:45-09:30
+  dayname: Piątek
+- l_idx: 76
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0026 00_Course 07_Programme PA Ist (2023), spec. SB__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 11:15-13:00
+  dayname: Wtorek
+- l_idx: 77
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0026 00_Course 07_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 09:15-11:00
+  dayname: Czwartek
+- l_idx: 78
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0023 00_Course 06_Programme PA Ist (2023), spec. SB__Projekt
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 11:15-14:00
+  dayname: Czwartek
+- l_idx: 79
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr1
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 10:15-14:00
+  dayname: Wtorek
+- l_idx: 80
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr2
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 11:15-15:00
+  dayname: Poniedziałek
+- l_idx: 81
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0014 00_Course 48_Programme PA Ist (2023), spec. SB__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer14_L_12
+  slot_str: 13:15-16:00
+  dayname: Czwartek
+- l_idx: 82
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0014 00_Course 48_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 08:15-10:00
+  dayname: Środa
+- l_idx: 83
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer29_L_19
+  slot_str: 10:15-12:00
+  dayname: Wtorek
+- l_idx: 84
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grC
+  lecturer_unique_id: Instytut_C_Lecturer27_L_25
+  slot_str: 13:00-14:45
+  dayname: Poniedziałek
+- l_idx: 85
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_D_Lecturer32_L_37
+  slot_str: 09:15-11:00
+  dayname: Środa
+- l_idx: 86
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grC
+  lecturer_unique_id: Instytut_D_Lecturer22_L_42
+  slot_str: 08:15-10:00
+  dayname: Czwartek
+- l_idx: 87
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0013 00_Course 33_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 17:15-19:00
+  dayname: Środa
+- l_idx: 88
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0013 00_Course 33_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 15:15-17:00
+  dayname: Czwartek
+- l_idx: 89
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 13:15-15:00
+  dayname: Środa
+- l_idx: 90
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 11:15-13:00
+  dayname: Środa
+- l_idx: 91
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 13:15-15:00
+  dayname: Czwartek
+- l_idx: 92
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 10:15-12:00
+  dayname: Wtorek
+- l_idx: 93
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer31_L_21
+  slot_str: 11:00-12:45
+  dayname: Poniedziałek
+- l_idx: 94
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer31_L_21
+  slot_str: 10:15-13:00
+  dayname: Czwartek
+- l_idx: 95
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0030 00_Course 32_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Studium_Języków_CJ_PŁ_FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_FTIMS_PA_Ist_2023_SC_sem2_gr1_00 00 0030 00_Course 32_Programme PA Ist (2023), spec. SC_Ćwiczenia
+  slot_str: 09:00-10:45
+  dayname: Poniedziałek
+- l_idx: 96
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Studium_Sportu_CS_PŁ_FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_FTIMS_PA_Ist_2023_SC_sem2_gr1_00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC_Ćwiczenia
+  slot_str: 08:15-10:00
+  dayname: Wtorek
+- l_idx: 97
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer49_L_7
+  slot_str: 11:15-13:00
+  dayname: Środa
+- l_idx: 98
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_D_Lecturer32_L_37
+  slot_str: 09:15-11:00
+  dayname: Czwartek
+- l_idx: 99
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grD
+  lecturer_unique_id: Instytut_D_Lecturer22_L_42
+  slot_str: 09:15-11:00
+  dayname: Środa
+- l_idx: 100
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 12:15-14:00
+  dayname: Wtorek
+- l_idx: 101
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 11:15-13:00
+  dayname: Czwartek
+- l_idx: 102
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer31_L_21
+  slot_str: 15:00-17:45
+  dayname: Poniedziałek
+- l_idx: 103
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 09:15-10:00
+  dayname: Wtorek
+- l_idx: 104
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 10:15-11:00
+  dayname: Wtorek
+- l_idx: 105
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 11:15-12:00
+  dayname: Wtorek
+- l_idx: 106
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer12_L_30
+  slot_str: 10:15-12:00
+  dayname: Poniedziałek
+- l_idx: 107
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 11:30-13:15
+  dayname: Czwartek
+- l_idx: 108
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer27_L_25
+  slot_str: 08:15-10:00
+  dayname: Poniedziałek
+- l_idx: 109
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 10:30-12:15
+  dayname: Piątek
+- l_idx: 110
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer44_L_32
+  slot_str: 12:15-14:00
+  dayname: Wtorek
+- l_idx: 111
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grC
+  lecturer_unique_id: Instytut_C_Lecturer43_L_1
+  slot_str: 12:15-14:00
+  dayname: Poniedziałek
+- l_idx: 112
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer44_L_32
+  slot_str: 14:15-16:00
+  dayname: Poniedziałek
+- l_idx: 113
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0052 00_Course 34_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 12:30-14:15
+  dayname: Piątek
+- l_idx: 114
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0007 00_Course 26_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_D_Lecturer25_L_45
+  slot_str: 13:00-14:45
+  dayname: Środa
+- l_idx: 115
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 13:30-15:15
+  dayname: Czwartek
+- l_idx: 116
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 08:30-10:15
+  dayname: Piątek
+- l_idx: 117
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 16:15-18:00
+  dayname: Wtorek
+- l_idx: 118
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0004 00_Course 31_Programme PA Ist (2023), spec. SC__Laboratorium
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 15:30-17:15
+  dayname: Czwartek
+- l_idx: 119
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0004 00_Course 31_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer35_L_17
+  slot_str: 11:00-12:45
+  dayname: Środa
+- l_idx: 120
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SC__Seminarium_gr3
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 10:15-14:00
+  dayname: Wtorek
+- l_idx: 121
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SC__Seminarium_gr4
+  lecturer_unique_id: Instytut_C_Lecturer44_L_32
+  slot_str: 13:15-17:00
+  dayname: Czwartek
+- l_idx: 122
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0037 00_Course 18_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer12_L_30
+  slot_str: 15:15-17:00
+  dayname: Poniedziałek
+- l_idx: 123
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0008 00_Course 46_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 12:15-13:00
+  dayname: Piątek
+- l_idx: 124
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0008 00_Course 46_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 11:15-13:00
+  dayname: Czwartek
+- l_idx: 125
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer09_L_14
+  slot_str: 11:15-14:00
+  dayname: Środa
+- l_idx: 126
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer09_L_14
+  slot_str: 13:15-16:00
+  dayname: Piątek
+- l_idx: 127
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer09_L_14
+  slot_str: 10:15-12:00
+  dayname: Piątek
+- l_idx: 128
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0002 00_Course 47_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 09:15-11:00
+  dayname: Czwartek
+- l_idx: 129
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0002 00_Course 47_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 08:15-10:00
+  dayname: Wtorek
+room_assignments: []

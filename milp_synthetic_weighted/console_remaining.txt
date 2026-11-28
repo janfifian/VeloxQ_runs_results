@@ -1,0 +1,266 @@
+=== 2026-10-29T12:54:13+01:00 check: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0
+easy: 5 to run, no time limit: easy_000_seed_1004 easy_001_seed_1010 easy_001_seed_1011 easy_001_seed_1012 easy_001_seed_1013
+extreme: 9 to run, a limit of 3600 s each: extreme_011_seed_1110 extreme_011_seed_1111 extreme_011_seed_1112 extreme_011_seed_1113 extreme_011_seed_1114 extreme_012_seed_1122 extreme_014_seed_1140 extreme_014_seed_1142 extreme_014_seed_1143
+hard: 8 to run, no time limit: hard_009_seed_1092 hard_009_seed_1093 hard_009_seed_1094 hard_010_seed_1100 hard_010_seed_1101 hard_010_seed_1102 hard_010_seed_1103 hard_010_seed_1104
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.0 s into the solve (objective 369.0, verifier True); final verifier True; call 27.699 s
+campaign finished in 28 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+5 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1004.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_000_seed_1004_MIP_solution.yaml
+  easy_001_seed_1010.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1010_MIP_solution.yaml
+  easy_001_seed_1011.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1011_MIP_solution.yaml
+  easy_001_seed_1012.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1012_MIP_solution.yaml
+  easy_001_seed_1013.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1013_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\repository_ready\instances\synthetic\easy_000_seed_1004.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_000_seed_1004 --gurobi-mip-gap 0.0
+9 instances, registry checked; code campaign-2026-10
+  extreme_011_seed_1110.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1110_MIP_solution.yaml
+  extreme_011_seed_1111.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1111_MIP_solution.yaml
+  extreme_011_seed_1112.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1112_MIP_solution.yaml
+  extreme_011_seed_1113.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1113_MIP_solution.yaml
+  extreme_011_seed_1114.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1114_MIP_solution.yaml
+  extreme_012_seed_1122.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_012_seed_1122_MIP_solution.yaml
+  extreme_014_seed_1140.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1140_MIP_solution.yaml
+  extreme_014_seed_1142.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1142_MIP_solution.yaml
+  extreme_014_seed_1143.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1143_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\repository_ready\instances\synthetic\extreme_011_seed_1110.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1110 --gurobi-mip-gap 0.0 --time-limit-phase2 3600.0
+8 instances, registry checked; code campaign-2026-10
+  hard_009_seed_1092.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1092_MIP_solution.yaml
+  hard_009_seed_1093.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1093_MIP_solution.yaml
+  hard_009_seed_1094.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1094_MIP_solution.yaml
+  hard_010_seed_1100.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1100_MIP_solution.yaml
+  hard_010_seed_1101.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1101_MIP_solution.yaml
+  hard_010_seed_1102.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1102_MIP_solution.yaml
+  hard_010_seed_1103.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1103_MIP_solution.yaml
+  hard_010_seed_1104.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\repository_ready\instances\synthetic\hard_009_seed_1092.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1092 --gurobi-mip-gap 0.0
+=== 2026-10-31T01:23:53+01:00 check: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: extreme
+extreme: 9 to run, a limit of 3600 s each: extreme_011_seed_1110 extreme_011_seed_1111 extreme_011_seed_1112 extreme_011_seed_1113 extreme_011_seed_1114 extreme_012_seed_1122 extreme_014_seed_1140 extreme_014_seed_1142 extreme_014_seed_1143
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: done, skipping
+campaign finished in 0 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+9 instances, registry checked; code campaign-2026-10
+  extreme_011_seed_1110.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1110_MIP_solution.yaml
+  extreme_011_seed_1111.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1111_MIP_solution.yaml
+  extreme_011_seed_1112.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1112_MIP_solution.yaml
+  extreme_011_seed_1113.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1113_MIP_solution.yaml
+  extreme_011_seed_1114.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1114_MIP_solution.yaml
+  extreme_012_seed_1122.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_012_seed_1122_MIP_solution.yaml
+  extreme_014_seed_1140.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1140_MIP_solution.yaml
+  extreme_014_seed_1142.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1142_MIP_solution.yaml
+  extreme_014_seed_1143.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1143_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\repository_ready\instances\synthetic\extreme_011_seed_1110.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1110 --gurobi-mip-gap 0.0 --time-limit-phase2 3600.0
+=== 2026-10-31T01:24:19+01:00 start: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: extreme
+extreme: 9 to run, a limit of 3600 s each: extreme_011_seed_1110 extreme_011_seed_1111 extreme_011_seed_1112 extreme_011_seed_1113 extreme_011_seed_1114 extreme_012_seed_1122 extreme_014_seed_1140 extreme_014_seed_1142 extreme_014_seed_1143
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.005 s into the solve (objective 369.0, verifier True); final verifier True; call 14.59 s
+campaign finished in 15 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+=== 2026-10-31T01:24:34+01:00 extreme: 9 instances
+9 instances, registry checked; code campaign-2026-10
+  extreme_011_seed_1110.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1110_MIP_solution.yaml
+  extreme_011_seed_1111.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1111_MIP_solution.yaml
+  extreme_011_seed_1112.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1112_MIP_solution.yaml
+  extreme_011_seed_1113.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1113_MIP_solution.yaml
+  extreme_011_seed_1114.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1114_MIP_solution.yaml
+  extreme_012_seed_1122.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_012_seed_1122_MIP_solution.yaml
+  extreme_014_seed_1140.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1140_MIP_solution.yaml
+  extreme_014_seed_1142.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1142_MIP_solution.yaml
+  extreme_014_seed_1143.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1143_MIP_solution.yaml
+[1/9] extreme_011_seed_1110.yaml: running ...
+[1/9] extreme_011_seed_1110.yaml: TIME_LIMIT, objective -518.0, gap 4.355212355212355; first incumbent 0.129 s into the solve (objective 11594.0, verifier True); final verifier True; call 3608.967 s
+[2/9] extreme_011_seed_1111.yaml: running ...
+[2/9] extreme_011_seed_1111.yaml: TIME_LIMIT, objective -647.0, gap 3.1020092735703244; first incumbent 2.015 s into the solve (objective 32058.0, verifier True); final verifier True; call 3608.838 s
+[3/9] extreme_011_seed_1112.yaml: running ...
+[3/9] extreme_011_seed_1112.yaml: TIME_LIMIT, objective -1096.0, gap 1.573905109489051; first incumbent 0.143 s into the solve (objective 11936.0, verifier True); final verifier True; call 3609.009 s
+[4/9] extreme_011_seed_1113.yaml: running ...
+[4/9] extreme_011_seed_1113.yaml: TIME_LIMIT, objective 918.0, gap 3.522875816993464; first incumbent 1.87 s into the solve (objective 15672.0, verifier True); final verifier True; call 3608.666 s
+[5/9] extreme_011_seed_1114.yaml: running ...
+[5/9] extreme_011_seed_1114.yaml: TIME_LIMIT, objective 106.0, gap 26.735849056603772; first incumbent 0.144 s into the solve (objective 13932.0, verifier True); final verifier True; call 3609.107 s
+[6/9] extreme_012_seed_1122.yaml: running ...
+[6/9] extreme_012_seed_1122.yaml: TIME_LIMIT, objective -211.0, gap 14.28436018957346; first incumbent 0.127 s into the solve (objective 11178.0, verifier True); final verifier True; call 3609.162 s
+[7/9] extreme_014_seed_1140.yaml: running ...
+[7/9] extreme_014_seed_1140.yaml: TIME_LIMIT, objective 5509.0, gap 1.2368850971138137; first incumbent 0.21 s into the solve (objective 20473.0, verifier True); final verifier True; call 3610.004 s
+[8/9] extreme_014_seed_1142.yaml: running ...
+[8/9] extreme_014_seed_1142.yaml: TIME_LIMIT, objective 5909.0, gap 1.2448806904721612; first incumbent 6.513 s into the solve (objective 48003.0, verifier True); final verifier True; call 3610.08 s
+[9/9] extreme_014_seed_1143.yaml: running ...
+[9/9] extreme_014_seed_1143.yaml: TIME_LIMIT, objective 5063.0, gap 1.3567055105668575; first incumbent 0.172 s into the solve (objective 21333.0, verifier True); final verifier True; call 3610.034 s
+campaign finished in 32484 s; summary: .\..\..\..\artifacts\campaign\milp_weighted\summary.csv
+summary.csv: 51 instances with a timetable
+=== 2026-10-31T10:26:00+01:00 ended, exit code 0
+=== 2026-11-04T01:46:22+01:00 check: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: easy, hard; only the 7 named instances
+easy: 5 to run (of 5 left), no time limit: easy_000_seed_1004 easy_001_seed_1010 easy_001_seed_1011 easy_001_seed_1012 easy_001_seed_1013
+hard: 2 to run (of 8 left), no time limit: hard_009_seed_1092 hard_009_seed_1093
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: done, skipping
+campaign finished in 0 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+5 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1004.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_000_seed_1004_MIP_solution.yaml
+  easy_001_seed_1010.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1010_MIP_solution.yaml
+  easy_001_seed_1011.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1011_MIP_solution.yaml
+  easy_001_seed_1012.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1012_MIP_solution.yaml
+  easy_001_seed_1013.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1013_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\repository_ready\instances\synthetic\easy_000_seed_1004.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_000_seed_1004 --gurobi-mip-gap 0.0
+2 instances, registry checked; code campaign-2026-10
+  hard_009_seed_1092.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1092_MIP_solution.yaml
+  hard_009_seed_1093.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1093_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\repository_ready\instances\synthetic\hard_009_seed_1092.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1092 --gurobi-mip-gap 0.0
+=== 2026-11-04T01:46:47+01:00 start: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: easy, hard; only the 7 named instances
+easy: 5 to run (of 5 left), no time limit: easy_000_seed_1004 easy_001_seed_1010 easy_001_seed_1011 easy_001_seed_1012 easy_001_seed_1013
+hard: 2 to run (of 8 left), no time limit: hard_009_seed_1092 hard_009_seed_1093
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.006 s into the solve (objective 369.0, verifier True); final verifier True; call 11.012 s
+campaign finished in 11 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+=== 2026-11-04T01:46:59+01:00 easy: 5 instances
+5 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1004.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_000_seed_1004_MIP_solution.yaml
+  easy_001_seed_1010.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1010_MIP_solution.yaml
+  easy_001_seed_1011.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1011_MIP_solution.yaml
+  easy_001_seed_1012.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1012_MIP_solution.yaml
+  easy_001_seed_1013.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\easy\easy_001_seed_1013_MIP_solution.yaml
+[1/5] easy_000_seed_1004.yaml: running ...
+[1/5] easy_000_seed_1004.yaml: OPTIMAL, objective -405.0, gap 0.0; first incumbent 0.001 s into the solve (objective 99.0, verifier True); final verifier True; call 6.548 s
+[2/5] easy_001_seed_1010.yaml: running ...
+[2/5] easy_001_seed_1010.yaml: OPTIMAL, objective -741.0, gap 0.0; first incumbent 0.002 s into the solve (objective -212.0, verifier True); final verifier True; call 6.78 s
+[3/5] easy_001_seed_1011.yaml: running ...
+[3/5] easy_001_seed_1011.yaml: OPTIMAL, objective -695.0, gap 0.0; first incumbent 0.003 s into the solve (objective 123.0, verifier True); final verifier True; call 6.663 s
+[4/5] easy_001_seed_1012.yaml: running ...
+[4/5] easy_001_seed_1012.yaml: OPTIMAL, objective -739.0, gap 0.0; first incumbent 0.03 s into the solve (objective -312.0, verifier True); final verifier True; call 6.697 s
+[5/5] easy_001_seed_1013.yaml: running ...
+[5/5] easy_001_seed_1013.yaml: OPTIMAL, objective -740.0, gap 0.0; first incumbent 0.028 s into the solve (objective -274.0, verifier True); final verifier True; call 6.779 s
+campaign finished in 34 s; summary: .\..\..\..\artifacts\campaign\milp_weighted\summary.csv
+summary.csv: 56 instances with a timetable
+=== 2026-11-04T01:47:35+01:00 hard: 2 instances
+2 instances, registry checked; code campaign-2026-10
+  hard_009_seed_1092.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1092_MIP_solution.yaml
+  hard_009_seed_1093.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1093_MIP_solution.yaml
+[1/2] hard_009_seed_1092.yaml: running ...
+[1/2] hard_009_seed_1092.yaml: OPTIMAL, objective -2624.0, gap 0.0; first incumbent 0.009 s into the solve (objective 15351.0, verifier True); final verifier True; call 6907.589 s
+[2/2] hard_009_seed_1093.yaml: running ...
+[2/2] hard_009_seed_1093.yaml: OPTIMAL, objective -2930.0, gap 0.0; first incumbent 0.097 s into the solve (objective 6132.0, verifier True); final verifier True; call 3338.333 s
+campaign finished in 10246 s; summary: .\..\..\..\artifacts\campaign\milp_weighted\summary.csv
+summary.csv: 58 instances with a timetable
+=== 2026-11-04T04:38:24+01:00 ended, exit code 0
+=== 2026-11-04T10:02:17+01:00 check: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: hard; only the 2 named instances
+hard: 2 to run (of 6 left), no time limit: hard_009_seed_1094 hard_010_seed_1100
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: done, skipping
+campaign finished in 0 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+2 instances, registry checked; code campaign-2026-10
+  hard_009_seed_1094.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1094_MIP_solution.yaml
+  hard_010_seed_1100.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1100_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\repository_ready\instances\synthetic\hard_009_seed_1094.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1094 --gurobi-mip-gap 0.0
+=== 2026-11-04T10:02:37+01:00 start: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: hard; only the 2 named instances
+hard: 2 to run (of 6 left), no time limit: hard_009_seed_1094 hard_010_seed_1100
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.001 s into the solve (objective 369.0, verifier True); final verifier True; call 16.077 s
+campaign finished in 16 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+=== 2026-11-04T10:02:54+01:00 hard: 2 instances
+2 instances, registry checked; code campaign-2026-10
+  hard_009_seed_1094.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_009_seed_1094_MIP_solution.yaml
+  hard_010_seed_1100.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1100_MIP_solution.yaml
+[1/2] hard_009_seed_1094.yaml: running ...
+[1/2] hard_009_seed_1094.yaml: OPTIMAL, objective -3111.0, gap 0.0; first incumbent 0.009 s into the solve (objective 10309.0, verifier True); final verifier True; call 108.129 s
+[2/2] hard_010_seed_1100.yaml: running ...
+=== 2026-11-17T22:35:37+01:00 check: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: hard; only the 4 named instances
+hard: 4 to run (of 4 left), no time limit: hard_010_seed_1101 hard_010_seed_1102 hard_010_seed_1103 hard_010_seed_1104
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: done, skipping
+campaign finished in 0 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+4 instances, registry checked; code campaign-2026-10
+  hard_010_seed_1101.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1101_MIP_solution.yaml
+  hard_010_seed_1102.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1102_MIP_solution.yaml
+  hard_010_seed_1103.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1103_MIP_solution.yaml
+  hard_010_seed_1104.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\repository_ready\instances\synthetic\hard_010_seed_1101.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1101 --gurobi-mip-gap 0.0
+=== 2026-11-17T22:35:55+01:00 start: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: hard; only the 4 named instances
+hard: 4 to run (of 4 left), no time limit: hard_010_seed_1101 hard_010_seed_1102 hard_010_seed_1103 hard_010_seed_1104
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.0 s into the solve (objective 369.0, verifier True); final verifier True; call 20.5 s
+campaign finished in 21 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+=== 2026-11-17T22:36:16+01:00 hard: 4 instances
+4 instances, registry checked; code campaign-2026-10
+  hard_010_seed_1101.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1101_MIP_solution.yaml
+  hard_010_seed_1102.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1102_MIP_solution.yaml
+  hard_010_seed_1103.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1103_MIP_solution.yaml
+  hard_010_seed_1104.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_solution.yaml
+[1/4] hard_010_seed_1101.yaml: running ...
+=== 2026-11-18T10:37:52+01:00 start: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: hard; only the 3 named instances
+hard: 3 to run (of 3 left), no time limit: hard_010_seed_1102 hard_010_seed_1103 hard_010_seed_1104
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.0 s into the solve (objective 369.0, verifier True); final verifier True; call 13.667 s
+campaign finished in 14 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+=== 2026-11-18T10:38:07+01:00 hard: 3 instances
+3 instances, registry checked; code campaign-2026-10
+  hard_010_seed_1102.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1102_MIP_solution.yaml
+  hard_010_seed_1103.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1103_MIP_solution.yaml
+  hard_010_seed_1104.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_solution.yaml
+[1/3] hard_010_seed_1102.yaml: running ...
+=== 2026-11-19T23:55:01+01:00 start: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: hard; only the 1 named instances
+hard: 1 to run (of 3 left), no time limit: hard_010_seed_1102
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.0 s into the solve (objective 369.0, verifier True); final verifier True; call 20.604 s
+campaign finished in 21 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+=== 2026-11-19T23:55:22+01:00 hard: 1 instances
+1 instances, registry checked; code campaign-2026-10
+  hard_010_seed_1102.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1102_MIP_solution.yaml
+[1/1] hard_010_seed_1102.yaml: running ...
+=== 2026-11-20T23:02:02+01:00 start: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: hard; only the 1 named instances
+hard: 1 to run (of 2 left), no time limit: hard_010_seed_1103
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.0 s into the solve (objective 369.0, verifier True); final verifier True; call 14.972 s
+campaign finished in 15 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+=== 2026-11-20T23:02:18+01:00 hard: 1 instances
+1 instances, registry checked; code campaign-2026-10
+  hard_010_seed_1103.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1103_MIP_solution.yaml
+[1/1] hard_010_seed_1103.yaml: running ...
+=== 2026-11-24T23:25:41+01:00 start: code campaign-2026-10, --objective-mode weighted_sum --threads 14 --mip-gap 0; steps: hard; only the 1 named instances
+hard: 1 to run (of 1 left), no time limit: hard_010_seed_1104
+1 instances, registry checked; code campaign-2026-10
+  easy_000_seed_1000.yaml  ->  .\artifacts\campaign\milp_preflight\easy\easy_000_seed_1000_MIP_solution.yaml
+[1/1] easy_000_seed_1000.yaml: running ...
+[1/1] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.0 s into the solve (objective 369.0, verifier True); final verifier True; call 13.123 s
+campaign finished in 13 s; summary: .\artifacts\campaign\milp_preflight\summary.csv
+check run on easy_000_seed_1000: the sweep's model, optimum (-420) and verdict
+=== 2026-11-24T23:25:55+01:00 hard: 1 instances
+1 instances, registry checked; code campaign-2026-10
+  hard_010_seed_1104.yaml  ->  .\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_solution.yaml
+[1/1] hard_010_seed_1104.yaml: running ...

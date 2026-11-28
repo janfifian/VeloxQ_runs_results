@@ -1,0 +1,6 @@
+setting,instance,tier,rep,veloxq_energy,veloxq_lessons,veloxq_solver_s,veloxq_time_core,violations_before,violations_after,soft_before,soft_after,ls_wall_s,ls_time_to_zero_s,ls_cycles,ls_converged,time_core,room_rows,rooms,policy_rules,full,call_wall_s
+S3,3_studies_instance,production,1,14497088.5,258,5067.244,False,226,1,-5180.0,-7620.0,1586.435,,5,True,False,True,True,True,False,1649.396
+S3,3_studies_instance,production,2,16118130.5,239,5066.214,False,206,3,-3590.0,-7996.0,1057.875,,5,True,False,True,True,True,False,1118.657
+S3,3_studies_instance,production,3,16003734.5,237,5067.224,False,212,2,-3981.0,-7906.0,1515.006,,5,True,False,True,True,True,False,1575.689
+S3,3_studies_instance,production,4,15473343.0,246,5066.276,False,218,0,-5411.0,-7935.0,1605.749,1350.747,5,True,True,True,True,True,True,1665.952
+S3,3_studies_instance,production,5,14672055.0,249,5067.41,False,205,5,-2581.0,-7895.0,1354.246,,5,True,False,True,True,True,False,1414.572

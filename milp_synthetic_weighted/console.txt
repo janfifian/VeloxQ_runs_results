@@ -1,0 +1,184 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20261012070843
+Username: FIFIANJANPC\21034
+RunAs User: FIFIANJANPC\21034
+Configuration Name: 
+Machine: FIFIANJANPC (Microsoft Windows NT 10.0.26200.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoExit -ExecutionPolicy Bypass -File C:\Users\21034\AppData\Local\Temp\claude\C--Users-21034-OneDrive-Dokumenty-Badania-Plany-Zaj-----Quantum-Approach-MILP-to-QUBO-transition-on-UCTTP\c7f15403-f6c9-4780-bea2-76b937de0f7c\scratchpad\launch_milp_campaign.ps1
+Process ID: 12776
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Started 2026-10-12 07:08:43 in C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP
+64 instances, registry checked; code campaign-2026-10-dirty
+  easy_000_seed_1000.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_000_seed_1000_MIP_solution.yaml
+  easy_000_seed_1001.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_000_seed_1001_MIP_solution.yaml
+  easy_000_seed_1002.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_000_seed_1002_MIP_solution.yaml
+  easy_000_seed_1003.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_000_seed_1003_MIP_solution.yaml
+  easy_000_seed_1004.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_000_seed_1004_MIP_solution.yaml
+  easy_001_seed_1010.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_001_seed_1010_MIP_solution.yaml
+  easy_001_seed_1011.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_001_seed_1011_MIP_solution.yaml
+  easy_001_seed_1012.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_001_seed_1012_MIP_solution.yaml
+  easy_001_seed_1013.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_001_seed_1013_MIP_solution.yaml
+  easy_001_seed_1014.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_001_seed_1014_MIP_solution.yaml
+  easy_002_seed_1020.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_002_seed_1020_MIP_solution.yaml
+  easy_002_seed_1021.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_002_seed_1021_MIP_solution.yaml
+  easy_002_seed_1022.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_002_seed_1022_MIP_solution.yaml
+  easy_002_seed_1023.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_002_seed_1023_MIP_solution.yaml
+  easy_002_seed_1024.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_002_seed_1024_MIP_solution.yaml
+  easy_003_seed_1030.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_003_seed_1030_MIP_solution.yaml
+  easy_003_seed_1031.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_003_seed_1031_MIP_solution.yaml
+  easy_003_seed_1032.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_003_seed_1032_MIP_solution.yaml
+  easy_003_seed_1033.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_003_seed_1033_MIP_solution.yaml
+  easy_003_seed_1034.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\easy\easy_003_seed_1034_MIP_solution.yaml
+  medium_004_seed_1040.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_004_seed_1040_MIP_solution.yaml
+  medium_004_seed_1041.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_004_seed_1041_MIP_solution.yaml
+  medium_004_seed_1042.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_004_seed_1042_MIP_solution.yaml
+  medium_004_seed_1043.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_004_seed_1043_MIP_solution.yaml
+  medium_004_seed_1044.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_004_seed_1044_MIP_solution.yaml
+  medium_005_seed_1050.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_005_seed_1050_MIP_solution.yaml
+  medium_005_seed_1051.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_005_seed_1051_MIP_solution.yaml
+  medium_005_seed_1052.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_005_seed_1052_MIP_solution.yaml
+  medium_005_seed_1053.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_005_seed_1053_MIP_solution.yaml
+  medium_005_seed_1054.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_005_seed_1054_MIP_solution.yaml
+  medium_006_seed_1060.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_006_seed_1060_MIP_solution.yaml
+  medium_006_seed_1061.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_006_seed_1061_MIP_solution.yaml
+  medium_006_seed_1062.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_006_seed_1062_MIP_solution.yaml
+  medium_006_seed_1063.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_006_seed_1063_MIP_solution.yaml
+  medium_006_seed_1064.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_006_seed_1064_MIP_solution.yaml
+  hard_007_seed_1070.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_007_seed_1070_MIP_solution.yaml
+  hard_007_seed_1071.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_007_seed_1071_MIP_solution.yaml
+  hard_007_seed_1072.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_007_seed_1072_MIP_solution.yaml
+  hard_007_seed_1073.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_007_seed_1073_MIP_solution.yaml
+  hard_007_seed_1074.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_007_seed_1074_MIP_solution.yaml
+  hard_008_seed_1080.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_008_seed_1080_MIP_solution.yaml
+  hard_008_seed_1081.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_008_seed_1081_MIP_solution.yaml
+  hard_008_seed_1082.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_008_seed_1082_MIP_solution.yaml
+  hard_008_seed_1083.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_008_seed_1083_MIP_solution.yaml
+  hard_008_seed_1084.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_008_seed_1084_MIP_solution.yaml
+  hard_009_seed_1090.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_009_seed_1090_MIP_solution.yaml
+  hard_009_seed_1091.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_009_seed_1091_MIP_solution.yaml
+  hard_009_seed_1092.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_009_seed_1092_MIP_solution.yaml
+  hard_009_seed_1093.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_009_seed_1093_MIP_solution.yaml
+  hard_009_seed_1094.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_009_seed_1094_MIP_solution.yaml
+  hard_010_seed_1100.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_010_seed_1100_MIP_solution.yaml
+  hard_010_seed_1101.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_010_seed_1101_MIP_solution.yaml
+  hard_010_seed_1102.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_010_seed_1102_MIP_solution.yaml
+  hard_010_seed_1103.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_010_seed_1103_MIP_solution.yaml
+  hard_010_seed_1104.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_solution.yaml
+  extreme_011_seed_1110.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1110_MIP_solution.yaml
+  extreme_011_seed_1111.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1111_MIP_solution.yaml
+  extreme_011_seed_1112.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1112_MIP_solution.yaml
+  extreme_011_seed_1113.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1113_MIP_solution.yaml
+  extreme_011_seed_1114.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_011_seed_1114_MIP_solution.yaml
+  extreme_012_seed_1122.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_012_seed_1122_MIP_solution.yaml
+  extreme_014_seed_1140.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1140_MIP_solution.yaml
+  extreme_014_seed_1142.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1142_MIP_solution.yaml
+  extreme_014_seed_1143.yaml  ->  C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zaj─Ö─ç - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\extreme\extreme_014_seed_1143_MIP_solution.yaml
+[1/64] easy_000_seed_1000.yaml: running ...
+[1/64] easy_000_seed_1000.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.006 s into the solve (objective 369.0, verifier True); final verifier True; call 7.286 s
+[2/64] easy_000_seed_1001.yaml: running ...
+[2/64] easy_000_seed_1001.yaml: OPTIMAL, objective -390.0, gap 0.0; first incumbent 0.0 s into the solve (objective 429.0, verifier True); final verifier True; call 6.934 s
+[3/64] easy_000_seed_1002.yaml: running ...
+[3/64] easy_000_seed_1002.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.0 s into the solve (objective 34.0, verifier True); final verifier True; call 6.875 s
+[4/64] easy_000_seed_1003.yaml: running ...
+[4/64] easy_000_seed_1003.yaml: OPTIMAL, objective -420.0, gap 0.0; first incumbent 0.009 s into the solve (objective 324.0, verifier True); final verifier True; call 6.763 s
+[5/64] easy_000_seed_1004.yaml: running ...
+[5/64] easy_000_seed_1004.yaml: OPTIMAL, objective -405.0, gap 0.0; first incumbent 0.015 s into the solve (objective 99.0, verifier True); final verifier True; call 6.983 s
+[6/64] easy_001_seed_1010.yaml: running ...
+[6/64] easy_001_seed_1010.yaml: OPTIMAL, objective -741.0, gap 0.0; first incumbent 0.002 s into the solve (objective -212.0, verifier True); final verifier True; call 7.142 s
+[7/64] easy_001_seed_1011.yaml: running ...
+[7/64] easy_001_seed_1011.yaml: OPTIMAL, objective -695.0, gap 0.0; first incumbent 0.0 s into the solve (objective 123.0, verifier True); final verifier True; call 6.947 s
+[8/64] easy_001_seed_1012.yaml: running ...
+[8/64] easy_001_seed_1012.yaml: OPTIMAL, objective -739.0, gap 0.0; first incumbent 0.036 s into the solve (objective -312.0, verifier True); final verifier True; call 7.176 s
+[9/64] easy_001_seed_1013.yaml: running ...
+[9/64] easy_001_seed_1013.yaml: OPTIMAL, objective -740.0, gap 0.0; first incumbent 0.043 s into the solve (objective -274.0, verifier True); final verifier True; call 7.068 s
+[10/64] easy_001_seed_1014.yaml: running ...
+[10/64] easy_001_seed_1014.yaml: OPTIMAL, objective -681.0, gap 0.0; first incumbent 0.002 s into the solve (objective 413.0, verifier True); final verifier True; call 7.061 s
+[11/64] easy_002_seed_1020.yaml: running ...
+[11/64] easy_002_seed_1020.yaml: OPTIMAL, objective -916.0, gap 0.0; first incumbent 0.031 s into the solve (objective -40.0, verifier True); final verifier True; call 7.165 s
+[12/64] easy_002_seed_1021.yaml: running ...
+[12/64] easy_002_seed_1021.yaml: OPTIMAL, objective -913.0, gap 0.0; first incumbent 0.004 s into the solve (objective 549.0, verifier True); final verifier True; call 7.003 s
+[13/64] easy_002_seed_1022.yaml: running ...
+[13/64] easy_002_seed_1022.yaml: OPTIMAL, objective -920.0, gap 0.0; first incumbent 0.008 s into the solve (objective 510.0, verifier True); final verifier True; call 7.218 s
+[14/64] easy_002_seed_1023.yaml: running ...
+[14/64] easy_002_seed_1023.yaml: OPTIMAL, objective -922.0, gap 0.0; first incumbent 0.0 s into the solve (objective 549.0, verifier True); final verifier True; call 6.863 s
+[15/64] easy_002_seed_1024.yaml: running ...
+[15/64] easy_002_seed_1024.yaml: OPTIMAL, objective -913.0, gap 0.0; first incumbent 0.0 s into the solve (objective 379.0, verifier True); final verifier True; call 7.017 s
+[16/64] easy_003_seed_1030.yaml: running ...
+[16/64] easy_003_seed_1030.yaml: OPTIMAL, objective -1161.0, gap 0.0; first incumbent 0.002 s into the solve (objective 57.0, verifier True); final verifier True; call 7.093 s
+[17/64] easy_003_seed_1031.yaml: running ...
+[17/64] easy_003_seed_1031.yaml: OPTIMAL, objective -1165.0, gap 0.0; first incumbent 0.002 s into the solve (objective 138.0, verifier True); final verifier True; call 7.5 s
+[18/64] easy_003_seed_1032.yaml: running ...
+[18/64] easy_003_seed_1032.yaml: OPTIMAL, objective -1155.0, gap 0.0; first incumbent 0.032 s into the solve (objective -84.0, verifier True); final verifier True; call 6.966 s
+[19/64] easy_003_seed_1033.yaml: running ...
+[19/64] easy_003_seed_1033.yaml: OPTIMAL, objective -1153.0, gap 0.0; first incumbent 0.002 s into the solve (objective 90.0, verifier True); final verifier True; call 6.758 s
+[20/64] easy_003_seed_1034.yaml: running ...
+[20/64] easy_003_seed_1034.yaml: OPTIMAL, objective -1166.0, gap 0.0; first incumbent 0.0 s into the solve (objective 475.0, verifier True); final verifier True; call 6.805 s
+[21/64] medium_004_seed_1040.yaml: running ...
+[21/64] medium_004_seed_1040.yaml: OPTIMAL, objective -1791.0, gap 0.0; first incumbent 0.015 s into the solve (objective 723.0, verifier True); final verifier True; call 7.323 s
+[22/64] medium_004_seed_1041.yaml: running ...
+[22/64] medium_004_seed_1041.yaml: OPTIMAL, objective -1778.0, gap 0.0; first incumbent 0.0 s into the solve (objective 2461.0, verifier True); final verifier True; call 7.372 s
+[23/64] medium_004_seed_1042.yaml: running ...
+[23/64] medium_004_seed_1042.yaml: OPTIMAL, objective -1678.0, gap 0.0; first incumbent 0.003 s into the solve (objective 1430.0, verifier True); final verifier True; call 7.457 s
+[24/64] medium_004_seed_1043.yaml: running ...
+[24/64] medium_004_seed_1043.yaml: OPTIMAL, objective -1702.0, gap 0.0; first incumbent 0.0 s into the solve (objective 2386.0, verifier True); final verifier True; call 7.296 s
+[25/64] medium_004_seed_1044.yaml: running ...
+[25/64] medium_004_seed_1044.yaml: OPTIMAL, objective -1765.0, gap 0.0; first incumbent 0.005 s into the solve (objective 953.0, verifier True); final verifier True; call 7.496 s
+[26/64] medium_005_seed_1050.yaml: running ...
+[26/64] medium_005_seed_1050.yaml: OPTIMAL, objective -2069.0, gap 0.0; first incumbent 0.0 s into the solve (objective 1854.0, verifier True); final verifier True; call 8.212 s
+[27/64] medium_005_seed_1051.yaml: running ...
+[27/64] medium_005_seed_1051.yaml: OPTIMAL, objective -2167.0, gap 0.0; first incumbent 0.016 s into the solve (objective 3361.0, verifier True); final verifier True; call 8.091 s
+[28/64] medium_005_seed_1052.yaml: running ...
+[28/64] medium_005_seed_1052.yaml: OPTIMAL, objective -2171.0, gap 0.0; first incumbent 0.0 s into the solve (objective 2470.0, verifier True); final verifier True; call 7.994 s
+[29/64] medium_005_seed_1053.yaml: running ...
+[29/64] medium_005_seed_1053.yaml: OPTIMAL, objective -2133.0, gap 0.0; first incumbent 0.048 s into the solve (objective 1572.0, verifier True); final verifier True; call 8.028 s
+[30/64] medium_005_seed_1054.yaml: running ...
+[30/64] medium_005_seed_1054.yaml: OPTIMAL, objective -2238.0, gap 0.0; first incumbent 0.007 s into the solve (objective 2798.0, verifier True); final verifier True; call 7.489 s
+[31/64] medium_006_seed_1060.yaml: running ...
+[31/64] medium_006_seed_1060.yaml: OPTIMAL, objective -2476.0, gap 0.0; first incumbent 0.004 s into the solve (objective 1812.0, verifier True); final verifier True; call 8.056 s
+[32/64] medium_006_seed_1061.yaml: running ...
+[32/64] medium_006_seed_1061.yaml: OPTIMAL, objective -2354.0, gap 0.0; first incumbent 0.012 s into the solve (objective 4412.0, verifier True); final verifier True; call 9.599 s
+[33/64] medium_006_seed_1062.yaml: running ...
+[33/64] medium_006_seed_1062.yaml: OPTIMAL, objective -2463.0, gap 0.0; first incumbent 0.004 s into the solve (objective 2487.0, verifier True); final verifier True; call 8.367 s
+[34/64] medium_006_seed_1063.yaml: running ...
+[34/64] medium_006_seed_1063.yaml: OPTIMAL, objective -2449.0, gap 0.0; first incumbent 0.002 s into the solve (objective 3167.0, verifier True); final verifier True; call 9.176 s
+[35/64] medium_006_seed_1064.yaml: running ...
+[35/64] medium_006_seed_1064.yaml: OPTIMAL, objective -2499.0, gap 0.0; first incumbent 0.003 s into the solve (objective 3907.0, verifier True); final verifier True; call 7.893 s
+[36/64] hard_007_seed_1070.yaml: running ...
+[36/64] hard_007_seed_1070.yaml: OPTIMAL, objective -2892.0, gap 0.0; first incumbent 0.005 s into the solve (objective 3731.0, verifier True); final verifier True; call 10.557 s
+[37/64] hard_007_seed_1071.yaml: running ...
+[37/64] hard_007_seed_1071.yaml: OPTIMAL, objective -2833.0, gap 0.0; first incumbent 0.059 s into the solve (objective 296.0, verifier True); final verifier True; call 14.695 s
+[38/64] hard_007_seed_1072.yaml: running ...
+[38/64] hard_007_seed_1072.yaml: OPTIMAL, objective -2689.0, gap 0.0; first incumbent 0.005 s into the solve (objective 5018.0, verifier True); final verifier True; call 13.819 s
+[39/64] hard_007_seed_1073.yaml: running ...
+[39/64] hard_007_seed_1073.yaml: OPTIMAL, objective -2616.0, gap 0.0; first incumbent 0.005 s into the solve (objective 4911.0, verifier True); final verifier True; call 14.793 s
+[40/64] hard_007_seed_1074.yaml: running ...
+[40/64] hard_007_seed_1074.yaml: OPTIMAL, objective -2889.0, gap 0.0; first incumbent 0.0 s into the solve (objective 6652.0, verifier True); final verifier True; call 10.888 s
+[41/64] hard_008_seed_1080.yaml: running ...
+[41/64] hard_008_seed_1080.yaml: OPTIMAL, objective -3033.0, gap 0.0; first incumbent 0.0 s into the solve (objective 8850.0, verifier True); final verifier True; call 81.687 s
+[42/64] hard_008_seed_1081.yaml: running ...
+[42/64] hard_008_seed_1081.yaml: OPTIMAL, objective -2758.0, gap 0.0; first incumbent 0.002 s into the solve (objective 11896.0, verifier True); final verifier True; call 1096.998 s
+[43/64] hard_008_seed_1082.yaml: running ...
+[43/64] hard_008_seed_1082.yaml: OPTIMAL, objective -2890.0, gap 0.0; first incumbent 0.013 s into the solve (objective 4774.0, verifier True); final verifier True; call 65.738 s
+[44/64] hard_008_seed_1083.yaml: running ...
+[44/64] hard_008_seed_1083.yaml: OPTIMAL, objective -2506.0, gap 0.0; first incumbent 0.014 s into the solve (objective 10500.0, verifier True); final verifier True; call 12209.769 s
+[45/64] hard_008_seed_1084.yaml: running ...
+[45/64] hard_008_seed_1084.yaml: OPTIMAL, objective -2847.0, gap 0.0; first incumbent 0.152 s into the solve (objective 1575.0, verifier True); final verifier True; call 1843.084 s
+[46/64] hard_009_seed_1090.yaml: running ...
+[46/64] hard_009_seed_1090.yaml: OPTIMAL, objective -2651.0, gap 0.0; first incumbent 0.014 s into the solve (objective 9588.0, verifier True); final verifier True; call 24559.2 s
+[47/64] hard_009_seed_1091.yaml: running ...
+[47/64] hard_009_seed_1091.yaml: OPTIMAL, objective -2813.0, gap 0.0; first incumbent 0.007 s into the solve (objective 10122.0, verifier True); final verifier True; call 12011.1 s
+[48/64] hard_009_seed_1092.yaml: running ...
+Ended 2026-10-12 21:40:01; exit code -1
+**********************
+Windows PowerShell transcript end
+End time: 20261012214001
+**********************

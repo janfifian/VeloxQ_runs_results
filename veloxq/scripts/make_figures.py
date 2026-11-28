@@ -2614,7 +2614,7 @@ def tab_veloxq_3studies():
     }
 
 
-MILP_3STUDIES = "campaign/milp_3studies"   # under artifacts/: the cold MILP of 21.10.2026
+MILP_3STUDIES = "campaign/milp_3studies_12h"   # under artifacts/: the cold MILP of 27-28.11.2026 (12 h)
 MILP_NO_LIMIT = "campaign/milp_extreme_no_limit"   # under artifacts/: one extreme instance, 22-25.10.2026
 
 
@@ -2662,19 +2662,21 @@ def _hm(seconds: float) -> str:
 
 
 def prod_milp_numbers() -> dict:
-    """The cold MILP on 3_studies under the current rules (21.10.2026; 550 min of search) against
-    the QUBO route under S3 (19.10.2026) and S0 (28-29.10.2026): fig_3studies_time.pdf
-    (scripts/plot_3studies_objective_vs_time.py) and the in-text numbers, from the run records
-    in artifacts/campaign/milp_3studies and of the S3 and S0 runs. Every sentence they feed is guarded."""
+    """The cold MILP on 3_studies under the current rules (27-28.11.2026; 12 h of search, to its
+    time limit) against the QUBO route under S3 (19.10.2026) and S0 (28-29.10.2026):
+    fig_3studies_time.pdf (scripts/plot_3studies_objective_vs_time.py) and the in-text numbers,
+    from the run records in artifacts/campaign/milp_3studies_12h and of the S3 and S0 runs.
+    Every sentence they feed is guarded."""
     sys.path.insert(0, str(ROOT / "scripts"))
     import plot_3studies_objective_vs_time as p3
     from recover_milp_snapshots import terms
     r = p3.draw(HERE, "fig_3studies_time", formats=("pdf",), title=False, paper=True)
     print("[make_figures] wrote fig_3studies_time.pdf")
     prod = ART / MILP_3STUDIES / "production"
-    checked = json.loads((prod / "recovered_snapshots_20261022.json").read_text(encoding="utf-8"))
+    checked = json.loads(p3.SNAPSHOTS.read_text(encoding="utf-8"))
     log = [json.loads(line) for line in (prod / "3_studies_instance_MIP_incumbents.jsonl")
            .read_text(encoding="utf-8").splitlines()]
+    summary = read_csv(ART / MILP_3STUDIES / "summary.csv")[0]
     if not checked or not all(c["full"] and abs(c["terms_sum"] - c["gurobi_objective"]) < 1e-6 for c in checked):
         die("3_studies MILP: a kept timetable fails a check, or its terms do not add up to Gurobi's objective")
     kept = {c["incumbent"]: c for c in checked}
@@ -2703,8 +2705,8 @@ def prod_milp_numbers() -> dict:
     if [sum(t.values()) for t in q_terms][:2] != [qubo, empty]:
         die("3_studies MILP: the QUBO route's objectives do not match their verdicts")
     objectives = [sum(t.values()) for t in q_terms]
-    if not (half["gurobi_objective"] > max(objectives) and hour["gurobi_objective"] < min(objectives)):
-        die("3_studies MILP: the prose says it is behind all three QUBO-route timetables at 30 min, ahead at 1 h")
+    if not (half["gurobi_objective"] < min(objectives) and hour["gurobi_objective"] < min(objectives)):
+        die("3_studies MILP: the prose says it is ahead of all three QUBO-route timetables at 30 min and at 1 h")
     # The abstract: that better timetable is found within an hour of the start of the route.
     if hour["found_s"] + build > 3600:
         die("3_studies MILP: the abstract says a better timetable comes within an hour of the start")
@@ -2714,15 +2716,15 @@ def prod_milp_numbers() -> dict:
     if max(-t["satisfaction"] for t in q_terms) != -q_terms[0]["satisfaction"] \
             or min(t["idle"] for t in q_terms) != q_terms[1]["idle"]:
         die("3_studies MILP: the QUBO route's most satisfaction or fewest idle minutes is not where the prose puts it")
-    # Gurobi's progress line at the reported search time (run_times_20261022.json): incumbent,
-    # bound and gap.
-    times = json.loads((prod / "run_times_20261022.json").read_text(encoding="utf-8"))
-    line = times["progress_line_at_reported"].split()
-    if float(times["reported_search_s"]) != p3.REPORT_S or not p3.REPORT_S - 60 <= int(line[-1][:-1]) <= p3.REPORT_S:
-        die("3_studies MILP: no progress line of Gurobi at the reported search time")
-    incumbent, bound, gap = float(line[5]), float(line[6]), line[7].rstrip("%")
-    if incumbent != best["gurobi_objective"]:
-        die("3_studies MILP: Gurobi's progress line disagrees with the best kept timetable")
+    # Gurobi's result at the time limit (the run's summary): incumbent, bound and gap; the run
+    # searched to its limit (checked by p3.milp_points).
+    bound, gap = float(summary["objective_bound"]), 100 * float(summary["mip_gap"])
+    if float(summary["objective"]) != best["gurobi_objective"]:
+        die("3_studies MILP: Gurobi's result disagrees with the best kept timetable")
+    # "that timetable and each of the kept ones pass every check": the first incumbent was kept and
+    # checked too.
+    if summary["first_full"] != "True" or float(summary["first_objective"]) != log[0]["objective"]:
+        die("3_studies MILP: the text says its first incumbent passes every check")
     # Section 6: the settings of the synthetic campaign (the same Gurobi, its default seed), but a
     # time limit in whole hours.
     camp = json.loads((ART / MILP_3STUDIES / "CAMPAIGN.json").read_text(encoding="utf-8"))
@@ -2748,7 +2750,7 @@ def prod_milp_numbers() -> dict:
         die("3_studies MILP: the text says the five VeloxQ calls were submitted together")
     # 7.3 and Fig. 5, the QUBO route under S0 (29.10.2026): its five calls were submitted together
     # too; its valid timetable is the repaired S0 answer; it takes longer than under S3 at every
-    # mark, and its five attempts end after the end of the figure.
+    # mark, and its five attempts end within the figure (the caption names no point after its end).
     s0r, q0 = r["s0"], p3.qubo_points("S0")
     sent0 = [datetime.datetime.fromisoformat(c["submitted"]) for c in q0["calls"].values()]
     if (max(sent0) - min(sent0)).total_seconds() > 60:
@@ -2756,21 +2758,20 @@ def prod_milp_numbers() -> dict:
     if s0r["objective"] != objectives[2]:
         die("3_studies MILP: the S0 route's valid timetable is not the repaired S0 answer")
     if not (s0r["best_t"] > r["best_t"] and s0r["valid4"] > r["valid4"] and s0r["five_end"] > r["five_end"]
-            and s0r["five_end"] > r["milp_end"]):
-        die("3_studies MILP: the text says the S0 route takes longer and its five attempts end after the figure")
-    # The text: no optimum within the reported search.
-    if float(gap) <= 0:
-        die("3_studies MILP: the text says it proves no optimum within the reported search")
+            and s0r["five_end"] <= r["milp_end"]):
+        die("3_studies MILP: the text says the S0 route takes longer and its five attempts end within the figure")
+    # The text: no optimum within the time limit, which the search reached.
+    if gap <= 0 or cfg["time_limit"] != p3.REPORT_S:
+        die("3_studies MILP: the text says it proves no optimum within its time limit")
     return {
         "ProdMilpBuildSec": fmt(build),
         "ProdMilpFirstSec": fmt(log[0]["runtime_s"]),
         "ProdMilpLimitHours": fmt(cfg["time_limit"] / 3600),
-        "ProdMilpRunMin": fmt(p3.REPORT_S / 60),
         "ProdMilpKept": str(len(checked)),
         "ProdMilpBest": fmt(best["gurobi_objective"]),
         "ProdMilpBestFound": _hm(best["found_s"]),
         "ProdMilpBound": fmt(bound),
-        "ProdMilpGap": gap,
+        "ProdMilpGap": fmt(gap, 1),
         "ProdMilpHalfHour": fmt(half["gurobi_objective"]),
         "ProdMilpHour": fmt(hour["gurobi_objective"]),
         "ProdMilpAtAnswer": fmt(best_at(r["answer_ready"])["gurobi_objective"]),

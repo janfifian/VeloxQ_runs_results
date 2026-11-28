@@ -1,0 +1,4724 @@
+{
+ "description": "Necessary condition sum_{c in C_S} q_c <= A_S per room set S of the physical rooms U (capacity thresholds, single rooms, and the max-deficit set over all subsets via min-cut). A failing S certifies that no room-feasible schedule exists; passing is not a proof of feasibility.",
+ "conventions": {
+  "admissible_rooms": "ProblemInstance.possible_rooms after _apply_RU3_capacity_filter (capacity >= C_quantities[c]); the code has no room-type filter",
+  "slot_didactic_minutes": "45 * clean_length_of_slot(slot.length)",
+  "clean_length_of_slot(90)": 1,
+  "required_didactic_minutes": "45 * C[C_list[c]][0]",
+  "q_c": "ceil(required minutes / max didactic minutes of slots with 0 < length <= required); lecturer availability ignored",
+  "room_available": "Classroom.weekCalendar.is_available(slot)[0][0]",
+  "room_universe_U": "R_fizycznie_istniejace minus remote rooms (R_zdalne); a course that may use a room outside U never enters C_S",
+  "excluded": "remote courses (C_zdalne); courses with q_c = 0 contribute nothing"
+ },
+ "summary": {
+  "n_instances": 64,
+  "n_fail": 0,
+  "n_pass": 64,
+  "failing": []
+ },
+ "instances": [
+  {
+   "file": "easy_000_seed_1000.yaml",
+   "source": "artifacts/generated_instances/easy_000_seed_1000.yaml",
+   "sha256": "f1bedbfcb711816cc35db463a4066e798dbe37f7e9cb799bfc4d6853d79bc39c",
+   "n_courses": 5,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 5,
+   "n_rooms": 3,
+   "n_physical_rooms": 3,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 5
+   },
+   "q_c": {
+    "1": 5
+   },
+   "room_capacities": {
+    "50": 1,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 3
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 70,
+     "slack": 70
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 3,
+     "n_courses": 5,
+     "sum_q": 5,
+     "A_S": 105,
+     "slack": 100
+    }
+   ],
+   "n_room_sets_checked": 5,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003"
+    ],
+    "n_courses": 5,
+    "sum_q": 5,
+    "A_S": 105,
+    "slack": 100
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_000_seed_1001.yaml",
+   "source": "artifacts/generated_instances/easy_000_seed_1001.yaml",
+   "sha256": "ab0d5a3dedc29a0b6c2d6e8744083f603e68af287ef944874bc7c64f04e42835",
+   "n_courses": 5,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 5,
+   "n_rooms": 3,
+   "n_physical_rooms": 3,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 5
+   },
+   "q_c": {
+    "1": 5
+   },
+   "room_capacities": {
+    "50": 2,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 3
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 35,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 3,
+     "n_courses": 5,
+     "sum_q": 5,
+     "A_S": 105,
+     "slack": 100
+    }
+   ],
+   "n_room_sets_checked": 4,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003"
+    ],
+    "n_courses": 5,
+    "sum_q": 5,
+    "A_S": 105,
+    "slack": 100
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_000_seed_1002.yaml",
+   "source": "artifacts/generated_instances/easy_000_seed_1002.yaml",
+   "sha256": "ab61c345fd083c87c68b665e51b32513beccc9b09a9e76f7262d4ed8cce0db46",
+   "n_courses": 5,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 5,
+   "n_rooms": 3,
+   "n_physical_rooms": 3,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 5
+   },
+   "q_c": {
+    "1": 5
+   },
+   "room_capacities": {
+    "50": 1,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 3
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 70,
+     "slack": 70
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 3,
+     "n_courses": 5,
+     "sum_q": 5,
+     "A_S": 105,
+     "slack": 100
+    }
+   ],
+   "n_room_sets_checked": 5,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003"
+    ],
+    "n_courses": 5,
+    "sum_q": 5,
+    "A_S": 105,
+    "slack": 100
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_000_seed_1003.yaml",
+   "source": "artifacts/generated_instances/easy_000_seed_1003.yaml",
+   "sha256": "7bc5bfddb34ad89a1914ed7c1deef224b71436351efe47dfe1d6cf5b2e843e0e",
+   "n_courses": 5,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 5,
+   "n_rooms": 3,
+   "n_physical_rooms": 3,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 5
+   },
+   "q_c": {
+    "1": 5
+   },
+   "room_capacities": {
+    "50": 3
+   },
+   "available_slots_per_room": {
+    "35": 3
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 3,
+     "n_courses": 5,
+     "sum_q": 5,
+     "A_S": 105,
+     "slack": 100
+    }
+   ],
+   "n_room_sets_checked": 4,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003"
+    ],
+    "n_courses": 5,
+    "sum_q": 5,
+    "A_S": 105,
+    "slack": 100
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_000_seed_1004.yaml",
+   "source": "artifacts/generated_instances/easy_000_seed_1004.yaml",
+   "sha256": "b504bd2e19c75b394772d3cdf86b5aadb6e6505dc3f4a2a4a7b30fa6a6724bb1",
+   "n_courses": 5,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 5,
+   "n_rooms": 3,
+   "n_physical_rooms": 3,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 5
+   },
+   "q_c": {
+    "1": 5
+   },
+   "room_capacities": {
+    "50": 3
+   },
+   "available_slots_per_room": {
+    "35": 3
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 3,
+     "n_courses": 5,
+     "sum_q": 5,
+     "A_S": 105,
+     "slack": 100
+    }
+   ],
+   "n_room_sets_checked": 4,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003"
+    ],
+    "n_courses": 5,
+    "sum_q": 5,
+    "A_S": 105,
+    "slack": 100
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_001_seed_1010.yaml",
+   "source": "artifacts/generated_instances/easy_001_seed_1010.yaml",
+   "sha256": "dbc2ed02adcc65ef157605b4a0d343647b7c3459a84ef14dd934dfc6923b48b5",
+   "n_courses": 9,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 9,
+   "n_rooms": 4,
+   "n_physical_rooms": 4,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 9
+   },
+   "q_c": {
+    "1": 9
+   },
+   "room_capacities": {
+    "50": 3,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 4
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 35,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 4,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 140,
+     "slack": 131
+    }
+   ],
+   "n_room_sets_checked": 5,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 140,
+    "slack": 131
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_001_seed_1011.yaml",
+   "source": "artifacts/generated_instances/easy_001_seed_1011.yaml",
+   "sha256": "b30e7fcf844231a26dc54857125322f9775dcabb4e9fda31bb1e0073406ca9d6",
+   "n_courses": 9,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 9,
+   "n_rooms": 4,
+   "n_physical_rooms": 4,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 9
+   },
+   "q_c": {
+    "1": 9
+   },
+   "room_capacities": {
+    "50": 3,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 4
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 35,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 4,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 140,
+     "slack": 131
+    }
+   ],
+   "n_room_sets_checked": 5,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 140,
+    "slack": 131
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_001_seed_1012.yaml",
+   "source": "artifacts/generated_instances/easy_001_seed_1012.yaml",
+   "sha256": "8b0adc4e74d62fc4b378864b53cd567c7321d6efcee08b6899cbe0da94bf31bf",
+   "n_courses": 9,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 9,
+   "n_rooms": 4,
+   "n_physical_rooms": 4,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 9
+   },
+   "q_c": {
+    "1": 9
+   },
+   "room_capacities": {
+    "50": 3,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 4
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 35,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 4,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 140,
+     "slack": 131
+    }
+   ],
+   "n_room_sets_checked": 5,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 140,
+    "slack": 131
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_001_seed_1013.yaml",
+   "source": "artifacts/generated_instances/easy_001_seed_1013.yaml",
+   "sha256": "d4393fb0f8ce095c8825e8bc50fb75b36268e8d71369fde46a88b94e4583ee36",
+   "n_courses": 9,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 9,
+   "n_rooms": 4,
+   "n_physical_rooms": 4,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 9
+   },
+   "q_c": {
+    "1": 9
+   },
+   "room_capacities": {
+    "50": 3,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 4
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 35,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 4,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 140,
+     "slack": 131
+    }
+   ],
+   "n_room_sets_checked": 5,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 140,
+    "slack": 131
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_001_seed_1014.yaml",
+   "source": "artifacts/generated_instances/easy_001_seed_1014.yaml",
+   "sha256": "9dcc590f8dbdf6cd7233515f5d69dda7afe46a669f299ab5d2d3c83cbe88d44c",
+   "n_courses": 9,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 9,
+   "n_rooms": 4,
+   "n_physical_rooms": 4,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 9
+   },
+   "q_c": {
+    "1": 9
+   },
+   "room_capacities": {
+    "50": 3,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 4
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 35,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 4,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 140,
+     "slack": 131
+    }
+   ],
+   "n_room_sets_checked": 5,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 140,
+    "slack": 131
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_002_seed_1020.yaml",
+   "source": "artifacts/generated_instances/easy_002_seed_1020.yaml",
+   "sha256": "52830a767da0cb9d7a6f47c79d172412926a963498b4ac741cbf8d792d1f248f",
+   "n_courses": 11,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 11,
+   "n_rooms": 5,
+   "n_physical_rooms": 5,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 11
+   },
+   "q_c": {
+    "1": 11
+   },
+   "room_capacities": {
+    "50": 4,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 5
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 35,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 5,
+     "n_courses": 11,
+     "sum_q": 11,
+     "A_S": 175,
+     "slack": 164
+    }
+   ],
+   "n_room_sets_checked": 6,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004",
+     "BLDG1_005"
+    ],
+    "n_courses": 11,
+    "sum_q": 11,
+    "A_S": 175,
+    "slack": 164
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_002_seed_1021.yaml",
+   "source": "artifacts/generated_instances/easy_002_seed_1021.yaml",
+   "sha256": "5fc582213860bbdddb17e5429d36e141c77d24412cd50e27e9775edd23ca1af7",
+   "n_courses": 11,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 11,
+   "n_rooms": 5,
+   "n_physical_rooms": 5,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 11
+   },
+   "q_c": {
+    "1": 11
+   },
+   "room_capacities": {
+    "50": 5
+   },
+   "available_slots_per_room": {
+    "35": 5
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 5,
+     "n_courses": 11,
+     "sum_q": 11,
+     "A_S": 175,
+     "slack": 164
+    }
+   ],
+   "n_room_sets_checked": 6,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004",
+     "BLDG1_005"
+    ],
+    "n_courses": 11,
+    "sum_q": 11,
+    "A_S": 175,
+    "slack": 164
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_002_seed_1022.yaml",
+   "source": "artifacts/generated_instances/easy_002_seed_1022.yaml",
+   "sha256": "7f97a2c5bf79dbcb44589ddab42b857baa206a0265f36847fd10821d31d8659b",
+   "n_courses": 11,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 11,
+   "n_rooms": 5,
+   "n_physical_rooms": 5,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 11
+   },
+   "q_c": {
+    "1": 11
+   },
+   "room_capacities": {
+    "50": 3,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 5
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 1,
+     "sum_q": 1,
+     "A_S": 70,
+     "slack": 69
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 5,
+     "n_courses": 11,
+     "sum_q": 11,
+     "A_S": 175,
+     "slack": 164
+    }
+   ],
+   "n_room_sets_checked": 7,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80"
+    ],
+    "room_ids": [
+     "BLDG1_003",
+     "BLDG1_004"
+    ],
+    "n_courses": 1,
+    "sum_q": 1,
+    "A_S": 70,
+    "slack": 69
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_002_seed_1023.yaml",
+   "source": "artifacts/generated_instances/easy_002_seed_1023.yaml",
+   "sha256": "23532437214084c05239b6da278c76ce476409e92cf18ab239a0457b92bfcff8",
+   "n_courses": 11,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 11,
+   "n_rooms": 5,
+   "n_physical_rooms": 5,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 11
+   },
+   "q_c": {
+    "1": 11
+   },
+   "room_capacities": {
+    "50": 3,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 5
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 1,
+     "sum_q": 1,
+     "A_S": 70,
+     "slack": 69
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 5,
+     "n_courses": 11,
+     "sum_q": 11,
+     "A_S": 175,
+     "slack": 164
+    }
+   ],
+   "n_room_sets_checked": 7,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80"
+    ],
+    "room_ids": [
+     "BLDG1_004",
+     "BLDG1_005"
+    ],
+    "n_courses": 1,
+    "sum_q": 1,
+    "A_S": 70,
+    "slack": 69
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_002_seed_1024.yaml",
+   "source": "artifacts/generated_instances/easy_002_seed_1024.yaml",
+   "sha256": "01d236e2c9ecd903d4a8ddda9d97dae92eb48043e9b37e8d68d045ce8cf96beb",
+   "n_courses": 11,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 11,
+   "n_rooms": 5,
+   "n_physical_rooms": 5,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 11
+   },
+   "q_c": {
+    "1": 11
+   },
+   "room_capacities": {
+    "50": 5
+   },
+   "available_slots_per_room": {
+    "35": 5
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 5,
+     "n_courses": 11,
+     "sum_q": 11,
+     "A_S": 175,
+     "slack": 164
+    }
+   ],
+   "n_room_sets_checked": 6,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004",
+     "BLDG1_005"
+    ],
+    "n_courses": 11,
+    "sum_q": 11,
+    "A_S": 175,
+    "slack": 164
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_003_seed_1030.yaml",
+   "source": "artifacts/generated_instances/easy_003_seed_1030.yaml",
+   "sha256": "f4a90e5a0d3bcf722d5ca99c941983954c69e6de1aacc0a63c04563fb46bbbbe",
+   "n_courses": 14,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 14,
+   "n_rooms": 7,
+   "n_physical_rooms": 7,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 14
+   },
+   "q_c": {
+    "1": 14
+   },
+   "room_capacities": {
+    "50": 5,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 7
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 70,
+     "slack": 70
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 7,
+     "n_courses": 14,
+     "sum_q": 14,
+     "A_S": 245,
+     "slack": 231
+    }
+   ],
+   "n_room_sets_checked": 9,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004",
+     "BLDG1_005",
+     "BLDG1_006",
+     "BLDG1_007"
+    ],
+    "n_courses": 14,
+    "sum_q": 14,
+    "A_S": 245,
+    "slack": 231
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_003_seed_1031.yaml",
+   "source": "artifacts/generated_instances/easy_003_seed_1031.yaml",
+   "sha256": "72a6a6d80c88ed228ccc605a671b7a2aaa3dc6f28ae2e3509f8ed7819da98243",
+   "n_courses": 14,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 14,
+   "n_rooms": 7,
+   "n_physical_rooms": 7,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 14
+   },
+   "q_c": {
+    "1": 14
+   },
+   "room_capacities": {
+    "50": 5,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 7
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 70,
+     "slack": 70
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 7,
+     "n_courses": 14,
+     "sum_q": 14,
+     "A_S": 245,
+     "slack": 231
+    }
+   ],
+   "n_room_sets_checked": 9,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004",
+     "BLDG1_005",
+     "BLDG1_006",
+     "BLDG1_007"
+    ],
+    "n_courses": 14,
+    "sum_q": 14,
+    "A_S": 245,
+    "slack": 231
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_003_seed_1032.yaml",
+   "source": "artifacts/generated_instances/easy_003_seed_1032.yaml",
+   "sha256": "79769e3a9631a84cbc57c9f8d8a764e492a88b2028356b2021a61c77d1c67a77",
+   "n_courses": 14,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 14,
+   "n_rooms": 7,
+   "n_physical_rooms": 7,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 14
+   },
+   "q_c": {
+    "1": 14
+   },
+   "room_capacities": {
+    "50": 6,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 7
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 0,
+     "sum_q": 0,
+     "A_S": 35,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 7,
+     "n_courses": 14,
+     "sum_q": 14,
+     "A_S": 245,
+     "slack": 231
+    }
+   ],
+   "n_room_sets_checked": 8,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=50"
+    ],
+    "room_ids": [
+     "BLDG1_001",
+     "BLDG1_002",
+     "BLDG1_003",
+     "BLDG1_004",
+     "BLDG1_005",
+     "BLDG1_006",
+     "BLDG1_007"
+    ],
+    "n_courses": 14,
+    "sum_q": 14,
+    "A_S": 245,
+    "slack": 231
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_003_seed_1033.yaml",
+   "source": "artifacts/generated_instances/easy_003_seed_1033.yaml",
+   "sha256": "33ceabd9f4deeb5cd3ab8f64623689a5e940dc94affed10eaa6f6be1a20c80cf",
+   "n_courses": 14,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 14,
+   "n_rooms": 7,
+   "n_physical_rooms": 7,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 14
+   },
+   "q_c": {
+    "1": 14
+   },
+   "room_capacities": {
+    "50": 5,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 7
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 1,
+     "sum_q": 1,
+     "A_S": 70,
+     "slack": 69
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 7,
+     "n_courses": 14,
+     "sum_q": 14,
+     "A_S": 245,
+     "slack": 231
+    }
+   ],
+   "n_room_sets_checked": 9,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80"
+    ],
+    "room_ids": [
+     "BLDG1_003",
+     "BLDG1_006"
+    ],
+    "n_courses": 1,
+    "sum_q": 1,
+    "A_S": 70,
+    "slack": 69
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "easy_003_seed_1034.yaml",
+   "source": "artifacts/generated_instances/easy_003_seed_1034.yaml",
+   "sha256": "bb3950970a449a039c8d8583024cd6df11373728640ed93a6045fcfdef9bbf21",
+   "n_courses": 14,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 14,
+   "n_rooms": 7,
+   "n_physical_rooms": 7,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 14
+   },
+   "q_c": {
+    "1": 14
+   },
+   "room_capacities": {
+    "50": 6,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 7
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 1,
+     "sum_q": 1,
+     "A_S": 35,
+     "slack": 34
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 7,
+     "n_courses": 14,
+     "sum_q": 14,
+     "A_S": 245,
+     "slack": 231
+    }
+   ],
+   "n_room_sets_checked": 8,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 1,
+    "sum_q": 1,
+    "A_S": 35,
+    "slack": 34
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_011_seed_1110.yaml",
+   "source": "artifacts/generated_instances/extreme_011_seed_1110.yaml",
+   "sha256": "2fc18680d798b79a2e2ea34a230dfbe75563062e2afcf1683490d908fa071de6",
+   "n_courses": 75,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 75,
+   "n_rooms": 16,
+   "n_physical_rooms": 16,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 75
+   },
+   "q_c": {
+    "1": 75
+   },
+   "room_capacities": {
+    "50": 10,
+    "80": 5,
+    "204": 1
+   },
+   "available_slots_per_room": {
+    "35": 16
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 204,
+     "n_rooms": 1,
+     "n_courses": 26,
+     "sum_q": 26,
+     "A_S": 35,
+     "slack": 9
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 6,
+     "n_courses": 45,
+     "sum_q": 45,
+     "A_S": 210,
+     "slack": 165
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 16,
+     "n_courses": 75,
+     "sum_q": 75,
+     "A_S": 560,
+     "slack": 485
+    }
+   ],
+   "n_room_sets_checked": 18,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=204",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_004"
+    ],
+    "n_courses": 26,
+    "sum_q": 26,
+    "A_S": 35,
+    "slack": 9
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_011_seed_1111.yaml",
+   "source": "artifacts/generated_instances/extreme_011_seed_1111.yaml",
+   "sha256": "884eae77962f581c29ef73ef98fc2253f6d79ccee3067f9c0685eb71cb12f831",
+   "n_courses": 75,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 75,
+   "n_rooms": 16,
+   "n_physical_rooms": 16,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 75
+   },
+   "q_c": {
+    "1": 75
+   },
+   "room_capacities": {
+    "50": 14,
+    "80": 1,
+    "172": 1
+   },
+   "available_slots_per_room": {
+    "35": 16
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 172,
+     "n_rooms": 1,
+     "n_courses": 35,
+     "sum_q": 35,
+     "A_S": 35,
+     "slack": 0
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 47,
+     "sum_q": 47,
+     "A_S": 70,
+     "slack": 23
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 16,
+     "n_courses": 75,
+     "sum_q": 75,
+     "A_S": 560,
+     "slack": 485
+    }
+   ],
+   "n_room_sets_checked": 18,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=172",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_011"
+    ],
+    "n_courses": 35,
+    "sum_q": 35,
+    "A_S": 35,
+    "slack": 0
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_011_seed_1112.yaml",
+   "source": "artifacts/generated_instances/extreme_011_seed_1112.yaml",
+   "sha256": "93c71ef1629199fe5a178b89436ce62402f15dd70b0a0ce3b7b7890a7fb924d5",
+   "n_courses": 75,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 75,
+   "n_rooms": 16,
+   "n_physical_rooms": 16,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 75
+   },
+   "q_c": {
+    "1": 75
+   },
+   "room_capacities": {
+    "50": 13,
+    "80": 2,
+    "152": 1
+   },
+   "available_slots_per_room": {
+    "35": 16
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 152,
+     "n_rooms": 1,
+     "n_courses": 27,
+     "sum_q": 27,
+     "A_S": 35,
+     "slack": 8
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 3,
+     "n_courses": 44,
+     "sum_q": 44,
+     "A_S": 105,
+     "slack": 61
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 16,
+     "n_courses": 75,
+     "sum_q": 75,
+     "A_S": 560,
+     "slack": 485
+    }
+   ],
+   "n_room_sets_checked": 18,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=152",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 27,
+    "sum_q": 27,
+    "A_S": 35,
+    "slack": 8
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_011_seed_1113.yaml",
+   "source": "artifacts/generated_instances/extreme_011_seed_1113.yaml",
+   "sha256": "e674922c5942d0eac46890723f51d0f31de64c357f9970fdbc6abf3a63c1d218",
+   "n_courses": 75,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 75,
+   "n_rooms": 16,
+   "n_physical_rooms": 16,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 75
+   },
+   "q_c": {
+    "1": 75
+   },
+   "room_capacities": {
+    "50": 11,
+    "80": 4,
+    "173": 1
+   },
+   "available_slots_per_room": {
+    "35": 16
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 173,
+     "n_rooms": 1,
+     "n_courses": 35,
+     "sum_q": 35,
+     "A_S": 35,
+     "slack": 0
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 5,
+     "n_courses": 49,
+     "sum_q": 49,
+     "A_S": 175,
+     "slack": 126
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 16,
+     "n_courses": 75,
+     "sum_q": 75,
+     "A_S": 560,
+     "slack": 485
+    }
+   ],
+   "n_room_sets_checked": 18,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=173",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 35,
+    "sum_q": 35,
+    "A_S": 35,
+    "slack": 0
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_011_seed_1114.yaml",
+   "source": "artifacts/generated_instances/extreme_011_seed_1114.yaml",
+   "sha256": "a204ad652d02e2a12c5ccb9cca8ce9f1eee33f389e3b8fe9addca8035fd568c1",
+   "n_courses": 75,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 75,
+   "n_rooms": 16,
+   "n_physical_rooms": 16,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 75
+   },
+   "q_c": {
+    "1": 75
+   },
+   "room_capacities": {
+    "50": 10,
+    "80": 5,
+    "168": 1
+   },
+   "available_slots_per_room": {
+    "35": 16
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 168,
+     "n_rooms": 1,
+     "n_courses": 33,
+     "sum_q": 33,
+     "A_S": 35,
+     "slack": 2
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 6,
+     "n_courses": 50,
+     "sum_q": 50,
+     "A_S": 210,
+     "slack": 160
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 16,
+     "n_courses": 75,
+     "sum_q": 75,
+     "A_S": 560,
+     "slack": 485
+    }
+   ],
+   "n_room_sets_checked": 18,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=168",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 33,
+    "sum_q": 33,
+    "A_S": 35,
+    "slack": 2
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_012_seed_1122.yaml",
+   "source": "artifacts/generated_instances/extreme_012_seed_1122.yaml",
+   "sha256": "4335f357a6e4892559621b674f1d8919f11cae7ccf009a1115a10779c12bdbf1",
+   "n_courses": 84,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 84,
+   "n_rooms": 18,
+   "n_physical_rooms": 18,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 84
+   },
+   "q_c": {
+    "1": 84
+   },
+   "room_capacities": {
+    "50": 12,
+    "80": 5,
+    "165": 1
+   },
+   "available_slots_per_room": {
+    "35": 18
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 165,
+     "n_rooms": 1,
+     "n_courses": 31,
+     "sum_q": 31,
+     "A_S": 35,
+     "slack": 4
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 6,
+     "n_courses": 54,
+     "sum_q": 54,
+     "A_S": 210,
+     "slack": 156
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 18,
+     "n_courses": 84,
+     "sum_q": 84,
+     "A_S": 630,
+     "slack": 546
+    }
+   ],
+   "n_room_sets_checked": 20,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=165",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 31,
+    "sum_q": 31,
+    "A_S": 35,
+    "slack": 4
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_014_seed_1140.yaml",
+   "source": "artifacts/generated_instances/extreme_014_seed_1140.yaml",
+   "sha256": "d1b2a5ba5f3bcade5affa50a9c3e13c365f8de40ad683d38d85669c1c88e56c2",
+   "n_courses": 100,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 100,
+   "n_rooms": 22,
+   "n_physical_rooms": 22,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 100
+   },
+   "q_c": {
+    "1": 100
+   },
+   "room_capacities": {
+    "50": 17,
+    "80": 2,
+    "200": 3
+   },
+   "available_slots_per_room": {
+    "35": 22
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 200,
+     "n_rooms": 3,
+     "n_courses": 56,
+     "sum_q": 56,
+     "A_S": 105,
+     "slack": 49
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 5,
+     "n_courses": 71,
+     "sum_q": 71,
+     "A_S": 175,
+     "slack": 104
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 22,
+     "n_courses": 100,
+     "sum_q": 100,
+     "A_S": 770,
+     "slack": 670
+    }
+   ],
+   "n_room_sets_checked": 25,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=200"
+    ],
+    "room_ids": [
+     "BLDG1_010",
+     "BLDG1_021",
+     "BLDG1_022"
+    ],
+    "n_courses": 56,
+    "sum_q": 56,
+    "A_S": 105,
+    "slack": 49
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_014_seed_1142.yaml",
+   "source": "artifacts/generated_instances/extreme_014_seed_1142.yaml",
+   "sha256": "f87791cc856018326abe6a52f98fd96a5bdfc966f3e6fb652919190f3f65a24f",
+   "n_courses": 100,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 100,
+   "n_rooms": 21,
+   "n_physical_rooms": 21,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 100
+   },
+   "q_c": {
+    "1": 100
+   },
+   "room_capacities": {
+    "50": 14,
+    "80": 5,
+    "259": 2
+   },
+   "available_slots_per_room": {
+    "35": 21
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 259,
+     "n_rooms": 2,
+     "n_courses": 60,
+     "sum_q": 60,
+     "A_S": 70,
+     "slack": 10
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 7,
+     "n_courses": 73,
+     "sum_q": 73,
+     "A_S": 245,
+     "slack": 172
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 21,
+     "n_courses": 100,
+     "sum_q": 100,
+     "A_S": 735,
+     "slack": 635
+    }
+   ],
+   "n_room_sets_checked": 24,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=259"
+    ],
+    "room_ids": [
+     "BLDG1_002",
+     "BLDG1_021"
+    ],
+    "n_courses": 60,
+    "sum_q": 60,
+    "A_S": 70,
+    "slack": 10
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "extreme_014_seed_1143.yaml",
+   "source": "artifacts/generated_instances/extreme_014_seed_1143.yaml",
+   "sha256": "d8d438f3af50b949954f9e85bd58042db7292a9d0c01060f1af9897dd4842637",
+   "n_courses": 100,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 100,
+   "n_rooms": 21,
+   "n_physical_rooms": 21,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 100
+   },
+   "q_c": {
+    "1": 100
+   },
+   "room_capacities": {
+    "50": 18,
+    "80": 1,
+    "182": 2
+   },
+   "available_slots_per_room": {
+    "35": 21
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 182,
+     "n_rooms": 2,
+     "n_courses": 59,
+     "sum_q": 59,
+     "A_S": 70,
+     "slack": 11
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 3,
+     "n_courses": 70,
+     "sum_q": 70,
+     "A_S": 105,
+     "slack": 35
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 21,
+     "n_courses": 100,
+     "sum_q": 100,
+     "A_S": 735,
+     "slack": 635
+    }
+   ],
+   "n_room_sets_checked": 24,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=182"
+    ],
+    "room_ids": [
+     "BLDG1_014",
+     "BLDG1_021"
+    ],
+    "n_courses": 59,
+    "sum_q": 59,
+    "A_S": 70,
+    "slack": 11
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_007_seed_1070.yaml",
+   "source": "artifacts/generated_instances/hard_007_seed_1070.yaml",
+   "sha256": "d7035cc990b338b6b5a8b64f0bc6972fd09693b972dabc57038cd9591cfe6f0d",
+   "n_courses": 38,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 38,
+   "n_rooms": 12,
+   "n_physical_rooms": 12,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 38
+   },
+   "q_c": {
+    "1": 38
+   },
+   "room_capacities": {
+    "50": 8,
+    "80": 3,
+    "96": 1
+   },
+   "available_slots_per_room": {
+    "35": 12
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 96,
+     "n_rooms": 1,
+     "n_courses": 1,
+     "sum_q": 1,
+     "A_S": 35,
+     "slack": 34
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 7,
+     "sum_q": 7,
+     "A_S": 140,
+     "slack": 133
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 12,
+     "n_courses": 38,
+     "sum_q": 38,
+     "A_S": 420,
+     "slack": 382
+    }
+   ],
+   "n_room_sets_checked": 14,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=96",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 1,
+    "sum_q": 1,
+    "A_S": 35,
+    "slack": 34
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_007_seed_1071.yaml",
+   "source": "artifacts/generated_instances/hard_007_seed_1071.yaml",
+   "sha256": "5dbf1e223681fb0cc2f3f5ac45715ce78bf22efca28c0249463c8298b5d14125",
+   "n_courses": 38,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 38,
+   "n_rooms": 12,
+   "n_physical_rooms": 12,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 38
+   },
+   "q_c": {
+    "1": 38
+   },
+   "room_capacities": {
+    "50": 10,
+    "80": 1,
+    "91": 1
+   },
+   "available_slots_per_room": {
+    "35": 12
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 91,
+     "n_rooms": 1,
+     "n_courses": 2,
+     "sum_q": 2,
+     "A_S": 35,
+     "slack": 33
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 10,
+     "sum_q": 10,
+     "A_S": 70,
+     "slack": 60
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 12,
+     "n_courses": 38,
+     "sum_q": 38,
+     "A_S": 420,
+     "slack": 382
+    }
+   ],
+   "n_room_sets_checked": 14,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=91",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_003"
+    ],
+    "n_courses": 2,
+    "sum_q": 2,
+    "A_S": 35,
+    "slack": 33
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_007_seed_1072.yaml",
+   "source": "artifacts/generated_instances/hard_007_seed_1072.yaml",
+   "sha256": "152d14b343d07ff15fafec78ad982f73e9121dc13a3ee7e6612497d0ca250612",
+   "n_courses": 38,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 38,
+   "n_rooms": 12,
+   "n_physical_rooms": 12,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 38
+   },
+   "q_c": {
+    "1": 38
+   },
+   "room_capacities": {
+    "50": 9,
+    "80": 2,
+    "125": 1
+   },
+   "available_slots_per_room": {
+    "35": 12
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 125,
+     "n_rooms": 1,
+     "n_courses": 4,
+     "sum_q": 4,
+     "A_S": 35,
+     "slack": 31
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 3,
+     "n_courses": 11,
+     "sum_q": 11,
+     "A_S": 105,
+     "slack": 94
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 12,
+     "n_courses": 38,
+     "sum_q": 38,
+     "A_S": 420,
+     "slack": 382
+    }
+   ],
+   "n_room_sets_checked": 14,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=125",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_006"
+    ],
+    "n_courses": 4,
+    "sum_q": 4,
+    "A_S": 35,
+    "slack": 31
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_007_seed_1073.yaml",
+   "source": "artifacts/generated_instances/hard_007_seed_1073.yaml",
+   "sha256": "347c25009cbc94d4d13517b43017933bfb0dd40434f0095da18aa3f0a1c1e509",
+   "n_courses": 38,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 38,
+   "n_rooms": 12,
+   "n_physical_rooms": 12,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 38
+   },
+   "q_c": {
+    "1": 38
+   },
+   "room_capacities": {
+    "50": 10,
+    "80": 1,
+    "99": 1
+   },
+   "available_slots_per_room": {
+    "35": 12
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 99,
+     "n_rooms": 1,
+     "n_courses": 2,
+     "sum_q": 2,
+     "A_S": 35,
+     "slack": 33
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 12,
+     "sum_q": 12,
+     "A_S": 70,
+     "slack": 58
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 12,
+     "n_courses": 38,
+     "sum_q": 38,
+     "A_S": 420,
+     "slack": 382
+    }
+   ],
+   "n_room_sets_checked": 14,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=99",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 2,
+    "sum_q": 2,
+    "A_S": 35,
+    "slack": 33
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_007_seed_1074.yaml",
+   "source": "artifacts/generated_instances/hard_007_seed_1074.yaml",
+   "sha256": "bab5e64bf92f67b7e9757a1ac413b1c13433eda4464e375fdf1d362e5f71acd3",
+   "n_courses": 38,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 38,
+   "n_rooms": 12,
+   "n_physical_rooms": 12,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 38
+   },
+   "q_c": {
+    "1": 38
+   },
+   "room_capacities": {
+    "50": 2,
+    "80": 9,
+    "143": 1
+   },
+   "available_slots_per_room": {
+    "35": 12
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 143,
+     "n_rooms": 1,
+     "n_courses": 3,
+     "sum_q": 3,
+     "A_S": 35,
+     "slack": 32
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 10,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 350,
+     "slack": 341
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 12,
+     "n_courses": 38,
+     "sum_q": 38,
+     "A_S": 420,
+     "slack": 382
+    }
+   ],
+   "n_room_sets_checked": 14,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=143",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 3,
+    "sum_q": 3,
+    "A_S": 35,
+    "slack": 32
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_008_seed_1080.yaml",
+   "source": "artifacts/generated_instances/hard_008_seed_1080.yaml",
+   "sha256": "0b888c7a599b70193ef884cb79bb613db796551b9064acc86d792a820bf79706",
+   "n_courses": 44,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 44,
+   "n_rooms": 13,
+   "n_physical_rooms": 13,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 44
+   },
+   "q_c": {
+    "1": 44
+   },
+   "room_capacities": {
+    "50": 9,
+    "80": 3,
+    "91": 1
+   },
+   "available_slots_per_room": {
+    "35": 13
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 91,
+     "n_rooms": 1,
+     "n_courses": 3,
+     "sum_q": 3,
+     "A_S": 35,
+     "slack": 32
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 16,
+     "sum_q": 16,
+     "A_S": 140,
+     "slack": 124
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 13,
+     "n_courses": 44,
+     "sum_q": 44,
+     "A_S": 455,
+     "slack": 411
+    }
+   ],
+   "n_room_sets_checked": 15,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=91",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 3,
+    "sum_q": 3,
+    "A_S": 35,
+    "slack": 32
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_008_seed_1081.yaml",
+   "source": "artifacts/generated_instances/hard_008_seed_1081.yaml",
+   "sha256": "690af587cdade52a912f9d6f16068f2d63dcb4c98bfb78e95bb87c46f8b0f4b3",
+   "n_courses": 44,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 44,
+   "n_rooms": 13,
+   "n_physical_rooms": 13,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 44
+   },
+   "q_c": {
+    "1": 44
+   },
+   "room_capacities": {
+    "50": 9,
+    "80": 3,
+    "98": 1
+   },
+   "available_slots_per_room": {
+    "35": 13
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 98,
+     "n_rooms": 1,
+     "n_courses": 4,
+     "sum_q": 4,
+     "A_S": 35,
+     "slack": 31
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 17,
+     "sum_q": 17,
+     "A_S": 140,
+     "slack": 123
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 13,
+     "n_courses": 44,
+     "sum_q": 44,
+     "A_S": 455,
+     "slack": 411
+    }
+   ],
+   "n_room_sets_checked": 15,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=98",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 4,
+    "sum_q": 4,
+    "A_S": 35,
+    "slack": 31
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_008_seed_1082.yaml",
+   "source": "artifacts/generated_instances/hard_008_seed_1082.yaml",
+   "sha256": "44371d35aa3feb793a03612fad72377d23f5ff16b508bb747a3783689aa4fde9",
+   "n_courses": 44,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 44,
+   "n_rooms": 13,
+   "n_physical_rooms": 13,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 44
+   },
+   "q_c": {
+    "1": 44
+   },
+   "room_capacities": {
+    "50": 9,
+    "80": 3,
+    "119": 1
+   },
+   "available_slots_per_room": {
+    "35": 13
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 119,
+     "n_rooms": 1,
+     "n_courses": 7,
+     "sum_q": 7,
+     "A_S": 35,
+     "slack": 28
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 15,
+     "sum_q": 15,
+     "A_S": 140,
+     "slack": 125
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 13,
+     "n_courses": 44,
+     "sum_q": 44,
+     "A_S": 455,
+     "slack": 411
+    }
+   ],
+   "n_room_sets_checked": 15,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=119",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 7,
+    "sum_q": 7,
+    "A_S": 35,
+    "slack": 28
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_008_seed_1083.yaml",
+   "source": "artifacts/generated_instances/hard_008_seed_1083.yaml",
+   "sha256": "3a503d252511b6624c790d654006e31f88e520976925fb2a49e2a2dca2508e42",
+   "n_courses": 44,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 44,
+   "n_rooms": 13,
+   "n_physical_rooms": 13,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 44
+   },
+   "q_c": {
+    "1": 44
+   },
+   "room_capacities": {
+    "50": 12,
+    "138": 1
+   },
+   "available_slots_per_room": {
+    "35": 13
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 138,
+     "n_rooms": 1,
+     "n_courses": 21,
+     "sum_q": 21,
+     "A_S": 35,
+     "slack": 14
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 13,
+     "n_courses": 44,
+     "sum_q": 44,
+     "A_S": 455,
+     "slack": 411
+    }
+   ],
+   "n_room_sets_checked": 14,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=138",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_008"
+    ],
+    "n_courses": 21,
+    "sum_q": 21,
+    "A_S": 35,
+    "slack": 14
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_008_seed_1084.yaml",
+   "source": "artifacts/generated_instances/hard_008_seed_1084.yaml",
+   "sha256": "eb696c1b35fdf1be03bcc7b845f8c58b13bc9f643dd8b2c41f19fb999b1644eb",
+   "n_courses": 44,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 44,
+   "n_rooms": 13,
+   "n_physical_rooms": 13,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 44
+   },
+   "q_c": {
+    "1": 44
+   },
+   "room_capacities": {
+    "50": 10,
+    "80": 2,
+    "176": 1
+   },
+   "available_slots_per_room": {
+    "35": 13
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 176,
+     "n_rooms": 1,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 35,
+     "slack": 26
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 3,
+     "n_courses": 21,
+     "sum_q": 21,
+     "A_S": 105,
+     "slack": 84
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 13,
+     "n_courses": 44,
+     "sum_q": 44,
+     "A_S": 455,
+     "slack": 411
+    }
+   ],
+   "n_room_sets_checked": 15,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=176",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_004"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 35,
+    "slack": 26
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_009_seed_1090.yaml",
+   "source": "artifacts/generated_instances/hard_009_seed_1090.yaml",
+   "sha256": "b4488c4b869dfad08ba8d03fbfca906122c3da6635845ac4ea33b39bf230104d",
+   "n_courses": 48,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 48,
+   "n_rooms": 14,
+   "n_physical_rooms": 14,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 48
+   },
+   "q_c": {
+    "1": 48
+   },
+   "room_capacities": {
+    "50": 11,
+    "80": 2,
+    "249": 1
+   },
+   "available_slots_per_room": {
+    "35": 14
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 249,
+     "n_rooms": 1,
+     "n_courses": 13,
+     "sum_q": 13,
+     "A_S": 35,
+     "slack": 22
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 3,
+     "n_courses": 24,
+     "sum_q": 24,
+     "A_S": 105,
+     "slack": 81
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 14,
+     "n_courses": 48,
+     "sum_q": 48,
+     "A_S": 490,
+     "slack": 442
+    }
+   ],
+   "n_room_sets_checked": 16,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=249",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_006"
+    ],
+    "n_courses": 13,
+    "sum_q": 13,
+    "A_S": 35,
+    "slack": 22
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_009_seed_1091.yaml",
+   "source": "artifacts/generated_instances/hard_009_seed_1091.yaml",
+   "sha256": "7a6becfe7e8d9279fc8326c6b8cd890ecf877e5d1afa7a9a6d3509be439ea5ce",
+   "n_courses": 48,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 48,
+   "n_rooms": 14,
+   "n_physical_rooms": 14,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 48
+   },
+   "q_c": {
+    "1": 48
+   },
+   "room_capacities": {
+    "50": 10,
+    "80": 3,
+    "138": 1
+   },
+   "available_slots_per_room": {
+    "35": 14
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 138,
+     "n_rooms": 1,
+     "n_courses": 7,
+     "sum_q": 7,
+     "A_S": 35,
+     "slack": 28
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 23,
+     "sum_q": 23,
+     "A_S": 140,
+     "slack": 117
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 14,
+     "n_courses": 48,
+     "sum_q": 48,
+     "A_S": 490,
+     "slack": 442
+    }
+   ],
+   "n_room_sets_checked": 16,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=138",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_004"
+    ],
+    "n_courses": 7,
+    "sum_q": 7,
+    "A_S": 35,
+    "slack": 28
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_009_seed_1092.yaml",
+   "source": "artifacts/generated_instances/hard_009_seed_1092.yaml",
+   "sha256": "95fffd49bca52adfaf6b0b943ab9d87332b3b56107f5c0d4362afed231e2aa62",
+   "n_courses": 48,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 48,
+   "n_rooms": 14,
+   "n_physical_rooms": 14,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 48
+   },
+   "q_c": {
+    "1": 48
+   },
+   "room_capacities": {
+    "50": 8,
+    "80": 5,
+    "146": 1
+   },
+   "available_slots_per_room": {
+    "35": 14
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 146,
+     "n_rooms": 1,
+     "n_courses": 13,
+     "sum_q": 13,
+     "A_S": 35,
+     "slack": 22
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 6,
+     "n_courses": 23,
+     "sum_q": 23,
+     "A_S": 210,
+     "slack": 187
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 14,
+     "n_courses": 48,
+     "sum_q": 48,
+     "A_S": 490,
+     "slack": 442
+    }
+   ],
+   "n_room_sets_checked": 16,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=146",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 13,
+    "sum_q": 13,
+    "A_S": 35,
+    "slack": 22
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_009_seed_1093.yaml",
+   "source": "artifacts/generated_instances/hard_009_seed_1093.yaml",
+   "sha256": "0033f0263cc5f31877f296974eb62b9638c68772ba43a67b04b1175ae6faf81c",
+   "n_courses": 48,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 48,
+   "n_rooms": 14,
+   "n_physical_rooms": 14,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 48
+   },
+   "q_c": {
+    "1": 48
+   },
+   "room_capacities": {
+    "50": 9,
+    "80": 4,
+    "148": 1
+   },
+   "available_slots_per_room": {
+    "35": 14
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 148,
+     "n_rooms": 1,
+     "n_courses": 13,
+     "sum_q": 13,
+     "A_S": 35,
+     "slack": 22
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 5,
+     "n_courses": 21,
+     "sum_q": 21,
+     "A_S": 175,
+     "slack": 154
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 14,
+     "n_courses": 48,
+     "sum_q": 48,
+     "A_S": 490,
+     "slack": 442
+    }
+   ],
+   "n_room_sets_checked": 16,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=148",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 13,
+    "sum_q": 13,
+    "A_S": 35,
+    "slack": 22
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_009_seed_1094.yaml",
+   "source": "artifacts/generated_instances/hard_009_seed_1094.yaml",
+   "sha256": "a785b4a850ca10ff409e7f4fe8b29ddd2e73b83e5a84e9c94a8fca27a1e090f0",
+   "n_courses": 48,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 48,
+   "n_rooms": 14,
+   "n_physical_rooms": 14,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 48
+   },
+   "q_c": {
+    "1": 48
+   },
+   "room_capacities": {
+    "50": 10,
+    "80": 3,
+    "162": 1
+   },
+   "available_slots_per_room": {
+    "35": 14
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 162,
+     "n_rooms": 1,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 35,
+     "slack": 26
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 24,
+     "sum_q": 24,
+     "A_S": 140,
+     "slack": 116
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 14,
+     "n_courses": 48,
+     "sum_q": 48,
+     "A_S": 490,
+     "slack": 442
+    }
+   ],
+   "n_room_sets_checked": 16,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=162",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_005"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 35,
+    "slack": 26
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_010_seed_1100.yaml",
+   "source": "artifacts/generated_instances/hard_010_seed_1100.yaml",
+   "sha256": "0f207240f2b54c5a9f19080bc2e7ca190a3780ef387131e4cec9a87a36ac092a",
+   "n_courses": 55,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 55,
+   "n_rooms": 15,
+   "n_physical_rooms": 15,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 55
+   },
+   "q_c": {
+    "1": 55
+   },
+   "room_capacities": {
+    "50": 11,
+    "80": 3,
+    "147": 1
+   },
+   "available_slots_per_room": {
+    "35": 15
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 147,
+     "n_rooms": 1,
+     "n_courses": 8,
+     "sum_q": 8,
+     "A_S": 35,
+     "slack": 27
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 25,
+     "sum_q": 25,
+     "A_S": 140,
+     "slack": 115
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 15,
+     "n_courses": 55,
+     "sum_q": 55,
+     "A_S": 525,
+     "slack": 470
+    }
+   ],
+   "n_room_sets_checked": 17,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=147",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_005"
+    ],
+    "n_courses": 8,
+    "sum_q": 8,
+    "A_S": 35,
+    "slack": 27
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_010_seed_1101.yaml",
+   "source": "artifacts/generated_instances/hard_010_seed_1101.yaml",
+   "sha256": "a14b506a84c0082c058888231f1f147196ddbbc72e45f1ea0bbc5e564cf6d87d",
+   "n_courses": 55,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 55,
+   "n_rooms": 15,
+   "n_physical_rooms": 15,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 55
+   },
+   "q_c": {
+    "1": 55
+   },
+   "room_capacities": {
+    "50": 8,
+    "80": 6,
+    "198": 1
+   },
+   "available_slots_per_room": {
+    "35": 15
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 198,
+     "n_rooms": 1,
+     "n_courses": 13,
+     "sum_q": 13,
+     "A_S": 35,
+     "slack": 22
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 7,
+     "n_courses": 27,
+     "sum_q": 27,
+     "A_S": 245,
+     "slack": 218
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 15,
+     "n_courses": 55,
+     "sum_q": 55,
+     "A_S": 525,
+     "slack": 470
+    }
+   ],
+   "n_room_sets_checked": 17,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=198",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 13,
+    "sum_q": 13,
+    "A_S": 35,
+    "slack": 22
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_010_seed_1102.yaml",
+   "source": "artifacts/generated_instances/hard_010_seed_1102.yaml",
+   "sha256": "6eadcfdca7f1fef0ec1f74f8af44b9580bfa8fd2ccb886c44e7f60ce23913912",
+   "n_courses": 55,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 55,
+   "n_rooms": 15,
+   "n_physical_rooms": 15,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 55
+   },
+   "q_c": {
+    "1": 55
+   },
+   "room_capacities": {
+    "50": 7,
+    "80": 7,
+    "141": 1
+   },
+   "available_slots_per_room": {
+    "35": 15
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 141,
+     "n_rooms": 1,
+     "n_courses": 19,
+     "sum_q": 19,
+     "A_S": 35,
+     "slack": 16
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 8,
+     "n_courses": 29,
+     "sum_q": 29,
+     "A_S": 280,
+     "slack": 251
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 15,
+     "n_courses": 55,
+     "sum_q": 55,
+     "A_S": 525,
+     "slack": 470
+    }
+   ],
+   "n_room_sets_checked": 17,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=141",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 19,
+    "sum_q": 19,
+    "A_S": 35,
+    "slack": 16
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_010_seed_1103.yaml",
+   "source": "artifacts/generated_instances/hard_010_seed_1103.yaml",
+   "sha256": "98f5df7736968f16c55b6935c8148d1f7326b6b12b0f28bfa6a4b19d1e77229d",
+   "n_courses": 55,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 55,
+   "n_rooms": 15,
+   "n_physical_rooms": 15,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 55
+   },
+   "q_c": {
+    "1": 55
+   },
+   "room_capacities": {
+    "50": 8,
+    "80": 6,
+    "188": 1
+   },
+   "available_slots_per_room": {
+    "35": 15
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 188,
+     "n_rooms": 1,
+     "n_courses": 23,
+     "sum_q": 23,
+     "A_S": 35,
+     "slack": 12
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 7,
+     "n_courses": 33,
+     "sum_q": 33,
+     "A_S": 245,
+     "slack": 212
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 15,
+     "n_courses": 55,
+     "sum_q": 55,
+     "A_S": 525,
+     "slack": 470
+    }
+   ],
+   "n_room_sets_checked": 17,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=188",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 23,
+    "sum_q": 23,
+    "A_S": 35,
+    "slack": 12
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "hard_010_seed_1104.yaml",
+   "source": "artifacts/generated_instances/hard_010_seed_1104.yaml",
+   "sha256": "e9ee5032af6f6d810dbebe0be44acd7a2eaa8cd7a5079f7cb0e0f2d77f1e6600",
+   "n_courses": 55,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 55,
+   "n_rooms": 15,
+   "n_physical_rooms": 15,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 55
+   },
+   "q_c": {
+    "1": 55
+   },
+   "room_capacities": {
+    "50": 10,
+    "80": 4,
+    "160": 1
+   },
+   "available_slots_per_room": {
+    "35": 15
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 160,
+     "n_rooms": 1,
+     "n_courses": 24,
+     "sum_q": 24,
+     "A_S": 35,
+     "slack": 11
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 5,
+     "n_courses": 33,
+     "sum_q": 33,
+     "A_S": 175,
+     "slack": 142
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 15,
+     "n_courses": 55,
+     "sum_q": 55,
+     "A_S": 525,
+     "slack": 470
+    }
+   ],
+   "n_room_sets_checked": 17,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=160",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_011"
+    ],
+    "n_courses": 24,
+    "sum_q": 24,
+    "A_S": 35,
+    "slack": 11
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_004_seed_1040.yaml",
+   "source": "artifacts/generated_instances/medium_004_seed_1040.yaml",
+   "sha256": "090b9a910e206286dd9ef0e3b37deaff7e34cd5cb704277d20c140007597e668",
+   "n_courses": 22,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 22,
+   "n_rooms": 8,
+   "n_physical_rooms": 8,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 22
+   },
+   "q_c": {
+    "1": 22
+   },
+   "room_capacities": {
+    "50": 6,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 8
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 4,
+     "sum_q": 4,
+     "A_S": 70,
+     "slack": 66
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 8,
+     "n_courses": 22,
+     "sum_q": 22,
+     "A_S": 280,
+     "slack": 258
+    }
+   ],
+   "n_room_sets_checked": 10,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80"
+    ],
+    "room_ids": [
+     "BLDG1_004",
+     "BLDG1_005"
+    ],
+    "n_courses": 4,
+    "sum_q": 4,
+    "A_S": 70,
+    "slack": 66
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_004_seed_1041.yaml",
+   "source": "artifacts/generated_instances/medium_004_seed_1041.yaml",
+   "sha256": "fb54ab2b1d994905b6c9af130cfe58d72e6d21ba9ce35c8d63ad6f3345ec8655",
+   "n_courses": 22,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 22,
+   "n_rooms": 8,
+   "n_physical_rooms": 8,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 22
+   },
+   "q_c": {
+    "1": 22
+   },
+   "room_capacities": {
+    "50": 6,
+    "80": 1,
+    "82": 1
+   },
+   "available_slots_per_room": {
+    "35": 8
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 82,
+     "n_rooms": 1,
+     "n_courses": 1,
+     "sum_q": 1,
+     "A_S": 35,
+     "slack": 34
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 3,
+     "sum_q": 3,
+     "A_S": 70,
+     "slack": 67
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 8,
+     "n_courses": 22,
+     "sum_q": 22,
+     "A_S": 280,
+     "slack": 258
+    }
+   ],
+   "n_room_sets_checked": 10,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=82",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 1,
+    "sum_q": 1,
+    "A_S": 35,
+    "slack": 34
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_004_seed_1042.yaml",
+   "source": "artifacts/generated_instances/medium_004_seed_1042.yaml",
+   "sha256": "17e5f471766cc73f32aace68ba4a52c26f9ba472aed32de0ba6078ae8fbdcf70",
+   "n_courses": 22,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 22,
+   "n_rooms": 8,
+   "n_physical_rooms": 8,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 22
+   },
+   "q_c": {
+    "1": 22
+   },
+   "room_capacities": {
+    "50": 7,
+    "86": 1
+   },
+   "available_slots_per_room": {
+    "35": 8
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 86,
+     "n_rooms": 1,
+     "n_courses": 3,
+     "sum_q": 3,
+     "A_S": 35,
+     "slack": 32
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 8,
+     "n_courses": 22,
+     "sum_q": 22,
+     "A_S": 280,
+     "slack": 258
+    }
+   ],
+   "n_room_sets_checked": 9,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=86",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_004"
+    ],
+    "n_courses": 3,
+    "sum_q": 3,
+    "A_S": 35,
+    "slack": 32
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_004_seed_1043.yaml",
+   "source": "artifacts/generated_instances/medium_004_seed_1043.yaml",
+   "sha256": "3e523cc15f4a4057927c6b130cb6ce21431144fd167168a45f6b76995781cc9d",
+   "n_courses": 22,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 22,
+   "n_rooms": 8,
+   "n_physical_rooms": 8,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 22
+   },
+   "q_c": {
+    "1": 22
+   },
+   "room_capacities": {
+    "50": 5,
+    "80": 3
+   },
+   "available_slots_per_room": {
+    "35": 8
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 3,
+     "n_courses": 3,
+     "sum_q": 3,
+     "A_S": 105,
+     "slack": 102
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 8,
+     "n_courses": 22,
+     "sum_q": 22,
+     "A_S": 280,
+     "slack": 258
+    }
+   ],
+   "n_room_sets_checked": 10,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80"
+    ],
+    "room_ids": [
+     "BLDG1_002",
+     "BLDG1_004",
+     "BLDG1_008"
+    ],
+    "n_courses": 3,
+    "sum_q": 3,
+    "A_S": 105,
+    "slack": 102
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_004_seed_1044.yaml",
+   "source": "artifacts/generated_instances/medium_004_seed_1044.yaml",
+   "sha256": "3e97fe4bac780b10131d471c6e1e59fd2300703062c207963ea4b454863edb4a",
+   "n_courses": 22,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 22,
+   "n_rooms": 8,
+   "n_physical_rooms": 8,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 22
+   },
+   "q_c": {
+    "1": 22
+   },
+   "room_capacities": {
+    "50": 7,
+    "80": 1
+   },
+   "available_slots_per_room": {
+    "35": 8
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 1,
+     "n_courses": 2,
+     "sum_q": 2,
+     "A_S": 35,
+     "slack": 33
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 8,
+     "n_courses": 22,
+     "sum_q": 22,
+     "A_S": 280,
+     "slack": 258
+    }
+   ],
+   "n_room_sets_checked": 9,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 2,
+    "sum_q": 2,
+    "A_S": 35,
+    "slack": 33
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_005_seed_1050.yaml",
+   "source": "artifacts/generated_instances/medium_005_seed_1050.yaml",
+   "sha256": "525ae515f292358e18bc63c44ad87b9bb7dfe0f2ac0623acc153ea382d9778fc",
+   "n_courses": 28,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 28,
+   "n_rooms": 9,
+   "n_physical_rooms": 9,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 28
+   },
+   "q_c": {
+    "1": 28
+   },
+   "room_capacities": {
+    "50": 8,
+    "91": 1
+   },
+   "available_slots_per_room": {
+    "35": 9
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 91,
+     "n_rooms": 1,
+     "n_courses": 7,
+     "sum_q": 7,
+     "A_S": 35,
+     "slack": 28
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 9,
+     "n_courses": 28,
+     "sum_q": 28,
+     "A_S": 315,
+     "slack": 287
+    }
+   ],
+   "n_room_sets_checked": 10,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=91",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 7,
+    "sum_q": 7,
+    "A_S": 35,
+    "slack": 28
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_005_seed_1051.yaml",
+   "source": "artifacts/generated_instances/medium_005_seed_1051.yaml",
+   "sha256": "de217a3bdd0b282b1502099a1b08d86d9af5a08cd6657d614bc56b3f016fd902",
+   "n_courses": 28,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 28,
+   "n_rooms": 9,
+   "n_physical_rooms": 9,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 28
+   },
+   "q_c": {
+    "1": 28
+   },
+   "room_capacities": {
+    "50": 5,
+    "80": 3,
+    "106": 1
+   },
+   "available_slots_per_room": {
+    "35": 9
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 106,
+     "n_rooms": 1,
+     "n_courses": 2,
+     "sum_q": 2,
+     "A_S": 35,
+     "slack": 33
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 5,
+     "sum_q": 5,
+     "A_S": 140,
+     "slack": 135
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 9,
+     "n_courses": 28,
+     "sum_q": 28,
+     "A_S": 315,
+     "slack": 287
+    }
+   ],
+   "n_room_sets_checked": 11,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=106",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_002"
+    ],
+    "n_courses": 2,
+    "sum_q": 2,
+    "A_S": 35,
+    "slack": 33
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_005_seed_1052.yaml",
+   "source": "artifacts/generated_instances/medium_005_seed_1052.yaml",
+   "sha256": "93f4113fa85280e7c3d97c87a9faceaebd3bb785ea42314f382b872b3c2e33ac",
+   "n_courses": 28,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 28,
+   "n_rooms": 9,
+   "n_physical_rooms": 9,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 28
+   },
+   "q_c": {
+    "1": 28
+   },
+   "room_capacities": {
+    "50": 7,
+    "80": 2
+   },
+   "available_slots_per_room": {
+    "35": 9
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 5,
+     "sum_q": 5,
+     "A_S": 70,
+     "slack": 65
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 9,
+     "n_courses": 28,
+     "sum_q": 28,
+     "A_S": 315,
+     "slack": 287
+    }
+   ],
+   "n_room_sets_checked": 11,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80"
+    ],
+    "room_ids": [
+     "BLDG1_007",
+     "BLDG1_009"
+    ],
+    "n_courses": 5,
+    "sum_q": 5,
+    "A_S": 70,
+    "slack": 65
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_005_seed_1053.yaml",
+   "source": "artifacts/generated_instances/medium_005_seed_1053.yaml",
+   "sha256": "b2ccbdd6eef1b721aff63fea4323c3189a44f866e9d02f600a83130af8415198",
+   "n_courses": 28,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 28,
+   "n_rooms": 9,
+   "n_physical_rooms": 9,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 28
+   },
+   "q_c": {
+    "1": 28
+   },
+   "room_capacities": {
+    "50": 8,
+    "129": 1
+   },
+   "available_slots_per_room": {
+    "35": 9
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 129,
+     "n_rooms": 1,
+     "n_courses": 4,
+     "sum_q": 4,
+     "A_S": 35,
+     "slack": 31
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 9,
+     "n_courses": 28,
+     "sum_q": 28,
+     "A_S": 315,
+     "slack": 287
+    }
+   ],
+   "n_room_sets_checked": 10,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=129",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_006"
+    ],
+    "n_courses": 4,
+    "sum_q": 4,
+    "A_S": 35,
+    "slack": 31
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_005_seed_1054.yaml",
+   "source": "artifacts/generated_instances/medium_005_seed_1054.yaml",
+   "sha256": "7d57e9d07e426e7e528fda0eca33178f7ea22f0b78809e389d4c28412b6c0f43",
+   "n_courses": 28,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 28,
+   "n_rooms": 9,
+   "n_physical_rooms": 9,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 28
+   },
+   "q_c": {
+    "1": 28
+   },
+   "room_capacities": {
+    "50": 8,
+    "86": 1
+   },
+   "available_slots_per_room": {
+    "35": 9
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 86,
+     "n_rooms": 1,
+     "n_courses": 3,
+     "sum_q": 3,
+     "A_S": 35,
+     "slack": 32
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 9,
+     "n_courses": 28,
+     "sum_q": 28,
+     "A_S": 315,
+     "slack": 287
+    }
+   ],
+   "n_room_sets_checked": 10,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=86",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_008"
+    ],
+    "n_courses": 3,
+    "sum_q": 3,
+    "A_S": 35,
+    "slack": 32
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_006_seed_1060.yaml",
+   "source": "artifacts/generated_instances/medium_006_seed_1060.yaml",
+   "sha256": "00f6654b72bb8980c68f5f1780a856de1eead146e1b2cdcb693256ce4571708f",
+   "n_courses": 32,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 32,
+   "n_rooms": 10,
+   "n_physical_rooms": 10,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 32
+   },
+   "q_c": {
+    "1": 32
+   },
+   "room_capacities": {
+    "50": 8,
+    "80": 1,
+    "88": 1
+   },
+   "available_slots_per_room": {
+    "35": 10
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 88,
+     "n_rooms": 1,
+     "n_courses": 1,
+     "sum_q": 1,
+     "A_S": 35,
+     "slack": 34
+    },
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 2,
+     "n_courses": 4,
+     "sum_q": 4,
+     "A_S": 70,
+     "slack": 66
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 10,
+     "n_courses": 32,
+     "sum_q": 32,
+     "A_S": 350,
+     "slack": 318
+    }
+   ],
+   "n_room_sets_checked": 12,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=88",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_001"
+    ],
+    "n_courses": 1,
+    "sum_q": 1,
+    "A_S": 35,
+    "slack": 34
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_006_seed_1061.yaml",
+   "source": "artifacts/generated_instances/medium_006_seed_1061.yaml",
+   "sha256": "32e7872aab09c8b4a77124c564d70fd0b52b8eb67049e9abf6555bb5715a8963",
+   "n_courses": 32,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 32,
+   "n_rooms": 10,
+   "n_physical_rooms": 10,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 32
+   },
+   "q_c": {
+    "1": 32
+   },
+   "room_capacities": {
+    "50": 9,
+    "101": 1
+   },
+   "available_slots_per_room": {
+    "35": 10
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 101,
+     "n_rooms": 1,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 35,
+     "slack": 26
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 10,
+     "n_courses": 32,
+     "sum_q": 32,
+     "A_S": 350,
+     "slack": 318
+    }
+   ],
+   "n_room_sets_checked": 11,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=101",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_006"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 35,
+    "slack": 26
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_006_seed_1062.yaml",
+   "source": "artifacts/generated_instances/medium_006_seed_1062.yaml",
+   "sha256": "6ca4bb3113d2e5b95f48d35369f19fcbf04d9eadd5771c1ba667caa127b380b5",
+   "n_courses": 32,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 32,
+   "n_rooms": 10,
+   "n_physical_rooms": 10,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 32
+   },
+   "q_c": {
+    "1": 32
+   },
+   "room_capacities": {
+    "50": 7,
+    "80": 3
+   },
+   "available_slots_per_room": {
+    "35": 10
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 3,
+     "n_courses": 4,
+     "sum_q": 4,
+     "A_S": 105,
+     "slack": 101
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 10,
+     "n_courses": 32,
+     "sum_q": 32,
+     "A_S": 350,
+     "slack": 318
+    }
+   ],
+   "n_room_sets_checked": 12,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80"
+    ],
+    "room_ids": [
+     "BLDG1_004",
+     "BLDG1_007",
+     "BLDG1_010"
+    ],
+    "n_courses": 4,
+    "sum_q": 4,
+    "A_S": 105,
+    "slack": 101
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_006_seed_1063.yaml",
+   "source": "artifacts/generated_instances/medium_006_seed_1063.yaml",
+   "sha256": "2bd52e2e43b3c0bd35c5cdac3511812e5d99146174451984b042d11cf650e48c",
+   "n_courses": 32,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 32,
+   "n_rooms": 10,
+   "n_physical_rooms": 10,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 32
+   },
+   "q_c": {
+    "1": 32
+   },
+   "room_capacities": {
+    "50": 9,
+    "101": 1
+   },
+   "available_slots_per_room": {
+    "35": 10
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 101,
+     "n_rooms": 1,
+     "n_courses": 9,
+     "sum_q": 9,
+     "A_S": 35,
+     "slack": 26
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 10,
+     "n_courses": 32,
+     "sum_q": 32,
+     "A_S": 350,
+     "slack": 318
+    }
+   ],
+   "n_room_sets_checked": 11,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=101",
+     "single_room"
+    ],
+    "room_ids": [
+     "BLDG1_010"
+    ],
+    "n_courses": 9,
+    "sum_q": 9,
+    "A_S": 35,
+    "slack": 26
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  },
+  {
+   "file": "medium_006_seed_1064.yaml",
+   "source": "artifacts/generated_instances/medium_006_seed_1064.yaml",
+   "sha256": "7695c0713553910727f4ebdf00f01e3d8c10e489127ad5c55e70ff3f3f1e7c25",
+   "n_courses": 32,
+   "n_remote_courses_excluded": 0,
+   "n_courses_with_rooms_outside_U_excluded": 0,
+   "n_courses_checked": 32,
+   "n_rooms": 10,
+   "n_physical_rooms": 10,
+   "n_slots": 35,
+   "slot_minutes": {
+    "90": 35
+   },
+   "slot_didactic_minutes": {
+    "45": 35
+   },
+   "required_didactic_minutes": {
+    "45": 32
+   },
+   "q_c": {
+    "1": 32
+   },
+   "room_capacities": {
+    "50": 6,
+    "80": 4
+   },
+   "available_slots_per_room": {
+    "35": 10
+   },
+   "eligibility_is_capacity_only": true,
+   "courses_with_no_admissible_room": [],
+   "courses_with_no_candidate_slot": [],
+   "capacity_ladder": [
+    {
+     "capacity_at_least": 80,
+     "n_rooms": 4,
+     "n_courses": 4,
+     "sum_q": 4,
+     "A_S": 140,
+     "slack": 136
+    },
+    {
+     "capacity_at_least": 50,
+     "n_rooms": 10,
+     "n_courses": 32,
+     "sum_q": 32,
+     "A_S": 350,
+     "slack": 318
+    }
+   ],
+   "n_room_sets_checked": 12,
+   "tightest_listed_set": {
+    "families": [
+     "capacity>=80"
+    ],
+    "room_ids": [
+     "BLDG1_002",
+     "BLDG1_004",
+     "BLDG1_007",
+     "BLDG1_008"
+    ],
+    "n_courses": 4,
+    "sum_q": 4,
+    "A_S": 140,
+    "slack": 136
+   },
+   "max_deficit_over_all_room_subsets": 0,
+   "fails": false,
+   "failing_sets": []
+  }
+ ]
+}

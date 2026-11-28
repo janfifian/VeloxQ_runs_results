@@ -1,0 +1,12 @@
+=== 2026-11-27T18:49:30+01:00 check: code 8acb11f, --out artifacts\campaign\milp_3studies_12h --instance-files artifacts\3studies\3_studies_instance.yaml --objective-mode weighted_sum --threads 14 --mip-gap 0 --time-limit 43200 --snapshot-every 1800 --snapshot-at 5067 5476 7081
+1 instances, registry checked; code campaign-2026-10-qubo-61-g8acb11f
+  3_studies_instance.yaml  ->  .\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_solution.yaml
+dry run: nothing launched; first command:
+  python .\scripts\benchmark_pipeline.py .\artifacts\3studies\3_studies_instance.yaml --run-mip --solve-time-stage --verify --objective-mode weighted_sum --gurobi-threads 14 --output-prefix .\artifacts\campaign\milp_3studies_12h\production\3_studies_instance --gurobi-mip-gap 0.0 --time-limit-phase2 43200.0 --snapshot-every 1800.0 --snapshot-at 5067.0 5476.0 7081.0
+=== 2026-11-27T18:49:46+01:00 start: code 8acb11f, --out artifacts\campaign\milp_3studies_12h --instance-files artifacts\3studies\3_studies_instance.yaml --objective-mode weighted_sum --threads 14 --mip-gap 0 --time-limit 43200 --snapshot-every 1800 --snapshot-at 5067 5476 7081
+1 instances, registry checked; code campaign-2026-10-qubo-61-g8acb11f
+  3_studies_instance.yaml  ->  .\artifacts\campaign\milp_3studies_12h\production\3_studies_instance_MIP_solution.yaml
+[1/1] 3_studies_instance.yaml: running ...
+[1/1] 3_studies_instance.yaml: TIME_LIMIT, objective -8755.0, gap 0.5160479725870931; first incumbent 22.6 s into the solve (objective 13573.0, verifier True); final verifier True; call 44279.219 s
+campaign finished in 44279 s; summary: .\artifacts\campaign\milp_3studies_12h\summary.csv
+=== 2026-11-28T07:07:46+01:00 ended, exit code 0

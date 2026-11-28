@@ -1,0 +1,225 @@
+[
+ {
+  "file": "3_studies_instance_MIP_snapshot_1800s.sol",
+  "marks": [
+   1800.0
+  ],
+  "incumbent": 89,
+  "found_s": 1751.265,
+  "gurobi_objective": -8460.0,
+  "lessons": 130,
+  "full": true,
+  "statuses": {
+   "time_core": true,
+   "room_rows": true,
+   "v_zero": true,
+   "rooms": true,
+   "policy_rules": true,
+   "extra_rules": true,
+   "full": true,
+   "pr5": true,
+   "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+  },
+  "terms": {
+   "satisfaction": -10160,
+   "idle": 1935.0,
+   "days": 60.0,
+   "time_of_day": -295.0
+  },
+  "terms_sum": -8460.0
+ },
+ {
+  "file": "3_studies_instance_MIP_snapshot_3600s.sol",
+  "marks": [
+   3600.0
+  ],
+  "incumbent": 99,
+  "found_s": 3021.276,
+  "gurobi_objective": -8638.0,
+  "lessons": 130,
+  "full": true,
+  "statuses": {
+   "time_core": true,
+   "room_rows": true,
+   "v_zero": true,
+   "rooms": true,
+   "policy_rules": true,
+   "extra_rules": true,
+   "full": true,
+   "pr5": true,
+   "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+  },
+  "terms": {
+   "satisfaction": -10340,
+   "idle": 1950.0,
+   "days": 57.0,
+   "time_of_day": -305.0
+  },
+  "terms_sum": -8638.0
+ },
+ {
+  "file": "3_studies_instance_MIP_snapshot_5067s.sol",
+  "marks": [
+   5067.0,
+   5400.0,
+   5476.0
+  ],
+  "incumbent": 106,
+  "found_s": 4397.879,
+  "gurobi_objective": -8705.0,
+  "lessons": 130,
+  "full": true,
+  "statuses": {
+   "time_core": true,
+   "room_rows": true,
+   "v_zero": true,
+   "rooms": true,
+   "policy_rules": true,
+   "extra_rules": true,
+   "full": true,
+   "pr5": true,
+   "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+  },
+  "terms": {
+   "satisfaction": -10340,
+   "idle": 1890.0,
+   "days": 60.0,
+   "time_of_day": -315.0
+  },
+  "terms_sum": -8705.0
+ },
+ {
+  "file": "3_studies_instance_MIP_snapshot_7081s.sol",
+  "marks": [
+   7081.0,
+   7200.0
+  ],
+  "incumbent": 107,
+  "found_s": 6515.252,
+  "gurobi_objective": -8710.0,
+  "lessons": 130,
+  "full": true,
+  "statuses": {
+   "time_core": true,
+   "room_rows": true,
+   "v_zero": true,
+   "rooms": true,
+   "policy_rules": true,
+   "extra_rules": true,
+   "full": true,
+   "pr5": true,
+   "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+  },
+  "terms": {
+   "satisfaction": -10340,
+   "idle": 1890.0,
+   "days": 60.0,
+   "time_of_day": -320.0
+  },
+  "terms_sum": -8710.0
+ },
+ {
+  "file": "3_studies_instance_MIP_snapshot_9000s.sol",
+  "marks": [
+   9000.0
+  ],
+  "incumbent": 110,
+  "found_s": 7689.253,
+  "gurobi_objective": -8730.0,
+  "lessons": 130,
+  "full": true,
+  "statuses": {
+   "time_core": true,
+   "room_rows": true,
+   "v_zero": true,
+   "rooms": true,
+   "policy_rules": true,
+   "extra_rules": true,
+   "full": true,
+   "pr5": true,
+   "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+  },
+  "terms": {
+   "satisfaction": -10340,
+   "idle": 1890.0,
+   "days": 60.0,
+   "time_of_day": -340.0
+  },
+  "terms_sum": -8730.0
+ },
+ {
+  "file": "3_studies_instance_MIP_snapshot_10800s.sol",
+  "marks": [
+   10800.0,
+   12600.0
+  ],
+  "incumbent": 113,
+  "found_s": 10661.116,
+  "gurobi_objective": -8750.0,
+  "lessons": 130,
+  "full": true,
+  "statuses": {
+   "time_core": true,
+   "room_rows": true,
+   "v_zero": true,
+   "rooms": true,
+   "policy_rules": true,
+   "extra_rules": true,
+   "full": true,
+   "pr5": true,
+   "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+  },
+  "terms": {
+   "satisfaction": -10340,
+   "idle": 1890.0,
+   "days": 60.0,
+   "time_of_day": -360.0
+  },
+  "terms_sum": -8750.0
+ },
+ {
+  "file": "3_studies_instance_MIP_snapshot_14400s.sol",
+  "marks": [
+   14400.0,
+   16200.0,
+   18000.0,
+   19800.0,
+   21600.0,
+   23400.0,
+   25200.0,
+   27000.0,
+   28800.0,
+   30600.0,
+   32400.0,
+   34200.0,
+   36000.0,
+   37800.0,
+   39600.0,
+   41400.0,
+   43200.0
+  ],
+  "incumbent": 114,
+  "found_s": 13204.132,
+  "gurobi_objective": -8755.0,
+  "lessons": 130,
+  "full": true,
+  "statuses": {
+   "time_core": true,
+   "room_rows": true,
+   "v_zero": true,
+   "rooms": true,
+   "policy_rules": true,
+   "extra_rules": true,
+   "full": true,
+   "pr5": true,
+   "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+  },
+  "terms": {
+   "satisfaction": -10340,
+   "idle": 1890.0,
+   "days": 60.0,
+   "time_of_day": -365.0
+  },
+  "terms_sum": -8755.0
+ }
+]

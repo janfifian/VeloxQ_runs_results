@@ -1,0 +1,13 @@
+﻿=== 3_studies repair of the 5 VeloxQ answers: attempt 1 started 2026-10-19 16:57:35
+[S3] 5 VeloxQ timetables to repair -> C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq_3studies_ls\S3_room_set_rows
+[S3 1/5] 3_studies_instance rep 1: violations 226 -> 1, all checks False, 1649.396 s
+[S3 2/5] 3_studies_instance rep 2: violations 206 -> 3, all checks False, 1118.657 s
+[S3 3/5] 3_studies_instance rep 3: violations 212 -> 2, all checks False, 1575.689 s
+[S3 4/5] 3_studies_instance rep 4: violations 218 -> 0, all checks True, 1665.952 s
+[S3 5/5] 3_studies_instance rep 5: violations 205 -> 5, all checks False, 1414.572 s
+=== 3_studies repair of the 5 VeloxQ answers: ended 2026-10-19 19:01:23; exit code 0
+=== 3_studies repair from an empty timetable: attempt 1 started 2026-10-19 19:01:23
+[S3] 1 empty timetables to repair -> C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq_3studies_ls\S3_room_set_rows_empty_start
+[S3 1/1] 3_studies_instance rep 0: violations 130 -> 0, all checks True, 1815.096 s
+=== 3_studies repair from an empty timetable: ended 2026-10-19 19:31:38; exit code 0
+=== 3_studies repairs: all ended 2026-10-19 19:31:38

@@ -1,0 +1,4 @@
+instance,encoding,qubo_config,nonzero_h,nonzero_J,ising_dynamic_range,scale_factor,smallest_scaled_coefficient,error_level,share_below_error_level,share_of_J_below_error_level
+easy_000_seed_1000,default,penalty_profile=sufficient,1210,10035,14831616.0,5013504.0,7.47979856004902e-08,0.01,0.6545131169408626,0.6791230692575984
+easy_000_seed_1000,presolved,penalty_profile=sufficient,650,5275,84509.33333333333,9792.75,3.829363559776365e-05,0.01,0.13248945147679325,0.12322274881516587
+easy_000_seed_1000,feasibility,penalty_profile=sufficient,320,4270,41587.0,9792.0,7.659313725490196e-05,0.01,0.0392156862745098,0.040983606557377046

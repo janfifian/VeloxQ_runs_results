@@ -1,0 +1,916 @@
+schema_version: 1
+metadata:
+  certificate: 'feasible timetable: MILP feasibility-only plan with an exact room assignment; remote lessons need no physical room and carry none'
+  instance_sha256: 6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b
+  code_version:
+    commit: 92e23f2a0cae2f51ec2c0b52e5e7c1f6c5660e93
+    tags_at_commit: []
+    describe: frozen-20260924-1155-39-g92e23f2
+    dirty: false
+    modified_tracked_files: []
+    n_modified_tracked_files: 0
+  statuses:
+    time_core: true
+    room_rows: true
+    v_zero: true
+    rooms: true
+    policy_rules: true
+    extra_rules: true
+    full: true
+    profile: time core + room rows per 15-min cell + exact rooms + 15-min break + PR5
+lessons:
+- l_idx: 0
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 13:30-16:15
+  dayname: Środa
+- l_idx: 1
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grA
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 08:30-10:15
+  dayname: Środa
+- l_idx: 2
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grB
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 10:45-12:30
+  dayname: Środa
+- l_idx: 3
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Projekt_grA
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 17:15-18:00
+  dayname: Środa
+- l_idx: 4
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Projekt_grB
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 16:30-17:15
+  dayname: Poniedziałek
+- l_idx: 5
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 16:15-18:00
+  dayname: Wtorek
+- l_idx: 6
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 11:00-12:45
+  dayname: Poniedziałek
+- l_idx: 7
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 19:00-19:45
+  dayname: Czwartek
+- l_idx: 8
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 18:45-19:30
+  dayname: Środa
+- l_idx: 9
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grC
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 18:00-18:45
+  dayname: Czwartek
+- l_idx: 10
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 17:45-19:30
+  dayname: Piątek
+- l_idx: 11
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 08:30-09:15
+  dayname: Czwartek
+- l_idx: 12
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grA
+  lecturer_unique_id: Instytut_D_Lecturer26_L_44
+  slot_str: 14:45-17:30
+  dayname: Piątek
+- l_idx: 13
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grB
+  lecturer_unique_id: Instytut_D_Lecturer26_L_44
+  slot_str: 08:45-11:30
+  dayname: Piątek
+- l_idx: 14
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0029 00_Course 38_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer30_L_43
+  slot_str: 12:15-14:00
+  dayname: Czwartek
+- l_idx: 15
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0016 00_Course 36_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 14:15-17:00
+  dayname: Czwartek
+- l_idx: 16
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0016 00_Course 36_Programme PB Ist (2022)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 18:15-19:00
+  dayname: Poniedziałek
+- l_idx: 17
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Laboratorium_grA
+  lecturer_unique_id: Instytut_D_Lecturer25_L_45
+  slot_str: 10:00-11:45
+  dayname: Wtorek
+- l_idx: 18
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Laboratorium_grB
+  lecturer_unique_id: Instytut_D_Lecturer25_L_45
+  slot_str: 12:15-14:00
+  dayname: Wtorek
+- l_idx: 19
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_D_Lecturer25_L_45
+  slot_str: 08:15-09:00
+  dayname: Poniedziałek
+- l_idx: 20
+  course_unique_id: FTIMS_PB_Ist_2022_sem4_gr1__00 00 0031 00_Course 19_Programme PB Ist (2022)__Ćwiczenia
+  lecturer_unique_id: Studium_Języków_CJ_PŁ_FTIMS_PB_Ist_2022_FTIMS_PB_Ist_2022_4_FTIMS_PB_Ist_2022_sem4_gr1_00 00 0031 00_Course 19_Programme PB Ist (2022)_Ćwiczenia
+  slot_str: 12:00-13:45
+  dayname: Piątek
+- l_idx: 21
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Projekt_grA
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 09:15-10:00
+  dayname: Wtorek
+- l_idx: 22
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Projekt_grB
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 13:15-14:00
+  dayname: Wtorek
+- l_idx: 23
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 18:00-19:45
+  dayname: Czwartek
+- l_idx: 24
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr1
+  lecturer_unique_id: Instytut_C_Lecturer04_L_13
+  slot_str: 08:15-12:00
+  dayname: Poniedziałek
+- l_idx: 25
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr2
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 14:30-18:15
+  dayname: Poniedziałek
+- l_idx: 26
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr3
+  lecturer_unique_id: Instytut_C_Lecturer35_L_17
+  slot_str: 16:15-20:00
+  dayname: Wtorek
+- l_idx: 27
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr4
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 16:15-20:00
+  dayname: Piątek
+- l_idx: 28
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0017 00_Course 44_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer35_L_17
+  slot_str: 11:15-13:00
+  dayname: Wtorek
+- l_idx: 29
+  course_unique_id: FTIMS_PB_Ist_2022_sem6_gr1__00 00 0043 00_Course 20_Programme PB Ist (2022)__Wykład
+  lecturer_unique_id: Instytut_A_Lecturer06_L_46
+  slot_str: 08:15-10:00
+  dayname: Piątek
+- l_idx: 30
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0005 00_Course 23_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 17:30-19:15
+  dayname: Czwartek
+- l_idx: 31
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0005 00_Course 23_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 11:00-12:45
+  dayname: Środa
+- l_idx: 32
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grA
+  lecturer_unique_id: Instytut_C_Lecturer18_L_10
+  slot_str: 12:15-14:00
+  dayname: Wtorek
+- l_idx: 33
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grC
+  lecturer_unique_id: Instytut_F_Lecturer20_L_38
+  slot_str: 09:00-10:45
+  dayname: Piątek
+- l_idx: 34
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0038 00_Course 14_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_E_Lecturer23_L_36
+  slot_str: 08:15-10:00
+  dayname: Środa
+- l_idx: 35
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0047 00_Course 21_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 12:15-14:00
+  dayname: Poniedziałek
+- l_idx: 36
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0047 00_Course 21_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 15:15-17:00
+  dayname: Środa
+- l_idx: 37
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer39_L_39
+  slot_str: 09:15-10:00
+  dayname: Poniedziałek
+- l_idx: 38
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grC
+  lecturer_unique_id: Instytut_C_Lecturer39_L_39
+  slot_str: 18:45-19:30
+  dayname: Środa
+- l_idx: 39
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Projekt_grA
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 16:00-16:45
+  dayname: Poniedziałek
+- l_idx: 40
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Projekt_grC
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 08:15-09:00
+  dayname: Poniedziałek
+- l_idx: 41
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 15:00-15:45
+  dayname: Poniedziałek
+- l_idx: 42
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0049 00_Course 25_Programme PB Ist (2024)__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 16:15-18:00
+  dayname: Wtorek
+- l_idx: 43
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0049 00_Course 25_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Instytut_F_Lecturer21_L_41
+  slot_str: 11:15-14:00
+  dayname: Czwartek
+- l_idx: 44
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__E-learning
+  lecturer_unique_id: Instytut_D_Lecturer32_L_37
+  slot_str: 08:45-09:30
+  dayname: Wtorek
+- l_idx: 45
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grA
+  lecturer_unique_id: Instytut_D_Lecturer22_L_42
+  slot_str: 18:15-20:00
+  dayname: Piątek
+- l_idx: 46
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grC
+  lecturer_unique_id: Instytut_D_Lecturer32_L_37
+  slot_str: 17:15-19:00
+  dayname: Poniedziałek
+- l_idx: 47
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0030 00_Course 32_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Studium_Języków_CJ_PŁ_FTIMS_PB_Ist_2024_FTIMS_PB_Ist_2024_2_FTIMS_PB_Ist_2024_sem2_gr1_00 00 0030 00_Course 32_Programme PB Ist (2024)_Ćwiczenia
+  slot_str: 15:00-16:45
+  dayname: Piątek
+- l_idx: 48
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr1__00 00 0050 00_Course 27_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Studium_Sportu_CS_PŁ_FTIMS_PB_Ist_2024_FTIMS_PB_Ist_2024_2_FTIMS_PB_Ist_2024_sem2_gr1_00 00 0050 00_Course 27_Programme PB Ist (2024)_Ćwiczenia
+  slot_str: 11:30-13:15
+  dayname: Piątek
+- l_idx: 49
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grB
+  lecturer_unique_id: Instytut_C_Lecturer18_L_10
+  slot_str: 14:15-16:00
+  dayname: Środa
+- l_idx: 50
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer39_L_39
+  slot_str: 12:30-13:15
+  dayname: Wtorek
+- l_idx: 51
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0015 00_Course 28_Programme PB Ist (2024)__Projekt_grB
+  lecturer_unique_id: Instytut_C_Lecturer48_L_26
+  slot_str: 09:45-10:30
+  dayname: Poniedziałek
+- l_idx: 52
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0049 00_Course 25_Programme PB Ist (2024)__Ćwiczenia
+  lecturer_unique_id: Instytut_F_Lecturer21_L_41
+  slot_str: 08:15-11:00
+  dayname: Czwartek
+- l_idx: 53
+  course_unique_id: FTIMS_PB_Ist_2024_sem2_gr2__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grB
+  lecturer_unique_id: Instytut_D_Lecturer22_L_42
+  slot_str: 16:15-18:00
+  dayname: Środa
+- l_idx: 54
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0034 00_Course 40_Programme PA IIst (2023), spec. SA__Laboratorium
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 12:00-13:45
+  dayname: Wtorek
+- l_idx: 55
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0034 00_Course 40_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 16:15-18:00
+  dayname: Wtorek
+- l_idx: 56
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer28_L_16
+  slot_str: 12:15-14:00
+  dayname: Środa
+- l_idx: 57
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer28_L_16
+  slot_str: 10:15-12:00
+  dayname: Środa
+- l_idx: 58
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0019 00_Course 39_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 08:15-10:00
+  dayname: Środa
+- l_idx: 59
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0019 00_Course 39_Programme PA IIst (2023), spec. SA__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 12:00-13:45
+  dayname: Piątek
+- l_idx: 60
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0009 00_Course 09_Programme PA IIst (2023), spec. SA__Wykład_grAD
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 15:15-20:00
+  dayname: Środa
+- l_idx: 61
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0009 00_Course 09_Programme PA IIst (2023), spec. SA__Wykład_grZRWFIU
+  lecturer_unique_id: Instytut_C_Lecturer03_L_9
+  slot_str: 15:15-20:00
+  dayname: Poniedziałek
+- l_idx: 62
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0032 00_Course 05_Programme PA IIst (2023), spec. SA__Projekt
+  lecturer_unique_id: Instytut_C_Lecturer03_L_9
+  slot_str: 14:15-20:00
+  dayname: Czwartek
+- l_idx: 63
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0035 00_Course 16_Programme PA IIst (2023), spec. SA__Projekt
+  lecturer_unique_id: Instytut_C_Lecturer33_L_27
+  slot_str: 08:15-14:00
+  dayname: Czwartek
+- l_idx: 64
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA__Ćwiczenia_grCJ
+  lecturer_unique_id: Studium_Języków_CJ_PŁ_FTIMS_PA_IIst_2023_FTIMS_PA_IIst_2023_SA_2_FTIMS_PA_IIst_2023_SA_sem2_gr1_00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA_Ćwiczenia_grCJ
+  slot_str: 14:15-17:00
+  dayname: Piątek
+- l_idx: 65
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA__Ćwiczenia_grWYDZ
+  lecturer_unique_id: Instytut_C_Lecturer45_L_47
+  slot_str: 17:15-20:00
+  dayname: Piątek
+- l_idx: 66
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0022 00_Course 10_Programme PA IIst (2023), spec. SA__Seminarium_gr1
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 10:15-13:00
+  dayname: Piątek
+- l_idx: 67
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0022 00_Course 10_Programme PA IIst (2023), spec. SA__Seminarium_gr2
+  lecturer_unique_id: Instytut_C_Lecturer14_L_12
+  slot_str: 12:15-15:00
+  dayname: Poniedziałek
+- l_idx: 68
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0053 00_Course 04_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 08:15-09:00
+  dayname: Poniedziałek
+- l_idx: 69
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0051 00_Course 12_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_B_Lecturer07_L_49
+  slot_str: 16:15-18:00
+  dayname: Piątek
+- l_idx: 70
+  course_unique_id: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0021 00_Course 02_Programme PA IIst (2023), spec. SA__Wykład
+  lecturer_unique_id: Instytut_A_Lecturer16_L_48
+  slot_str: 18:15-20:00
+  dayname: Piątek
+- l_idx: 71
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 14:00-14:45
+  dayname: Piątek
+- l_idx: 72
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer12_L_30
+  slot_str: 13:45-15:30
+  dayname: Poniedziałek
+- l_idx: 73
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer27_L_25
+  slot_str: 08:15-10:00
+  dayname: Wtorek
+- l_idx: 74
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SB__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer43_L_1
+  slot_str: 12:30-14:15
+  dayname: Środa
+- l_idx: 75
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0052 00_Course 34_Programme PA Ist (2023), spec. SB__E-learning
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 19:15-20:00
+  dayname: Czwartek
+- l_idx: 76
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0026 00_Course 07_Programme PA Ist (2023), spec. SB__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 14:45-16:30
+  dayname: Czwartek
+- l_idx: 77
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0026 00_Course 07_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 11:30-13:15
+  dayname: Wtorek
+- l_idx: 78
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0023 00_Course 06_Programme PA Ist (2023), spec. SB__Projekt
+  lecturer_unique_id: Instytut_C_Lecturer01_L_22
+  slot_str: 08:15-11:00
+  dayname: Czwartek
+- l_idx: 79
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr1
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 10:30-14:15
+  dayname: Czwartek
+- l_idx: 80
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr2
+  lecturer_unique_id: Instytut_C_Lecturer08_L_24
+  slot_str: 08:15-12:00
+  dayname: Poniedziałek
+- l_idx: 81
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0014 00_Course 48_Programme PA Ist (2023), spec. SB__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer14_L_12
+  slot_str: 15:15-18:00
+  dayname: Poniedziałek
+- l_idx: 82
+  course_unique_id: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0014 00_Course 48_Programme PA Ist (2023), spec. SB__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 10:30-12:15
+  dayname: Piątek
+- l_idx: 83
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer29_L_19
+  slot_str: 09:45-11:30
+  dayname: Piątek
+- l_idx: 84
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grC
+  lecturer_unique_id: Instytut_C_Lecturer27_L_25
+  slot_str: 09:15-11:00
+  dayname: Poniedziałek
+- l_idx: 85
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_D_Lecturer32_L_37
+  slot_str: 18:00-19:45
+  dayname: Środa
+- l_idx: 86
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grC
+  lecturer_unique_id: Instytut_D_Lecturer22_L_42
+  slot_str: 09:00-10:45
+  dayname: Czwartek
+- l_idx: 87
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0013 00_Course 33_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 17:00-18:45
+  dayname: Wtorek
+- l_idx: 88
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0013 00_Course 33_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 16:30-18:15
+  dayname: Czwartek
+- l_idx: 89
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 12:00-13:45
+  dayname: Środa
+- l_idx: 90
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 15:15-17:00
+  dayname: Środa
+- l_idx: 91
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 13:30-15:15
+  dayname: Piątek
+- l_idx: 92
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 16:45-18:30
+  dayname: Środa
+- l_idx: 93
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer31_L_21
+  slot_str: 11:15-13:00
+  dayname: Czwartek
+- l_idx: 94
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer31_L_21
+  slot_str: 11:30-14:15
+  dayname: Poniedziałek
+- l_idx: 95
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0030 00_Course 32_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Studium_Języków_CJ_PŁ_FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_FTIMS_PA_Ist_2023_SC_sem2_gr1_00 00 0030 00_Course 32_Programme PA Ist (2023), spec. SC_Ćwiczenia
+  slot_str: 16:30-18:15
+  dayname: Piątek
+- l_idx: 96
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Studium_Sportu_CS_PŁ_FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_FTIMS_PA_Ist_2023_SC_sem2_gr1_00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC_Ćwiczenia
+  slot_str: 11:45-13:30
+  dayname: Wtorek
+- l_idx: 97
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer49_L_7
+  slot_str: 13:00-14:45
+  dayname: Poniedziałek
+- l_idx: 98
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_D_Lecturer32_L_37
+  slot_str: 17:30-19:15
+  dayname: Czwartek
+- l_idx: 99
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grD
+  lecturer_unique_id: Instytut_D_Lecturer22_L_42
+  slot_str: 17:45-19:30
+  dayname: Poniedziałek
+- l_idx: 100
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 14:30-16:15
+  dayname: Poniedziałek
+- l_idx: 101
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 14:30-16:15
+  dayname: Środa
+- l_idx: 102
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer31_L_21
+  slot_str: 17:00-19:45
+  dayname: Poniedziałek
+- l_idx: 103
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 15:15-16:00
+  dayname: Piątek
+- l_idx: 104
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 10:30-11:15
+  dayname: Wtorek
+- l_idx: 105
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 16:45-17:30
+  dayname: Środa
+- l_idx: 106
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer12_L_30
+  slot_str: 11:15-13:00
+  dayname: Poniedziałek
+- l_idx: 107
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer41_L_28
+  slot_str: 08:15-10:00
+  dayname: Wtorek
+- l_idx: 108
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer27_L_25
+  slot_str: 14:45-16:30
+  dayname: Środa
+- l_idx: 109
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer47_L_2
+  slot_str: 13:30-15:15
+  dayname: Czwartek
+- l_idx: 110
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer44_L_32
+  slot_str: 12:00-13:45
+  dayname: Wtorek
+- l_idx: 111
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grC
+  lecturer_unique_id: Instytut_C_Lecturer43_L_1
+  slot_str: 16:30-18:15
+  dayname: Wtorek
+- l_idx: 112
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer44_L_32
+  slot_str: 11:30-13:15
+  dayname: Czwartek
+- l_idx: 113
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0052 00_Course 34_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 09:00-10:45
+  dayname: Piątek
+- l_idx: 114
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0007 00_Course 26_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_D_Lecturer25_L_45
+  slot_str: 17:30-19:15
+  dayname: Poniedziałek
+- l_idx: 115
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 08:30-10:15
+  dayname: Czwartek
+- l_idx: 116
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer19_L_4
+  slot_str: 18:15-20:00
+  dayname: Środa
+- l_idx: 117
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 15:15-17:00
+  dayname: Poniedziałek
+- l_idx: 118
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0004 00_Course 31_Programme PA Ist (2023), spec. SC__Laboratorium
+  lecturer_unique_id: Instytut_C_Lecturer46_L_6
+  slot_str: 15:30-17:15
+  dayname: Czwartek
+- l_idx: 119
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0004 00_Course 31_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer35_L_17
+  slot_str: 09:15-11:00
+  dayname: Środa
+- l_idx: 120
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SC__Seminarium_gr3
+  lecturer_unique_id: Instytut_C_Lecturer05_L_15
+  slot_str: 11:15-15:00
+  dayname: Czwartek
+- l_idx: 121
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SC__Seminarium_gr4
+  lecturer_unique_id: Instytut_C_Lecturer44_L_32
+  slot_str: 16:15-20:00
+  dayname: Wtorek
+- l_idx: 122
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0037 00_Course 18_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer12_L_30
+  slot_str: 18:15-20:00
+  dayname: Poniedziałek
+- l_idx: 123
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0008 00_Course 46_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 12:30-13:15
+  dayname: Piątek
+- l_idx: 124
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0008 00_Course 46_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer17_L_29
+  slot_str: 15:45-17:30
+  dayname: Czwartek
+- l_idx: 125
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grA
+  lecturer_unique_id: Instytut_C_Lecturer09_L_14
+  slot_str: 13:00-15:45
+  dayname: Środa
+- l_idx: 126
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grB
+  lecturer_unique_id: Instytut_C_Lecturer09_L_14
+  slot_str: 13:30-16:15
+  dayname: Piątek
+- l_idx: 127
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer09_L_14
+  slot_str: 10:15-12:00
+  dayname: Wtorek
+- l_idx: 128
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0002 00_Course 47_Programme PA Ist (2023), spec. SC__Wykład
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 08:15-10:00
+  dayname: Wtorek
+- l_idx: 129
+  course_unique_id: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0002 00_Course 47_Programme PA Ist (2023), spec. SC__Ćwiczenia
+  lecturer_unique_id: Instytut_C_Lecturer34_L_8
+  slot_str: 08:15-10:00
+  dayname: Piątek
+room_assignments:
+- l_idx: 0
+  room_unique_id: BB_BB-06
+- l_idx: 1
+  room_unique_id: BB_BB-06
+- l_idx: 2
+  room_unique_id: BB_BB-06
+- l_idx: 3
+  room_unique_id: BB_BB-12
+- l_idx: 4
+  room_unique_id: BB_BB-06
+- l_idx: 5
+  room_unique_id: BB_BB-06
+- l_idx: 6
+  room_unique_id: BB_BB-06
+- l_idx: 7
+  room_unique_id: BA_BA-05
+- l_idx: 8
+  room_unique_id: BB_BB-17
+- l_idx: 9
+  room_unique_id: BA_BA-05
+- l_idx: 10
+  room_unique_id: BB_BB-12
+- l_idx: 11
+  room_unique_id: BA_BA-02
+- l_idx: 12
+  room_unique_id: BB_BB-17
+- l_idx: 13
+  room_unique_id: BA_BA-07
+- l_idx: 14
+  room_unique_id: BB_BB-06
+- l_idx: 15
+  room_unique_id: BB_BB-06
+- l_idx: 16
+  room_unique_id: BB_BB-06
+- l_idx: 20
+  room_unique_id: Centrum Językowe_CJ-FTIMS_PB_Ist_2022_FTIMS_PB_Ist_2022_4_00 00 0031 00_Course 19_Ćwiczenia_FTIMS_PB_Ist_2022_sem4_gr1
+- l_idx: 21
+  room_unique_id: BB_BB-02
+- l_idx: 22
+  room_unique_id: BB_BB-17
+- l_idx: 23
+  room_unique_id: BB_BB-06
+- l_idx: 24
+  room_unique_id: BB_BB-12
+- l_idx: 25
+  room_unique_id: BB_BB-12
+- l_idx: 26
+  room_unique_id: BB_BB-12
+- l_idx: 27
+  room_unique_id: BB_BB-16
+- l_idx: 28
+  room_unique_id: BB_BB-06
+- l_idx: 29
+  room_unique_id: BB_BB-16
+- l_idx: 30
+  room_unique_id: BB_BB-01
+- l_idx: 31
+  room_unique_id: BB_BB-09
+- l_idx: 32
+  room_unique_id: BB_BB-07
+- l_idx: 33
+  room_unique_id: BB_BB-04
+- l_idx: 34
+  room_unique_id: BB_BB-01
+- l_idx: 35
+  room_unique_id: BB_BB-12
+- l_idx: 36
+  room_unique_id: BB_BB-12
+- l_idx: 37
+  room_unique_id: BB_BB-07
+- l_idx: 38
+  room_unique_id: BB_BB-07
+- l_idx: 39
+  room_unique_id: BD_BD-03
+- l_idx: 40
+  room_unique_id: BA_BA-09
+- l_idx: 41
+  room_unique_id: BB_BB-16
+- l_idx: 42
+  room_unique_id: BB_BB-16
+- l_idx: 43
+  room_unique_id: BB_BB-12
+- l_idx: 45
+  room_unique_id: BD_BD-01
+- l_idx: 46
+  room_unique_id: BB_BB-07
+- l_idx: 47
+  room_unique_id: Centrum Językowe_CJ-FTIMS_PB_Ist_2024_FTIMS_PB_Ist_2024_2_00 00 0030 00_Course 32_Ćwiczenia_FTIMS_PB_Ist_2024_sem2_gr1
+- l_idx: 48
+  room_unique_id: Centrum Sportu_CS-FTIMS_PB_Ist_2024_FTIMS_PB_Ist_2024_2_00 00 0050 00_Course 27_Ćwiczenia_FTIMS_PB_Ist_2024_sem2_gr1
+- l_idx: 49
+  room_unique_id: BB_BB-07
+- l_idx: 50
+  room_unique_id: BB_BB-10
+- l_idx: 51
+  room_unique_id: BB_BB-02
+- l_idx: 52
+  room_unique_id: BB_BB-06
+- l_idx: 53
+  room_unique_id: BD_BD-01
+- l_idx: 54
+  room_unique_id: BB_BB-02
+- l_idx: 55
+  room_unique_id: BD_BD-01
+- l_idx: 56
+  room_unique_id: BB_BB-12
+- l_idx: 57
+  room_unique_id: BB_BB-12
+- l_idx: 58
+  room_unique_id: BB_BB-12
+- l_idx: 59
+  room_unique_id: BB_BB-06
+- l_idx: 60
+  room_unique_id: BB_BB-16
+- l_idx: 61
+  room_unique_id: BB_BB-09
+- l_idx: 62
+  room_unique_id: BB_BB-12
+- l_idx: 63
+  room_unique_id: BB_BB-07
+- l_idx: 64
+  room_unique_id: Centrum Językowe_CJ-FTIMS_PA_IIst_2023_FTIMS_PA_IIst_2023_SA_2_FTIMS_PA_IIst_2023_SA_sem2_gr1_00 00 0046 00_Course 45_Ćwiczenia_grCJ
+- l_idx: 65
+  room_unique_id: BB_BB-01
+- l_idx: 66
+  room_unique_id: BB_BB-12
+- l_idx: 67
+  room_unique_id: BB_BB-16
+- l_idx: 68
+  room_unique_id: BB_BB-06
+- l_idx: 69
+  room_unique_id: BE_BE-01
+- l_idx: 70
+  room_unique_id: BD_BD-06
+- l_idx: 71
+  room_unique_id: BA_BA-02
+- l_idx: 72
+  room_unique_id: BB_BB-06
+- l_idx: 73
+  room_unique_id: BB_BB-06
+- l_idx: 74
+  room_unique_id: BB_BB-07
+- l_idx: 76
+  room_unique_id: BB_BB-16
+- l_idx: 77
+  room_unique_id: BB_BB-12
+- l_idx: 78
+  room_unique_id: BB_BB-02
+- l_idx: 79
+  room_unique_id: BB_BB-16
+- l_idx: 80
+  room_unique_id: BB_BB-16
+- l_idx: 81
+  room_unique_id: BB_BB-18
+- l_idx: 82
+  room_unique_id: BB_BB-16
+- l_idx: 83
+  room_unique_id: BA_BA-10
+- l_idx: 84
+  room_unique_id: BA_BA-06
+- l_idx: 85
+  room_unique_id: BB_BB-05
+- l_idx: 86
+  room_unique_id: BB_BB-10
+- l_idx: 87
+  room_unique_id: BB_BB-13
+- l_idx: 88
+  room_unique_id: BB_BB-16
+- l_idx: 89
+  room_unique_id: BB_BB-16
+- l_idx: 90
+  room_unique_id: BB_BB-09
+- l_idx: 91
+  room_unique_id: BB_BB-12
+- l_idx: 92
+  room_unique_id: BB_BB-06
+- l_idx: 93
+  room_unique_id: BB_BB-13
+- l_idx: 94
+  room_unique_id: BB_BB-09
+- l_idx: 95
+  room_unique_id: Centrum Językowe_CJ-FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_00 00 0030 00_Course 32_Ćwiczenia_FTIMS_PA_Ist_2023_SC_sem2_gr1
+- l_idx: 96
+  room_unique_id: Centrum Sportu_CS-FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_00 00 0050 00_Course 27_Ćwiczenia_FTIMS_PA_Ist_2023_SC_sem2_gr1
+- l_idx: 97
+  room_unique_id: BD_BD-01
+- l_idx: 98
+  room_unique_id: BB_BB-07
+- l_idx: 99
+  room_unique_id: BB_BB-05
+- l_idx: 100
+  room_unique_id: BB_BB-15
+- l_idx: 101
+  room_unique_id: BB_BB-18
+- l_idx: 102
+  room_unique_id: BB_BB-16
+- l_idx: 103
+  room_unique_id: BB_BB-05
+- l_idx: 104
+  room_unique_id: BB_BB-03
+- l_idx: 105
+  room_unique_id: BB_BB-18
+- l_idx: 106
+  room_unique_id: BB_BB-18
+- l_idx: 107
+  room_unique_id: BB_BB-12
+- l_idx: 108
+  room_unique_id: BB_BB-15
+- l_idx: 109
+  room_unique_id: BB_BB-09
+- l_idx: 110
+  room_unique_id: BB_BB-05
+- l_idx: 111
+  room_unique_id: BA_BA-07
+- l_idx: 112
+  room_unique_id: BB_BB-09
+- l_idx: 113
+  room_unique_id: BD_BD-01
+- l_idx: 115
+  room_unique_id: BA_BA-05
+- l_idx: 116
+  room_unique_id: BB_BB-02
+- l_idx: 118
+  room_unique_id: BB_BB-17
+- l_idx: 120
+  room_unique_id: BB_BB-18
+- l_idx: 121
+  room_unique_id: BB_BB-09
+- l_idx: 122
+  room_unique_id: BB_BB-12
+- l_idx: 123
+  room_unique_id: BB_BB-16
+- l_idx: 124
+  room_unique_id: BB_BB-13
+- l_idx: 125
+  room_unique_id: BB_BB-02
+- l_idx: 126
+  room_unique_id: BB_BB-07
+- l_idx: 127
+  room_unique_id: BB_BB-16
+- l_idx: 128
+  room_unique_id: BB_BB-16
+- l_idx: 129
+  room_unique_id: BA_BA-02

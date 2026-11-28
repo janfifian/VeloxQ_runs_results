@@ -1,0 +1,11 @@
+QPUs (working graphs as published on 2026-10-10, https://docs.dwavequantum.com/en/latest/quantum_research/solver_properties_specific.html); minorminer 0.2.21, dwave-networkx 0.8.19, networkx 3.6.1:
+  Advantage2_system1   zephyr   Z12  working  4575 qubits  41474 couplers | ideal  4800 /  45864, degree 20 | treewidth <= 202 (verified here; D-Wave's papers: <= 200)
+                       clique embedding K_184 on the ideal graph (chains <= 13); on 2 thinned stand-ins: K_108 (chains <= 14), K_109 (chains <= 13)
+  Advantage2_system2   zephyr   Z12  working  4506 qubits  40302 couplers | ideal  4800 /  45864, degree 20 | treewidth <= 202 (verified here; D-Wave's papers: <= 200)
+                       clique embedding K_184 on the ideal graph (chains <= 13); on 2 thinned stand-ins: K_102 (chains <= 14), K_111 (chains <= 14)
+  Advantage2_system4   zephyr   Z6   working  1202 qubits  10537 couplers | ideal  1248 /  11400, degree 20 | treewidth <= 106 (verified here; D-Wave's papers: <= 104)
+                       clique embedding K_88 on the ideal graph (chains <= 7); on 2 thinned stand-ins: K_73 (chains <= 8), K_70 (chains <= 8)
+  Advantage_system4    pegasus  P16  working  5627 qubits  40279 couplers | ideal  5640 /  40484, degree 15 | treewidth <= 202 (verified here; D-Wave's papers: <= 188)
+                       clique embedding K_180 on the ideal graph (chains <= 17); on 2 thinned stand-ins: K_173 (chains <= 17), K_173 (chains <= 17)
+  Advantage_system6    pegasus  P16  working  5612 qubits  40088 couplers | ideal  5640 /  40484, degree 15 | treewidth <= 202 (verified here; D-Wave's papers: <= 188)
+                       clique embedding K_180 on the ideal graph (chains <= 17); on 2 thinned stand-ins: K_172 (chains <= 17), K_172 (chains <= 17)

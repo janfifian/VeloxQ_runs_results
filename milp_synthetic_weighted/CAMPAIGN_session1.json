@@ -1,0 +1,314 @@
+{
+ "what": "phase-2 MILP on the certified synthetic instances, one process per instance",
+ "started": "2026-10-12T07:08:43+02:00",
+ "settings": {
+  "out": "artifacts\\campaign\\milp_weighted",
+  "instances": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic",
+  "objective_mode": "weighted_sum",
+  "threads": 14,
+  "mip_gap": 0.0,
+  "seed": null,
+  "time_limit": null,
+  "tiers": null,
+  "only": null,
+  "dry_run": false,
+  "summarize_only": false,
+  "allow_uncommitted": false
+ },
+ "environment": {
+  "python_version": "3.13.12",
+  "python_implementation": "CPython",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_processors": 20,
+  "hostname": "FifianJanPC",
+  "timestamp": "2026-10-12T07:08:43+02:00",
+  "git_commit": "48dd5556066a",
+  "git_dirty": true,
+  "code": {
+   "commit": "48dd5556066a4e43fb44b8aa57315cacf31075dc",
+   "tags_at_commit": [
+    "campaign-2026-10"
+   ],
+   "describe": "campaign-2026-10-dirty",
+   "dirty": true,
+   "modified_tracked_files": [
+    "notebooks/velox_vs_gurobi_comparison.ipynb",
+    "scripts/LATO_instructions.txt"
+   ],
+   "n_modified_tracked_files": 2
+  },
+  "packages": {
+   "gurobipy": "12.0.3",
+   "veloxq_sdk": "0.1.dev125+ge290bd081",
+   "dimod": "0.12.21",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "torch": "2.11.0+cpu",
+   "networkx": "3.6.1",
+   "h5py": "3.16.0",
+   "PyYAML": "6.0.3",
+   "gurobi_library": "12.0.3"
+  }
+ },
+ "uncommitted_code": [],
+ "instances": [
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_000_seed_1000.yaml",
+   "sha256": "f1bedbfcb711816cc35db463a4066e798dbe37f7e9cb799bfc4d6853d79bc39c"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_000_seed_1001.yaml",
+   "sha256": "ab0d5a3dedc29a0b6c2d6e8744083f603e68af287ef944874bc7c64f04e42835"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_000_seed_1002.yaml",
+   "sha256": "ab61c345fd083c87c68b665e51b32513beccc9b09a9e76f7262d4ed8cce0db46"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_000_seed_1003.yaml",
+   "sha256": "7bc5bfddb34ad89a1914ed7c1deef224b71436351efe47dfe1d6cf5b2e843e0e"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_000_seed_1004.yaml",
+   "sha256": "b504bd2e19c75b394772d3cdf86b5aadb6e6505dc3f4a2a4a7b30fa6a6724bb1"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_001_seed_1010.yaml",
+   "sha256": "dbc2ed02adcc65ef157605b4a0d343647b7c3459a84ef14dd934dfc6923b48b5"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_001_seed_1011.yaml",
+   "sha256": "b30e7fcf844231a26dc54857125322f9775dcabb4e9fda31bb1e0073406ca9d6"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_001_seed_1012.yaml",
+   "sha256": "8b0adc4e74d62fc4b378864b53cd567c7321d6efcee08b6899cbe0da94bf31bf"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_001_seed_1013.yaml",
+   "sha256": "d4393fb0f8ce095c8825e8bc50fb75b36268e8d71369fde46a88b94e4583ee36"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_001_seed_1014.yaml",
+   "sha256": "9dcc590f8dbdf6cd7233515f5d69dda7afe46a669f299ab5d2d3c83cbe88d44c"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_002_seed_1020.yaml",
+   "sha256": "52830a767da0cb9d7a6f47c79d172412926a963498b4ac741cbf8d792d1f248f"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_002_seed_1021.yaml",
+   "sha256": "5fc582213860bbdddb17e5429d36e141c77d24412cd50e27e9775edd23ca1af7"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_002_seed_1022.yaml",
+   "sha256": "7f97a2c5bf79dbcb44589ddab42b857baa206a0265f36847fd10821d31d8659b"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_002_seed_1023.yaml",
+   "sha256": "23532437214084c05239b6da278c76ce476409e92cf18ab239a0457b92bfcff8"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_002_seed_1024.yaml",
+   "sha256": "01d236e2c9ecd903d4a8ddda9d97dae92eb48043e9b37e8d68d045ce8cf96beb"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_003_seed_1030.yaml",
+   "sha256": "f4a90e5a0d3bcf722d5ca99c941983954c69e6de1aacc0a63c04563fb46bbbbe"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_003_seed_1031.yaml",
+   "sha256": "72a6a6d80c88ed228ccc605a671b7a2aaa3dc6f28ae2e3509f8ed7819da98243"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_003_seed_1032.yaml",
+   "sha256": "79769e3a9631a84cbc57c9f8d8a764e492a88b2028356b2021a61c77d1c67a77"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_003_seed_1033.yaml",
+   "sha256": "33ceabd9f4deeb5cd3ab8f64623689a5e940dc94affed10eaa6f6be1a20c80cf"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\easy_003_seed_1034.yaml",
+   "sha256": "bb3950970a449a039c8d8583024cd6df11373728640ed93a6045fcfdef9bbf21"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_004_seed_1040.yaml",
+   "sha256": "090b9a910e206286dd9ef0e3b37deaff7e34cd5cb704277d20c140007597e668"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_004_seed_1041.yaml",
+   "sha256": "fb54ab2b1d994905b6c9af130cfe58d72e6d21ba9ce35c8d63ad6f3345ec8655"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_004_seed_1042.yaml",
+   "sha256": "17e5f471766cc73f32aace68ba4a52c26f9ba472aed32de0ba6078ae8fbdcf70"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_004_seed_1043.yaml",
+   "sha256": "3e523cc15f4a4057927c6b130cb6ce21431144fd167168a45f6b76995781cc9d"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_004_seed_1044.yaml",
+   "sha256": "3e97fe4bac780b10131d471c6e1e59fd2300703062c207963ea4b454863edb4a"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_005_seed_1050.yaml",
+   "sha256": "525ae515f292358e18bc63c44ad87b9bb7dfe0f2ac0623acc153ea382d9778fc"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_005_seed_1051.yaml",
+   "sha256": "de217a3bdd0b282b1502099a1b08d86d9af5a08cd6657d614bc56b3f016fd902"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_005_seed_1052.yaml",
+   "sha256": "93f4113fa85280e7c3d97c87a9faceaebd3bb785ea42314f382b872b3c2e33ac"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_005_seed_1053.yaml",
+   "sha256": "b2ccbdd6eef1b721aff63fea4323c3189a44f866e9d02f600a83130af8415198"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_005_seed_1054.yaml",
+   "sha256": "7d57e9d07e426e7e528fda0eca33178f7ea22f0b78809e389d4c28412b6c0f43"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_006_seed_1060.yaml",
+   "sha256": "00f6654b72bb8980c68f5f1780a856de1eead146e1b2cdcb693256ce4571708f"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_006_seed_1061.yaml",
+   "sha256": "32e7872aab09c8b4a77124c564d70fd0b52b8eb67049e9abf6555bb5715a8963"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_006_seed_1062.yaml",
+   "sha256": "6ca4bb3113d2e5b95f48d35369f19fcbf04d9eadd5771c1ba667caa127b380b5"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_006_seed_1063.yaml",
+   "sha256": "2bd52e2e43b3c0bd35c5cdac3511812e5d99146174451984b042d11cf650e48c"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\medium_006_seed_1064.yaml",
+   "sha256": "7695c0713553910727f4ebdf00f01e3d8c10e489127ad5c55e70ff3f3f1e7c25"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_007_seed_1070.yaml",
+   "sha256": "d7035cc990b338b6b5a8b64f0bc6972fd09693b972dabc57038cd9591cfe6f0d"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_007_seed_1071.yaml",
+   "sha256": "5dbf1e223681fb0cc2f3f5ac45715ce78bf22efca28c0249463c8298b5d14125"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_007_seed_1072.yaml",
+   "sha256": "152d14b343d07ff15fafec78ad982f73e9121dc13a3ee7e6612497d0ca250612"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_007_seed_1073.yaml",
+   "sha256": "347c25009cbc94d4d13517b43017933bfb0dd40434f0095da18aa3f0a1c1e509"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_007_seed_1074.yaml",
+   "sha256": "bab5e64bf92f67b7e9757a1ac413b1c13433eda4464e375fdf1d362e5f71acd3"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_008_seed_1080.yaml",
+   "sha256": "0b888c7a599b70193ef884cb79bb613db796551b9064acc86d792a820bf79706"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_008_seed_1081.yaml",
+   "sha256": "690af587cdade52a912f9d6f16068f2d63dcb4c98bfb78e95bb87c46f8b0f4b3"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_008_seed_1082.yaml",
+   "sha256": "44371d35aa3feb793a03612fad72377d23f5ff16b508bb747a3783689aa4fde9"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_008_seed_1083.yaml",
+   "sha256": "3a503d252511b6624c790d654006e31f88e520976925fb2a49e2a2dca2508e42"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_008_seed_1084.yaml",
+   "sha256": "eb696c1b35fdf1be03bcc7b845f8c58b13bc9f643dd8b2c41f19fb999b1644eb"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_009_seed_1090.yaml",
+   "sha256": "b4488c4b869dfad08ba8d03fbfca906122c3da6635845ac4ea33b39bf230104d"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_009_seed_1091.yaml",
+   "sha256": "7a6becfe7e8d9279fc8326c6b8cd890ecf877e5d1afa7a9a6d3509be439ea5ce"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_009_seed_1092.yaml",
+   "sha256": "95fffd49bca52adfaf6b0b943ab9d87332b3b56107f5c0d4362afed231e2aa62"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_009_seed_1093.yaml",
+   "sha256": "0033f0263cc5f31877f296974eb62b9638c68772ba43a67b04b1175ae6faf81c"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_009_seed_1094.yaml",
+   "sha256": "a785b4a850ca10ff409e7f4fe8b29ddd2e73b83e5a84e9c94a8fca27a1e090f0"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_010_seed_1100.yaml",
+   "sha256": "0f207240f2b54c5a9f19080bc2e7ca190a3780ef387131e4cec9a87a36ac092a"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_010_seed_1101.yaml",
+   "sha256": "a14b506a84c0082c058888231f1f147196ddbbc72e45f1ea0bbc5e564cf6d87d"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_010_seed_1102.yaml",
+   "sha256": "6eadcfdca7f1fef0ec1f74f8af44b9580bfa8fd2ccb886c44e7f60ce23913912"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_010_seed_1103.yaml",
+   "sha256": "98f5df7736968f16c55b6935c8148d1f7326b6b12b0f28bfa6a4b19d1e77229d"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\hard_010_seed_1104.yaml",
+   "sha256": "e9ee5032af6f6d810dbebe0be44acd7a2eaa8cd7a5079f7cb0e0f2d77f1e6600"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_011_seed_1110.yaml",
+   "sha256": "2fc18680d798b79a2e2ea34a230dfbe75563062e2afcf1683490d908fa071de6"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_011_seed_1111.yaml",
+   "sha256": "884eae77962f581c29ef73ef98fc2253f6d79ccee3067f9c0685eb71cb12f831"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_011_seed_1112.yaml",
+   "sha256": "93c71ef1629199fe5a178b89436ce62402f15dd70b0a0ce3b7b7890a7fb924d5"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_011_seed_1113.yaml",
+   "sha256": "e674922c5942d0eac46890723f51d0f31de64c357f9970fdbc6abf3a63c1d218"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_011_seed_1114.yaml",
+   "sha256": "a204ad652d02e2a12c5ccb9cca8ce9f1eee33f389e3b8fe9addca8035fd568c1"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_012_seed_1122.yaml",
+   "sha256": "4335f357a6e4892559621b674f1d8919f11cae7ccf009a1115a10779c12bdbf1"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_014_seed_1140.yaml",
+   "sha256": "d1b2a5ba5f3bcade5affa50a9c3e13c365f8de40ad683d38d85669c1c88e56c2"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_014_seed_1142.yaml",
+   "sha256": "f87791cc856018326abe6a52f98fd96a5bdfc966f3e6fb652919190f3f65a24f"
+  },
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\repository_ready\\instances\\synthetic\\extreme_014_seed_1143.yaml",
+   "sha256": "d8d438f3af50b949954f9e85bd58042db7292a9d0c01060f1af9897dd4842637"
+  }
+ ]
+}

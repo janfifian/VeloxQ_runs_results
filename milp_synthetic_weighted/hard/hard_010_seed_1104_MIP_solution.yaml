@@ -1,0 +1,951 @@
+schema_version: 1
+metadata:
+  solver: MILP/Gurobi (autoplanner)
+  stages_solved:
+  - phase2
+  phase2:
+    wall_time_seconds: 47704.375
+    time_build_s: 0.499
+    time_solve_s: 47703.729
+    time_limit_seconds: null
+    lessons_planned: 55
+    first_incumbent:
+      runtime_s: 0.105
+      work: 0.13
+      objective: 6506.0
+      pass: 0
+      source: MIPSOL callback
+      time_build_s: 0.499
+      wall_time_to_first_incumbent_s: 0.604
+      sol_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-extreme-5h\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_first_incumbent.sol
+        sha256: a1f378e94689c37f2c51b4aa09078d0c0f6a83dca53864fe0b80292ab833b326
+        sha256_file_bytes: a1f378e94689c37f2c51b4aa09078d0c0f6a83dca53864fe0b80292ab833b326
+        bytes: 84437
+      lessons_planned: 55
+      solution_file:
+        path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-extreme-5h\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_first_incumbent_solution.yaml
+        sha256: ea6a49842dc553dfdf271b5b19ab6dcb1a38aafb89016fda5afe766241ff3602
+        sha256_file_bytes: 39de82962107de9e9d8c4adaa0e11e70e151b78fc0248f896e426584b01ee0d0
+        bytes: 16061
+      verifier:
+        feasible: true
+        n_violations: 0
+        statuses:
+          time_core: true
+          room_rows: true
+          v_zero: true
+          rooms: true
+          policy_rules: true
+          extra_rules: true
+          full: true
+          pr5: true
+          profile: time core + room rows per 15-min cell + exact rooms + 15-min break
+            + PR5
+    sol_file: C:\Users\21034\AppData\Local\Temp\gurobi_pipeline_0n0xwhg9\artifacts/saved_solutions_phase2\rozwiazanie1_etap2.sol
+    sol_file_copy:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-extreme-5h\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_phase2.sol
+      sha256: 6d6cdcbb70ccecfd5bd8b8907a31eac6aeb3ec0ed95ce0fd634a04d2f3758a8c
+      sha256_file_bytes: c222490081ace036b35dabe4c39493a70004f6b68472a97856921e67974155e4
+      bytes: 86005
+    gurobi_log_copy:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-extreme-5h\..\..\..\artifacts\campaign\milp_weighted\hard\hard_010_seed_1104_MIP_phase2_gurobi.log
+      sha256: f5199ae2ebefb7f5a79e30a0fbd4d6ccf32c5a16040f0d4594cd4e47eca6d2e6
+      sha256_file_bytes: c697ebaed28a052b2ed2ea8b60f3964544e050f051c1d1700155115b0407d610
+      bytes: 182859
+    objective_value: -2044.0
+    n_vars: 4875
+    gurobi_feasible: true
+    gurobi_status: INTERRUPTED
+    objective_mode: weighted_sum
+    levels: []
+    model_fingerprint:
+      sha256: 30b7d8c5913c28785879b73bdd03af19a2f638d0a63ed6256114e35dc9e70a60
+      n_vars: 4875
+      n_constrs: 21318
+      n_nonzeros: 116752
+      n_objectives: 1
+    rules:
+      room_filter: 'RU3 filter of 07.10.2026: possible_rooms[c] keeps the rooms whose
+        capacity is at least the course size; loading fails for a course with no such
+        room unless ProblemInstance.strict_RU3 is False'
+      pr5: true
+      validation_profile: time core + room rows per 15-min cell + exact rooms + 15-min
+        break + PR5
+      remote_lessons: need no room; the room stage leaves them out
+      milp:
+        constraints:
+        - CONJ-PHASE3
+        - MAX_CHUNKS
+        - MIXED-MODALITY-LECTURERS
+        - MIXED-MODALITY-STUDENTS
+        - PR1
+        - PR4_LECTURERS
+        - PR4_STUDENTS
+        - RU2
+        - RU9
+        safety_buffer_min: 7.5
+        room_rows_per: cell
+        strong_CONJ_PHASE3: 1
+        objective_mode: weighted_sum
+        feasibility_only: false
+        reward_unit: lesson
+    solve_summary:
+      status: INTERRUPTED
+      runtime_s: 47703.716
+      work: 51346.457
+      objective: -2044.0
+      objective_bound: -2562.0
+      mip_gap: 0.2534246575342466
+      node_count: 2602195.0
+      n_incumbents: 65
+      time_to_first_incumbent_s: 0.105
+      work_to_first_incumbent: 0.13
+      first_incumbent_objective: 6506.0
+      first_incumbent_source: MIPSOL callback
+      time_to_last_incumbent_s: 47703.669
+    incumbents:
+    - runtime_s: 0.105
+      objective: 6506.0
+      pass: 0
+      work: 0.13
+    - runtime_s: 0.881
+      objective: 6421.0
+      pass: 0
+      work: 0.824
+    - runtime_s: 2.152
+      objective: 6411.0
+      pass: 0
+      work: 1.952
+    - runtime_s: 2.718
+      objective: 6058.0
+      pass: 0
+      work: 2.471
+    - runtime_s: 5.979
+      objective: 5774.0
+      pass: 0
+      work: 5.652
+    - runtime_s: 7.213
+      objective: 5764.0
+      pass: 0
+      work: 7.051
+    - runtime_s: 7.224
+      objective: 5494.0
+      pass: 0
+      work: 7.059
+    - runtime_s: 7.227
+      objective: 4101.0
+      pass: 0
+      work: 7.06
+    - runtime_s: 8.961
+      objective: 3045.0
+      pass: 0
+      work: 8.823
+    - runtime_s: 8.964
+      objective: 2835.0
+      pass: 0
+      work: 8.824
+    - runtime_s: 8.974
+      objective: 2716.0
+      pass: 0
+      work: 8.826
+    - runtime_s: 9.083
+      objective: 2711.0
+      pass: 0
+      work: 8.886
+    - runtime_s: 12.995
+      objective: 2697.0
+      pass: 0
+      work: 13.177
+    - runtime_s: 12.995
+      objective: 2625.0
+      pass: 0
+      work: 13.611
+    - runtime_s: 12.995
+      objective: 2415.0
+      pass: 0
+      work: 13.611
+    - runtime_s: 13.759
+      objective: 2220.0
+      pass: 0
+      work: 14.563
+    - runtime_s: 15.497
+      objective: 2093.0
+      pass: 0
+      work: 16.578
+    - runtime_s: 15.497
+      objective: 1778.0
+      pass: 0
+      work: 16.601
+    - runtime_s: 15.497
+      objective: 929.0
+      pass: 0
+      work: 16.601
+    - runtime_s: 16.355
+      objective: 824.0
+      pass: 0
+      work: 18.302
+    - runtime_s: 16.355
+      objective: 474.0
+      pass: 0
+      work: 18.302
+    - runtime_s: 18.331
+      objective: 394.0
+      pass: 0
+      work: 21.023
+    - runtime_s: 18.331
+      objective: 312.0
+      pass: 0
+      work: 21.023
+    - runtime_s: 18.331
+      objective: 261.0
+      pass: 0
+      work: 21.446
+    - runtime_s: 18.331
+      objective: 186.0
+      pass: 0
+      work: 21.446
+    - runtime_s: 18.331
+      objective: 173.0
+      pass: 0
+      work: 21.446
+    - runtime_s: 19.692
+      objective: 137.0
+      pass: 0
+      work: 23.052
+    - runtime_s: 19.692
+      objective: 124.0
+      pass: 0
+      work: 23.322
+    - runtime_s: 19.692
+      objective: 73.0
+      pass: 0
+      work: 23.322
+    - runtime_s: 19.692
+      objective: 41.0
+      pass: 0
+      work: 23.322
+    - runtime_s: 19.692
+      objective: 38.0
+      pass: 0
+      work: 23.322
+    - runtime_s: 19.694
+      objective: -140.0
+      pass: 0
+      work: 23.322
+    - runtime_s: 20.875
+      objective: -239.0
+      pass: 0
+      work: 24.938
+    - runtime_s: 20.875
+      objective: -289.0
+      pass: 0
+      work: 25.042
+    - runtime_s: 20.875
+      objective: -319.0
+      pass: 0
+      work: 25.042
+    - runtime_s: 21.842
+      objective: -407.0
+      pass: 0
+      work: 26.477
+    - runtime_s: 21.843
+      objective: -434.0
+      pass: 0
+      work: 26.51
+    - runtime_s: 23.692
+      objective: -489.0
+      pass: 0
+      work: 29.179
+    - runtime_s: 28.185
+      objective: -527.0
+      pass: 0
+      work: 36.064
+    - runtime_s: 29.566
+      objective: -562.0
+      pass: 0
+      work: 38.17
+    - runtime_s: 31.232
+      objective: -671.0
+      pass: 0
+      work: 40.722
+    - runtime_s: 31.232
+      objective: -677.0
+      pass: 0
+      work: 40.88
+    - runtime_s: 33.286
+      objective: -732.0
+      pass: 0
+      work: 43.238
+    - runtime_s: 33.286
+      objective: -792.0
+      pass: 0
+      work: 43.251
+    - runtime_s: 33.286
+      objective: -852.0
+      pass: 0
+      work: 43.251
+    - runtime_s: 33.286
+      objective: -933.0
+      pass: 0
+      work: 43.305
+    - runtime_s: 35.257
+      objective: -1026.0
+      pass: 0
+      work: 46.15
+    - runtime_s: 35.259
+      objective: -1037.0
+      pass: 0
+      work: 46.386
+    - runtime_s: 46.522
+      objective: -1042.0
+      pass: 0
+      work: 57.686
+    - runtime_s: 55.691
+      objective: -1120.0
+      pass: 0
+      work: 62.587
+    - runtime_s: 263.777
+      objective: -1143.0
+      pass: 0
+      work: 298.459
+    - runtime_s: 280.004
+      objective: -1163.0
+      pass: 0
+      work: 319.982
+    - runtime_s: 282.154
+      objective: -1268.0
+      pass: 0
+      work: 322.516
+    - runtime_s: 321.951
+      objective: -1333.0
+      pass: 0
+      work: 375.764
+    - runtime_s: 321.953
+      objective: -1408.0
+      pass: 0
+      work: 375.764
+    - runtime_s: 321.955
+      objective: -1432.0
+      pass: 0
+      work: 376.03
+    - runtime_s: 325.649
+      objective: -1522.0
+      pass: 0
+      work: 380.908
+    - runtime_s: 325.651
+      objective: -1607.0
+      pass: 0
+      work: 380.908
+    - runtime_s: 333.385
+      objective: -1726.0
+      pass: 0
+      work: 391.379
+    - runtime_s: 337.397
+      objective: -1740.0
+      pass: 0
+      work: 396.698
+    - runtime_s: 346.456
+      objective: -1750.0
+      pass: 0
+      work: 408.211
+    - runtime_s: 365.627
+      objective: -1855.0
+      pass: 0
+      work: 434.557
+    - runtime_s: 8322.707
+      objective: -2029.000000000001
+      pass: 0
+      work: 10906.084
+    - runtime_s: 8322.775
+      objective: -2043.999999999999
+      pass: 0
+      work: 10906.084
+    - runtime_s: 47703.669
+      objective: -2044.0
+      pass: 0
+      work: 51346.457
+    objective_settings:
+    - name: null
+      priority: null
+      weight: 1.0
+      abs_tol: null
+      rel_tol: null
+      sense: min
+    solver_settings:
+      TimeLimit: null
+      MIPGap: 0.0
+      MIPGapAbs: 1.0e-10
+      FeasibilityTol: 1.0e-06
+      IntFeasTol: 1.0e-05
+      OptimalityTol: 1.0e-06
+      Threads: 14
+      Seed: 0
+      MIPFocus: 0
+  phase3: {}
+  environment:
+    python_version: 3.13.12
+    python_implementation: CPython
+    platform: Windows-11-10.0.26300-SP0
+    machine: AMD64
+    processor: Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+    logical_processors: 20
+    hostname: FifianJanPC
+    timestamp: '2026-11-24T23:26:01+01:00'
+    git_commit: 48dd5556066a
+    git_dirty: false
+    code:
+      commit: 48dd5556066a4e43fb44b8aa57315cacf31075dc
+      tags_at_commit:
+      - campaign-2026-10
+      describe: campaign-2026-10
+      dirty: false
+      modified_tracked_files: []
+      n_modified_tracked_files: 0
+    packages:
+      gurobipy: 12.0.3
+      veloxq_sdk: 0.1.dev125+ge290bd081
+      dimod: 0.12.21
+      numpy: 2.4.4
+      scipy: 1.17.1
+      torch: 2.11.0+cpu
+      networkx: 3.6.1
+      h5py: 3.16.0
+      PyYAML: 6.0.3
+      gurobi_library: 12.0.3
+  instance:
+    file:
+      path: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\.claude\worktrees\milp-extreme-5h\repository_ready\instances\synthetic\hard_010_seed_1104.yaml
+      sha256: e9ee5032af6f6d810dbebe0be44acd7a2eaa8cd7a5079f7cb0e0f2d77f1e6600
+      sha256_file_bytes: e9ee5032af6f6d810dbebe0be44acd7a2eaa8cd7a5079f7cb0e0f2d77f1e6600
+      bytes: 228587
+    dimensions:
+      n_lecturers: 19
+      n_subjects: 55
+      n_groups: 19
+      n_rooms: 15
+      n_days: 5
+      n_time_slots: 35
+    conflict_graph:
+      n_vertices: 55
+      n_edges: 610
+      edge_density: 0.410774
+      avg_degree: 22.1818
+      max_degree: 38
+      min_degree: 5
+      degree_std: 9.8407
+      n_components: 1
+      largest_component_size: 55
+      n_triangles: 3154
+      global_clustering: 0.607161
+      avg_local_clustering: 0.673358
+      chromatic_lower_bound: 13
+      chromatic_upper_bound: 15
+      chromatic_pressure: 0.371429
+      edges_by_source:
+        groups: 572
+        teachers: 64
+  settings:
+    objective_mode: weighted_sum
+    objective_weights:
+      lecturers_satisfaction: 1.0
+      gap_obj: 1.0
+      min_days: 1.0
+      time_of_day: 1.0
+      soft_lecture: 1.0
+    enabled_constraints_phase2:
+    - CONJ-PHASE3
+    - MAX_CHUNKS
+    - MIXED-MODALITY-LECTURERS
+    - MIXED-MODALITY-STUDENTS
+    - PR1
+    - PR4_LECTURERS
+    - PR4_STUDENTS
+    - RU2
+    - RU9
+    pr5: true
+    enabled_objectives_phase2:
+    - gap_obj_students
+    - lecturers_satisfaction
+    - min_days_students
+    - time_of_day
+    priorities_phase2:
+      time_of_day: 1
+      gap_obj: 5
+      lecturers_satisfaction: 6
+      min_days: 3
+      soft_lecture: 1
+    constants_phase2:
+      reward_unit: lesson
+      buffer_time: 15
+      safety_buffer_min: 7.5
+      mixed_threshold_global: 120
+      sport_threshold_global: 30
+      lecture_before_penalty: 100.0
+      penalty_per_day: 1.0
+      gap_penalty_per_minute: 1.0
+    strong_CONJ_PHASE3: 1
+    room_rows_per: cell
+    enabled_constraints_phase3:
+    - EachLessonHasOneClassroom
+    - NC3
+    - OnlyAssignedClassroomsAllowed
+    - RU1_grupy
+    - RU1_prowadzący
+    - RU3
+    - RU7
+    enabled_objectives_phase3:
+    - min_lecturer_travel
+    - min_rooms_used
+    - min_student_travel
+    priorities_phase3:
+      min_student_travel: 3
+      min_rooms_used: 2
+      min_lecturer_travel: 1
+    constants_phase3:
+      KEEP_HARD_CONSTRAINT_RU1_STUDENTS: 15
+      RU1_GROUPS_PENALTY: 1000
+      KEEP_HARD_CONSTRAINT_RU1_LECTURERS: 15
+      RU1_LECTURERS_PENALTY: 1000
+      ROOM_USED_PENALTY: 10
+    time_limit_phase2: null
+    time_limit_phase3: null
+    threads: 14
+    mip_gap: 0.0
+    seed: null
+    feasibility_only: false
+    from_lp_path: null
+    warmstart_sol_path: null
+  verifier:
+    feasible: true
+    n_violations: 0
+    violations_by_constraint:
+      PR1_course_minutes: 0
+      MC_max_chunks: 0
+      PR3_PR4_lecturer_overlap: 0
+      PR3_PR4_group_overlap: 0
+      RU2_lecturer_availability: 0
+      PR2_lecturer_assigned: 0
+      CONJ_PHASE3_room_count: 0
+      CONJ_PHASE3_room_capacity: 0
+    soft_metrics:
+      lecturer_satisfaction_counts:
+        high_pref: 41
+        low_pref: 3
+        neutral: 11
+        not_available: 0
+      lecturer_satisfaction_percent:
+        high_pref: 74.5
+        low_pref: 5.5
+        neutral: 20.0
+        not_available: 0.0
+      time_of_day_counts:
+        morning: 26
+        afternoon: 17
+        evening: 12
+      time_of_day_minutes:
+        morning: 2340.0
+        afternoon: 1530.0
+        evening: 1080.0
+      total_student_gap_minutes: 1215.0
+      gap_minutes_by_group:
+        grp_001: 30.0
+        grp_002: 120.0
+        grp_004: 60.0
+        grp_005: 75.0
+        grp_006: 75.0
+        grp_007: 90.0
+        grp_008: 105.0
+        grp_009: 45.0
+        grp_012: 30.0
+        grp_013: 120.0
+        grp_015: 135.0
+        grp_017: 15.0
+        grp_014: 75.0
+        grp_011: 30.0
+        grp_010: 30.0
+        grp_019: 60.0
+        grp_016: 30.0
+        grp_003: 15.0
+        grp_018: 75.0
+      days_per_group:
+        avg: 4.79
+        min: 4
+        max: 5
+        by_group:
+          grp_001: 5
+          grp_002: 5
+          grp_003: 5
+          grp_004: 5
+          grp_005: 5
+          grp_006: 5
+          grp_007: 5
+          grp_008: 5
+          grp_009: 5
+          grp_010: 4
+          grp_011: 5
+          grp_012: 5
+          grp_013: 5
+          grp_014: 5
+          grp_015: 4
+          grp_016: 5
+          grp_017: 4
+          grp_018: 5
+          grp_019: 4
+    statuses:
+      time_core: true
+      room_rows: true
+      v_zero: true
+      rooms: true
+      policy_rules: true
+      extra_rules: true
+      full: true
+      pr5: true
+      profile: time core + room rows per 15-min cell + exact rooms + 15-min break
+        + PR5
+    extra_violations_by_rule:
+      BREAK_lecturer: 0
+      BREAK_group: 0
+      PR5_mixed_modality: 0
+    room_assignment:
+      roomable: true
+      assignment:
+        '0': 0
+        '1': 14
+        '2': 0
+        '3': 9
+        '4': 0
+        '5': 14
+        '6': 9
+        '7': 3
+        '8': 1
+        '9': 14
+        '10': 14
+        '11': 1
+        '12': 14
+        '13': 11
+        '14': 14
+        '15': 2
+        '16': 0
+        '17': 2
+        '18': 1
+        '19': 1
+        '20': 10
+        '21': 11
+        '22': 10
+        '23': 11
+        '24': 10
+        '25': 10
+        '26': 10
+        '27': 14
+        '28': 12
+        '29': 10
+        '30': 10
+        '31': 10
+        '32': 14
+        '33': 10
+        '34': 10
+        '35': 11
+        '36': 12
+        '37': 10
+        '38': 10
+        '39': 10
+        '40': 14
+        '41': 10
+        '42': 14
+        '43': 10
+        '44': 10
+        '45': 9
+        '46': 10
+        '47': 10
+        '48': 10
+        '49': 14
+        '50': 10
+        '51': 10
+        '52': 10
+        '53': 10
+        '54': 10
+      n_in_person: 55
+      n_remote_exempt: 0
+      n_roomed: 55
+      upper_bound: 55
+      n_without_admissible_free_room: 0
+      status: OPTIMAL
+      unroomed: []
+lessons:
+- l_idx: 0
+  course_unique_id: grp_001__1001_Course 1__Seminarium
+  lecturer_unique_id: lec_008
+  slot_str: 16:45-18:15
+  dayname: Poniedziałek
+- l_idx: 1
+  course_unique_id: grp_002__1002_Course 2__Inne
+  lecturer_unique_id: lec_008
+  slot_str: 11:30-13:00
+  dayname: Środa
+- l_idx: 2
+  course_unique_id: grp_003__1003_Course 3__E-learning
+  lecturer_unique_id: lec_006
+  slot_str: 15:00-16:30
+  dayname: Poniedziałek
+- l_idx: 3
+  course_unique_id: grp_004__1004_Course 4__E-learning
+  lecturer_unique_id: lec_015
+  slot_str: 13:15-14:45
+  dayname: Piątek
+- l_idx: 4
+  course_unique_id: grp_005__1005_Course 5__E-learning
+  lecturer_unique_id: lec_018
+  slot_str: 9:45-11:15
+  dayname: Czwartek
+- l_idx: 5
+  course_unique_id: grp_006__1006_Course 6__E-learning
+  lecturer_unique_id: lec_016
+  slot_str: 9:45-11:15
+  dayname: Piątek
+- l_idx: 6
+  course_unique_id: grp_007__1007_Course 7__Projekt
+  lecturer_unique_id: lec_011
+  slot_str: 15:00-16:30
+  dayname: Piątek
+- l_idx: 7
+  course_unique_id: grp_008__1008_Course 8__Ćwiczenia
+  lecturer_unique_id: lec_018
+  slot_str: 8:00-9:30
+  dayname: Poniedziałek
+- l_idx: 8
+  course_unique_id: grp_009__1009_Course 9__Projekt
+  lecturer_unique_id: lec_013
+  slot_str: 15:00-16:30
+  dayname: Poniedziałek
+- l_idx: 9
+  course_unique_id: grp_010__1010_Course 10__Inne
+  lecturer_unique_id: lec_018
+  slot_str: 18:30-20:00
+  dayname: Piątek
+- l_idx: 10
+  course_unique_id: grp_011__1011_Course 11__Seminarium
+  lecturer_unique_id: lec_013
+  slot_str: 15:00-16:30
+  dayname: Środa
+- l_idx: 11
+  course_unique_id: grp_012__1012_Course 12__Laboratorium
+  lecturer_unique_id: lec_003
+  slot_str: 9:45-11:15
+  dayname: Czwartek
+- l_idx: 12
+  course_unique_id: grp_013__1013_Course 13__Laboratorium
+  lecturer_unique_id: lec_003
+  slot_str: 16:45-18:15
+  dayname: Piątek
+- l_idx: 13
+  course_unique_id: grp_014__1014_Course 14__Laboratorium
+  lecturer_unique_id: lec_001
+  slot_str: 16:45-18:15
+  dayname: Środa
+- l_idx: 14
+  course_unique_id: grp_015__1015_Course 15__E-learning
+  lecturer_unique_id: lec_017
+  slot_str: 9:45-11:15
+  dayname: Wtorek
+- l_idx: 15
+  course_unique_id: grp_016__1016_Course 16__Inne
+  lecturer_unique_id: lec_011
+  slot_str: 15:00-16:30
+  dayname: Poniedziałek
+- l_idx: 16
+  course_unique_id: grp_017__1017_Course 17__Laboratorium
+  lecturer_unique_id: lec_011
+  slot_str: 8:00-9:30
+  dayname: Wtorek
+- l_idx: 17
+  course_unique_id: grp_018__1018_Course 18__Laboratorium
+  lecturer_unique_id: lec_015
+  slot_str: 9:45-11:15
+  dayname: Czwartek
+- l_idx: 18
+  course_unique_id: grp_019__1019_Course 19__Laboratorium
+  lecturer_unique_id: lec_010
+  slot_str: 8:00-9:30
+  dayname: Wtorek
+- l_idx: 19
+  course_unique_id: grp_004__1020_Course 20__Ćwiczenia
+  lecturer_unique_id: lec_007
+  slot_str: 16:45-18:15
+  dayname: Poniedziałek
+- l_idx: 20
+  course_unique_id: grp_014__1021_Course 21__Laboratorium
+  lecturer_unique_id: lec_012
+  slot_str: 11:30-13:00
+  dayname: Wtorek
+- l_idx: 21
+  course_unique_id: grp_011__1022_Course 22__Projekt
+  lecturer_unique_id: lec_007
+  slot_str: 13:15-14:45
+  dayname: Piątek
+- l_idx: 22
+  course_unique_id: grp_002__1023_Course 23__E-learning
+  lecturer_unique_id: lec_003
+  slot_str: 15:00-16:30
+  dayname: Wtorek
+- l_idx: 23
+  course_unique_id: grp_003__1024_Course 24__Seminarium
+  lecturer_unique_id: lec_004
+  slot_str: 11:30-13:00
+  dayname: Piątek
+- l_idx: 24
+  course_unique_id: grp_004__1025_Course 25__E-learning
+  lecturer_unique_id: lec_018
+  slot_str: 15:00-16:30
+  dayname: Środa
+- l_idx: 25
+  course_unique_id: grp_011__1026_Course 26__Projekt
+  lecturer_unique_id: lec_011
+  slot_str: 8:00-9:30
+  dayname: Czwartek
+- l_idx: 26
+  course_unique_id: grp_002__1027_Course 27__Laboratorium
+  lecturer_unique_id: lec_007
+  slot_str: 11:30-13:00
+  dayname: Czwartek
+- l_idx: 27
+  course_unique_id: grp_016__1028_Course 28__Wykład
+  lecturer_unique_id: lec_014
+  slot_str: 15:00-16:30
+  dayname: Wtorek
+- l_idx: 28
+  course_unique_id: grp_007__1029_Course 29__Seminarium
+  lecturer_unique_id: lec_017
+  slot_str: 11:30-13:00
+  dayname: Piątek
+- l_idx: 29
+  course_unique_id: grp_019__1030_Course 30__Inne
+  lecturer_unique_id: lec_012
+  slot_str: 9:45-11:15
+  dayname: Środa
+- l_idx: 30
+  course_unique_id: grp_012__1031_Course 31__Inne
+  lecturer_unique_id: lec_009
+  slot_str: 8:00-9:30
+  dayname: Środa
+- l_idx: 31
+  course_unique_id: grp_008__1032_Course 32__Projekt
+  lecturer_unique_id: lec_009
+  slot_str: 9:45-11:15
+  dayname: Poniedziałek
+- l_idx: 32
+  course_unique_id: grp_014__1033_Course 33__Seminarium
+  lecturer_unique_id: lec_019
+  slot_str: 8:00-9:30
+  dayname: Czwartek
+- l_idx: 33
+  course_unique_id: grp_008__1034_Course 34__Ćwiczenia
+  lecturer_unique_id: lec_016
+  slot_str: 8:00-9:30
+  dayname: Wtorek
+- l_idx: 34
+  course_unique_id: grp_018__1035_Course 35__Laboratorium
+  lecturer_unique_id: lec_003
+  slot_str: 13:15-14:45
+  dayname: Piątek
+- l_idx: 35
+  course_unique_id: grp_017__1036_Course 36__E-learning
+  lecturer_unique_id: lec_012
+  slot_str: 16:45-18:15
+  dayname: Czwartek
+- l_idx: 36
+  course_unique_id: grp_008__1037_Course 37__E-learning
+  lecturer_unique_id: lec_007
+  slot_str: 11:30-13:00
+  dayname: Poniedziałek
+- l_idx: 37
+  course_unique_id: grp_013__1038_Course 38__E-learning
+  lecturer_unique_id: lec_009
+  slot_str: 9:45-11:15
+  dayname: Piątek
+- l_idx: 38
+  course_unique_id: grp_018__1039_Course 39__Wykład
+  lecturer_unique_id: lec_013
+  slot_str: 9:45-11:15
+  dayname: Wtorek
+- l_idx: 39
+  course_unique_id: grp_009__1040_Course 40__Inne
+  lecturer_unique_id: lec_016
+  slot_str: 9:45-11:15
+  dayname: Czwartek
+- l_idx: 40
+  course_unique_id: grp_003__1041_Course 41__Wykład
+  lecturer_unique_id: lec_014
+  slot_str: 16:45-18:15
+  dayname: Wtorek
+- l_idx: 41
+  course_unique_id: grp_005__1042_Course 42__Inne
+  lecturer_unique_id: lec_001
+  slot_str: 18:30-20:00
+  dayname: Piątek
+- l_idx: 42
+  course_unique_id: grp_012__1043_Course 43__Ćwiczenia
+  lecturer_unique_id: lec_013
+  slot_str: 11:30-13:00
+  dayname: Czwartek
+- l_idx: 43
+  course_unique_id: grp_013__1044_Course 44__Inne
+  lecturer_unique_id: lec_002
+  slot_str: 18:30-20:00
+  dayname: Poniedziałek
+- l_idx: 44
+  course_unique_id: grp_018__1045_Course 45__Ćwiczenia
+  lecturer_unique_id: lec_012
+  slot_str: 16:45-18:15
+  dayname: Piątek
+- l_idx: 45
+  course_unique_id: grp_013__1046_Course 46__Laboratorium
+  lecturer_unique_id: lec_017
+  slot_str: 13:15-14:45
+  dayname: Czwartek
+- l_idx: 46
+  course_unique_id: grp_015__1047_Course 47__Seminarium
+  lecturer_unique_id: lec_010
+  slot_str: 16:45-18:15
+  dayname: Poniedziałek
+- l_idx: 47
+  course_unique_id: grp_004__1048_Course 48__Projekt
+  lecturer_unique_id: lec_005
+  slot_str: 15:00-16:30
+  dayname: Poniedziałek
+- l_idx: 48
+  course_unique_id: grp_019__1049_Course 49__Inne
+  lecturer_unique_id: lec_017
+  slot_str: 11:30-13:00
+  dayname: Środa
+- l_idx: 49
+  course_unique_id: grp_002__1050_Course 50__E-learning
+  lecturer_unique_id: lec_008
+  slot_str: 15:00-16:30
+  dayname: Piątek
+- l_idx: 50
+  course_unique_id: grp_007__1051_Course 51__Laboratorium
+  lecturer_unique_id: lec_001
+  slot_str: 16:45-18:15
+  dayname: Wtorek
+- l_idx: 51
+  course_unique_id: grp_002__1052_Course 52__Seminarium
+  lecturer_unique_id: lec_008
+  slot_str: 11:30-13:00
+  dayname: Piątek
+- l_idx: 52
+  course_unique_id: grp_010__1053_Course 53__Projekt
+  lecturer_unique_id: lec_002
+  slot_str: 13:15-14:45
+  dayname: Wtorek
+- l_idx: 53
+  course_unique_id: grp_013__1054_Course 54__Wykład
+  lecturer_unique_id: lec_014
+  slot_str: 13:15-14:45
+  dayname: Środa
+- l_idx: 54
+  course_unique_id: grp_010__1055_Course 55__Ćwiczenia
+  lecturer_unique_id: lec_005
+  slot_str: 13:15-14:45
+  dayname: Poniedziałek
+room_assignments: []

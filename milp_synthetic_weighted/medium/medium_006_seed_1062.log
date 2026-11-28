@@ -1,0 +1,314 @@
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 3523.
+================================================================================
+Wczytuję instancję z: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\repository_ready\instances\synthetic\medium_006_seed_1062.yaml
+================================================================================
+  ProblemInstance(|P| (prowadzący)=12, |C| (kursy)=32, |C_double|=53, |C_linking|=0, |C_zdalne|=0, |C_sportowe|=0, |C_jezykowe|=0, |G| (grupy studenckie)=12, |R| (sale)=10, |R_zdalne|=0, |R_CJ|=0, |R_CS|=0, |R_fizycznie_istniejace|=10, |T| (sloty)=35, |D| (dni)=5)
+
+================================================================================
+(a) MILP via autoplanner (Gurobi)
+================================================================================
+  [workaround] Gurobi logs redirected: C:\Users\21034\AppData\Local\Temp\gurobi_pipeline_1gptix7t
+  [MILP] etap 2: alokacja czasowa
+Set parameter Username
+Set parameter LicenseID to value <removed>
+Academic license - for non-commercial use only - expires 2027-05-04
+Set parameter Threads to value 14
+Set parameter LogFile to value "C:\Users\21034\AppData\Local\Temp\gurobi_pipeline_1gptix7t\artifacts/gurobi_logs_phase2\gurobilog1_etap2.log"
+Set parameter MIPGap to value 0
+Gurobi Optimizer version 12.0.3 build v12.0.3rc0 (win64 - Windows 11+.0 (26200.2))
+
+CPU model: 12th Gen Intel(R) Core(TM) i9-12900H, instruction set [SSE2|AVX|AVX2]
+Thread count: 14 physical cores, 20 logical processors, using up to 14 threads
+
+Non-default parameters:
+MIPGap  0
+Threads  14
+
+Optimize a model with 13057 rows, 2966 columns and 46396 nonzeros
+Model fingerprint: 0x5ed6f66e
+Variable types: 1592 continuous, 1374 integer (1374 binary)
+Coefficient statistics:
+  Matrix range     [1e+00, 8e+01]
+  Objective range  [1e+00, 1e+02]
+  Bounds range     [1e+00, 1e+00]
+  RHS range        [1e+00, 6e+02]
+Found heuristic solution: objective 2487.0000000
+Presolve removed 10115 rows and 157 columns
+Presolve time: 0.03s
+Presolved: 2942 rows, 2809 columns, 9971 nonzeros
+Variable types: 0 continuous, 2809 integer (2809 binary)
+
+Root relaxation: objective -7.319667e+03, 2534 iterations, 0.04 seconds (0.04 work units)
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0 -7319.6667    0  490 2487.00000 -7319.6667   394%     -    0s
+H    0     0                    1202.0000000 -7319.6667   709%     -    0s
+H    0     0                     692.0000000 -7319.6667  1158%     -    0s
+H    0     0                     568.0000000 -7319.6667  1389%     -    0s
+H    0     0                     463.0000000 -7319.6667  1681%     -    0s
+H    0     0                     338.0000000 -7319.5952  2266%     -    0s
+H    0     0                     233.0000000 -7319.5952  3241%     -    0s
+     0     0 -6062.9762    0  565  233.00000 -6062.9762  2702%     -    0s
+H    0     0                      -2.0000000 -6062.9762      -     -    0s
+     0     0 -5994.9524    0  543   -2.00000 -5994.9524      -     -    0s
+     0     0 -4660.9663    0  560   -2.00000 -4660.9663      -     -    0s
+     0     0 -4607.3354    0  584   -2.00000 -4607.3354      -     -    0s
+     0     0 -4604.7735    0  565   -2.00000 -4604.7735      -     -    0s
+     0     0 -4604.7137    0  612   -2.00000 -4604.7137      -     -    0s
+H    0     0                    -187.0000000 -3205.9895  1614%     -    0s
+     0     0 -3205.9895    0  665 -187.00000 -3205.9895  1614%     -    0s
+H    0     0                    -537.0000000 -3203.9181   497%     -    0s
+H    0     0                    -705.0000000 -3192.9093   353%     -    0s
+     0     0 -3192.9093    0  698 -705.00000 -3192.9093   353%     -    0s
+     0     0 -3192.0612    0  673 -705.00000 -3192.0612   353%     -    0s
+H    0     0                    -1193.000000 -3192.0612   168%     -    0s
+     0     0 -2790.1609    0  654 -1193.0000 -2790.1609   134%     -    0s
+H    0     0                    -1203.000000 -2775.4202   131%     -    0s
+H    0     0                    -1337.000000 -2775.4202   108%     -    0s
+     0     0 -2775.4202    0  663 -1337.0000 -2775.4202   108%     -    0s
+     0     0 -2775.0917    0  664 -1337.0000 -2775.0917   108%     -    0s
+H    0     0                    -1477.000000 -2611.3096  76.8%     -    0s
+H    0     0                    -1492.000000 -2611.3096  75.0%     -    0s
+     0     0 -2611.3096    0  618 -1492.0000 -2611.3096  75.0%     -    0s
+H    0     0                    -1511.000000 -2609.6585  72.7%     -    0s
+     0     0 -2606.9574    0  661 -1511.0000 -2606.9574  72.5%     -    0s
+     0     0 -2606.0008    0  654 -1511.0000 -2606.0008  72.5%     -    0s
+H    0     0                    -1571.000000 -2606.0008  65.9%     -    0s
+     0     0 -2576.9821    0  555 -1571.0000 -2576.9821  64.0%     -    0s
+H    0     0                    -1656.000000 -2571.3988  55.3%     -    0s
+H    0     0                    -1666.000000 -2571.3988  54.3%     -    0s
+H    0     0                    -1935.000000 -2571.3988  32.9%     -    0s
+     0     0 -2571.3988    0  586 -1935.0000 -2571.3988  32.9%     -    0s
+     0     0 -2486.9762    0  574 -1935.0000 -2486.9762  28.5%     -    0s
+H    0     0                    -1995.000000 -2486.9048  24.7%     -    0s
+     0     0 -2486.2500    0  504 -1995.0000 -2486.2500  24.6%     -    0s
+     0     0 -2485.0833    0  629 -1995.0000 -2485.0833  24.6%     -    0s
+     0     0 -2485.0833    0  616 -1995.0000 -2485.0833  24.6%     -    0s
+H    0     0                    -2085.000000 -2484.9167  19.2%     -    0s
+H    0     0                    -2204.000000 -2484.7083  12.7%     -    0s
+H    0     0                    -2266.000000 -2484.7083  9.65%     -    1s
+H    0     0                    -2296.000000 -2484.7083  8.22%     -    1s
+     0     2 -2484.7083    0  615 -2296.0000 -2484.7083  8.22%     -    1s
+H   29    44                    -2306.000000 -2480.5000  7.57%   112    1s
+H   31    44                    -2366.000000 -2480.5000  4.84%   112    1s
+H   33    44                    -2390.000000 -2480.5000  3.79%   116    1s
+H   42    44                    -2420.000000 -2480.5000  2.50%   123    1s
+H   47    77                    -2463.000000 -2480.5000  0.71%   117    1s
+
+Cutting planes:
+  Gomory: 7
+  Cover: 77
+  Clique: 712
+  MIR: 20
+  StrongCG: 1
+  GUB cover: 3
+  Zero half: 202
+  RLT: 54
+  Relax-and-lift: 35
+  BQP: 50
+  PSD: 16
+
+Explored 238 nodes (21808 simplex iterations) in 1.43 seconds (1.06 work units)
+Thread count was 14 (of 20 available processors)
+
+Solution count 10: -2463 -2420 -2390 ... -1995
+No other solutions better than -2463
+
+Optimal solution found (tolerance 0.00e+00)
+Best objective -2.463000000000e+03, best bound -2.463000000000e+03, gap 0.0000%
+
+User-callback calls 1232, time in user-callback 0.00 sec
+  [save] rozwiązanie zapisane do: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_006_seed_1062_MIP_first_incumbent_solution.yaml
+
+================================================================================
+VERIFICATION REPORT
+================================================================================
+  instance: {'P': 12, 'C': 32, 'G': 12, 'R': 10, 'T': 35, 'D': 5}
+  |L|=32  has_spatial=False
+
+-- 1. HARD CONSTRAINTS --
+  feasibility: OK  (total violations: 0)
+  ✓ PR1_course_minutes: 0 violation(s)
+  ✓ MC_max_chunks: 0 violation(s)
+  ✓ PR3_PR4_lecturer_overlap: 0 violation(s)
+  ✓ PR3_PR4_group_overlap: 0 violation(s)
+  ✓ RU2_lecturer_availability: 0 violation(s)
+  ✓ PR2_lecturer_assigned: 0 violation(s)
+  ✓ CONJ_PHASE3_room_count: 0 violation(s)
+  ✓ CONJ_PHASE3_room_capacity: 0 violation(s)
+
+-- 1b. RULES OUTSIDE V AND STATUSES --
+  ✓ BREAK_lecturer: 0 violation(s)
+  ✓ BREAK_group: 0 violation(s)
+  ✓ PR5_mixed_modality: 0 violation(s)
+  rooms: 32/32 in-person lessons roomed (remote exempt: 0, bound 32, solver status OPTIMAL)
+  statuses: {'time_core': True, 'room_rows': True, 'v_zero': True, 'rooms': True, 'policy_rules': True, 'extra_rules': True, 'full': True, 'pr5': True, 'profile': 'time core + room rows per 15-min cell + exact rooms + 15-min break + PR5'}
+
+-- 2. SOFT METRICS --
+  lecturer_satisfaction_counts:
+      high_pref: 7
+      low_pref: 4
+      neutral: 21
+      not_available: 0
+  lecturer_satisfaction_percent:
+      high_pref: 21.9
+      low_pref: 12.5
+      neutral: 65.6
+      not_available: 0.0
+  time_of_day_counts:
+      morning: 10
+      afternoon: 11
+      evening: 11
+  time_of_day_minutes:
+      morning: 900.0
+      afternoon: 990.0
+      evening: 990.0
+  total_student_gap_minutes: 1920.0
+  gap_minutes_by_group:
+      grp_001: 15.0
+      grp_002: 330.0
+      grp_007: 570.0
+      grp_011: 15.0
+      grp_009: 450.0
+      grp_008: 30.0
+      grp_003: 270.0
+      grp_005: 225.0
+      grp_012: 15.0
+  days_per_group:
+      avg: 3.08
+      min: 2
+      max: 5
+      by_group: {'grp_001': 4, 'grp_002': 2, 'grp_003': 3, 'grp_004': 2, 'grp_005': 5, 'grp_006': 2, 'grp_007': 4, 'grp_008': 3, 'grp_009': 4, 'grp_010': 2, 'grp_011': 3, 'grp_012': 3}
+
+-- 3. PER-LESSON AUDIT --
+  l  0  ★ Czwartek       11:30-13:00    grp_001__1001_Course 1__Laboratorium                    lec_006     room=—  gap[min]: grp_001=15.0
+  l  1    Piątek         9:45-11:15     grp_002__1002_Course 2__Inne                            lec_001     room=—
+  l  2    Czwartek       15:00-16:30    grp_003__1003_Course 3__Wykład                          lec_003     room=—
+  l  3    Poniedziałek   16:45-18:15    grp_004__1004_Course 4__E-learning                      lec_009     room=—
+  l  4    Poniedziałek   9:45-11:15     grp_005__1005_Course 5__Seminarium                      lec_002     room=—
+  l  5    Wtorek         11:30-13:00    grp_006__1006_Course 6__E-learning                      lec_001     room=—
+  l  6  ★ Wtorek         9:45-11:15     grp_007__1007_Course 7__E-learning                      lec_002     room=—
+  l  7    Piątek         13:15-14:45    grp_008__1008_Course 8__Projekt                         lec_010     room=—
+  l  8    Czwartek       13:15-14:45    grp_009__1009_Course 9__Inne                            lec_005     room=—
+  l  9    Czwartek       18:30-20:00    grp_010__1010_Course 10__Projekt                        lec_012     room=—
+  l 10    Środa          16:45-18:15    grp_011__1011_Course 11__Ćwiczenia                      lec_008     room=—  gap[min]: grp_011=15.0
+  l 11  ~ Środa          18:30-20:00    grp_012__1012_Course 12__Inne                           lec_007     room=—
+  l 12    Wtorek         9:45-11:15     grp_011__1013_Course 13__Ćwiczenia                      lec_007     room=—
+  l 13    Środa          13:15-14:45    grp_009__1014_Course 14__Ćwiczenia                      lec_006     room=—
+  l 14    Wtorek         16:45-18:15    grp_009__1015_Course 15__Projekt                        lec_002     room=—  gap[min]: grp_009=435.0
+  l 15    Poniedziałek   15:00-16:30    grp_008__1016_Course 16__Projekt                        lec_003     room=—
+  l 16  ★ Środa          18:30-20:00    grp_001__1017_Course 17__E-learning                     lec_005     room=—
+  l 17    Środa          15:00-16:30    grp_009__1018_Course 18__Wykład                         lec_007     room=—  gap[min]: grp_009=15.0, grp_003=225.0, grp_007=330.0
+  l 18  ~ Środa          9:45-11:15     grp_003__1019_Course 19__Inne                           lec_008     room=—  gap[min]: grp_003=15.0
+  l 19    Wtorek         8:00-9:30      grp_009__1020_Course 20__Ćwiczenia                      lec_012     room=—
+  l 20  ★ Czwartek       9:45-11:15     grp_008__1021_Course 21__Ćwiczenia                      lec_012     room=—
+  l 21    Środa          15:00-16:30    grp_005__1022_Course 22__Wykład                         lec_009     room=—  gap[min]: grp_005=225.0
+  l 22    Piątek         15:00-16:30    grp_007__1023_Course 23__Inne                           lec_007     room=—
+  l 23    Wtorek         13:15-14:45    grp_005__1024_Course 24__Wykład                         lec_008     room=—
+  l 24  ★ Wtorek         15:00-16:30    grp_007__1025_Course 25__Laboratorium                   lec_012     room=—  gap[min]: grp_007=225.0
+  l 25  ★ Poniedziałek   18:30-20:00    grp_008__1026_Course 26__Ćwiczenia                      lec_002     room=—  gap[min]: grp_008=15.0, grp_003=15.0
+  l 26  ★ Poniedziałek   16:45-18:15    grp_002__1027_Course 27__Ćwiczenia                      lec_003     room=—  gap[min]: grp_003=15.0, grp_008=15.0
+  l 27  ~ Czwartek       18:30-20:00    grp_011__1028_Course 28__Wykład                         lec_005     room=—
+  l 28    Wtorek         15:00-16:30    grp_012__1029_Course 29__Laboratorium                   lec_011     room=—  gap[min]: grp_012=15.0
+  l 29  ~ Środa          8:00-9:30      grp_003__1030_Course 30__Laboratorium                   lec_006     room=—
+  l 30    Piątek         18:30-20:00    grp_005__1031_Course 31__Wykład                         lec_009     room=—
+  l 31    Piątek         16:45-18:15    grp_007__1032_Course 32__Inne                           lec_011     room=—  gap[min]: grp_007=15.0, grp_002=330.0
+  [MILP] etap 2 zakończony: 1.74s, |L|=32, obj=-2463.0, n_vars=2966
+  [MILP] first incumbent: 0.004 s into the solve (build 0.298 s), objective 2487.0, verifier feasible: True
+  [save] rozwiązanie zapisane do: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\milp_weighted\medium\medium_006_seed_1062_MIP_solution.yaml
+
+================================================================================
+VERIFICATION REPORT
+================================================================================
+  instance: {'P': 12, 'C': 32, 'G': 12, 'R': 10, 'T': 35, 'D': 5}
+  |L|=32  has_spatial=False
+
+-- 1. HARD CONSTRAINTS --
+  feasibility: OK  (total violations: 0)
+  ✓ PR1_course_minutes: 0 violation(s)
+  ✓ MC_max_chunks: 0 violation(s)
+  ✓ PR3_PR4_lecturer_overlap: 0 violation(s)
+  ✓ PR3_PR4_group_overlap: 0 violation(s)
+  ✓ RU2_lecturer_availability: 0 violation(s)
+  ✓ PR2_lecturer_assigned: 0 violation(s)
+  ✓ CONJ_PHASE3_room_count: 0 violation(s)
+  ✓ CONJ_PHASE3_room_capacity: 0 violation(s)
+
+-- 1b. RULES OUTSIDE V AND STATUSES --
+  ✓ BREAK_lecturer: 0 violation(s)
+  ✓ BREAK_group: 0 violation(s)
+  ✓ PR5_mixed_modality: 0 violation(s)
+  rooms: 32/32 in-person lessons roomed (remote exempt: 0, bound 32, solver status OPTIMAL)
+  statuses: {'time_core': True, 'room_rows': True, 'v_zero': True, 'rooms': True, 'policy_rules': True, 'extra_rules': True, 'full': True, 'pr5': True, 'profile': 'time core + room rows per 15-min cell + exact rooms + 15-min break + PR5'}
+
+-- 2. SOFT METRICS --
+  lecturer_satisfaction_counts:
+      high_pref: 32
+      low_pref: 0
+      neutral: 0
+      not_available: 0
+  lecturer_satisfaction_percent:
+      high_pref: 100.0
+      low_pref: 0.0
+      neutral: 0.0
+      not_available: 0.0
+  time_of_day_counts:
+      morning: 22
+      afternoon: 3
+      evening: 7
+  time_of_day_minutes:
+      morning: 1980.0
+      afternoon: 270.0
+      evening: 630.0
+  total_student_gap_minutes: 90.0
+  gap_minutes_by_group:
+      grp_003: 30.0
+      grp_007: 30.0
+      grp_009: 15.0
+      grp_005: 15.0
+  days_per_group:
+      avg: 3.92
+      min: 2
+      max: 5
+      by_group: {'grp_001': 5, 'grp_002': 3, 'grp_003': 5, 'grp_004': 2, 'grp_005': 5, 'grp_006': 2, 'grp_007': 5, 'grp_008': 5, 'grp_009': 5, 'grp_010': 2, 'grp_011': 4, 'grp_012': 4}
+
+-- 3. PER-LESSON AUDIT --
+  l  0  ★ Środa          9:45-11:15     grp_001__1001_Course 1__Laboratorium                    lec_006     room=—
+  l  1  ★ Piątek         8:00-9:30      grp_002__1002_Course 2__Inne                            lec_001     room=—
+  l  2  ★ Czwartek       9:45-11:15     grp_003__1003_Course 3__Wykład                          lec_003     room=—
+  l  3  ★ Środa          9:45-11:15     grp_004__1004_Course 4__E-learning                      lec_009     room=—
+  l  4  ★ Środa          18:30-20:00    grp_005__1005_Course 5__Seminarium                      lec_002     room=—
+  l  5  ★ Poniedziałek   11:30-13:00    grp_006__1006_Course 6__E-learning                      lec_001     room=—
+  l  6  ★ Piątek         9:45-11:15     grp_007__1007_Course 7__E-learning                      lec_002     room=—
+  l  7  ★ Poniedziałek   11:30-13:00    grp_008__1008_Course 8__Projekt                         lec_010     room=—
+  l  8  ★ Czwartek       8:00-9:30      grp_009__1009_Course 9__Inne                            lec_005     room=—
+  l  9  ★ Poniedziałek   9:45-11:15     grp_010__1010_Course 10__Projekt                        lec_012     room=—
+  l 10  ★ Piątek         11:30-13:00    grp_011__1011_Course 11__Ćwiczenia                      lec_008     room=—
+  l 11  ★ Piątek         9:45-11:15     grp_012__1012_Course 12__Inne                           lec_007     room=—
+  l 12  ★ Czwartek       16:45-18:15    grp_011__1013_Course 13__Ćwiczenia                      lec_007     room=—
+  l 13  ★ Piątek         15:00-16:30    grp_009__1014_Course 14__Ćwiczenia                      lec_006     room=—
+  l 14  ★ Poniedziałek   18:30-20:00    grp_009__1015_Course 15__Projekt                        lec_002     room=—
+  l 15  ★ Piątek         18:30-20:00    grp_008__1016_Course 16__Projekt                        lec_003     room=—
+  l 16  ★ Poniedziałek   15:00-16:30    grp_001__1017_Course 17__E-learning                     lec_005     room=—
+  l 17  ★ Środa          8:00-9:30      grp_009__1018_Course 18__Wykład                         lec_007     room=—
+  l 18  ★ Poniedziałek   18:30-20:00    grp_003__1019_Course 19__Inne                           lec_008     room=—
+  l 19  ★ Wtorek         15:00-16:30    grp_009__1020_Course 20__Ćwiczenia                      lec_012     room=—
+  l 20  ★ Czwartek       9:45-11:15     grp_008__1021_Course 21__Ćwiczenia                      lec_012     room=—
+  l 21  ★ Piątek         11:30-13:00    grp_005__1022_Course 22__Wykład                         lec_009     room=—
+  l 22  ★ Wtorek         16:45-18:15    grp_007__1023_Course 23__Inne                           lec_007     room=—  gap[min]: grp_009=15.0
+  l 23  ★ Czwartek       9:45-11:15     grp_005__1024_Course 24__Wykład                         lec_008     room=—
+  l 24  ★ Środa          11:30-13:00    grp_007__1025_Course 25__Laboratorium                   lec_012     room=—  gap[min]: grp_007=15.0
+  l 25  ★ Wtorek         9:45-11:15     grp_008__1026_Course 26__Ćwiczenia                      lec_002     room=—
+  l 26  ★ Środa          9:45-11:15     grp_002__1027_Course 27__Ćwiczenia                      lec_003     room=—  gap[min]: grp_003=15.0, grp_007=15.0
+  l 27  ★ Wtorek         16:45-18:15    grp_011__1028_Course 28__Wykład                         lec_005     room=—
+  l 28  ★ Środa          11:30-13:00    grp_012__1029_Course 29__Laboratorium                   lec_011     room=—
+  l 29  ★ Czwartek       11:30-13:00    grp_003__1030_Course 30__Laboratorium                   lec_006     room=—  gap[min]: grp_003=15.0
+  l 30  ★ Czwartek       11:30-13:00    grp_005__1031_Course 31__Wykład                         lec_009     room=—  gap[min]: grp_005=15.0
+  l 31  ★ Poniedziałek   8:00-9:30      grp_007__1032_Course 32__Inne                           lec_011     room=—
+
+================================================================================
+PODSUMOWANIE BENCHMARKU
+================================================================================
+  MIP: feasible=OK  phase2_time=1.744s  E=n/a

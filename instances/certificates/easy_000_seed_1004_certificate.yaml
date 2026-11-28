@@ -1,0 +1,59 @@
+schema_version: 1
+metadata:
+  certificate: 'feasible timetable: MILP feasibility-only plan with an exact room
+    assignment; remote lessons need no physical room and carry none'
+  instance_sha256: b504bd2e19c75b394772d3cdf86b5aadb6e6505dc3f4a2a4a7b30fa6a6724bb1
+  code_version:
+    commit: 92e23f2a0cae2f51ec2c0b52e5e7c1f6c5660e93
+    tags_at_commit: []
+    describe: frozen-20260924-1155-39-g92e23f2
+    dirty: false
+    modified_tracked_files: []
+    n_modified_tracked_files: 0
+  statuses:
+    time_core: true
+    room_rows: true
+    v_zero: true
+    rooms: true
+    policy_rules: true
+    extra_rules: true
+    full: true
+    profile: time core + room rows per 15-min cell + exact rooms + 15-min break +
+      PR5
+lessons:
+- l_idx: 0
+  course_unique_id: grp_001__1001_Course 1__Projekt
+  lecturer_unique_id: lec_002
+  slot_str: 13:15-14:45
+  dayname: Poniedziałek
+- l_idx: 1
+  course_unique_id: grp_002__1002_Course 2__Seminarium
+  lecturer_unique_id: lec_003
+  slot_str: 11:30-13:00
+  dayname: Czwartek
+- l_idx: 2
+  course_unique_id: grp_003__1003_Course 3__E-learning
+  lecturer_unique_id: lec_002
+  slot_str: 11:30-13:00
+  dayname: Czwartek
+- l_idx: 3
+  course_unique_id: grp_002__1004_Course 4__Wykład
+  lecturer_unique_id: lec_003
+  slot_str: 8:00-9:30
+  dayname: Czwartek
+- l_idx: 4
+  course_unique_id: grp_002__1005_Course 5__Laboratorium
+  lecturer_unique_id: lec_003
+  slot_str: 16:45-18:15
+  dayname: Wtorek
+room_assignments:
+- l_idx: 0
+  room_unique_id: BLDG1_002
+- l_idx: 1
+  room_unique_id: BLDG1_001
+- l_idx: 2
+  room_unique_id: BLDG1_002
+- l_idx: 3
+  room_unique_id: BLDG1_003
+- l_idx: 4
+  room_unique_id: BLDG1_003

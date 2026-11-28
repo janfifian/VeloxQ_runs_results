@@ -1,0 +1,63 @@
+{
+ "what": "phase-2 MILP on the certified synthetic instances, one process per instance",
+ "started": "2026-11-19T23:55:23+01:00",
+ "settings": {
+  "out": "..\\..\\..\\artifacts\\campaign\\milp_weighted",
+  "instances": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\.claude\\worktrees\\milp-extreme-5h\\repository_ready\\instances\\synthetic",
+  "objective_mode": "weighted_sum",
+  "threads": 14,
+  "mip_gap": 0.0,
+  "seed": null,
+  "time_limit": null,
+  "tiers": [
+   "hard"
+  ],
+  "only": [
+   "hard_010_seed_1102"
+  ],
+  "dry_run": false,
+  "summarize_only": false,
+  "allow_uncommitted": false
+ },
+ "environment": {
+  "python_version": "3.13.12",
+  "python_implementation": "CPython",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "machine": "AMD64",
+  "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+  "logical_processors": 20,
+  "hostname": "FifianJanPC",
+  "timestamp": "2026-11-19T23:55:23+01:00",
+  "git_commit": "48dd5556066a",
+  "git_dirty": false,
+  "code": {
+   "commit": "48dd5556066a4e43fb44b8aa57315cacf31075dc",
+   "tags_at_commit": [
+    "campaign-2026-10"
+   ],
+   "describe": "campaign-2026-10",
+   "dirty": false,
+   "modified_tracked_files": [],
+   "n_modified_tracked_files": 0
+  },
+  "packages": {
+   "gurobipy": "12.0.3",
+   "veloxq_sdk": "0.1.dev125+ge290bd081",
+   "dimod": "0.12.21",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "torch": "2.11.0+cpu",
+   "networkx": "3.6.1",
+   "h5py": "3.16.0",
+   "PyYAML": "6.0.3",
+   "gurobi_library": "12.0.3"
+  }
+ },
+ "uncommitted_code": [],
+ "instances": [
+  {
+   "file": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zaj\u0119\u0107 - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\.claude\\worktrees\\milp-extreme-5h\\repository_ready\\instances\\synthetic\\hard_010_seed_1102.yaml",
+   "sha256": "6eadcfdca7f1fef0ec1f74f8af44b9580bfa8fd2ccb886c44e7f60ce23913912"
+  }
+ ]
+}

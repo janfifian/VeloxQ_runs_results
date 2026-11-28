@@ -1,0 +1,46 @@
+{
+ "instance": "artifacts/generated_instances/hard_007_seed_1070.yaml",
+ "instance_sha256": "d7035cc990b338b6b5a8b64f0bc6972fd09693b972dabc57038cd9591cfe6f0d",
+ "code_version": {
+  "commit": "92e23f2a0cae2f51ec2c0b52e5e7c1f6c5660e93",
+  "tags_at_commit": [],
+  "describe": "frozen-20260924-1155-39-g92e23f2",
+  "dirty": false,
+  "modified_tracked_files": [],
+  "n_modified_tracked_files": 0
+ },
+ "time_limit_seconds": 3600.0,
+ "wall_seconds": 4.4,
+ "milp_status": "SOLUTION_LIMIT",
+ "lessons": 38,
+ "statuses": {
+  "time_core": true,
+  "room_rows": true,
+  "v_zero": true,
+  "rooms": true,
+  "policy_rules": true,
+  "extra_rules": true,
+  "full": true,
+  "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+ },
+ "room_check": {
+  "violations": {
+   "PR1_course_minutes": 0,
+   "MC_max_chunks": 0,
+   "PR3_PR4_lecturer_overlap": 0,
+   "PR3_PR4_group_overlap": 0,
+   "RU2_lecturer_availability": 0,
+   "PR2_lecturer_assigned": 0,
+   "CONJ_PHASE3_room_count": 0,
+   "CONJ_PHASE3_room_capacity": 0,
+   "EachLessonHasOneClassroom": 0,
+   "NC3_room_double_booking": 0,
+   "RU3_room_capacity": 0,
+   "RU7_room_availability": 0
+  },
+  "n_rooms_assigned": 38,
+  "n_remote_lessons_without_room": 0
+ },
+ "certified_feasible": true,
+ "certificate": "artifacts/feasibility_certificates/hard_007_seed_1070_certificate.yaml"
+}

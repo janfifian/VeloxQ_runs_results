@@ -1,0 +1,2 @@
+# Keep the bytes as they are: the sha256 in registry.csv is the plain sha256sum.
+* -text

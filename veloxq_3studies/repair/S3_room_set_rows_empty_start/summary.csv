@@ -1,0 +1,2 @@
+setting,instance,tier,rep,veloxq_energy,veloxq_lessons,veloxq_solver_s,veloxq_time_core,violations_before,violations_after,soft_before,soft_after,ls_wall_s,ls_time_to_zero_s,ls_cycles,ls_converged,time_core,room_rows,rooms,policy_rules,full,call_wall_s
+S3,3_studies_instance,production,0,,,,,130,0,0.0,-8220.0,1755.187,1493.774,5,True,True,True,True,True,True,1815.096

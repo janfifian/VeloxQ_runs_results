@@ -1,0 +1,2111 @@
+{
+ "withheld_fields": [
+  "soft_metrics.gap_minutes_by_group",
+  "soft_metrics.days_per_group.by_group"
+ ],
+ "calls": {
+  "1": {
+   "timetable": {
+    "file": "rep_1/3_studies_instance_postLS.yaml",
+    "sha256": "207f1802b762634523d27476db816503636fce45bee0f1531ab75c0487058f22",
+    "lessons": 130
+   },
+   "record": {
+    "applied_local_search": true,
+    "source_instance": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+    "source_instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "source_solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_1\\3_studies_instance_velox_solution.yaml",
+     "sha256": "a3de1a3b8a3f25c37ef5849b26c2f99fde46e780eaae480c6549c2700e21a44b",
+     "sha256_file_bytes": "e1d2ca8051b09d8d55eb3f9afe4227ce481659ce4001a4cc2e951d7801640a36",
+     "bytes": 101581
+    },
+    "source_solution": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_1\\3_studies_instance_velox_solution.yaml",
+    "candidate_count": 1,
+    "candidates_considered": [
+     {
+      "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_1\\3_studies_instance_velox_solution.yaml",
+      "pre_cost": null
+     }
+    ],
+    "qubo_config": null,
+    "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T17:24:58+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    },
+    "cli_args": {
+     "instance_yaml": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "input_solution": [
+      "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_1\\3_studies_instance_velox_solution.yaml"
+     ],
+     "output_prefix": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_1\\3_studies_instance",
+     "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+     "qubo_config": null,
+     "instance_dir": null,
+     "solution_dir": null,
+     "output_dir": null,
+     "solution_glob": "*_solution.yaml",
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "no_first_improvement": false,
+     "skip_h1": false,
+     "skip_k_opt": false,
+     "enable_pr3_pr4_purge": false,
+     "tie_break": "soft_objective",
+     "no_extra_rules": false,
+     "no_pr5": false,
+     "room_set_rows": true,
+     "no_qubo_energy": false,
+     "dump_per_cycle": false,
+     "targeted_k_opt_first": false,
+     "targeted_k_opt_only": false,
+     "targeted_max_per_violation": 50,
+     "targeted_max_blockers_per_deficit": 10,
+     "verbose": false
+    },
+    "initial_cost": [
+     226,
+     -5180.0
+    ],
+    "final_cost": [
+     1,
+     -7620.0
+    ],
+    "cost_definition": {
+     "first_key": "time-core violations + break and PR5 pairs + exceeded MILP room-set rows",
+     "tie_break": "soft_objective",
+     "pr5": true,
+     "room_set_rows": true
+    },
+    "initial": {
+     "violations_time_core": 198,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 4,
+      "BREAK_group": 12,
+      "PR5_mixed_modality": 12
+     },
+     "soft_objective": -5180.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -18960.0,
+      "min_gaps_students": 13515.0,
+      "min_days_students": 60.0,
+      "time_of_day": 205.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2543392042.0
+    },
+    "final": {
+     "violations_time_core": 1,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 0,
+      "BREAK_group": 0,
+      "PR5_mixed_modality": 0
+     },
+     "soft_objective": -7620.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -10040.0,
+      "min_gaps_students": 2580.0,
+      "min_days_students": 60.0,
+      "time_of_day": -220.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2578369435.5
+    },
+    "local_search_args": {
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "first_improvement": true
+    }
+   },
+   "verdict": {
+    "solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_1\\3_studies_instance_postLS.yaml",
+     "sha256": "207f1802b762634523d27476db816503636fce45bee0f1531ab75c0487058f22",
+     "sha256_file_bytes": "dd8a43356fedee11b42696532f21f2283062d2f6aeb2e8374d750f297ce909e4",
+     "bytes": 47357
+    },
+    "instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "lessons": 130,
+    "feasible_time_core": false,
+    "n_violations": 1,
+    "violations_by_constraint": {
+     "PR1_course_minutes": 1,
+     "MC_max_chunks": 0,
+     "PR3_PR4_lecturer_overlap": 0,
+     "PR3_PR4_group_overlap": 0,
+     "RU2_lecturer_availability": 0,
+     "PR2_lecturer_assigned": 0,
+     "CONJ_PHASE3_room_count": 0,
+     "CONJ_PHASE3_room_capacity": 0
+    },
+    "extra_violations_by_rule": {
+     "BREAK_lecturer": 0,
+     "BREAK_group": 0,
+     "PR5_mixed_modality": 0
+    },
+    "statuses": {
+     "time_core": false,
+     "room_rows": true,
+     "v_zero": false,
+     "rooms": true,
+     "policy_rules": true,
+     "extra_rules": true,
+     "full": false,
+     "pr5": true,
+     "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+    },
+    "room_assignment": {
+     "roomable": true,
+     "assignment": {
+      "6523": 26,
+      "6685": 27,
+      "6809": 27,
+      "6824": 27,
+      "7088": 7,
+      "7200": 26,
+      "7241": 20,
+      "7478": 17,
+      "7479": 30,
+      "7733": 28,
+      "7812": 28,
+      "8870": 27,
+      "9305": 31,
+      "9951": 0,
+      "10456": 28,
+      "10911": 20,
+      "10950": 22,
+      "11301": 30,
+      "11484": 31,
+      "11613": 31,
+      "12031": 17,
+      "12368": 12,
+      "12555": 22,
+      "12782": 30,
+      "12944": 27,
+      "13321": 27,
+      "13393": 20,
+      "13545": 30,
+      "13615": 21,
+      "13741": 27,
+      "13742": 27,
+      "13998": 41,
+      "13999": 27,
+      "14091": 20,
+      "14092": 27,
+      "14342": 27,
+      "14410": 7,
+      "14775": 30,
+      "14918": 29,
+      "14919": 27,
+      "15193": 10,
+      "15194": 43,
+      "15223": 31,
+      "15386": 20,
+      "15652": 30,
+      "15738": 31,
+      "15739": 30,
+      "15851": 27,
+      "15852": 17,
+      "15950": 19,
+      "15951": 27,
+      "15995": 30,
+      "16130": 32,
+      "16343": 31,
+      "16431": 21,
+      "16432": 30,
+      "16563": 13,
+      "16779": 31,
+      "17067": 32,
+      "17412": 20,
+      "17413": 32,
+      "17635": 40,
+      "17955": 30,
+      "18197": 22,
+      "18515": 31,
+      "18516": 30,
+      "18730": 21,
+      "18922": 33,
+      "19003": 20,
+      "19423": 31,
+      "19586": 22,
+      "19826": 2,
+      "19827": 27,
+      "20032": 11,
+      "20033": 32,
+      "20223": 35,
+      "20224": 31,
+      "20474": 33,
+      "20475": 32,
+      "20563": 29,
+      "20640": 13,
+      "20844": 25,
+      "20962": 21,
+      "20963": 21,
+      "21165": 32,
+      "21398": 33,
+      "21399": 12,
+      "21906": 17,
+      "21907": 31,
+      "21948": 30,
+      "22142": 38,
+      "22143": 31,
+      "22427": 18,
+      "22574": 30,
+      "22575": 30,
+      "22787": 31,
+      "22788": 33,
+      "22868": 27,
+      "22946": 34,
+      "22947": 34,
+      "23236": 39,
+      "23460": 32,
+      "23461": 23,
+      "23626": 24,
+      "23981": 31,
+      "24073": 29,
+      "24074": 12,
+      "24180": 18,
+      "24181": 30,
+      "24329": 29,
+      "24330": 42,
+      "24455": 27,
+      "24726": 12,
+      "24727": 22,
+      "25152": 33,
+      "25153": 31,
+      "25333": 25,
+      "25334": 35,
+      "25446": 31,
+      "25447": 32,
+      "25566": 32,
+      "25567": 33
+     },
+     "n_in_person": 122,
+     "n_remote_exempt": 8,
+     "n_roomed": 122,
+     "upper_bound": 122,
+     "n_without_admissible_free_room": 0,
+     "status": "OPTIMAL",
+     "unroomed": []
+    },
+    "soft_metrics": {
+     "lecturer_satisfaction_counts": {
+      "high_pref": 124,
+      "low_pref": 6,
+      "neutral": 0,
+      "not_available": 0
+     },
+     "lecturer_satisfaction_percent": {
+      "high_pref": 95.4,
+      "low_pref": 4.6,
+      "neutral": 0.0,
+      "not_available": 0.0
+     },
+     "time_of_day_counts": {
+      "morning": 68,
+      "afternoon": 50,
+      "evening": 12
+     },
+     "time_of_day_minutes": {
+      "morning": 7740.0,
+      "afternoon": 5790.0,
+      "evening": 1200.0
+     },
+     "total_student_gap_minutes": 2580.0,
+     "days_per_group": {
+      "avg": 5.0,
+      "min": 5,
+      "max": 5
+     }
+    },
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T17:25:04+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    }
+   }
+  },
+  "2": {
+   "timetable": {
+    "file": "rep_2/3_studies_instance_postLS.yaml",
+    "sha256": "6df2bd53669d8d152ab0a0bfce48634122998497b3b3f25f3995baf940feb355",
+    "lessons": 130
+   },
+   "record": {
+    "applied_local_search": true,
+    "source_instance": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+    "source_instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "source_solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_2\\3_studies_instance_velox_solution.yaml",
+     "sha256": "034ef16bfb2f308baa9d430657cdac75fdf4072239caa2c4fff71118535a617c",
+     "sha256_file_bytes": "f29debaa9660eee33fe8a402958564cb828ea2fb6325f13ece21098ac0906307",
+     "bytes": 94700
+    },
+    "source_solution": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_2\\3_studies_instance_velox_solution.yaml",
+    "candidate_count": 1,
+    "candidates_considered": [
+     {
+      "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_2\\3_studies_instance_velox_solution.yaml",
+      "pre_cost": null
+     }
+    ],
+    "qubo_config": null,
+    "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T17:43:37+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    },
+    "cli_args": {
+     "instance_yaml": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "input_solution": [
+      "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_2\\3_studies_instance_velox_solution.yaml"
+     ],
+     "output_prefix": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_2\\3_studies_instance",
+     "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+     "qubo_config": null,
+     "instance_dir": null,
+     "solution_dir": null,
+     "output_dir": null,
+     "solution_glob": "*_solution.yaml",
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "no_first_improvement": false,
+     "skip_h1": false,
+     "skip_k_opt": false,
+     "enable_pr3_pr4_purge": false,
+     "tie_break": "soft_objective",
+     "no_extra_rules": false,
+     "no_pr5": false,
+     "room_set_rows": true,
+     "no_qubo_energy": false,
+     "dump_per_cycle": false,
+     "targeted_k_opt_first": false,
+     "targeted_k_opt_only": false,
+     "targeted_max_per_violation": 50,
+     "targeted_max_blockers_per_deficit": 10,
+     "verbose": false
+    },
+    "initial_cost": [
+     206,
+     -3590.0
+    ],
+    "final_cost": [
+     3,
+     -7996.0
+    ],
+    "cost_definition": {
+     "first_key": "time-core violations + break and PR5 pairs + exceeded MILP room-set rows",
+     "tie_break": "soft_objective",
+     "pr5": true,
+     "room_set_rows": true
+    },
+    "initial": {
+     "violations_time_core": 196,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 2,
+      "BREAK_group": 7,
+      "PR5_mixed_modality": 1
+     },
+     "soft_objective": -3590.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -17440.0,
+      "min_gaps_students": 13785.0,
+      "min_days_students": 60.0,
+      "time_of_day": 5.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2563999835.5
+    },
+    "final": {
+     "violations_time_core": 3,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 0,
+      "BREAK_group": 0,
+      "PR5_mixed_modality": 0
+     },
+     "soft_objective": -7996.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -9980.0,
+      "min_gaps_students": 2160.0,
+      "min_days_students": 59.0,
+      "time_of_day": -235.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2584412607.0
+    },
+    "local_search_args": {
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "first_improvement": true
+    }
+   },
+   "verdict": {
+    "solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_2\\3_studies_instance_postLS.yaml",
+     "sha256": "6df2bd53669d8d152ab0a0bfce48634122998497b3b3f25f3995baf940feb355",
+     "sha256_file_bytes": "6011f32c56627f01602b6ea1cc1fb1a3aafa0e4c8448f2994ea429c4b7c27073",
+     "bytes": 47389
+    },
+    "instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "lessons": 130,
+    "feasible_time_core": false,
+    "n_violations": 3,
+    "violations_by_constraint": {
+     "PR1_course_minutes": 2,
+     "MC_max_chunks": 0,
+     "PR3_PR4_lecturer_overlap": 0,
+     "PR3_PR4_group_overlap": 1,
+     "RU2_lecturer_availability": 0,
+     "PR2_lecturer_assigned": 0,
+     "CONJ_PHASE3_room_count": 0,
+     "CONJ_PHASE3_room_capacity": 0
+    },
+    "extra_violations_by_rule": {
+     "BREAK_lecturer": 0,
+     "BREAK_group": 0,
+     "PR5_mixed_modality": 0
+    },
+    "statuses": {
+     "time_core": false,
+     "room_rows": true,
+     "v_zero": false,
+     "rooms": true,
+     "policy_rules": true,
+     "extra_rules": true,
+     "full": false,
+     "pr5": true,
+     "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+    },
+    "room_assignment": {
+     "roomable": true,
+     "assignment": {
+      "12419": 26,
+      "12583": 25,
+      "12616": 20,
+      "12741": 39,
+      "12818": 20,
+      "13097": 40,
+      "13098": 27,
+      "13222": 27,
+      "13417": 7,
+      "13418": 25,
+      "13489": 27,
+      "13490": 35,
+      "13650": 27,
+      "13715": 17,
+      "13993": 31,
+      "14069": 27,
+      "14070": 27,
+      "14173": 30,
+      "14395": 31,
+      "14396": 27,
+      "14575": 30,
+      "14701": 31,
+      "15021": 31,
+      "15116": 29,
+      "15269": 27,
+      "15323": 32,
+      "15387": 30,
+      "15550": 15,
+      "15638": 30,
+      "15757": 27,
+      "15758": 21,
+      "15818": 30,
+      "15819": 2,
+      "16254": 17,
+      "16477": 31,
+      "16714": 19,
+      "16798": 32,
+      "16799": 38,
+      "16934": 29,
+      "16935": 30,
+      "17139": 27,
+      "17452": 30,
+      "17575": 30,
+      "17696": 41,
+      "17774": 43,
+      "17858": 31,
+      "17909": 20,
+      "17910": 31,
+      "18044": 20,
+      "18045": 15,
+      "18182": 31,
+      "18276": 33,
+      "18430": 21,
+      "18431": 32,
+      "18505": 35,
+      "18506": 32,
+      "18937": 0,
+      "18938": 27,
+      "19162": 21,
+      "19163": 32,
+      "19302": 15,
+      "19386": 32,
+      "19387": 28,
+      "19483": 15,
+      "19484": 30,
+      "19554": 31,
+      "19667": 32,
+      "19798": 23,
+      "19880": 20,
+      "20015": 30,
+      "20016": 20,
+      "20154": 20,
+      "20155": 20,
+      "20344": 29,
+      "20657": 42,
+      "20658": 33,
+      "20985": 33,
+      "20986": 20,
+      "21084": 20,
+      "21085": 32,
+      "21243": 27,
+      "21244": 21,
+      "21618": 33,
+      "21767": 34,
+      "21768": 33,
+      "21817": 25,
+      "21818": 18,
+      "21964": 13,
+      "22010": 25,
+      "22011": 7,
+      "22093": 19,
+      "22094": 29,
+      "22183": 34,
+      "22248": 22,
+      "22343": 11,
+      "22440": 30,
+      "22441": 36,
+      "22657": 26,
+      "22658": 27,
+      "22861": 35,
+      "22862": 36,
+      "22966": 31,
+      "23141": 27,
+      "23142": 32,
+      "23250": 27,
+      "23461": 32,
+      "23462": 37,
+      "23511": 32,
+      "23582": 21,
+      "23687": 31,
+      "23975": 27,
+      "23976": 21,
+      "24066": 34,
+      "24067": 32,
+      "24191": 34,
+      "24192": 20,
+      "24305": 23,
+      "24306": 23,
+      "24458": 35,
+      "24459": 34,
+      "24873": 29,
+      "24874": 16
+     },
+     "n_in_person": 122,
+     "n_remote_exempt": 8,
+     "n_roomed": 122,
+     "upper_bound": 122,
+     "n_without_admissible_free_room": 0,
+     "status": "OPTIMAL",
+     "unroomed": []
+    },
+    "soft_metrics": {
+     "lecturer_satisfaction_counts": {
+      "high_pref": 123,
+      "low_pref": 7,
+      "neutral": 0,
+      "not_available": 0
+     },
+     "lecturer_satisfaction_percent": {
+      "high_pref": 94.6,
+      "low_pref": 5.4,
+      "neutral": 0.0,
+      "not_available": 0.0
+     },
+     "time_of_day_counts": {
+      "morning": 75,
+      "afternoon": 41,
+      "evening": 14
+     },
+     "time_of_day_minutes": {
+      "morning": 8475.0,
+      "afternoon": 4905.0,
+      "evening": 1230.0
+     },
+     "total_student_gap_minutes": 2445.0,
+     "days_per_group": {
+      "avg": 4.92,
+      "min": 4,
+      "max": 5
+     }
+    },
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T17:43:43+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    }
+   }
+  },
+  "3": {
+   "timetable": {
+    "file": "rep_3/3_studies_instance_postLS.yaml",
+    "sha256": "9b4617b6ada528edd75bd5b134c7fd553197962c63a540791f547d85a704fcb8",
+    "lessons": 132
+   },
+   "record": {
+    "applied_local_search": true,
+    "source_instance": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+    "source_instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "source_solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_3\\3_studies_instance_velox_solution.yaml",
+     "sha256": "0740025078869a4731dcc706c625dc65aef0c442582cd5643b7df9e3b9bf5bc8",
+     "sha256_file_bytes": "c17b07b2d87be1bb11fb92567d43cb23f06456189a63dd1600f4ab40c0360b36",
+     "bytes": 95346
+    },
+    "source_solution": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_3\\3_studies_instance_velox_solution.yaml",
+    "candidate_count": 1,
+    "candidates_considered": [
+     {
+      "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_3\\3_studies_instance_velox_solution.yaml",
+      "pre_cost": null
+     }
+    ],
+    "qubo_config": null,
+    "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T18:09:53+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    },
+    "cli_args": {
+     "instance_yaml": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "input_solution": [
+      "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_3\\3_studies_instance_velox_solution.yaml"
+     ],
+     "output_prefix": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_3\\3_studies_instance",
+     "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+     "qubo_config": null,
+     "instance_dir": null,
+     "solution_dir": null,
+     "output_dir": null,
+     "solution_glob": "*_solution.yaml",
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "no_first_improvement": false,
+     "skip_h1": false,
+     "skip_k_opt": false,
+     "enable_pr3_pr4_purge": false,
+     "tie_break": "soft_objective",
+     "no_extra_rules": false,
+     "no_pr5": false,
+     "room_set_rows": true,
+     "no_qubo_energy": false,
+     "dump_per_cycle": false,
+     "targeted_k_opt_first": false,
+     "targeted_k_opt_only": false,
+     "targeted_max_per_violation": 50,
+     "targeted_max_blockers_per_deficit": 10,
+     "verbose": false
+    },
+    "initial_cost": [
+     212,
+     -3981.0
+    ],
+    "final_cost": [
+     2,
+     -7906.0
+    ],
+    "cost_definition": {
+     "first_key": "time-core violations + break and PR5 pairs + exceeded MILP room-set rows",
+     "tie_break": "soft_objective",
+     "pr5": true,
+     "room_set_rows": true
+    },
+    "initial": {
+     "violations_time_core": 192,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 1,
+      "BREAK_group": 10,
+      "PR5_mixed_modality": 6
+     },
+     "soft_objective": -3981.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -17460.0,
+      "min_gaps_students": 13110.0,
+      "min_days_students": 59.0,
+      "time_of_day": 310.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 3,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2561069161.0
+    },
+    "final": {
+     "violations_time_core": 2,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 0,
+      "BREAK_group": 0,
+      "PR5_mixed_modality": 0
+     },
+     "soft_objective": -7906.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -10380.0,
+      "min_gaps_students": 2610.0,
+      "min_days_students": 59.0,
+      "time_of_day": -195.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2578503687.0
+    },
+    "local_search_args": {
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "first_improvement": true
+    }
+   },
+   "verdict": {
+    "solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_3\\3_studies_instance_postLS.yaml",
+     "sha256": "9b4617b6ada528edd75bd5b134c7fd553197962c63a540791f547d85a704fcb8",
+     "sha256_file_bytes": "9784ed94db15e6bfb01f042831ee4af3c52492da5363872ecd8fb58371e60049",
+     "bytes": 48070
+    },
+    "instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "lessons": 132,
+    "feasible_time_core": false,
+    "n_violations": 2,
+    "violations_by_constraint": {
+     "PR1_course_minutes": 0,
+     "MC_max_chunks": 1,
+     "PR3_PR4_lecturer_overlap": 0,
+     "PR3_PR4_group_overlap": 1,
+     "RU2_lecturer_availability": 0,
+     "PR2_lecturer_assigned": 0,
+     "CONJ_PHASE3_room_count": 0,
+     "CONJ_PHASE3_room_capacity": 0
+    },
+    "extra_violations_by_rule": {
+     "BREAK_lecturer": 0,
+     "BREAK_group": 0,
+     "PR5_mixed_modality": 0
+    },
+    "statuses": {
+     "time_core": false,
+     "room_rows": true,
+     "v_zero": false,
+     "rooms": true,
+     "policy_rules": true,
+     "extra_rules": true,
+     "full": false,
+     "pr5": true,
+     "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+    },
+    "room_assignment": {
+     "roomable": true,
+     "assignment": {
+      "226": 26,
+      "227": 15,
+      "228": 26,
+      "9156": 27,
+      "9262": 27,
+      "9298": 28,
+      "9352": 27,
+      "9510": 19,
+      "9804": 17,
+      "9805": 7,
+      "10097": 4,
+      "10501": 20,
+      "10630": 30,
+      "11515": 16,
+      "11620": 27,
+      "11637": 9,
+      "11685": 30,
+      "12488": 31,
+      "12613": 26,
+      "12728": 27,
+      "12828": 26,
+      "12890": 20,
+      "13001": 20,
+      "13002": 29,
+      "13073": 29,
+      "13267": 30,
+      "13268": 39,
+      "13506": 31,
+      "13507": 20,
+      "13801": 22,
+      "13802": 27,
+      "14283": 27,
+      "14284": 28,
+      "14460": 27,
+      "14653": 14,
+      "14805": 29,
+      "14971": 30,
+      "14972": 20,
+      "15146": 30,
+      "15147": 28,
+      "15542": 31,
+      "15543": 29,
+      "15618": 31,
+      "15619": 22,
+      "15767": 30,
+      "15768": 7,
+      "15970": 31,
+      "15971": 27,
+      "16172": 32,
+      "16244": 31,
+      "16245": 31,
+      "16499": 28,
+      "16500": 2,
+      "16739": 30,
+      "16740": 32,
+      "16894": 3,
+      "17059": 20,
+      "17247": 33,
+      "17571": 32,
+      "18045": 0,
+      "18046": 31,
+      "18206": 28,
+      "18424": 31,
+      "18425": 30,
+      "18549": 28,
+      "18706": 19,
+      "18707": 28,
+      "19068": 31,
+      "19069": 42,
+      "19338": 21,
+      "19424": 32,
+      "19503": 30,
+      "19624": 27,
+      "19745": 33,
+      "19746": 18,
+      "19853": 27,
+      "19982": 32,
+      "20181": 30,
+      "20182": 33,
+      "20317": 21,
+      "20318": 3,
+      "20499": 34,
+      "20559": 32,
+      "20640": 30,
+      "20907": 41,
+      "20908": 31,
+      "21258": 30,
+      "21259": 15,
+      "21469": 34,
+      "21650": 21,
+      "21651": 27,
+      "21783": 22,
+      "21895": 31,
+      "22112": 21,
+      "22113": 31,
+      "22294": 35,
+      "22403": 34,
+      "22404": 26,
+      "22602": 36,
+      "22603": 33,
+      "22749": 20,
+      "22750": 38,
+      "22838": 25,
+      "22839": 31,
+      "23199": 35,
+      "23200": 34,
+      "23321": 32,
+      "23322": 15,
+      "23495": 9,
+      "23496": 22,
+      "23557": 27,
+      "23558": 10,
+      "23770": 40,
+      "24201": 35,
+      "24202": 36,
+      "24448": 43,
+      "24559": 32,
+      "24560": 31,
+      "24629": 9,
+      "24630": 26,
+      "24692": 27,
+      "24693": 9,
+      "24809": 31,
+      "24810": 20
+     },
+     "n_in_person": 124,
+     "n_remote_exempt": 8,
+     "n_roomed": 124,
+     "upper_bound": 124,
+     "n_without_admissible_free_room": 0,
+     "status": "OPTIMAL",
+     "unroomed": []
+    },
+    "soft_metrics": {
+     "lecturer_satisfaction_counts": {
+      "high_pref": 129,
+      "low_pref": 3,
+      "neutral": 0,
+      "not_available": 0
+     },
+     "lecturer_satisfaction_percent": {
+      "high_pref": 97.7,
+      "low_pref": 2.3,
+      "neutral": 0.0,
+      "not_available": 0.0
+     },
+     "time_of_day_counts": {
+      "morning": 67,
+      "afternoon": 51,
+      "evening": 14
+     },
+     "time_of_day_minutes": {
+      "morning": 7635.0,
+      "afternoon": 6015.0,
+      "evening": 1230.0
+     },
+     "total_student_gap_minutes": 2895.0,
+     "days_per_group": {
+      "avg": 4.92,
+      "min": 4,
+      "max": 5
+     }
+    },
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T18:10:00+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    }
+   }
+  },
+  "4": {
+   "timetable": {
+    "file": "rep_4/3_studies_instance_postLS.yaml",
+    "sha256": "38bec42bc939e7219ca57d339f6b9c3873aa30588d53a7fb99acfd13003d3416",
+    "lessons": 130
+   },
+   "record": {
+    "applied_local_search": true,
+    "source_instance": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+    "source_instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "source_solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_4\\3_studies_instance_velox_solution.yaml",
+     "sha256": "35dfc8d781d05d6e5685eb4cde84ccfde7d1c41d7eaa70053ee270c1061ead77",
+     "sha256_file_bytes": "d94e2fb3a70b588847a9d0f6bc08ca03ceba37c63febbf9cce6886392dc26991",
+     "bytes": 97707
+    },
+    "source_solution": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_4\\3_studies_instance_velox_solution.yaml",
+    "candidate_count": 1,
+    "candidates_considered": [
+     {
+      "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_4\\3_studies_instance_velox_solution.yaml",
+      "pre_cost": null
+     }
+    ],
+    "qubo_config": null,
+    "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T18:37:40+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    },
+    "cli_args": {
+     "instance_yaml": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "input_solution": [
+      "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_4\\3_studies_instance_velox_solution.yaml"
+     ],
+     "output_prefix": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_4\\3_studies_instance",
+     "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+     "qubo_config": null,
+     "instance_dir": null,
+     "solution_dir": null,
+     "output_dir": null,
+     "solution_glob": "*_solution.yaml",
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "no_first_improvement": false,
+     "skip_h1": false,
+     "skip_k_opt": false,
+     "enable_pr3_pr4_purge": false,
+     "tie_break": "soft_objective",
+     "no_extra_rules": false,
+     "no_pr5": false,
+     "room_set_rows": true,
+     "no_qubo_energy": false,
+     "dump_per_cycle": false,
+     "targeted_k_opt_first": false,
+     "targeted_k_opt_only": false,
+     "targeted_max_per_violation": 50,
+     "targeted_max_blockers_per_deficit": 10,
+     "verbose": false
+    },
+    "initial_cost": [
+     218,
+     -5411.0
+    ],
+    "final_cost": [
+     0,
+     -7935.0
+    ],
+    "cost_definition": {
+     "first_key": "time-core violations + break and PR5 pairs + exceeded MILP room-set rows",
+     "tie_break": "soft_objective",
+     "pr5": true,
+     "room_set_rows": true
+    },
+    "initial": {
+     "violations_time_core": 196,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 0,
+      "BREAK_group": 14,
+      "PR5_mixed_modality": 8
+     },
+     "soft_objective": -5411.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -17580.0,
+      "min_gaps_students": 11940.0,
+      "min_days_students": 59.0,
+      "time_of_day": 170.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2542734930.5
+    },
+    "final": {
+     "violations_time_core": 0,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 0,
+      "BREAK_group": 0,
+      "PR5_mixed_modality": 0
+     },
+     "soft_objective": -7935.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -10220.0,
+      "min_gaps_students": 2475.0,
+      "min_days_students": 60.0,
+      "time_of_day": -250.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2578254837.0
+    },
+    "local_search_args": {
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "first_improvement": true
+    }
+   },
+   "verdict": {
+    "solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_4\\3_studies_instance_postLS.yaml",
+     "sha256": "38bec42bc939e7219ca57d339f6b9c3873aa30588d53a7fb99acfd13003d3416",
+     "sha256_file_bytes": "4bf65753cebbd37a128e03d547c443eae35e8280323d0f0e547ebaebe8d68c4c",
+     "bytes": 47334
+    },
+    "instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "lessons": 130,
+    "feasible_time_core": true,
+    "n_violations": 0,
+    "violations_by_constraint": {
+     "PR1_course_minutes": 0,
+     "MC_max_chunks": 0,
+     "PR3_PR4_lecturer_overlap": 0,
+     "PR3_PR4_group_overlap": 0,
+     "RU2_lecturer_availability": 0,
+     "PR2_lecturer_assigned": 0,
+     "CONJ_PHASE3_room_count": 0,
+     "CONJ_PHASE3_room_capacity": 0
+    },
+    "extra_violations_by_rule": {
+     "BREAK_lecturer": 0,
+     "BREAK_group": 0,
+     "PR5_mixed_modality": 0
+    },
+    "statuses": {
+     "time_core": true,
+     "room_rows": true,
+     "v_zero": true,
+     "rooms": true,
+     "policy_rules": true,
+     "extra_rules": true,
+     "full": true,
+     "pr5": true,
+     "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+    },
+    "room_assignment": {
+     "roomable": true,
+     "assignment": {
+      "6846": 27,
+      "6906": 31,
+      "7505": 42,
+      "7618": 27,
+      "7681": 26,
+      "7804": 30,
+      "7826": 30,
+      "7863": 19,
+      "7945": 11,
+      "7962": 27,
+      "8002": 27,
+      "8493": 30,
+      "8706": 30,
+      "9803": 27,
+      "10428": 0,
+      "10506": 27,
+      "10699": 30,
+      "10787": 27,
+      "11166": 31,
+      "11375": 31,
+      "11532": 35,
+      "12199": 27,
+      "12650": 32,
+      "12651": 27,
+      "12774": 30,
+      "12976": 41,
+      "13108": 20,
+      "13194": 4,
+      "13311": 30,
+      "13600": 40,
+      "13704": 30,
+      "14027": 27,
+      "14214": 27,
+      "14291": 20,
+      "14444": 8,
+      "14497": 7,
+      "14581": 26,
+      "14791": 21,
+      "14899": 17,
+      "14900": 31,
+      "15171": 43,
+      "15172": 28,
+      "15472": 30,
+      "15692": 20,
+      "15693": 21,
+      "15954": 13,
+      "16090": 20,
+      "16153": 27,
+      "16442": 31,
+      "16740": 31,
+      "16741": 32,
+      "16915": 21,
+      "17060": 38,
+      "17061": 39,
+      "17191": 32,
+      "17367": 29,
+      "17368": 35,
+      "17538": 33,
+      "17668": 31,
+      "17669": 27,
+      "18149": 31,
+      "18150": 33,
+      "18228": 15,
+      "18229": 31,
+      "18304": 27,
+      "18394": 22,
+      "18395": 27,
+      "18731": 31,
+      "18732": 33,
+      "18959": 30,
+      "19012": 26,
+      "19398": 23,
+      "19399": 35,
+      "19851": 23,
+      "19975": 29,
+      "19976": 34,
+      "20135": 16,
+      "20435": 20,
+      "20436": 36,
+      "20510": 23,
+      "20689": 34,
+      "20690": 23,
+      "20860": 4,
+      "20861": 25,
+      "20981": 32,
+      "20982": 28,
+      "21240": 34,
+      "21330": 36,
+      "21425": 28,
+      "21834": 35,
+      "21835": 11,
+      "22192": 36,
+      "22193": 32,
+      "22485": 24,
+      "22486": 37,
+      "22551": 19,
+      "22580": 30,
+      "22652": 16,
+      "22653": 27,
+      "22719": 30,
+      "22720": 31,
+      "23278": 27,
+      "23279": 29,
+      "23371": 37,
+      "23372": 31,
+      "23542": 30,
+      "23627": 26,
+      "23628": 20,
+      "24089": 29,
+      "24241": 28,
+      "24411": 33,
+      "24412": 28,
+      "24584": 9,
+      "24585": 20,
+      "24743": 30,
+      "24856": 30,
+      "25078": 32,
+      "25079": 31,
+      "25192": 21,
+      "25193": 31,
+      "25365": 21,
+      "25624": 30
+     },
+     "n_in_person": 122,
+     "n_remote_exempt": 8,
+     "n_roomed": 122,
+     "upper_bound": 122,
+     "n_without_admissible_free_room": 0,
+     "status": "OPTIMAL",
+     "unroomed": []
+    },
+    "soft_metrics": {
+     "lecturer_satisfaction_counts": {
+      "high_pref": 127,
+      "low_pref": 3,
+      "neutral": 0,
+      "not_available": 0
+     },
+     "lecturer_satisfaction_percent": {
+      "high_pref": 97.7,
+      "low_pref": 2.3,
+      "neutral": 0.0,
+      "not_available": 0.0
+     },
+     "time_of_day_counts": {
+      "morning": 76,
+      "afternoon": 41,
+      "evening": 13
+     },
+     "time_of_day_minutes": {
+      "morning": 8760.0,
+      "afternoon": 4905.0,
+      "evening": 1245.0
+     },
+     "total_student_gap_minutes": 2475.0,
+     "days_per_group": {
+      "avg": 5.0,
+      "min": 5,
+      "max": 5
+     }
+    },
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T18:37:46+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    }
+   }
+  },
+  "5": {
+   "timetable": {
+    "file": "rep_5/3_studies_instance_postLS.yaml",
+    "sha256": "604030154c344b8a5bcf208d0d68ecf7701f318997f46b30a5760e3e25e91ddf",
+    "lessons": 136
+   },
+   "record": {
+    "applied_local_search": true,
+    "source_instance": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+    "source_instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "source_solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_5\\3_studies_instance_velox_solution.yaml",
+     "sha256": "56c8bc2ffc19ab544597a37060a18134ba4d3b14d2d9fa4e44cf8ce8280ffb8e",
+     "sha256_file_bytes": "7c1be98ebe6d9fe41599eed61ec4d4fa72aaf6310bdd4785d70678456371db09",
+     "bytes": 99176
+    },
+    "source_solution": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_5\\3_studies_instance_velox_solution.yaml",
+    "candidate_count": 1,
+    "candidates_considered": [
+     {
+      "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_5\\3_studies_instance_velox_solution.yaml",
+      "pre_cost": null
+     }
+    ],
+    "qubo_config": null,
+    "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T19:01:15+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    },
+    "cli_args": {
+     "instance_yaml": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "input_solution": [
+      "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\rep_5\\3_studies_instance_velox_solution.yaml"
+     ],
+     "output_prefix": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_5\\3_studies_instance",
+     "qubo_cache": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies\\S3\\caches\\3_studies_instance.qubo_cache.h5",
+     "qubo_config": null,
+     "instance_dir": null,
+     "solution_dir": null,
+     "output_dir": null,
+     "solution_glob": "*_solution.yaml",
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "no_first_improvement": false,
+     "skip_h1": false,
+     "skip_k_opt": false,
+     "enable_pr3_pr4_purge": false,
+     "tie_break": "soft_objective",
+     "no_extra_rules": false,
+     "no_pr5": false,
+     "room_set_rows": true,
+     "no_qubo_energy": false,
+     "dump_per_cycle": false,
+     "targeted_k_opt_first": false,
+     "targeted_k_opt_only": false,
+     "targeted_max_per_violation": 50,
+     "targeted_max_blockers_per_deficit": 10,
+     "verbose": false
+    },
+    "initial_cost": [
+     205,
+     -2581.0
+    ],
+    "final_cost": [
+     5,
+     -7895.0
+    ],
+    "cost_definition": {
+     "first_key": "time-core violations + break and PR5 pairs + exceeded MILP room-set rows",
+     "tie_break": "soft_objective",
+     "pr5": true,
+     "room_set_rows": true
+    },
+    "initial": {
+     "violations_time_core": 192,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 0,
+      "BREAK_group": 5,
+      "PR5_mixed_modality": 8
+     },
+     "soft_objective": -2581.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -18300.0,
+      "min_gaps_students": 15345.0,
+      "min_days_students": 59.0,
+      "time_of_day": 315.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2587090057.5
+    },
+    "final": {
+     "violations_time_core": 5,
+     "extra_rule_pairs": {
+      "BREAK_lecturer": 0,
+      "BREAK_group": 0,
+      "PR5_mixed_modality": 0
+     },
+     "soft_objective": -7895.0,
+     "soft_objective_terms": {
+      "lecturers_satisfaction": -10280.0,
+      "min_gaps_students": 2610.0,
+      "min_days_students": 60.0,
+      "time_of_day": -285.0
+     },
+     "room_set_rows_exceeded": {
+      "room_set_count": 0,
+      "room_set_capacity": 0
+     },
+     "qubo_decision_energy": 2582640851.5
+    },
+    "local_search_args": {
+     "ks": [
+      1,
+      2
+     ],
+     "max_outer_passes": null,
+     "max_wall_seconds_per_pass": null,
+     "candidate_shortlist_k": 10,
+     "disable_unschedule": false,
+     "first_improvement": true
+    }
+   },
+   "verdict": {
+    "solution_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\campaign\\veloxq_3studies_ls\\S3_room_set_rows\\rep_5\\3_studies_instance_postLS.yaml",
+     "sha256": "604030154c344b8a5bcf208d0d68ecf7701f318997f46b30a5760e3e25e91ddf",
+     "sha256_file_bytes": "86acba59f5f1e079d00a298b74957d051d841960a0eafa0ca3bc400fe3b39dec",
+     "bytes": 49180
+    },
+    "instance_file": {
+     "path": "C:\\Users\\21034\\OneDrive\\Dokumenty\\Badania\\Plany Zajęć - Quantum Approach\\MILP-to-QUBO-transition-on-UCTTP\\artifacts\\3studies\\3_studies_instance.yaml",
+     "sha256": "6b15c26b7979b4ac3ed0b8862cf2ed893f0501e65a5c4ec49ca713f40f590c3b",
+     "sha256_file_bytes": "f8ee77367884b49946bc4e594296814776e859a55ff9150ee01d10c5f4c2b530",
+     "bytes": 1525013
+    },
+    "lessons": 136,
+    "feasible_time_core": false,
+    "n_violations": 5,
+    "violations_by_constraint": {
+     "PR1_course_minutes": 0,
+     "MC_max_chunks": 4,
+     "PR3_PR4_lecturer_overlap": 0,
+     "PR3_PR4_group_overlap": 1,
+     "RU2_lecturer_availability": 0,
+     "PR2_lecturer_assigned": 0,
+     "CONJ_PHASE3_room_count": 0,
+     "CONJ_PHASE3_room_capacity": 0
+    },
+    "extra_violations_by_rule": {
+     "BREAK_lecturer": 0,
+     "BREAK_group": 0,
+     "PR5_mixed_modality": 0
+    },
+    "statuses": {
+     "time_core": false,
+     "room_rows": true,
+     "v_zero": false,
+     "rooms": true,
+     "policy_rules": true,
+     "extra_rules": true,
+     "full": false,
+     "pr5": true,
+     "profile": "time core + room rows per 15-min cell + exact rooms + 15-min break + PR5"
+    },
+    "room_assignment": {
+     "roomable": true,
+     "assignment": {
+      "87": 27,
+      "88": 27,
+      "89": 6,
+      "120": 27,
+      "121": 27,
+      "122": 18,
+      "6949": 31,
+      "7363": 16,
+      "7630": 30,
+      "7977": 27,
+      "9056": 38,
+      "9160": 30,
+      "9161": 27,
+      "9190": 27,
+      "9413": 15,
+      "9414": 27,
+      "9679": 27,
+      "9680": 26,
+      "9873": 11,
+      "10526": 12,
+      "10880": 27,
+      "11049": 39,
+      "11611": 27,
+      "11612": 40,
+      "11655": 30,
+      "11872": 30,
+      "11980": 29,
+      "12779": 17,
+      "12955": 26,
+      "12956": 27,
+      "13147": 26,
+      "13297": 27,
+      "13298": 30,
+      "13361": 28,
+      "13532": 30,
+      "13533": 26,
+      "13702": 20,
+      "13812": 29,
+      "14133": 21,
+      "14134": 20,
+      "14283": 42,
+      "14284": 20,
+      "14385": 25,
+      "14787": 0,
+      "15137": 27,
+      "15138": 31,
+      "15245": 31,
+      "15246": 33,
+      "15289": 31,
+      "15442": 16,
+      "15489": 35,
+      "15548": 27,
+      "15549": 21,
+      "15893": 20,
+      "15991": 28,
+      "16033": 18,
+      "16048": 30,
+      "16049": 27,
+      "16329": 27,
+      "16484": 43,
+      "16485": 30,
+      "16551": 30,
+      "16694": 30,
+      "16732": 21,
+      "16992": 30,
+      "16993": 20,
+      "17045": 7,
+      "17246": 20,
+      "17398": 32,
+      "17399": 31,
+      "17892": 19,
+      "17945": 30,
+      "17946": 31,
+      "18079": 33,
+      "18317": 31,
+      "18318": 31,
+      "18414": 19,
+      "18415": 30,
+      "18505": 30,
+      "18621": 22,
+      "18813": 32,
+      "18814": 32,
+      "19323": 33,
+      "19525": 33,
+      "19526": 21,
+      "19610": 36,
+      "19611": 23,
+      "19770": 28,
+      "19862": 31,
+      "19863": 31,
+      "20014": 34,
+      "20015": 21,
+      "20216": 28,
+      "20517": 32,
+      "20518": 32,
+      "20623": 31,
+      "20624": 31,
+      "20790": 29,
+      "20843": 35,
+      "20844": 32,
+      "20934": 33,
+      "21058": 33,
+      "21059": 33,
+      "21170": 17,
+      "21171": 34,
+      "21345": 22,
+      "21443": 28,
+      "21444": 11,
+      "21755": 41,
+      "21756": 35,
+      "21843": 32,
+      "22478": 34,
+      "22479": 20,
+      "22608": 33,
+      "23058": 35,
+      "23059": 31,
+      "23308": 34,
+      "23309": 21,
+      "23420": 32,
+      "23421": 32,
+      "23665": 20,
+      "23666": 13,
+      "23915": 30,
+      "23916": 28,
+      "24031": 29,
+      "24032": 27,
+      "24107": 32,
+      "24108": 13
+     },
+     "n_in_person": 128,
+     "n_remote_exempt": 8,
+     "n_roomed": 128,
+     "upper_bound": 128,
+     "n_without_admissible_free_room": 0,
+     "status": "OPTIMAL",
+     "unroomed": []
+    },
+    "soft_metrics": {
+     "lecturer_satisfaction_counts": {
+      "high_pref": 126,
+      "low_pref": 10,
+      "neutral": 0,
+      "not_available": 0
+     },
+     "lecturer_satisfaction_percent": {
+      "high_pref": 92.6,
+      "low_pref": 7.4,
+      "neutral": 0.0,
+      "not_available": 0.0
+     },
+     "time_of_day_counts": {
+      "morning": 79,
+      "afternoon": 46,
+      "evening": 11
+     },
+     "time_of_day_minutes": {
+      "morning": 9255.0,
+      "afternoon": 4710.0,
+      "evening": 855.0
+     },
+     "total_student_gap_minutes": 2835.0,
+     "days_per_group": {
+      "avg": 5.0,
+      "min": 5,
+      "max": 5
+     }
+    },
+    "environment": {
+     "python_version": "3.13.12",
+     "python_implementation": "CPython",
+     "platform": "Windows-11-10.0.26200-SP0",
+     "machine": "AMD64",
+     "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+     "logical_processors": 20,
+     "hostname": "FifianJanPC",
+     "timestamp": "2026-10-19T19:01:22+02:00",
+     "git_commit": "2fa811cd9db1",
+     "git_dirty": true,
+     "code": {
+      "commit": "2fa811cd9db115bf9d8a412aba5fae480ca51172",
+      "tags_at_commit": [],
+      "describe": "campaign-2026-10-qubo-11-g2fa811c-dirty",
+      "dirty": true,
+      "modified_tracked_files": [
+       "notebooks/velox_vs_gurobi_comparison.ipynb",
+       "paper/icsoc2026.aux",
+       "paper/icsoc2026.bbl",
+       "paper/icsoc2026.blg",
+       "paper/icsoc2026.pdf",
+       "scripts/LATO_instructions.txt"
+      ],
+      "n_modified_tracked_files": 6
+     },
+     "packages": {
+      "gurobipy": "12.0.3",
+      "veloxq_sdk": "0.1.dev125+ge290bd081",
+      "dimod": "0.12.21",
+      "numpy": "2.4.4",
+      "scipy": "1.17.1",
+      "torch": "2.11.0+cpu",
+      "networkx": "3.6.1",
+      "h5py": "3.16.0",
+      "PyYAML": "6.0.3",
+      "gurobi_library": "12.0.3"
+     }
+    }
+   }
+  }
+ }
+}

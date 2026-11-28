@@ -1,0 +1,349 @@
+W plikach logów obecne działania programu można śledzić w pliku z sesji nr: 5748.
+================================================================================
+Wczytuję instancję z: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\3studies\3_studies_instance.yaml
+================================================================================
+  ProblemInstance(|P| (prowadzący)=55, |C| (kursy)=130, |C_double|=167, |C_linking|=84, |C_zdalne|=8, |C_sportowe|=2, |C_jezykowe|=4, |G| (grupy studenckie)=12, |R| (sale)=52, |R_zdalne|=8, |R_CJ|=4, |R_CS|=2, |R_fizycznie_istniejace|=38, |T| (sloty)=1410, |D| (dni)=5)
+  [save] rozwiązanie zapisane do: C:\Users\21034\OneDrive\Dokumenty\Badania\Plany Zajęć - Quantum Approach\MILP-to-QUBO-transition-on-UCTTP\artifacts\campaign\veloxq_3studies\S3\rep_1\3_studies_instance_velox_solution.yaml
+
+================================================================================
+VERIFICATION REPORT
+================================================================================
+  instance: {'P': 55, 'C': 130, 'G': 12, 'R': 52, 'T': 1410, 'D': 5}
+  |L|=258  has_spatial=False
+
+-- 1. HARD CONSTRAINTS --
+  feasibility: FAILED  (total violations: 198)
+  ✗ PR1_course_minutes: 76 violation(s)
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Wykład', 'required_minutes': 135, 'scheduled_minutes': 90}
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grA', 'required_minutes': 45, 'scheduled_minutes': 135}
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grB', 'required_minutes': 45, 'scheduled_minutes': 135}
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grC', 'required_minutes': 45, 'scheduled_minutes': 90}
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Ćwiczenia', 'required_minutes': 45, 'scheduled_minutes': 90}
+      ... and 71 more
+  ✗ MC_max_chunks: 100 violation(s)
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Wykład', 'max_chunks': 1, 'scheduled_chunks': 2}
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grA', 'max_chunks': 1, 'scheduled_chunks': 2}
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grB', 'max_chunks': 1, 'scheduled_chunks': 2}
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Wykład', 'max_chunks': 1, 'scheduled_chunks': 2}
+      - {'course': 'FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Ćwiczenia', 'max_chunks': 1, 'scheduled_chunks': 2}
+      ... and 95 more
+  ✗ PR3_PR4_lecturer_overlap: 1 violation(s)
+      - {'lecturer': 'Instytut_C_Lecturer46_L_6', 'lessons': (54, 236)}
+  ✗ PR3_PR4_group_overlap: 21 violation(s)
+      - {'group': 'FTIMS_PB_Ist_2022_sem4_gr1', 'lessons': (7, 31)}
+      - {'group': 'FTIMS_PB_Ist_2022_sem4_gr1', 'lessons': (8, 10)}
+      - {'group': 'FTIMS_PB_Ist_2022_sem4_gr1', 'lessons': (18, 29)}
+      - {'group': 'FTIMS_PB_Ist_2022_sem4_gr1', 'lessons': (19, 33)}
+      - {'group': 'FTIMS_PB_Ist_2022_sem4_gr1', 'lessons': (23, 32)}
+      ... and 16 more
+  ✓ RU2_lecturer_availability: 0 violation(s)
+  ✓ PR2_lecturer_assigned: 0 violation(s)
+  ✓ CONJ_PHASE3_room_count: 0 violation(s)
+  ✓ CONJ_PHASE3_room_capacity: 0 violation(s)
+
+-- 1b. RULES OUTSIDE V AND STATUSES --
+  ✗ BREAK_lecturer: 4 violation(s)
+  ✗ BREAK_group: 12 violation(s)
+  ✗ PR5_mixed_modality: 12 violation(s)
+  rooms: 250/250 in-person lessons roomed (remote exempt: 8, bound 250, solver status OPTIMAL)
+  statuses: {'time_core': False, 'room_rows': True, 'v_zero': False, 'rooms': True, 'policy_rules': False, 'extra_rules': False, 'full': False, 'pr5': True, 'profile': 'time core + room rows per 15-min cell + exact rooms + 15-min break + PR5'}
+
+-- 2. SOFT METRICS --
+  lecturer_satisfaction_counts:
+      high_pref: 230
+      low_pref: 28
+      neutral: 0
+      not_available: 0
+  lecturer_satisfaction_percent:
+      high_pref: 89.1
+      low_pref: 10.9
+      neutral: 0.0
+      not_available: 0.0
+  time_of_day_counts:
+      morning: 95
+      afternoon: 95
+      evening: 68
+  time_of_day_minutes:
+      morning: 6615.0
+      afternoon: 5475.0
+      evening: 3720.0
+  total_student_gap_minutes: 14595.0
+  gap_minutes_by_group:
+      FTIMS_PB_Ist_2022_sem4_gr1: 1365.0
+      FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1: 1590.0
+      FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1: 1770.0
+      FTIMS_PB_Ist_2022_sem6_gr1: 1140.0
+      FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1: 1365.0
+      FTIMS_PB_Ist_2024_sem2_gr1: 1455.0
+      FTIMS_PB_Ist_2024_sem2_gr2: 1485.0
+      FTIMS_PA_Ist_2023_SC_sem2_gr1: 1110.0
+      FTIMS_PA_Ist_2023_SC_sem2_gr2: 1080.0
+      FTIMS_PA_IIst_2023_SA_sem2_gr1: 1065.0
+      FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1: 240.0
+      FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1: 930.0
+  days_per_group:
+      avg: 5.0
+      min: 5
+      max: 5
+      by_group: {'FTIMS_PB_Ist_2022_sem4_gr1': 5, 'FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1': 5, 'FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1': 5, 'FTIMS_PB_Ist_2022_sem6_gr1': 5, 'FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1': 5, 'FTIMS_PB_Ist_2024_sem2_gr1': 5, 'FTIMS_PB_Ist_2024_sem2_gr2': 5, 'FTIMS_PA_Ist_2023_SC_sem2_gr1': 5, 'FTIMS_PA_Ist_2023_SC_sem2_gr2': 5, 'FTIMS_PA_IIst_2023_SA_sem2_gr1': 5, 'FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1': 5, 'FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1': 5}
+
+-- 3. PER-LESSON AUDIT --
+  l  0  ★ Piątek         11:45-12:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=60.0
+  l  1  ★ Piątek         12:45-13:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=15.0
+  l  2  ★ Wtorek         13:00-13:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grA Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=45.0
+  l  3  ★ Środa          15:00-15:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grA Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0
+  l  4  ★ Wtorek         11:30-12:15    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grB Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=45.0
+  l  5  ★ Środa          12:15-13:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0027 00_Course 01_Programme PB Ist (2022)__Ćwiczenia_grB Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=15.0
+  l  6  ★ Czwartek       08:30-09:15    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Projekt_grA Instytut_C_Lecturer41_L_28  room=—
+  l  7  ★ Czwartek       12:45-13:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Projekt_grB Instytut_C_Lecturer41_L_28  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=-60.0  ⚠ PR3_PR4_group_overlap
+  l  8  ★ Poniedziałek   12:15-13:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer08_L_24  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0  ⚠ PR3_PR4_group_overlap
+  l  9  ★ Środa          10:15-11:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer08_L_24  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=15.0
+  l 10  ★ Poniedziałek   12:15-13:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Ćwiczenia Instytut_C_Lecturer41_L_28  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=-45.0  ⚠ PR3_PR4_group_overlap
+  l 11  ★ Wtorek         10:00-10:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0001 00_Course 37_Programme PB Ist (2022)__Ćwiczenia Instytut_C_Lecturer41_L_28  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=0.0
+  l 12  ★ Wtorek         09:15-10:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grA Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=15.0
+  l 13  ★ Czwartek       15:45-16:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grA Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0
+  l 14  ★ Piątek         08:15-09:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grA Instytut_C_Lecturer30_L_43  room=—
+  l 15  ★ Czwartek       17:45-18:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grB Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=75.0
+  l 16  ★ Czwartek       18:45-19:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grB Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=15.0
+  l 17  ★ Piątek         14:00-14:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grB Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0
+  l 18  ★ Poniedziałek   11:00-11:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grC Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=-60.0  ⚠ PR3_PR4_group_overlap
+  l 19  ★ Poniedziałek   17:45-18:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Laboratorium_grC Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=-15.0  ⚠ PR3_PR4_group_overlap
+  l 20  ★ Wtorek         16:15-17:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=150.0, FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=135.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=165.0
+  l 21  ★ Środa          18:30-19:15    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=75.0, FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=90.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=90.0
+  l 22  ★ Środa          16:30-17:15    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Ćwiczenia Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=45.0
+  l 23  ★ Czwartek       14:30-15:15    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0024 00_Course 17_Programme PB Ist (2022)__Ćwiczenia Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=-15.0  ⚠ PR3_PR4_group_overlap
+  l 24  ★ Środa          11:15-12:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grA Instytut_D_Lecturer26_L_44  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=15.0
+  l 25  ★ Środa          13:45-14:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grA Instytut_D_Lecturer26_L_44  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=45.0
+  l 26  ★ Wtorek         17:15-19:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grA Instytut_D_Lecturer26_L_44  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=15.0
+  l 27  ★ Piątek         10:00-10:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grB Instytut_D_Lecturer26_L_44  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=60.0
+  l 28  ★ Piątek         18:00-18:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grB Instytut_D_Lecturer26_L_44  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=195.0
+  l 29  ★ Poniedziałek   10:15-12:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0011 00_Course 15_Programme PB Ist (2022)__Projekt_grB Instytut_D_Lecturer26_L_44  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=75.0  ⚠ PR3_PR4_group_overlap
+  l 30  ★ Czwartek       09:45-11:30    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0029 00_Course 38_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0
+  l 31  ★ Czwartek       12:00-13:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0029 00_Course 38_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer30_L_43  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0  ⚠ PR3_PR4_group_overlap
+  l 32  ★ Czwartek       14:00-14:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0016 00_Course 36_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer48_L_26  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0  ⚠ PR3_PR4_group_overlap
+  l 33  ★ Poniedziałek   15:15-18:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0016 00_Course 36_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer48_L_26  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0  ⚠ PR3_PR4_group_overlap
+  l 34  ★ Poniedziałek   14:00-14:45    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0016 00_Course 36_Programme PB Ist (2022)__Ćwiczenia Instytut_C_Lecturer48_L_26  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=60.0
+  l 35  ~ Poniedziałek   19:15-20:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0016 00_Course 36_Programme PB Ist (2022)__Ćwiczenia Instytut_C_Lecturer48_L_26  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=45.0
+  l 36  ★ Środa          09:15-10:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Laboratorium_grA Instytut_D_Lecturer25_L_45  room=—
+  l 37  ★ Wtorek         08:15-09:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Laboratorium_grB Instytut_D_Lecturer25_L_45  room=—
+  l 38  ★ Wtorek         19:15-20:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0044 00_Course 26_Programme PB Ist (2022)__Laboratorium_grB Instytut_D_Lecturer25_L_45  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=15.0
+  l 39  ★ Poniedziałek   08:15-09:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0031 00_Course 19_Programme PB Ist (2022)__Ćwiczenia Studium_Języków_CJ_PŁ_FTIMS_PB_Ist_2022_FTIMS_PB_Ist_2022_4_FTIMS_PB_Ist_2022_sem4_gr1_00 00 0031 00_Course 19_Programme PB Ist (2022)_Ćwiczenia  room=—
+  l 40  ★ Piątek         19:15-20:00    FTIMS_PB_Ist_2022_sem4_gr1__00 00 0031 00_Course 19_Programme PB Ist (2022)__Ćwiczenia Studium_Języków_CJ_PŁ_FTIMS_PB_Ist_2022_FTIMS_PB_Ist_2022_4_FTIMS_PB_Ist_2022_sem4_gr1_00 00 0031 00_Course 19_Programme PB Ist (2022)_Ćwiczenia  room=—  gap[min]: FTIMS_PB_Ist_2022_sem4_gr1=30.0, FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=60.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=225.0
+  l 41  ~ Czwartek       15:45-16:30    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Projekt_grA Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=30.0
+  l 42  ~ Czwartek       18:15-19:00    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Projekt_grA Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=105.0
+  l 43  ★ Środa          13:45-14:30    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Projekt_grB Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=120.0
+  l 44  ★ Środa          15:00-15:45    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Projekt_grB Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=30.0
+  l 45  ~ Wtorek         16:15-17:00    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=180.0, FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=225.0
+  l 46  ★ Środa          09:30-10:15    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0012 00_Course 30_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer33_L_27  room=—
+  l 47  ★ Czwartek       10:00-11:45    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr1 Instytut_C_Lecturer04_L_13  room=—  ⚠ PR3_PR4_group_overlap
+  l 48  ★ Piątek         10:15-13:00    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr1 Instytut_C_Lecturer04_L_13  room=—
+  l 49  ★ Poniedziałek   08:45-09:30    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr2 Instytut_C_Lecturer08_L_24  room=—
+  l 50  ★ Poniedziałek   15:15-17:00    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr2 Instytut_C_Lecturer08_L_24  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=165.0
+  l 51  ★ Wtorek         11:30-13:15    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr3 Instytut_C_Lecturer35_L_17  room=—
+  l 52  ★ Wtorek         18:00-19:45    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr3 Instytut_C_Lecturer35_L_17  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=60.0
+  l 53  ★ Środa          16:30-18:15    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr3 Instytut_C_Lecturer35_L_17  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=45.0
+  l 54  ★ Czwartek       11:30-15:15    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0039 00_Course 10_Programme PB Ist (2022)__Seminarium_gr4 Instytut_C_Lecturer46_L_6  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=-15.0  ⚠ PR3_PR4_lecturer_overlap, PR3_PR4_group_overlap
+  l 55  ★ Środa          11:00-11:45    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0017 00_Course 44_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer35_L_17  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=45.0
+  l 56  ★ Środa          18:30-19:15    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0017 00_Course 44_Programme PB Ist (2022)__Wykład Instytut_C_Lecturer35_L_17  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=15.0
+  l 57  ★ Poniedziałek   11:45-12:30    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0043 00_Course 20_Programme PB Ist (2022)__Wykład Instytut_A_Lecturer06_L_46  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=135.0, FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=15.0
+  l 58  ★ Piątek         14:15-15:00    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0043 00_Course 20_Programme PB Ist (2022)__Wykład Instytut_A_Lecturer06_L_46  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=75.0, FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=15.0
+  l 59  ★ Piątek         17:15-19:00    FTIMS_PB_Ist_2022_sem6_gr1__00 00 0043 00_Course 20_Programme PB Ist (2022)__Wykład Instytut_A_Lecturer06_L_46  room=—  gap[min]: FTIMS_PB_Ist_2022_sem6_gr1=135.0, FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=135.0
+  l 60  ★ Wtorek         13:00-13:45    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0005 00_Course 23_Programme PB Ist (2024)__Wykład Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=30.0, FTIMS_PB_Ist_2024_sem2_gr2=30.0
+  l 61  ~ Czwartek       18:00-18:45    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0005 00_Course 23_Programme PB Ist (2024)__Wykład Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=210.0, FTIMS_PB_Ist_2024_sem2_gr2=195.0
+  l 62  ★ Czwartek       12:15-13:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0005 00_Course 23_Programme PB Ist (2024)__Ćwiczenia Instytut_C_Lecturer01_L_22  room=—  ⚠ PR3_PR4_group_overlap
+  l 63  ★ Czwartek       13:45-14:30    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0005 00_Course 23_Programme PB Ist (2024)__Ćwiczenia Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=15.0
+  l 64  ★ Środa          11:45-12:30    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grA Instytut_C_Lecturer18_L_10  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=0.0
+  l 65  ★ Środa          16:30-17:15    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grA Instytut_C_Lecturer18_L_10  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=45.0
+  l 66  ★ Piątek         09:00-09:45    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grC Instytut_F_Lecturer20_L_38  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=0.0, FTIMS_PB_Ist_2024_sem2_gr2=0.0
+  l 67  ★ Piątek         12:00-12:45    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grC Instytut_F_Lecturer20_L_38  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=30.0, FTIMS_PB_Ist_2024_sem2_gr2=30.0
+  l 68  ★ Środa          11:00-11:45    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0038 00_Course 14_Programme PB Ist (2024)__Wykład Instytut_E_Lecturer23_L_36  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0
+  l 69  ★ Poniedziałek   14:15-15:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0047 00_Course 21_Programme PB Ist (2024)__Wykład Instytut_C_Lecturer08_L_24  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=135.0, FTIMS_PB_Ist_2024_sem2_gr2=135.0
+  l 70  ★ Wtorek         09:15-10:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0047 00_Course 21_Programme PB Ist (2024)__Ćwiczenia Instytut_C_Lecturer08_L_24  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=15.0
+  l 71  ★ Wtorek         17:15-18:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0047 00_Course 21_Programme PB Ist (2024)__Ćwiczenia Instytut_C_Lecturer08_L_24  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=15.0
+  l 72  ★ Piątek         08:15-09:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grA Instytut_C_Lecturer39_L_39  room=—
+  l 73  ★ Piątek         16:45-17:30    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grA Instytut_C_Lecturer39_L_39  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=150.0
+  l 74  ★ Wtorek         19:15-20:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grC Instytut_C_Lecturer39_L_39  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=75.0, FTIMS_PB_Ist_2024_sem2_gr2=30.0
+  l 75  ★ Czwartek       12:45-13:30    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Projekt_grA Instytut_C_Lecturer48_L_26  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=-15.0  ⚠ PR3_PR4_group_overlap
+  l 76  ~ Poniedziałek   08:15-09:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Wykład Instytut_C_Lecturer48_L_26  room=—
+  l 77  ~ Czwartek       19:15-20:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0015 00_Course 28_Programme PB Ist (2024)__Wykład Instytut_C_Lecturer48_L_26  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=30.0, FTIMS_PB_Ist_2024_sem2_gr2=30.0
+  l 78  ★ Środa          15:00-15:45    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0049 00_Course 25_Programme PB Ist (2024)__Wykład Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=150.0, FTIMS_PB_Ist_2024_sem2_gr2=195.0
+  l 79  ★ Piątek         14:30-15:15    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0049 00_Course 25_Programme PB Ist (2024)__Ćwiczenia Instytut_F_Lecturer21_L_41  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr2=15.0
+  l 80  ★ Piątek         16:45-18:30    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0049 00_Course 25_Programme PB Ist (2024)__Ćwiczenia Instytut_F_Lecturer21_L_41  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr2=90.0
+  l 81  ★ Wtorek         08:15-09:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grA Instytut_D_Lecturer22_L_42  room=—
+  l 82  ★ Wtorek         16:15-17:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grA Instytut_D_Lecturer22_L_42  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=150.0
+  l 83  ★ Środa          18:15-19:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grA Instytut_D_Lecturer22_L_42  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=60.0
+  l 84  ★ Wtorek         11:45-12:30    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grC Instytut_D_Lecturer32_L_37  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=105.0, FTIMS_PB_Ist_2024_sem2_gr2=30.0
+  l 85  ★ Piątek         13:30-14:15    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grC Instytut_D_Lecturer32_L_37  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=45.0, FTIMS_PB_Ist_2024_sem2_gr2=45.0
+  l 86  ★ Poniedziałek   11:15-12:00    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0030 00_Course 32_Programme PB Ist (2024)__Ćwiczenia Studium_Języków_CJ_PŁ_FTIMS_PB_Ist_2024_FTIMS_PB_Ist_2024_2_FTIMS_PB_Ist_2024_sem2_gr1_00 00 0030 00_Course 32_Programme PB Ist (2024)_Ćwiczenia  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=135.0, FTIMS_PB_Ist_2024_sem2_gr2=135.0
+  l 87  ★ Piątek         10:45-11:30    FTIMS_PB_Ist_2024_sem2_gr1__00 00 0050 00_Course 27_Programme PB Ist (2024)__Ćwiczenia Studium_Sportu_CS_PŁ_FTIMS_PB_Ist_2024_FTIMS_PB_Ist_2024_2_FTIMS_PB_Ist_2024_sem2_gr1_00 00 0050 00_Course 27_Programme PB Ist (2024)_Ćwiczenia  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr1=60.0, FTIMS_PB_Ist_2024_sem2_gr2=60.0
+  l 88  ★ Wtorek         08:15-09:00    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grB Instytut_C_Lecturer18_L_10  room=—
+  l 89  ★ Wtorek         10:30-11:15    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0040 00_Course 42_Programme PB Ist (2024)__Projekt_grB Instytut_C_Lecturer18_L_10  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr2=90.0
+  l 90  ★ Wtorek         16:30-17:15    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grB Instytut_C_Lecturer39_L_39  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr2=165.0
+  l 91  ★ Wtorek         18:00-18:45    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0015 00_Course 28_Programme PB Ist (2024)__Laboratorium_grB Instytut_C_Lecturer39_L_39  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr2=45.0
+  l 92  ~ Czwartek       08:30-09:15    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0015 00_Course 28_Programme PB Ist (2024)__Projekt_grB Instytut_C_Lecturer48_L_26  room=—
+  l 93  ★ Środa          16:30-17:15    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0049 00_Course 25_Programme PB Ist (2024)__Ćwiczenia Instytut_F_Lecturer21_L_41  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr2=45.0
+  l 94  ★ Czwartek       12:00-14:45    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0049 00_Course 25_Programme PB Ist (2024)__Ćwiczenia Instytut_F_Lecturer21_L_41  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr2=45.0
+  l 95  ★ Czwartek       10:30-11:15    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grB Instytut_D_Lecturer22_L_42  room=—  gap[min]: FTIMS_PB_Ist_2024_sem2_gr2=75.0
+  l 96  ★ Piątek         08:15-09:00    FTIMS_PB_Ist_2024_sem2_gr2__00 00 0028 00_Course 11_Programme PB Ist (2024)__Laboratorium_grB Instytut_D_Lecturer22_L_42  room=—
+  l 97  ~ Piątek         12:15-13:00    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0034 00_Course 40_Programme PA IIst (2023), spec. SA__Laboratorium Instytut_C_Lecturer05_L_15  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=105.0
+  l 98  ★ Poniedziałek   12:15-13:00    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0034 00_Course 40_Programme PA IIst (2023), spec. SA__Wykład Instytut_C_Lecturer05_L_15  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=60.0
+  l 99  ★ Poniedziałek   13:30-14:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0034 00_Course 40_Programme PA IIst (2023), spec. SA__Wykład Instytut_C_Lecturer05_L_15  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=30.0
+  l100  ★ Wtorek         12:00-12:45    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Wykład Instytut_C_Lecturer28_L_16  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=-15.0  ⚠ PR3_PR4_group_overlap
+  l101  ★ Wtorek         17:15-18:00    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Wykład Instytut_C_Lecturer28_L_16  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=15.0
+  l102  ★ Wtorek         16:15-17:00    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Ćwiczenia Instytut_C_Lecturer28_L_16  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=150.0
+  l103  ~ Środa          11:00-11:45    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Ćwiczenia Instytut_C_Lecturer28_L_16  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=75.0
+  l104  ~ Środa          12:30-13:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0045 00_Course 13_Programme PA IIst (2023), spec. SA__Ćwiczenia Instytut_C_Lecturer28_L_16  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=45.0
+  l105  ★ Środa          09:00-09:45    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0019 00_Course 39_Programme PA IIst (2023), spec. SA__Wykład Instytut_C_Lecturer08_L_24  room=—
+  l106  ★ Środa          13:45-14:30    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0019 00_Course 39_Programme PA IIst (2023), spec. SA__Wykład Instytut_C_Lecturer08_L_24  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=30.0
+  l107  ★ Piątek         09:45-10:30    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0019 00_Course 39_Programme PA IIst (2023), spec. SA__Ćwiczenia Instytut_C_Lecturer46_L_6  room=—
+  l108  ★ Piątek         16:30-17:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0019 00_Course 39_Programme PA IIst (2023), spec. SA__Ćwiczenia Instytut_C_Lecturer46_L_6  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=120.0
+  l109  ★ Wtorek         10:30-12:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0009 00_Course 09_Programme PA IIst (2023), spec. SA__Wykład_grAD Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=30.0  ⚠ PR3_PR4_group_overlap
+  l110  ★ Czwartek       10:45-15:30    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0009 00_Course 09_Programme PA IIst (2023), spec. SA__Wykład_grAD Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=-240.0  ⚠ PR3_PR4_group_overlap
+  l111  ★ Czwartek       18:30-19:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0009 00_Course 09_Programme PA IIst (2023), spec. SA__Wykład_grZRWFIU Instytut_C_Lecturer03_L_9  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=15.0
+  l112  ★ Poniedziałek   14:30-19:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0009 00_Course 09_Programme PA IIst (2023), spec. SA__Wykład_grZRWFIU Instytut_C_Lecturer03_L_9  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=15.0
+  l113  ★ Czwartek       17:30-18:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0032 00_Course 05_Programme PA IIst (2023), spec. SA__Projekt Instytut_C_Lecturer03_L_9  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=15.0
+  l114  ★ Czwartek       09:00-14:45    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0032 00_Course 05_Programme PA IIst (2023), spec. SA__Projekt Instytut_C_Lecturer03_L_9  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=-15.0  ⚠ PR3_PR4_group_overlap, PR3_PR4_group_overlap
+  l115  ★ Wtorek         13:00-13:45    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0035 00_Course 16_Programme PA IIst (2023), spec. SA__Projekt Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=15.0
+  l116  ★ Środa          18:30-19:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0035 00_Course 16_Programme PA IIst (2023), spec. SA__Projekt Instytut_C_Lecturer33_L_27  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=240.0
+  l117  ★ Czwartek       08:30-09:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0035 00_Course 16_Programme PA IIst (2023), spec. SA__Projekt Instytut_C_Lecturer33_L_27  room=—  ⚠ PR3_PR4_group_overlap
+  l118  ★ Wtorek         08:15-10:00    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0035 00_Course 16_Programme PA IIst (2023), spec. SA__Projekt Instytut_C_Lecturer33_L_27  room=—
+  l119  ★ Czwartek       16:30-17:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA__Ćwiczenia_grCJ Studium_Języków_CJ_PŁ_FTIMS_PA_IIst_2023_FTIMS_PA_IIst_2023_SA_2_FTIMS_PA_IIst_2023_SA_sem2_gr1_00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA_Ćwiczenia_grCJ  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=60.0
+  l120  ★ Piątek         13:45-14:30    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA__Ćwiczenia_grWYDZ Instytut_C_Lecturer45_L_47  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem2_gr1=45.0
+  l121  ★ Poniedziałek   09:30-11:15    FTIMS_PA_IIst_2023_SA_sem2_gr1__00 00 0046 00_Course 45_Programme PA IIst (2023), spec. SA__Ćwiczenia_grWYDZ Instytut_C_Lecturer45_L_47  room=—
+  l122  ~ Czwartek       08:30-11:15    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0022 00_Course 10_Programme PA IIst (2023), spec. SA__Seminarium_gr1 Instytut_C_Lecturer05_L_15  room=—
+  l123  ★ Czwartek       14:30-15:15    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0022 00_Course 10_Programme PA IIst (2023), spec. SA__Seminarium_gr2 Instytut_C_Lecturer14_L_12  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1=15.0
+  l124  ★ Poniedziałek   15:30-18:15    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0022 00_Course 10_Programme PA IIst (2023), spec. SA__Seminarium_gr2 Instytut_C_Lecturer14_L_12  room=—
+  l125  ★ Wtorek         11:30-12:15    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0053 00_Course 04_Programme PA IIst (2023), spec. SA__Wykład Instytut_C_Lecturer41_L_28  room=—
+  l126  ★ Czwartek       13:30-14:15    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0053 00_Course 04_Programme PA IIst (2023), spec. SA__Wykład Instytut_C_Lecturer41_L_28  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1=30.0
+  l127  ★ Piątek         12:30-13:15    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0051 00_Course 12_Programme PA IIst (2023), spec. SA__Wykład Instytut_B_Lecturer07_L_49  room=—
+  l128  ★ Piątek         14:15-15:00    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0051 00_Course 12_Programme PA IIst (2023), spec. SA__Wykład Instytut_B_Lecturer07_L_49  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1=60.0
+  l129  ★ Piątek         17:15-19:00    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0051 00_Course 12_Programme PA IIst (2023), spec. SA__Wykład Instytut_B_Lecturer07_L_49  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1=135.0
+  l130  ★ Środa          11:00-11:45    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0021 00_Course 02_Programme PA IIst (2023), spec. SA__Wykład Instytut_A_Lecturer16_L_48  room=—
+  l131  ★ Czwartek       11:15-13:00    FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1__00 00 0021 00_Course 02_Programme PA IIst (2023), spec. SA__Wykład Instytut_A_Lecturer16_L_48  room=—  gap[min]: FTIMS_PA_IIst_2023_SA_sem4_spec_SA_gr1=0.0
+  l132  ★ Piątek         11:30-12:15    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=150.0
+  l133  ★ Piątek         13:45-14:30    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=90.0
+  l134  ★ Poniedziałek   15:30-16:15    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer12_L_30  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=120.0
+  l135  ★ Poniedziałek   16:30-17:15    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer12_L_30  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=15.0
+  l136  ★ Czwartek       12:30-14:15    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer12_L_30  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=15.0  ⚠ PR3_PR4_group_overlap
+  l137  ★ Wtorek         12:45-13:30    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer27_L_25  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=0.0
+  l138  ★ Czwartek       12:45-13:30    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer27_L_25  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=-90.0  ⚠ PR3_PR4_group_overlap
+  l139  ~ Poniedziałek   10:15-12:00    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SB__Laboratorium_grA Instytut_C_Lecturer43_L_1  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=75.0
+  l140  ★ Wtorek         17:15-19:00    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SB__Laboratorium_grA Instytut_C_Lecturer43_L_1  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=15.0  ⚠ PR3_PR4_group_overlap
+  l141  ★ Czwartek       19:15-20:00    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0052 00_Course 34_Programme PA Ist (2023), spec. SB__E-learning Instytut_C_Lecturer46_L_6  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=120.0
+  l142  ★ Środa          11:15-12:00    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0026 00_Course 07_Programme PA Ist (2023), spec. SB__Wykład Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=30.0
+  l143  ★ Czwartek       10:30-12:15    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0026 00_Course 07_Programme PA Ist (2023), spec. SB__Wykład Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=0.0
+  l144  ★ Czwartek       09:45-10:30    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0026 00_Course 07_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=45.0
+  l145  ~ Wtorek         18:45-19:30    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0023 00_Course 06_Programme PA Ist (2023), spec. SB__Projekt Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=-15.0  ⚠ PR3_PR4_group_overlap
+  l146  ★ Środa          10:00-10:45    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0023 00_Course 06_Programme PA Ist (2023), spec. SB__Projekt Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=60.0
+  l147  ★ Czwartek       14:45-15:30    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0023 00_Course 06_Programme PA Ist (2023), spec. SB__Projekt Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=75.0
+  l148  ~ Wtorek         11:00-12:45    FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1__00 00 0023 00_Course 06_Programme PA Ist (2023), spec. SB__Projekt Instytut_C_Lecturer01_L_22  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=120.0
+  l149  ★ Czwartek       09:15-11:00    FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr1 Instytut_C_Lecturer34_L_8  room=—
+  l150  ★ Czwartek       11:15-15:00    FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr1 Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=15.0  ⚠ PR3_PR4_group_overlap
+  l151  ★ Poniedziałek   10:45-11:30    FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr2 Instytut_C_Lecturer08_L_24  room=—
+  l152  ★ Wtorek         11:45-12:30    FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr2 Instytut_C_Lecturer08_L_24  room=—
+  l153  ★ Środa          15:00-16:45    FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SB__Seminarium_gr2 Instytut_C_Lecturer08_L_24  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=195.0
+  l154  ★ Poniedziałek   14:30-15:15    FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0014 00_Course 48_Programme PA Ist (2023), spec. SB__Wykład Instytut_C_Lecturer14_L_12  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=120.0
+  l155  ★ Czwartek       12:30-14:15    FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0014 00_Course 48_Programme PA Ist (2023), spec. SB__Wykład Instytut_C_Lecturer14_L_12  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=-150.0  ⚠ PR3_PR4_group_overlap
+  l156  ★ Środa          11:00-11:45    FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1__00 00 0014 00_Course 48_Programme PA Ist (2023), spec. SB__Ćwiczenia Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=45.0
+  l157  ★ Piątek         08:45-09:30    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer29_L_19  room=—
+  l158  ★ Piątek         11:45-12:30    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer29_L_19  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=-15.0  ⚠ PR3_PR4_group_overlap
+  l159  ★ Piątek         13:00-13:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer29_L_19  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=30.0
+  l160  ★ Poniedziałek   08:15-09:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grC Instytut_C_Lecturer27_L_25  room=—
+  l161  ★ Poniedziałek   12:30-13:15    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grC Instytut_C_Lecturer27_L_25  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=90.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=90.0
+  l162  ★ Poniedziałek   18:15-19:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_D_Lecturer32_L_37  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0
+  l163  ★ Środa          10:00-10:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_D_Lecturer32_L_37  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=30.0
+  l164  ★ Wtorek         17:15-19:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_D_Lecturer32_L_37  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0
+  l165  ★ Czwartek       09:30-10:15    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grC Instytut_D_Lecturer22_L_42  room=—
+  l166  ★ Piątek         10:00-10:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grC Instytut_D_Lecturer22_L_42  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=30.0
+  l167  ★ Środa          14:00-15:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grC Instytut_D_Lecturer22_L_42  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=75.0
+  l168  ★ Środa          16:00-16:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0013 00_Course 33_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=255.0
+  l169  ★ Środa          17:00-17:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0013 00_Course 33_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0  ⚠ PR3_PR4_group_overlap
+  l170  ★ Wtorek         19:15-20:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0013 00_Course 33_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0
+  l171  ★ Środa          18:30-19:15    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0013 00_Course 33_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=45.0
+  l172  ★ Wtorek         16:15-17:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=180.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=180.0
+  l173  ★ Piątek         11:15-12:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=30.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0  ⚠ PR3_PR4_group_overlap
+  l174  ★ Środa          12:00-12:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0
+  l175  ★ Czwartek       13:30-14:15    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=-60.0  ⚠ PR3_PR4_group_overlap
+  l176  ★ Wtorek         12:30-13:15    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0
+  l177  ★ Czwartek       14:45-15:30    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=30.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0
+  l178  ★ Czwartek       12:45-13:30    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=-15.0  ⚠ PR3_PR4_group_overlap
+  l179  ★ Czwartek       16:30-17:15    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=60.0
+  l180  ★ Poniedziałek   14:00-14:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer31_L_21  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=45.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=45.0
+  l181  ★ Poniedziałek   16:00-16:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer31_L_21  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0
+  l182  ★ Poniedziałek   17:15-18:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer31_L_21  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=30.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=30.0
+  l183  ★ Poniedziałek   19:15-20:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer31_L_21  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0
+  l184  ★ Czwartek       12:45-14:30    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer31_L_21  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=-15.0  ⚠ PR3_PR4_group_overlap, PR3_PR4_group_overlap
+  l185  ★ Poniedziałek   10:15-11:00    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0030 00_Course 32_Programme PA Ist (2023), spec. SC__Ćwiczenia Studium_Języków_CJ_PŁ_FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_FTIMS_PA_Ist_2023_SC_sem2_gr1_00 00 0030 00_Course 32_Programme PA Ist (2023), spec. SC_Ćwiczenia  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=75.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=75.0
+  l186  ★ Poniedziałek   15:00-15:45    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC__Ćwiczenia Studium_Sportu_CS_PŁ_FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_FTIMS_PA_Ist_2023_SC_sem2_gr1_00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC_Ćwiczenia  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=15.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0
+  l187  ★ Środa          08:45-09:30    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC__Ćwiczenia Studium_Sportu_CS_PŁ_FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_FTIMS_PA_Ist_2023_SC_sem2_gr1_00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC_Ćwiczenia  room=—
+  l188  ★ Piątek         15:45-16:30    FTIMS_PA_Ist_2023_SC_sem2_gr1__00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC__Ćwiczenia Studium_Sportu_CS_PŁ_FTIMS_PA_Ist_2023_FTIMS_PA_Ist_2023_SC_2_FTIMS_PA_Ist_2023_SC_sem2_gr1_00 00 0050 00_Course 27_Programme PA Ist (2023), spec. SC_Ćwiczenia  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=30.0, FTIMS_PA_Ist_2023_SC_sem2_gr2=30.0
+  l189  ★ Czwartek       13:45-14:30    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer49_L_7  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0
+  l190  ★ Piątek         12:15-14:00    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0010 00_Course 24_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer49_L_7  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0
+  l191  ★ Czwartek       12:15-13:00    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_D_Lecturer32_L_37  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=60.0  ⚠ PR3_PR4_group_overlap
+  l192  ★ Środa          17:30-19:15    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_D_Lecturer32_L_37  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=-15.0  ⚠ PR3_PR4_group_overlap
+  l193  ★ Czwartek       09:30-11:15    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_D_Lecturer32_L_37  room=—
+  l194  ★ Poniedziałek   18:15-19:00    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grD Instytut_D_Lecturer22_L_42  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=15.0
+  l195  ★ Środa          10:00-10:45    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grD Instytut_D_Lecturer22_L_42  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=30.0
+  l196  ★ Wtorek         18:00-19:45    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0006 00_Course 11_Programme PA Ist (2023), spec. SC__Laboratorium_grD Instytut_D_Lecturer22_L_42  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=60.0
+  l197  ★ Czwartek       12:15-13:00    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=-15.0  ⚠ PR3_PR4_group_overlap, PR3_PR4_group_overlap
+  l198  ★ Piątek         14:30-15:15    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0054 00_Course 03_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=45.0
+  l199  ★ Piątek         10:15-11:00    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer47_L_2  room=—
+  l200  ★ Piątek         14:30-15:15    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0036 00_Course 29_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr2=30.0
+  l201  ★ Wtorek         11:30-12:15    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer31_L_21  room=—
+  l202  ★ Czwartek       11:45-12:30    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer31_L_21  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=90.0  ⚠ PR3_PR4_group_overlap
+  l203  ★ Czwartek       17:00-17:45    FTIMS_PA_Ist_2023_SC_sem2_gr2__00 00 0025 00_Course 25_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer31_L_21  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem2_gr1=90.0
+  l204  ★ Wtorek         19:15-20:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0
+  l205  ★ Piątek         12:30-13:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=75.0
+  l206  ★ Wtorek         08:15-09:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer19_L_4  room=—
+  l207  ★ Piątek         08:15-09:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer19_L_4  room=—
+  l208  ★ Wtorek         10:00-10:45    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0
+  l209  ★ Środa          12:30-13:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0018 00_Course 17_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=30.0
+  l210  ★ Czwartek       16:30-17:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer12_L_30  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=0.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=60.0
+  l211  ★ Poniedziałek   15:30-16:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer41_L_28  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=0.0
+  l212  ★ Środa          10:15-12:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0003 00_Course 41_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer41_L_28  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0
+  l213  ★ Środa          15:15-16:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer27_L_25  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=45.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=45.0
+  l214  ★ Czwartek       08:15-09:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer27_L_25  room=—
+  l215  ★ Czwartek       10:30-11:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0
+  l216  ★ Czwartek       13:45-14:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0020 00_Course 08_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer47_L_2  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0
+  l217  ~ Poniedziałek   11:00-11:45    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer44_L_32  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=120.0
+  l218  ~ Wtorek         18:15-19:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer44_L_32  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0
+  l219  ★ Czwartek       12:15-13:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer44_L_32  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=60.0  ⚠ PR3_PR4_group_overlap
+  l220  ~ Czwartek       18:45-19:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer44_L_32  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=90.0
+  l221  ★ Poniedziałek   12:45-13:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grC Instytut_C_Lecturer43_L_1  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=60.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=45.0
+  l222  ★ Poniedziałek   17:30-18:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grC Instytut_C_Lecturer43_L_1  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=75.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=15.0
+  l223  ~ Środa          13:45-14:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Laboratorium_grC Instytut_C_Lecturer43_L_1  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=30.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=105.0
+  l224  ~ Poniedziałek   19:15-20:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0048 00_Course 22_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer44_L_32  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=60.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=60.0
+  l225  ★ Piątek         14:45-15:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0052 00_Course 34_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer46_L_6  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=15.0
+  l226  ★ Środa          08:15-09:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0007 00_Course 26_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_D_Lecturer25_L_45  room=—
+  l227  ★ Środa          16:15-17:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0007 00_Course 26_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_D_Lecturer25_L_45  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0, FTIMS_PA_Ist_2023_SB_sem4_spec_SB_gr1=15.0
+  l228  ★ Poniedziałek   14:45-15:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer05_L_15  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=75.0
+  l229  ~ Wtorek         17:15-18:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer05_L_15  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0
+  l230  ~ Czwartek       15:45-16:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer05_L_15  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=75.0
+  l231  ★ Wtorek         09:00-09:45    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=0.0
+  l232  ★ Piątek         10:30-11:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=90.0
+  l233  ~ Piątek         16:30-18:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer19_L_4  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=60.0
+  l234  ★ Wtorek         13:15-14:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0041 00_Course 43_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer05_L_15  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=150.0
+  l235  ★ Czwartek       09:30-10:15    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0004 00_Course 31_Programme PA Ist (2023), spec. SC__Laboratorium Instytut_C_Lecturer46_L_6  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=30.0
+  l236  ★ Czwartek       12:45-13:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0004 00_Course 31_Programme PA Ist (2023), spec. SC__Laboratorium Instytut_C_Lecturer46_L_6  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=-15.0  ⚠ PR3_PR4_lecturer_overlap, PR3_PR4_group_overlap
+  l237  ★ Piątek         13:45-14:30    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0004 00_Course 31_Programme PA Ist (2023), spec. SC__Laboratorium Instytut_C_Lecturer46_L_6  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=30.0
+  l238  ★ Środa          09:15-10:00    FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1__00 00 0004 00_Course 31_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer35_L_17  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem4_spec_SC_gr1=15.0
+  l239  ★ Czwartek       11:30-15:15    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SC__Seminarium_gr3 Instytut_C_Lecturer05_L_15  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=0.0  ⚠ PR3_PR4_group_overlap
+  l240  ~ Wtorek         12:00-12:45    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SC__Seminarium_gr4 Instytut_C_Lecturer44_L_32  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=60.0
+  l241  ★ Poniedziałek   14:15-17:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0033 00_Course 10_Programme PA Ist (2023), spec. SC__Seminarium_gr4 Instytut_C_Lecturer44_L_32  room=—
+  l242  ★ Poniedziałek   19:15-20:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0037 00_Course 18_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer12_L_30  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=135.0, FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=240.0
+  l243  ★ Czwartek       19:15-20:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0037 00_Course 18_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer12_L_30  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=180.0, FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=300.0
+  l244  ★ Piątek         13:15-14:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0008 00_Course 46_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=15.0, FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=15.0
+  l245  ★ Środa          17:30-18:15    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0008 00_Course 46_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=75.0, FTIMS_PA_Ist_2023_SB_sem6_spec_SB_gr1=45.0
+  l246  ★ Piątek         12:15-13:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0008 00_Course 46_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer17_L_29  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=60.0
+  l247  ★ Środa          13:45-14:30    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer09_L_14  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=135.0
+  l248  ★ Środa          15:30-16:15    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer09_L_14  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=60.0
+  l249  ~ Piątek         09:30-11:15    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grA Instytut_C_Lecturer09_L_14  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=30.0
+  l250  ★ Czwartek       12:15-13:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer09_L_14  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=-180.0  ⚠ PR3_PR4_group_overlap
+  l251  ★ Piątek         14:00-14:45    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer09_L_14  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=0.0
+  l252  ~ Wtorek         09:15-11:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Laboratorium_grB Instytut_C_Lecturer09_L_14  room=—
+  l253  ★ Środa          10:45-11:30    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer09_L_14  room=—
+  l254  ~ Czwartek       09:45-11:30    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0042 00_Course 35_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer09_L_14  room=—
+  l255  ★ Piątek         08:15-09:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0002 00_Course 47_Programme PA Ist (2023), spec. SC__Wykład Instytut_C_Lecturer34_L_8  room=—
+  l256  ★ Czwartek       15:30-16:15    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0002 00_Course 47_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=150.0
+  l257  ~ Piątek         15:15-16:00    FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1__00 00 0002 00_Course 47_Programme PA Ist (2023), spec. SC__Ćwiczenia Instytut_C_Lecturer34_L_8  room=—  gap[min]: FTIMS_PA_Ist_2023_SC_sem6_spec_SC_gr1=30.0
+[S3] 3_studies_instance rep 1: energy 14497088.5, |L| 258, solver time 5067.243533996 s

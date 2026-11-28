@@ -1,0 +1,8 @@
+{
+ "what": "times of the 3_studies cold MILP run of 27-28.11.2026 that the figure, the README and the paper use (recorded 28.11.2026)",
+ "run_started": "2026-11-27T18:49:47.456+01:00",
+ "run_started_from": "creation time of CAMPAIGN.json, which the driver writes as it starts (read in the run's own folder, before the copy into this one)",
+ "search_started": "2026-11-27T18:52:03.713+01:00",
+ "search_started_from": "creation time of production/3_studies_instance_MIP_incumbents.jsonl, which the solve opens just before Gurobi's optimize (read in the run's own folder, before the copy into this one)",
+ "load_and_build_s": 136
+}
