@@ -32,7 +32,7 @@ instance, so they are here pseudonymised with the map of the pseudonymised insta
 (`../instances/3_studies/3_studies_instance.yaml`; `scripts/pseudonymise_3studies.py`); nothing else in
 them changes. The run records inside them keep the hashes of the original files and of the original
 instance, which the copies do not match; `SHA256SUMS` lists the copies by their bytes. The `.sol` files
-decode against the instance (`scripts/recover_milp_snapshots.py`); the pseudonymised instance keeps the
-order of every list, so they decode against it too. Every text file here has Unix line ends, and
+decode against the instance, the pseudonymised one included (`scripts/recover_milp_snapshots.py`).
+Every text file here has Unix line ends, and
 `.gitattributes` stops git from converting them; `SHA256SUMS` lists every file by its bytes
 (`sha256sum -c SHA256SUMS`). Rebuilt by `scripts/assemble_milp_3studies_deposit.py`.

@@ -27,9 +27,8 @@ one map: lecturers, courses and their codes, programmes, institutes, faculties o
 buildings and rooms are replaced by tokens (`Lecturer07`, `Course 12`, `00 00 0031 00`, `PA`,
 `Instytut_C`, `BA-04`, ...), the lecturers' free-text requests and the rooms' comments are
 emptied, and Gurobi's licence number is removed from the logs. Every number, time slot,
-capacity, availability and lesson type, and the order of every list, are unchanged, so the
-samples, Gurobi's solutions and the timetables decode and check against the published instance
-exactly as against the original. The run records keep the hashes of the original files, which
+capacity, availability and lesson type is unchanged, and the samples, Gurobi's solutions and the
+timetables decode and check against the published instance exactly as against the original. The run records keep the hashes of the original files, which
 the published copies do not match; each folder's `SHA256SUMS` lists the published files by their
 bytes. The map is not published.
 

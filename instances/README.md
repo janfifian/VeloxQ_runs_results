@@ -71,9 +71,9 @@ buildings and rooms are replaced by tokens (`Lecturer07`, `Course 12`,
 `00 00 0031 00`, `PA`, `Instytut_C`, `BA-04`, ...), with one map for the
 instance and every file of its runs, and the lecturers' free-text requests and
 the rooms' comments are emptied. Numbers, slots, capacities, availabilities,
-lesson types, the remote, language-centre and sports-centre markers and the
-order of every list are unchanged, so the copy loads like the original and a
-timetable checks against it exactly as against the original. The registry
+lesson types and the remote, language-centre and sports-centre markers are
+unchanged, so the copy loads like the original and a timetable checks against
+it exactly as against the original. The registry
 names the original by its path in the code repository
 (`artifacts/3studies/3_studies_instance.yaml`, `instance_in_folder` false) and
 its sha256, the hash the run records use, and the pseudonymised copy in
