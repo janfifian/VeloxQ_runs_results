@@ -1,0 +1,19 @@
+Copyright 2026, the authors: Piotr Koneczny, Bartłomiej Gardas, Filip Turoboś.
+
+The data and results in this repository (the instances, the QUBO matrices, the solver answers
+and samples, the timetables, the run records, verdicts and logs, and the tables and figures) are
+licensed under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+  Summary:     https://creativecommons.org/licenses/by/4.0/
+  Legal code:  https://creativecommons.org/licenses/by/4.0/legalcode
+
+You are free to share and adapt them for any purpose, even commercially, provided you give
+appropriate credit, provide a link to the licence and indicate if changes were made.
+
+Credit: please cite the paper the data belong to:
+
+  Piotr Koneczny, Bartłomiej Gardas and Filip Turoboś, "Would bigger quantum annealers help?
+  An emulator-based test of QUBO against MILP on university timetabling", to appear soon on
+  arXiv.
+
+The scripts in veloxq/scripts/ and dwave_capacity/code/ are not covered by this licence.

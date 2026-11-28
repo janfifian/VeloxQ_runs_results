@@ -5,6 +5,18 @@ of QUBO against MILP on university timetabling*: the instances, and every solver
 timetable, verdict and run record of the runs the paper reports, with the scripts that compute
 its tables and figures from them. Archived on Zenodo: https://doi.org/10.5281/zenodo.23692152.
 
+## Licence and how to cite
+
+The data and results in this repository are licensed under the Creative Commons Attribution 4.0
+International licence ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see `LICENSE`):
+you may share and adapt them for any purpose, provided you give credit. If you use them, please
+cite the paper:
+
+> Piotr Koneczny, Bartłomiej Gardas and Filip Turoboś, "Would bigger quantum annealers help? An
+> emulator-based test of QUBO against MILP on university timetabling", ***To appear soon on arXiv.***
+
+The scripts in `veloxq/scripts/` and `dwave_capacity/code/` are not covered by this licence.
+
 ## Contents
 
 | folder | what it holds | in the paper |
